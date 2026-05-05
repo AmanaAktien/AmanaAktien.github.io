@@ -296,10 +296,35 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
 /* ═══════════════════════════════
    TABLET (max 960px)
 ═══════════════════════════════ */
+
+/* ── SCREEN READER ONLY ── */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* ── HAMBURGER MENU ── */
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:38px;height:38px;background:none;border:1.5px solid var(--border);border-radius:4px;cursor:pointer;padding:7px;flex-shrink:0;}
+.hamburger span{display:block;height:2px;background:var(--black);border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:2px solid var(--black);z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.12);}
+.mobile-menu.open{display:block;}
+.mobile-menu ul{list-style:none;padding:.5rem 0;}
+.mobile-menu ul li a{display:block;padding:.85rem 1.5rem;font-size:.9rem;font-weight:600;color:var(--text);border-bottom:1px solid var(--border);transition:background .15s;}
+.mobile-menu ul li:last-child a{border-bottom:none;}
+.mobile-menu ul li a:hover{background:var(--bg);color:var(--gold);}
+.mobile-menu ul li a.active{color:var(--gold);}
+.mobile-menu-footer{padding:1rem 1.5rem;background:var(--black);}
+.mobile-menu-footer a{display:block;text-align:center;background:var(--gold);color:#fff;padding:.75rem;border-radius:3px;font-weight:700;font-size:.82rem;}
+
+/* ── IMPROVED HOVER ── */
+.ar:hover{background:#F0F4FF;box-shadow:inset 3px 0 0 var(--gold);}
+
 @media (max-width: 960px) {
   html, body { overflow-x: hidden; }
   .topbar { display: none; }
   nav .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .btn-no { display: none; }
   .nav-inner { padding: 0 1rem; }
   .nav-brand { border-right: none; padding-right: 0; margin-right: 0; }
   .btn-no { display: none; }
@@ -502,9 +527,9 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
 <div class="topbar">
   <div class="tbl">
     <span>☪️ Halal. Fundamental. Langfristig.</span>
-    <a href="https://www.youtube.com/@AmanaAktien" target="_blank">YouTube</a>
-    <a href="https://www.instagram.com/amanaaktien" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@amanaaktien" target="_blank">TikTok</a>
+    <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener noreferrer">TikTok</a>
   </div>
   <div>🇩🇪 Auf Deutsch · AAOIFI-Standard · Kein Riba</div>
 </div>
@@ -514,7 +539,7 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">
       <!-- Logo-Icon -->
-      <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="nav-logo" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Amana Aktien Logo" role="img">
         <rect width="40" height="40" rx="6" fill="#B8860B"/>
         <text x="20" y="27" font-size="18" text-anchor="middle" fill="white">☪</text>
       </svg>
@@ -529,14 +554,31 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
       <li><a href="halal-check.html">Halal-Check</a></li>
       <li><a href="grundlagen.html">Grundlagen</a></li>
       <li><a href="ueber-uns.html">Über uns</a></li>
-      <li><a href="https://steady.page/de/amanaaktien" target="_blank">Premium</a></li>
+      <li><a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer">Premium</a></li>
     </ul>
     <div class="nav-right">
-      <a href="https://www.youtube.com/@AmanaAktien" target="_blank" class="btn-no">YouTube</a>
-      <a href="https://steady.page/de/amanaaktien" target="_blank" class="btn-ng">Premium freischalten</a>
+      <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer" class="btn-no">YouTube</a>
+      <a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer" class="btn-ng">Premium freischalten</a>
+      <button class="hamburger" onclick="toggleMenu(this)" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="etf-analysen.html">📊 ETF-Analysen</a></li>
+    <li><a href="aktien.html">📈 Aktien</a></li>
+    <li><a href="halal-check.html">✅ Halal-Check</a></li>
+    <li><a href="grundlagen.html">📚 Grundlagen</a></li>
+    <li><a href="ueber-uns.html">☪️ Über uns</a></li>
+  </ul>
+  <div class="mobile-menu-footer">
+    <a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer">⭐ Premium freischalten – 9 €/Monat</a>
+  </div>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -548,8 +590,8 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
       <h1>Halal investieren –<br><em>mit Wissen &amp; Prinzipien.</em></h1>
       <p class="hero-sub">Der führende deutschsprachige Kanal für fundierte, scharia-konforme Aktien- und ETF-Analysen. Für Muslime in Deutschland, Österreich und der Schweiz, die langfristig und ehrlich investieren wollen.</p>
       <div class="hero-btns">
-        <a href="https://www.youtube.com/@AmanaAktien" target="_blank" class="btn-hp">▶ Kostenlos auf YouTube</a>
-        <a href="https://steady.page/de/amanaaktien" target="_blank" class="btn-hs">Premium freischalten →</a>
+        <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer" class="btn-hp">▶ Kostenlos auf YouTube</a>
+        <a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer" class="btn-hs">Premium freischalten →</a>
       </div>
       <div class="hero-stats">
         <div class="hst"><div class="hst-num">126</div><div class="hst-lbl">Videos</div></div>
@@ -559,29 +601,29 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
       </div>
     </div>
     <div class="hero-right">
-      <a href="https://www.youtube.com/watch?v=4ER2QhbDhIQ" target="_blank" class="hero-card">
-        <img class="hero-card-img" src="https://img.youtube.com/vi/4ER2QhbDhIQ/hqdefault.jpg" alt="Arista Networks Halal Check" onerror="this.style.display='none'">
+      <a href="https://www.youtube.com/watch?v=4ER2QhbDhIQ" target="_blank" rel="noopener noreferrer" class="hero-card">
+        <img class="hero-card-img" src="https://img.youtube.com/vi/4ER2QhbDhIQ/hqdefault.jpg" alt="Arista Networks Halal Check" loading="lazy" decoding="async" onerror="this.style.display='none'">
         <div class="hero-card-body">
           <div class="hero-card-title">Arista Networks – 4.387% in 10 Jahren 🔥</div>
           <div class="hero-card-meta">👁 70 Aufrufe · 9:44 Min.</div>
         </div>
       </a>
-      <a href="https://www.youtube.com/watch?v=ge8o16VvrGw" target="_blank" class="hero-card">
-        <img class="hero-card-img" src="https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg" alt="iShares MSCI World Islamic ETF" onerror="this.style.display='none'">
+      <a href="https://www.youtube.com/watch?v=ge8o16VvrGw" target="_blank" rel="noopener noreferrer" class="hero-card">
+        <img class="hero-card-img" src="https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg" alt="iShares MSCI World Islamic ETF" loading="lazy" decoding="async" onerror="this.style.display='none'">
         <div class="hero-card-body">
           <div class="hero-card-title">iShares MSCI World Islamic ETF – Komplett-Check</div>
           <div class="hero-card-meta">👁 61 Aufrufe · 12:21 Min.</div>
         </div>
       </a>
-      <a href="https://www.youtube.com/watch?v=TN5EgqhijYw" target="_blank" class="hero-card">
-        <img class="hero-card-img" src="https://img.youtube.com/vi/TN5EgqhijYw/hqdefault.jpg" alt="Nemetschek Halal Aktie" onerror="this.style.display='none'">
+      <a href="https://www.youtube.com/watch?v=TN5EgqhijYw" target="_blank" rel="noopener noreferrer" class="hero-card">
+        <img class="hero-card-img" src="https://img.youtube.com/vi/TN5EgqhijYw/hqdefault.jpg" alt="Nemetschek Halal Aktie" loading="lazy" decoding="async" onerror="this.style.display='none'">
         <div class="hero-card-body">
           <div class="hero-card-title">Nemetschek: -50% Absturz! Die beste Halal-Chance?</div>
           <div class="hero-card-meta">👁 127 Aufrufe · 2:08 Min.</div>
         </div>
       </a>
-      <a href="https://www.youtube.com/watch?v=OvvDqjBbEPQ" target="_blank" class="hero-card">
-        <img class="hero-card-img" src="https://img.youtube.com/vi/OvvDqjBbEPQ/hqdefault.jpg" alt="Novo Nordisk Halal Check" onerror="this.style.display='none'">
+      <a href="https://www.youtube.com/watch?v=OvvDqjBbEPQ" target="_blank" rel="noopener noreferrer" class="hero-card">
+        <img class="hero-card-img" src="https://img.youtube.com/vi/OvvDqjBbEPQ/hqdefault.jpg" alt="Novo Nordisk Halal Check" loading="lazy" decoding="async" onerror="this.style.display='none'">
         <div class="hero-card-body">
           <div class="hero-card-title">Novo Nordisk – Darf man als Muslim investieren?</div>
           <div class="hero-card-meta">👁 167 Aufrufe · 2:07 Min.</div>
@@ -609,13 +651,13 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
     <div class="stag">☪ ETF-Analysen</div>
     <div class="shd" id="etf">
       <h2>Halal ETF-Analysen</h2>
-      <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dGA-_hN9pqznOboSSG6SXt" target="_blank">Alle ETF-Analysen →</a>
+      <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dGA-_hN9pqznOboSSG6SXt" target="_blank" rel="noopener noreferrer">Alle ETF-Analysen →</a>
     </div>
 
     <!-- Featured ETF -->
-    <a href="https://www.youtube.com/watch?v=ge8o16VvrGw" target="_blank" class="fc">
+    <a href="https://www.youtube.com/watch?v=ge8o16VvrGw" target="_blank" rel="noopener noreferrer" class="fc">
       <div class="fth">
-        <img src="https://img.youtube.com/vi/ge8o16VvrGw/maxresdefault.jpg" alt="iShares MSCI World Islamic ETF Analyse" onerror="this.src='https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg'">
+        <img src="https://img.youtube.com/vi/ge8o16VvrGw/maxresdefault.jpg" alt="iShares MSCI World Islamic ETF Analyse" loading="lazy" decoding="async" onerror="this.src='https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg'">
         <div class="play-ov"><div class="play-btn">▶</div></div>
       </div>
       <div class="fb">
@@ -627,39 +669,39 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
     </a>
 
     <div class="al">
-      <a href="https://www.youtube.com/watch?v=hqtuQIk2OW4" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/hqtuQIk2OW4/hqdefault.jpg" alt="XASB ETF Sukuk" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💰</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab be" style="font-size:.55rem;padding:.12rem .4rem;">ETF</span></div><h4>XASB ETF: Über 5% Rendite & 100% Halal? (Sukuk ETF 2026)</h4><div class="ais"><span>👁 6 Aufrufe</span><span>7:56 Min.</span><span>03.05.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=hqtuQIk2OW4" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/hqtuQIk2OW4/hqdefault.jpg" alt="XASB ETF Sukuk" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💰</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>XASB ETF: Über 5% Rendite & 100% Halal? (Sukuk ETF 2026)</h4><div class="ais"><span>👁 6 Aufrufe</span><span>7:56 Min.</span><span>03.05.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=ObVvclyRFWg" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/ObVvclyRFWg/hqdefault.jpg" alt="iShares MSCI USA Islamic ETF" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🇺🇸</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab be" style="font-size:.55rem;padding:.12rem .4rem;">ETF</span></div><h4>iShares MSCI USA Islamic ETF – Rendite, Risiko & Halal-Check 2026</h4><div class="ais"><span>👁 63 Aufrufe</span><span>8:16 Min.</span><span>20.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=ObVvclyRFWg" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/ObVvclyRFWg/hqdefault.jpg" alt="iShares MSCI USA Islamic ETF" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🇺🇸</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>iShares MSCI USA Islamic ETF – Rendite, Risiko & Halal-Check 2026</h4><div class="ais"><span>👁 63 Aufrufe</span><span>8:16 Min.</span><span>20.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=yXYZFUKByVk" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/yXYZFUKByVk/hqdefault.jpg" alt="iShares Sukuk ETF" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💎</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab be" style="font-size:.55rem;padding:.12rem .4rem;">ETF</span></div><h4>5% Rendite OHNE Zinsen? Der einzige Halal-Anleihen-ETF – iShares Sukuk</h4><div class="ais"><span>👁 46 Aufrufe</span><span>9:25 Min.</span><span>22.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=yXYZFUKByVk" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/yXYZFUKByVk/hqdefault.jpg" alt="iShares Sukuk ETF" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💎</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>5% Rendite OHNE Zinsen? Der einzige Halal-Anleihen-ETF – iShares Sukuk</h4><div class="ais"><span>👁 46 Aufrufe</span><span>9:25 Min.</span><span>22.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=Ywtz7cn7_5I" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/Ywtz7cn7_5I/hqdefault.jpg" alt="Invesco MWIM Islamic ETF" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🌙</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab be" style="font-size:.55rem;padding:.12rem .4rem;">ETF</span></div><h4>Invesco MWIM Islamic ETF – HALAL & GLOBAL: Vollständige Analyse 2026</h4><div class="ais"><span>👁 35 Aufrufe</span><span>10:46 Min.</span><span>27.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=Ywtz7cn7_5I" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/Ywtz7cn7_5I/hqdefault.jpg" alt="Invesco MWIM Islamic ETF" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🌙</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>Invesco MWIM Islamic ETF – HALAL & GLOBAL: Vollständige Analyse 2026</h4><div class="ais"><span>👁 35 Aufrufe</span><span>10:46 Min.</span><span>27.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=yFJy5iBYd9s" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/yFJy5iBYd9s/hqdefault.jpg" alt="iShares MSCI EM Islamic ETF" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🌏</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab be" style="font-size:.55rem;padding:.12rem .4rem;">ETF</span></div><h4>+74% in 1 Jahr – iShares MSCI EM Islamic ETF: Scharia-Check & Rendite</h4><div class="ais"><span>👁 30 Aufrufe</span><span>10:08 Min.</span><span>22.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=yFJy5iBYd9s" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/yFJy5iBYd9s/hqdefault.jpg" alt="iShares MSCI EM Islamic ETF" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🌏</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>+74% in 1 Jahr – iShares MSCI EM Islamic ETF: Scharia-Check & Rendite</h4><div class="ais"><span>👁 30 Aufrufe</span><span>10:08 Min.</span><span>22.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=N2hzVdBBo6c" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/N2hzVdBBo6c/hqdefault.jpg" alt="UMMA ETF Wahed" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🕌</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab be" style="font-size:.55rem;padding:.12rem .4rem;">ETF</span></div><h4>+30% in 1 Jahr! UMMA ETF von Wahed – großer Halal-Check 2026</h4><div class="ais"><span>👁 24 Aufrufe</span><span>6:06 Min.</span><span>23.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=N2hzVdBBo6c" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/N2hzVdBBo6c/hqdefault.jpg" alt="UMMA ETF Wahed" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🕌</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>+30% in 1 Jahr! UMMA ETF von Wahed – großer Halal-Check 2026</h4><div class="ais"><span>👁 24 Aufrufe</span><span>6:06 Min.</span><span>23.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=m-vz-XqlCsw" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/m-vz-XqlCsw/hqdefault.jpg" alt="AMAL ETF Halal" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>📋</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab be" style="font-size:.55rem;padding:.12rem .4rem;">ETF</span></div><h4>AMAL ETF: Der einzige Scharia-konforme ETF mit Fatwa | +32% Rendite</h4><div class="ais"><span>👁 31 Aufrufe</span><span>8:29 Min.</span><span>25.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=m-vz-XqlCsw" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/m-vz-XqlCsw/hqdefault.jpg" alt="AMAL ETF Halal" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>📋</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>AMAL ETF: Der einzige Scharia-konforme ETF mit Fatwa | +32% Rendite</h4><div class="ais"><span>👁 31 Aufrufe</span><span>8:29 Min.</span><span>25.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
     </div>
@@ -667,22 +709,22 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
     <!-- GOLD & SILBER -->
     <div class="shd" style="margin-top:2rem;">
       <h2>🥇 Gold & Silber – Halal?</h2>
-      <a href="https://www.youtube.com/@AmanaAktien" target="_blank">Mehr →</a>
+      <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer">Mehr →</a>
     </div>
     <div class="al">
-      <a href="https://www.youtube.com/watch?v=wKczompaW7w" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/wKczompaW7w/hqdefault.jpg" alt="iShares Physical Gold ETC Halal" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🥇</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bg2" style="font-size:.55rem;padding:.12rem .4rem;">Gold ETC</span></div><h4>Gold ETF HALAL? Die ehrliche Analyse für Muslime | iShares Physical Gold ETC</h4><div class="ais"><span>👁 16 Aufrufe</span><span>9:47 Min.</span><span>21.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=wKczompaW7w" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/wKczompaW7w/hqdefault.jpg" alt="iShares Physical Gold ETC Halal" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🥇</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>Gold ETF HALAL? Die ehrliche Analyse für Muslime | iShares Physical Gold ETC</h4><div class="ais"><span>👁 16 Aufrufe</span><span>9:47 Min.</span><span>21.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=V5mwdGxwSnc" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/V5mwdGxwSnc/hqdefault.jpg" alt="Invesco Physical Gold ETC" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🏅</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bg2" style="font-size:.55rem;padding:.12rem .4rem;">Gold ETC</span></div><h4>Invesco Physical Gold ETC – Ist dieser ETC wirklich HALAL? Komplette Analyse 2026</h4><div class="ais"><span>👁 17 Aufrufe</span><span>8:26 Min.</span><span>26.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=V5mwdGxwSnc" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/V5mwdGxwSnc/hqdefault.jpg" alt="Invesco Physical Gold ETC" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🏅</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>Invesco Physical Gold ETC – Ist dieser ETC wirklich HALAL? Komplette Analyse 2026</h4><div class="ais"><span>👁 17 Aufrufe</span><span>8:26 Min.</span><span>26.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=Qbj4dktdp2Y" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/Qbj4dktdp2Y/hqdefault.jpg" alt="Silber ETC Halal" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🥈</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bg2" style="font-size:.55rem;padding:.12rem .4rem;">Silber ETC</span></div><h4>Ist dieser Silber-ETC wirklich Halal? Die Antwort überrascht dich 👀</h4><div class="ais"><span>👁 21 Aufrufe</span><span>6:10 Min.</span><span>25.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=Qbj4dktdp2Y" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/Qbj4dktdp2Y/hqdefault.jpg" alt="Silber ETC Halal" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🥈</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab tw" style="font-size:.55rem;padding:.12rem .4rem;background:#FFF7ED;color:#C2410C;border:1px solid #FED7AA;">⚠️ PRÜFEN</span></div><h4>Ist dieser Silber-ETC wirklich Halal? Die Antwort überrascht dich 👀</h4><div class="ais"><span>👁 21 Aufrufe</span><span>6:10 Min.</span><span>25.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
     </div>
@@ -691,12 +733,12 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
     <div class="stag" style="margin-top:2.5rem;">☪ Aktien-Analysen</div>
     <div class="shd" id="aktien">
       <h2>Halal Aktien-Analysen</h2>
-      <a href="https://www.youtube.com/@AmanaAktien" target="_blank">Alle Aktien →</a>
+      <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer">Alle Aktien →</a>
     </div>
 
-    <a href="https://www.youtube.com/watch?v=4ER2QhbDhIQ" target="_blank" class="fc">
+    <a href="https://www.youtube.com/watch?v=4ER2QhbDhIQ" target="_blank" rel="noopener noreferrer" class="fc">
       <div class="fth">
-        <img src="https://img.youtube.com/vi/4ER2QhbDhIQ/maxresdefault.jpg" alt="Arista Networks Halal Aktienanalyse 2026" onerror="this.src='https://img.youtube.com/vi/4ER2QhbDhIQ/hqdefault.jpg'">
+        <img src="https://img.youtube.com/vi/4ER2QhbDhIQ/maxresdefault.jpg" alt="Arista Networks Halal Aktienanalyse 2026" loading="lazy" decoding="async" onerror="this.src='https://img.youtube.com/vi/4ER2QhbDhIQ/hqdefault.jpg'">
         <div class="play-ov"><div class="play-btn">▶</div></div>
       </div>
       <div class="fb">
@@ -708,44 +750,44 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
     </a>
 
     <div class="al">
-      <a href="https://www.youtube.com/watch?v=2vNn1v-eCBc" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/2vNn1v-eCBc/hqdefault.jpg" alt="ServiceNow Aktienanalyse Halal 2026" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💻</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab ba" style="font-size:.55rem;padding:.12rem .4rem;">Aktie</span></div><h4>ServiceNow (NOW) – 58% gefallen! Jetzt kaufen? Aktienanalyse + Halal-Check 2026</h4><div class="ais"><span>👁 34 Aufrufe</span><span>11:17 Min.</span><span>01.05.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=2vNn1v-eCBc" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/2vNn1v-eCBc/hqdefault.jpg" alt="ServiceNow Aktienanalyse Halal 2026" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💻</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>ServiceNow (NOW) – 58% gefallen! Jetzt kaufen? Aktienanalyse + Halal-Check 2026</h4><div class="ais"><span>👁 34 Aufrufe</span><span>11:17 Min.</span><span>01.05.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=TN5EgqhijYw" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/TN5EgqhijYw/hqdefault.jpg" alt="Nemetschek Aktie Halal Analyse" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>📉</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab ba" style="font-size:.55rem;padding:.12rem .4rem;">Aktie</span></div><h4>Nemetschek: -50% Absturz! 📉 Die beste Halal-Chance 2026?</h4><div class="ais"><span>👁 127 Aufrufe</span><span>2:08 Min.</span><span>14.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=TN5EgqhijYw" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/TN5EgqhijYw/hqdefault.jpg" alt="Nemetschek Aktie Halal Analyse" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>📉</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>Nemetschek: -50% Absturz! 📉 Die beste Halal-Chance 2026?</h4><div class="ais"><span>👁 127 Aufrufe</span><span>2:08 Min.</span><span>14.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=dweaAVqlFSs" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/dweaAVqlFSs/hqdefault.jpg" alt="Apple Aktie Halal Check 2026" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🍎</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab ba" style="font-size:.55rem;padding:.12rem .4rem;">Aktie</span></div><h4>Ist Apple HALAL? Diese Zahl schockiert jeden Muslim-Investor 🍎 | Analyse 2026</h4><div class="ais"><span>👁 27 Aufrufe</span><span>7:17 Min.</span><span>29.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=dweaAVqlFSs" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/dweaAVqlFSs/hqdefault.jpg" alt="Apple Aktie Halal Check 2026" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🍎</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab tw" style="font-size:.55rem;padding:.12rem .4rem;background:#FFF7ED;color:#C2410C;border:1px solid #FED7AA;">🔍 ANALYSE</span></div><h4>Ist Apple HALAL? Diese Zahl schockiert jeden Muslim-Investor 🍎 | Analyse 2026</h4><div class="ais"><span>👁 27 Aufrufe</span><span>7:17 Min.</span><span>29.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=OvvDqjBbEPQ" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/OvvDqjBbEPQ/hqdefault.jpg" alt="Novo Nordisk Halal Check" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💊</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab ba" style="font-size:.55rem;padding:.12rem .4rem;">Aktie</span></div><h4>Novo Nordisk – Darf man als Muslim in Wegovy / Ozempic investieren?</h4><div class="ais"><span>👁 167 Aufrufe</span><span>2:07 Min.</span><span>09.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=OvvDqjBbEPQ" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/OvvDqjBbEPQ/hqdefault.jpg" alt="Novo Nordisk Halal Check" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💊</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab tw" style="font-size:.55rem;padding:.12rem .4rem;background:#FFF7ED;color:#C2410C;border:1px solid #FED7AA;">⚠️ PRÜFEN</span></div><h4>Novo Nordisk – Darf man als Muslim in Wegovy / Ozempic investieren?</h4><div class="ais"><span>👁 167 Aufrufe</span><span>2:07 Min.</span><span>09.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=wEGOTvuAlwM" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/wEGOTvuAlwM/hqdefault.jpg" alt="Halal Dividendenaktien Deutschland" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🏭</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab ba" style="font-size:.55rem;padding:.12rem .4rem;">Aktie</span></div><h4>5 Halal Dividendenaktien aus Deutschland – die kaum jemand kennt!</h4><div class="ais"><span>👁 43 Aufrufe</span><span>6:17 Min.</span><span>28.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=wEGOTvuAlwM" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/wEGOTvuAlwM/hqdefault.jpg" alt="Halal Dividendenaktien Deutschland" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🏭</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>5 Halal Dividendenaktien aus Deutschland – die kaum jemand kennt!</h4><div class="ais"><span>👁 43 Aufrufe</span><span>6:17 Min.</span><span>28.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=gQOHK70GPj8" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/gQOHK70GPj8/hqdefault.jpg" alt="ZINSFREI investieren Halal Aktie" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>📸</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab ba" style="font-size:.55rem;padding:.12rem .4rem;">Aktie</span></div><h4>ZINSFREI investieren: Warum jeder Muslim diese Aktie kennen muss!</h4><div class="ais"><span>👁 62 Aufrufe</span><span>14:07 Min.</span><span>09.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=gQOHK70GPj8" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/gQOHK70GPj8/hqdefault.jpg" alt="ZINSFREI investieren Halal Aktie" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>📸</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>ZINSFREI investieren: Warum jeder Muslim diese Aktie kennen muss!</h4><div class="ais"><span>👁 62 Aufrufe</span><span>14:07 Min.</span><span>09.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=cxIMg3CqPiM" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/cxIMg3CqPiM/hqdefault.jpg" alt="Deckers Brand Halal Aktie Monster" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>👟</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab ba" style="font-size:.55rem;padding:.12rem .4rem;">Aktie</span></div><h4>Von 1.000 € zu 700.000 €? 📈 Deckers Brand – Diese Halal-Aktie ist ein Monster!</h4><div class="ais"><span>👁 97 Aufrufe</span><span>7:39 Min.</span><span>31.03.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=cxIMg3CqPiM" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/cxIMg3CqPiM/hqdefault.jpg" alt="Deckers Brand Halal Aktie Monster" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>👟</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>Von 1.000 € zu 700.000 €? 📈 Deckers Brand – Diese Halal-Aktie ist ein Monster!</h4><div class="ais"><span>👁 97 Aufrufe</span><span>7:39 Min.</span><span>31.03.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=RrhZj0tBhEs" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/RrhZj0tBhEs/hqdefault.jpg" alt="Krones Halal Aktie Deutschland" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🥤</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab ba" style="font-size:.55rem;padding:.12rem .4rem;">Aktie</span></div><h4>Jedes 4. Getränk kommt von IHR! 🥤 Krones im Halal-Check: Unterbewertet?</h4><div class="ais"><span>👁 88 Aufrufe</span><span>1:00 Min.</span><span>08.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=RrhZj0tBhEs" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/RrhZj0tBhEs/hqdefault.jpg" alt="Krones Halal Aktie Deutschland" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🥤</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bh" style="font-size:.55rem;padding:.12rem .4rem;">✅ HALAL</span></div><h4>Jedes 4. Getränk kommt von IHR! 🥤 Krones im Halal-Check: Unterbewertet?</h4><div class="ais"><span>👁 88 Aufrufe</span><span>1:00 Min.</span><span>08.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
     </div>
@@ -754,7 +796,7 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
     <div class="stag" style="margin-top:2.5rem;">☪ AAOIFI-Standard</div>
     <div class="shd" id="halal">
       <h2>Halal-Check Übersicht</h2>
-      <a href="https://www.youtube.com/@AmanaAktien" target="_blank">Alle Checks →</a>
+      <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer">Alle Checks →</a>
     </div>
     <div class="hw">
       <table class="ht">
@@ -774,17 +816,17 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
     <div class="stag" style="margin-top:2.5rem;">📚 Für Einsteiger</div>
     <div class="shd" id="grundlagen">
       <h2>Halal Investieren – Grundlagen</h2>
-      <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dJSdqS6OY7K0MNQdWUXpDy" target="_blank">Playlist →</a>
+      <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dJSdqS6OY7K0MNQdWUXpDy" target="_blank" rel="noopener noreferrer">Playlist →</a>
     </div>
     <div class="al">
-      <a href="https://www.youtube.com/watch?v=Ss_CyIxKNeI" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/Ss_CyIxKNeI/hqdefault.jpg" alt="Halal Investieren für Anfänger" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🕌</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bb" style="font-size:.55rem;padding:.12rem .4rem;">Grundlagen</span></div><h4>Halal Investieren für Anfänger – Part 1: Alles was du wissen musst</h4><div class="ais"><span>👁 4 Aufrufe</span><span>7:22 Min.</span><span>01.05.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=Ss_CyIxKNeI" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/Ss_CyIxKNeI/hqdefault.jpg" alt="Halal Investieren für Anfänger" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>🕌</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bb" style="font-size:.55rem;padding:.12rem .4rem;">📚 Grundlagen</span></div><h4>Halal Investieren für Anfänger – Part 1: Alles was du wissen musst</h4><div class="ais"><span>👁 4 Aufrufe</span><span>7:22 Min.</span><span>01.05.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
-      <a href="https://www.youtube.com/watch?v=rf1yuD5LDfo" target="_blank" class="ar">
-        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/rf1yuD5LDfo/hqdefault.jpg" alt="Broker Empfehlung Amana Aktien" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💼</div>'"></div>
-        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bb" style="font-size:.55rem;padding:.12rem .4rem;">Broker</span></div><h4>Welchen Broker benutzen wir bei Amana Aktien? – Ihr habt gefragt, ich antworte!</h4><div class="ais"><span>👁 21 Aufrufe</span><span>0:45 Min.</span><span>13.04.2026</span></div></div></div>
+      <a href="https://www.youtube.com/watch?v=rf1yuD5LDfo" target="_blank" rel="noopener noreferrer" class="ar">
+        <div class="ar-img-wrap"><img src="https://img.youtube.com/vi/rf1yuD5LDfo/hqdefault.jpg" alt="Broker Empfehlung Amana Aktien" loading="lazy" decoding="async" onerror="this.parentElement.innerHTML='<div class=ar-img-ph>💼</div>'"></div>
+        <div class="ar-body"><div class="ai"><div style="margin-bottom:.2rem;"><span class="ab bb" style="font-size:.55rem;padding:.12rem .4rem;">🏦 Broker-Tipp</span></div><h4>Welchen Broker benutzen wir bei Amana Aktien? – Ihr habt gefragt, ich antworte!</h4><div class="ais"><span>👁 21 Aufrufe</span><span>0:45 Min.</span><span>13.04.2026</span></div></div></div>
         <span class="ar-arr">→</span>
       </a>
     </div>
@@ -809,7 +851,7 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
           <li><span class="prd">✦</span> Purification-Ratio-Berechnungen</li>
           <li><span class="prd">✦</span> Community & direkter Austausch</li>
         </ul>
-        <a href="https://steady.page/de/amanaaktien" target="_blank" class="bpr">Jetzt Mitglied werden →</a>
+        <a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer" class="bpr">Jetzt Mitglied werden →</a>
         <p class="prn">☪️ Kein Riba · Kein Haram · Jederzeit kündbar</p>
       </div>
     </div>
@@ -830,19 +872,19 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
       <div class="wh">📱 Folge Amana Aktien</div>
       <div class="wb">
         <ul class="sl">
-          <li><a href="https://www.youtube.com/@AmanaAktien" target="_blank" class="sr">
+          <li><a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer" class="sr">
             <div class="si" style="background:#FF0000;">▶</div>
             <div><div>YouTube</div><div class="ssub">126 Videos · 27 Abonnenten</div></div>
           </a></li>
-          <li><a href="https://www.instagram.com/amanaaktien" target="_blank" class="sr">
+          <li><a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer" class="sr">
             <div class="si" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);">📸</div>
             <div><div>Instagram</div><div class="ssub">42 Beiträge · 35 Follower</div></div>
           </a></li>
-          <li><a href="https://www.tiktok.com/@amanaaktien" target="_blank" class="sr">
+          <li><a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener noreferrer" class="sr">
             <div class="si" style="background:#111;border:1px solid #333;">🎵</div>
             <div><div>TikTok</div><div class="ssub">835 Follower · 21,4K Likes</div></div>
           </a></li>
-          <li><a href="https://steady.page/de/amanaaktien" target="_blank" class="sr">
+          <li><a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer" class="sr">
             <div class="si" style="background:#2B7A4B;">⭐</div>
             <div><div>Steady (Premium)</div><div class="ssub">Exklusive Inhalte</div></div>
           </a></li>
@@ -854,22 +896,22 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
       <div class="wh">📋 Themen-Playlists</div>
       <div class="wb" style="padding:.5rem 1.1rem;">
         <div class="pll">
-          <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dGA-_hN9pqznOboSSG6SXt" target="_blank" class="plr">
+          <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dGA-_hN9pqznOboSSG6SXt" target="_blank" rel="noopener noreferrer" class="plr">
             <div class="pio">📊</div>
             <div><div class="pln">Halal ETF-Analysen</div><div class="pct">10 Videos</div></div>
             <span class="par">→</span>
           </a>
-          <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1eX9hc6LVa2fwuXfv1VgJzt" target="_blank" class="plr">
+          <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1eX9hc6LVa2fwuXfv1VgJzt" target="_blank" rel="noopener noreferrer" class="plr">
             <div class="pio">🇩🇪</div>
             <div><div class="pln">Halal Aktien Deutschland</div><div class="pct">5 Videos</div></div>
             <span class="par">→</span>
           </a>
-          <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1eoeBZ3R-mYc_cOo1QwKJDF" target="_blank" class="plr">
+          <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1eoeBZ3R-mYc_cOo1QwKJDF" target="_blank" rel="noopener noreferrer" class="plr">
             <div class="pio">🇺🇸</div>
             <div><div class="pln">US Halal Qualitätsaktien</div><div class="pct">3 Videos</div></div>
             <span class="par">→</span>
           </a>
-          <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dJSdqS6OY7K0MNQdWUXpDy" target="_blank" class="plr">
+          <a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dJSdqS6OY7K0MNQdWUXpDy" target="_blank" rel="noopener noreferrer" class="plr">
             <div class="pio">📚</div>
             <div><div class="pln">Wissen über Halal Investing</div><div class="pct">1 Video</div></div>
             <span class="par">→</span>
@@ -882,11 +924,11 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
       <div class="wh">🏦 Empfohlene Broker*</div>
       <div class="wb">
         <div class="brl">
-          <a href="https://refnocode.trade.re/xhmwwbv6" target="_blank" class="brr">
+          <a href="https://refnocode.trade.re/xhmwwbv6" target="_blank" rel="noopener noreferrer" class="brr">
             <div class="brio">🟢</div>
             <div><div>Trade Republic</div><div class="brsub">Mit Willkommensbonus</div></div>
           </a>
-          <a href="https://de.scalable.capital/einladung/b6qrtw" target="_blank" class="brr">
+          <a href="https://de.scalable.capital/einladung/b6qrtw" target="_blank" rel="noopener noreferrer" class="brr">
             <div class="brio">📈</div>
             <div><div>Scalable Capital</div><div class="brsub">Einladungslink</div></div>
           </a>
@@ -906,7 +948,7 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
         <div class="stag">☪ Unsere Mission</div>
         <h2 style="font-family:'Lora',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;line-height:1.2;margin-bottom:1rem;">Das <em style="font-style:italic;color:var(--gold);">einzige</em> deutschsprachige Analyse-Portal für Halal-Investoren</h2>
         <p style="color:var(--text2);font-size:.92rem;line-height:1.8;margin-bottom:1.5rem;">Muslimische Investoren in Deutschland, Österreich und der Schweiz verdienen professionelle, ehrliche Finanzanalysen – scharia-konform, transparent und auf Deutsch. Genau das ist Amana Aktien.</p>
-        <a href="https://www.youtube.com/@AmanaAktien" target="_blank" class="btn-hp" style="display:inline-block;">Kanal besuchen →</a>
+        <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer" class="btn-hp" style="display:inline-block;">Kanal besuchen →</a>
       </div>
       <div style="border-radius:8px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);">
         <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=700&q=80" alt="Halal Investieren Börse Analyse" style="width:100%;height:320px;object-fit:cover;">
@@ -961,8 +1003,8 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
         <div style="font-size:.65rem;color:#666;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem;">Mitgliedschaft ab</div>
         <div class="bp2">9 €</div>
         <div class="bper">pro Monat · jederzeit kündbar</div>
-        <a href="https://steady.page/de/amanaaktien" target="_blank" class="bpb">Jetzt Mitglied werden →</a>
-        <a href="https://www.youtube.com/@AmanaAktien" target="_blank" class="bpo">Erst kostenlos testen →</a>
+        <a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer" class="bpb">Jetzt Mitglied werden →</a>
+        <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer" class="bpo">Erst kostenlos testen →</a>
         <p class="plg">☪️ Kein Riba · Kein Haram · Kein versteckter Trick<br>Abwicklung über Steady · DSGVO-konform</p>
       </div>
     </div>
@@ -1023,8 +1065,8 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
           <li><div class="purif-num">4</div><div>Fertig – dein Investment ist gereinigt und vollständig halal. 🤲</div></li>
         </ul>
         <div style="margin-top:1.5rem;display:flex;gap:.75rem;flex-wrap:wrap;">
-          <a href="https://app.zoya.finance/purification" target="_blank" style="display:inline-block;background:var(--gold);color:#fff;padding:.7rem 1.25rem;border-radius:3px;font-weight:700;font-size:.78rem;letter-spacing:.05em;">Purification berechnen →</a>
-          <a href="https://www.youtube.com/@AmanaAktien" target="_blank" style="display:inline-block;background:rgba(255,255,255,.1);color:#ccc;padding:.7rem 1.25rem;border-radius:3px;font-weight:600;font-size:.78rem;border:1px solid rgba(255,255,255,.15);">Video-Erklärung ansehen</a>
+          <a href="https://app.zoya.finance/purification" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:var(--gold);color:#fff;padding:.7rem 1.25rem;border-radius:3px;font-weight:700;font-size:.78rem;letter-spacing:.05em;">Purification berechnen →</a>
+          <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:rgba(255,255,255,.1);color:#ccc;padding:.7rem 1.25rem;border-radius:3px;font-weight:600;font-size:.78rem;border:1px solid rgba(255,255,255,.15);">Video-Erklärung ansehen</a>
         </div>
       </div>
       <div class="purif-img">
@@ -1041,37 +1083,37 @@ footer { background: #0F0F0F; color: #666; padding: 3rem 2rem 1.5rem; }
     <h2 style="font-family:'Lora',serif;font-size:clamp(1.5rem,3vw,2rem);font-weight:700;margin-bottom:.5rem;">Halal-Investing Tools</h2>
     <p style="color:var(--text2);font-size:.9rem;max-width:540px;line-height:1.75;">Diese kostenlosen Tools helfen dir, halal zu investieren – von der Aktien-Prüfung bis zur Zakat-Berechnung.</p>
     <div class="tools-grid">
-      <a href="https://musaffa.com" target="_blank" class="tool-card">
+      <a href="https://musaffa.com" target="_blank" rel="noopener noreferrer" class="tool-card">
         <div class="tool-icon">🔍</div>
         <h3>Halal Aktien-Screener</h3>
         <p>Über 140.000 Aktien und ETFs auf Scharia-Konformität prüfen – kostenlos und nach AAOIFI-Standard.</p>
         <span class="tool-link">Zu Musaffa →</span>
       </a>
-      <a href="https://app.zoya.finance/zakat" target="_blank" class="tool-card">
+      <a href="https://app.zoya.finance/zakat" target="_blank" rel="noopener noreferrer" class="tool-card">
         <div class="tool-icon">🌙</div>
         <h3>Zakat-Rechner</h3>
         <p>Berechne deine Zakat auf Aktien, ETFs, Gold und Ersparnisse – präzise und islamisch korrekt.</p>
         <span class="tool-link">Zur Zakat-Berechnung →</span>
       </a>
-      <a href="https://app.zoya.finance/purification" target="_blank" class="tool-card">
+      <a href="https://app.zoya.finance/purification" target="_blank" rel="noopener noreferrer" class="tool-card">
         <div class="tool-icon">✨</div>
         <h3>Purification-Rechner</h3>
         <p>Berechne deinen Reinigungsbetrag für Dividenden und halte dein Portfolio 100% halal.</p>
         <span class="tool-link">Purification berechnen →</span>
       </a>
-      <a href="https://zoya.finance" target="_blank" class="tool-card">
+      <a href="https://zoya.finance" target="_blank" rel="noopener noreferrer" class="tool-card">
         <div class="tool-icon">📱</div>
         <h3>Zoya App</h3>
         <p>Die #1 Halal-Investing-App mit Portfolio-Tracking, Scharia-Checks und automatischer Purification.</p>
         <span class="tool-link">App herunterladen →</span>
       </a>
-      <a href="https://musaffa.com/halal-etf-screener" target="_blank" class="tool-card">
+      <a href="https://musaffa.com/halal-etf-screener" target="_blank" rel="noopener noreferrer" class="tool-card">
         <div class="tool-icon">📊</div>
         <h3>Halal ETF-Screener</h3>
         <p>Finde scharia-konforme ETFs aus über 3.000 Fonds – gefiltert nach AAOIFI-Kriterien.</p>
         <span class="tool-link">ETFs prüfen →</span>
       </a>
-      <a href="https://steady.page/de/amanaaktien" target="_blank" class="tool-card">
+      <a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer" class="tool-card">
         <div class="tool-icon">⭐</div>
         <h3>Amana Aktien Premium</h3>
         <p>Vollständige Analysen, exklusive Aktien-Ideen und AAOIFI-Checks – direkt von uns für dich.</p>
@@ -1180,7 +1222,7 @@ function toggleFaq(btn) {
   <h2>Jede neue Halal-Analyse direkt ins Postfach</h2>
   <p>Kostenlos, kein Spam, jederzeit abbestellbar. Für Muslime, die halal investieren wollen.</p>
   <div class="nlbf">
-    <input type="email" class="nlbi" placeholder="deine@email.de">
+    <label for="nl-email" class="sr-only">E-Mail-Adresse</label><input type="email" id="nl-email" class="nlbi" placeholder="deine@email.de" autocomplete="email">
     <button class="bnlb">Anmelden →</button>
   </div>
   <p class="nlbn">Kostenlos · Kein Spam · Jederzeit abbestellbar</p>
@@ -1201,19 +1243,19 @@ function toggleFaq(btn) {
       <div class="fc2">
         <h5>Analysen</h5>
         <ul>
-          <li><a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dGA-_hN9pqznOboSSG6SXt" target="_blank">Halal ETF-Analysen</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1eX9hc6LVa2fwuXfv1VgJzt" target="_blank">Aktien Deutschland</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1eoeBZ3R-mYc_cOo1QwKJDF" target="_blank">Aktien USA</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dJSdqS6OY7K0MNQdWUXpDy" target="_blank">Grundlagen</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dGA-_hN9pqznOboSSG6SXt" target="_blank" rel="noopener noreferrer">Halal ETF-Analysen</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1eX9hc6LVa2fwuXfv1VgJzt" target="_blank" rel="noopener noreferrer">Aktien Deutschland</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1eoeBZ3R-mYc_cOo1QwKJDF" target="_blank" rel="noopener noreferrer">Aktien USA</a></li>
+          <li><a href="https://www.youtube.com/playlist?list=PLPjB3bQWeh1dJSdqS6OY7K0MNQdWUXpDy" target="_blank" rel="noopener noreferrer">Grundlagen</a></li>
         </ul>
       </div>
       <div class="fc2">
         <h5>Social Media</h5>
         <ul>
-          <li><a href="https://www.youtube.com/@AmanaAktien" target="_blank">YouTube</a></li>
-          <li><a href="https://www.instagram.com/amanaaktien" target="_blank">Instagram</a></li>
-          <li><a href="https://www.tiktok.com/@amanaaktien" target="_blank">TikTok</a></li>
-          <li><a href="https://steady.page/de/amanaaktien" target="_blank">Steady (Premium)</a></li>
+          <li><a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li><a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener noreferrer">TikTok</a></li>
+          <li><a href="https://steady.page/de/amanaaktien" target="_blank" rel="noopener noreferrer">Steady (Premium)</a></li>
         </ul>
       </div>
       <div class="fc2">
@@ -1233,5 +1275,23 @@ function toggleFaq(btn) {
   </div>
 </footer>
 
+
+<script>
+function toggleMenu(btn) {
+  btn.classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow = btn.classList.contains('open') ? 'hidden' : '';
+}
+// Close menu when clicking outside
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.querySelector('.hamburger');
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove('open');
+    btn.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+</script>
 </body>
 </html>
