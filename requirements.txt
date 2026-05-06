@@ -1,0 +1,7 @@
+# Amana Aktien – Python Dependencies
+# Installiert via: pip install -r requirements.txt
+
+requests>=2.31.0          # HTTP + Retry-Adapter
+python-dateutil>=2.8.2    # ISO-Datum-Parsing
+defusedxml>=0.7.1         # Sicherer XML-Parser (verhindert XXE-Angriffe)
+urllib3>=2.0.0            # HTTP-Transport (bereits in requests, explizit für Stabilität)
