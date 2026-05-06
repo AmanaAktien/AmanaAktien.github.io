@@ -1,0 +1,62 @@
+# ============================================================
+# Amana Aktien – Auto-Update Workflow
+# Läuft automatisch wenn du ein neues YouTube Video hochlädst
+# Aktualisiert videos.json und baut die Webseite neu
+# ============================================================
+
+name: 🕌 Auto-Update Videos
+
+on:
+  # ── Automatisch alle 2 Stunden prüfen ──
+  schedule:
+    - cron: '0 */2 * * *'   # Alle 2 Stunden
+
+  # ── Manuell starten (für sofortigen Update) ──
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Erzwinge Update auch ohne neue Videos'
+        required: false
+        default: 'false'
+
+jobs:
+  update-videos:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Erlaubt das Schreiben in das Repo
+
+    steps:
+      # ── 1. Repository auschecken ──
+      - name: 📥 Repository auschecken
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── 2. Python einrichten ──
+      - name: 🐍 Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # ── 3. Abhängigkeiten installieren ──
+      - name: 📦 Abhängigkeiten installieren
+        run: pip install requests python-dateutil
+
+      # ── 4. Videos aktualisieren ──
+      - name: 🎬 YouTube Videos abrufen und aktualisieren
+        env:
+          YOUTUBE_CHANNEL_ID: UCAmanaAktien  # Wird im Script überschrieben
+        run: python update_videos.py
+
+      # ── 5. Änderungen committen ──
+      - name: 💾 Änderungen speichern
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Amana Aktien Bot"
+          git add videos.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "🕌 Auto-Update: Neue Videos von YouTube [$(date '+%d.%m.%Y %H:%M')]"
+
+      # ── 6. Änderungen hochladen ──
+      - name: 🚀 Änderungen hochladen
+        run: git push
+        continue-on-error: true
