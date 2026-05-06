@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://amanaaktien.github.io/blog/purification-erklaert.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8860B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white'>☪</text></svg>">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#0D0D0D;color:#E8E4DC;line-height:1.7;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+:root{--gold:#C9A84C;--gold-dim:#A07830;--gold-glow:rgba(201,168,76,.15);--surface:#161616;--surface2:#1E1E1E;--border:rgba(201,168,76,.2);--text:#E8E4DC;--muted:#888;--green:#3D9970;--green-bg:rgba(61,153,112,.12)}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav-brand{display:flex;align-items:center;gap:.75rem}
+.nav-logo{width:36px;height:36px;border-radius:6px;background:var(--gold);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0}
+.brand-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:.02em}
+.brand-sub{font-size:.52rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
+.nav-links a{padding:.45rem .85rem;font-size:.78rem;font-weight:500;color:var(--muted);border-radius:4px;transition:color .2s,background .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(255,255,255,.06)}
+.btn-yt{background:var(--gold)!important;color:#0D0D0D!important;font-weight:700!important;padding:.45rem 1rem!important;border-radius:4px!important;font-size:.76rem!important;letter-spacing:.04em}
+.btn-yt:hover{background:var(--gold-dim)!important}
+/* Article Layout */
+.article-wrap{max-width:780px;margin:0 auto;padding:4rem 2rem 6rem}
+.article-breadcrumb{font-size:.72rem;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:.5rem}
+.article-breadcrumb a{color:var(--gold);transition:opacity .2s}
+.article-breadcrumb a:hover{opacity:.8}
+.article-breadcrumb span{color:var(--muted)}
+.article-meta{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.article-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);background:var(--gold-glow);border:1px solid var(--border);padding:.3rem .7rem;border-radius:20px}
+.article-date{font-size:.72rem;color:var(--muted)}
+.article-read{font-size:.72rem;color:var(--muted)}
+.article-h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:1.25rem;line-height:1.15}
+.article-lead{font-size:1.05rem;color:#aaa;line-height:1.8;margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.article-body h2{font-size:1.4rem;color:#fff;margin:2.5rem 0 1rem}
+.article-body h3{font-size:1.1rem;color:var(--gold);margin:2rem 0 .75rem;font-family:'DM Sans',sans-serif;font-weight:700}
+.article-body p{color:#bbb;line-height:1.85;margin-bottom:1.25rem}
+.article-body ul,.article-body ol{color:#bbb;padding-left:1.5rem;margin-bottom:1.25rem}
+.article-body li{margin-bottom:.5rem;line-height:1.7}
+.article-body strong{color:var(--text);font-weight:700}
+.article-body a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);transition:border-color .2s}
+.article-body a:hover{border-color:var(--gold)}
+/* Info box */
+.info-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:1.25rem 1.5rem;margin:2rem 0}
+.info-box-title{font-weight:700;font-size:.85rem;color:var(--gold);margin-bottom:.5rem}
+.info-box p{margin:0;font-size:.85rem;color:var(--muted);line-height:1.7}
+/* Table */
+.article-table-wrap{overflow-x:auto;margin:2rem 0;border-radius:6px;border:1px solid var(--border)}
+.article-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.article-table th{background:var(--surface2);color:var(--gold);font-weight:700;padding:.75rem 1rem;text-align:left;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.article-table td{padding:.7rem 1rem;border-top:1px solid rgba(255,255,255,.05);color:#bbb;vertical-align:top}
+.article-table tr:hover td{background:rgba(255,255,255,.02)}
+.badge-halal{background:rgba(61,153,112,.15);color:#3D9970;border:1px solid rgba(61,153,112,.3);padding:.2rem .55rem;border-radius:3px;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.badge-haram{background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.25);padding:.2rem .55rem;border-radius:3px;font-size:.65rem;font-weight:700;white-space:nowrap}
+/* YouTube embed */
+.yt-embed{margin:2.5rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#000;aspect-ratio:16/9}
+.yt-embed iframe{width:100%;height:100%;border:none;display:block}
+.yt-caption{font-size:.72rem;color:var(--muted);margin-top:.5rem;text-align:center}
+/* Key Takeaways */
+.takeaways{background:linear-gradient(135deg,#0F1A0F,#152215);border:1px solid rgba(61,153,112,.25);border-radius:8px;padding:2rem;margin:3rem 0}
+.takeaways-title{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
+.takeaways ul{list-style:none;padding:0}
+.takeaways li{display:flex;align-items:flex-start;gap:.75rem;font-size:.85rem;color:#bbb;margin-bottom:.6rem;line-height:1.6}
+.takeaways li::before{content:"→";color:var(--green);font-weight:700;flex-shrink:0;margin-top:.05rem}
+/* Disclaimer */
+.disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:3rem 0;font-size:.72rem;color:#555;line-height:1.65}
+.disclaimer strong{color:#666}
+/* Related articles */
+.related-section{margin-top:4rem;padding-top:2.5rem;border-top:1px solid var(--border)}
+.related-title{font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.related-card{background:var(--surface2);border:1px solid var(--border);border-radius:6px;padding:1.25rem;transition:border-color .2s,transform .2s}
+.related-card:hover{border-color:rgba(201,168,76,.4);transform:translateY(-2px)}
+.related-card-cat{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.related-card-title{font-size:.85rem;font-weight:700;color:var(--text);line-height:1.4}
+.related-card-link{display:block;margin-top:.75rem;font-size:.72rem;color:var(--gold)}
+/* Footer */
+footer{background:#080808;border-top:1px solid var(--border);padding:2rem;text-align:center}
+footer p{font-size:.68rem;color:#333}
+footer a{color:var(--muted);transition:color .2s}
+footer a:hover{color:var(--gold)}
+@media(max-width:640px){
+  .article-wrap{padding:2.5rem 1rem 4rem}
+  .article-h1{font-size:1.7rem}
+  nav .nav-links{display:none}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+
+<title>Purification: Dividende reinigen – So geht's (mit Beispiel) | Amana Aktien</title>
+<meta name="description" content="Was ist Purification beim Halal Investieren? Wie berechne ich den unreinen Anteil meiner Dividende? Schritt-für-Schritt Anleitung mit Beispielen von Amana Aktien.">
+<meta property="og:title" content="Purification: Dividende reinigen – So geht's (mit Beispiel) | Amana Aktien">
+<meta property="og:description" content="Was ist Purification beim Halal Investieren? Wie berechne ich den unreinen Anteil meiner Dividende? Schritt-für-Schritt Anleitung mit Beispielen von Amana Aktien.">
+<meta property="og:image" content="https://img.youtube.com/vi/dweaAVqlFSs/hqdefault.jpg">
+</head>
+<body>
+<nav aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand" aria-label="Amana Aktien Startseite">
+      <div class="nav-logo" aria-hidden="true">☪</div>
+      <div><div class="brand-title">Amana Aktien</div><div class="brand-sub">Halal Investieren</div></div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="../index.html#videos">Videos</a></li>
+      <li><a href="../index.html#about">Über uns</a></li>
+      <li><a href="../index.html#principles">Grundlagen</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+      <li><a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer nofollow" class="btn-yt" aria-label="YouTube Kanal">▶ YouTube</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="article-wrap">
+
+<nav class="article-breadcrumb" aria-label="Breadcrumb">
+  <a href="index.html">Blog</a><span>›</span><span>Reinigung</span>
+</nav>
+<div class="article-meta">
+  <span class="article-cat">🌿 Reinigung</span>
+  <span class="article-date">Mai 2026</span>
+  <span class="article-read">8 Min. Lesezeit</span>
+</div>
+<h1 class="article-h1">Purification: Dividende reinigen – So berechnest du den unreinen Anteil</h1>
+<p class="article-lead">Auch eine halale Aktie kann kleine Anteile unreiner Einnahmen haben – zum Beispiel Zinsen auf Unternehmenskonten. Diese musst du durch eine Spende reinigen. Was das genau bedeutet und wie du es berechnest, erklärt dieser Artikel.</p>
+
+<div class="article-body">
+
+<h2>Warum ist Purification notwendig?</h2>
+<p>Viele neue Halal-Investoren verstehen das: Eine Aktie kann den AAOIFI-Scharia-Screening-Test bestehen und trotzdem einen kleinen Anteil unreiner Einnahmen haben. Selbst gut geführte, konforme Unternehmen verdienen typischerweise etwas Zinsen auf ihre Unternehmenskonten, Geldmarktpositionen oder kurzfristige Anlagen.</p>
+<p>Diese Einnahmen – auch wenn sie klein sind – fließen über Dividenden und Kurssteigerungen an die Aktionäre. <strong>Purification ist der Prozess, den unreinen Anteil deiner Dividendeneinnahmen durch eine Spende zu reinigen.</strong> Es ist keine Option, sondern eine Pflicht – alle großen Scharia-Beiräte und alle fünf Screening-Methodologien fordern sie.</p>
+
+<div class="info-box">
+  <div class="info-box-title">☪ Purification ≠ Zakat</div>
+  <p>Purification und Zakat sind zwei verschiedene Pflichten. Zakat sind 2,5% deines Gesamtvermögens über dem Nisab-Grenzwert, die jährlich gezahlt werden. Purification ist der unreine Anteil der Dividenden, der bei deren Erhalt gespendet wird. Du kannst Purification-Spenden nicht auf deine Zakat anrechnen.</p>
+</div>
+
+<h2>Wie wird die Purification-Rate berechnet?</h2>
+<p>Die Purification-Rate ergibt sich aus den Jahresabschlüssen des Unternehmens:</p>
+
+<div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:2rem;margin:2rem 0;text-align:center">
+  <div style="font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:1.25rem">Formel</div>
+  <div style="font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff">Purification-Rate = Unreine Einnahmen ÷ Gesamtumsatz × 100</div>
+  <div style="font-size:.75rem;color:var(--muted);margin-top:.75rem">Unreine Einnahmen = Zinseinkommen + Einnahmen aus verbotenen Aktivitäten (falls vorhanden)</div>
+</div>
+
+<h2>Konkrete Beispiel-Rechnung</h2>
+
+<h3>Beispiel 1: Apple (AAPL)</h3>
+<p>Apple hat eine Purification-Rate von ca. <strong>1,2%</strong> (Zinseinkommen auf Unternehmenskonten).</p>
+<div class="article-table-wrap">
+  <table class="article-table">
+    <thead><tr><th>Schritt</th><th>Betrag</th></tr></thead>
+    <tbody>
+      <tr><td>Erhaltene Dividende</td><td>100,00 €</td></tr>
+      <tr><td>× Purification-Rate (1,2%)</td><td>× 0,012</td></tr>
+      <tr><td><strong>= Zu spendender Betrag</strong></td><td><strong>1,20 €</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h3>Beispiel 2: iShares MSCI World Islamic ETF</h3>
+<p>ETFs haben eine gewichtete durchschnittliche Purification-Rate über alle Positionen. Beim iShares MSCI World Islamic liegt sie bei ca. <strong>1,5%</strong>.</p>
+<div class="article-table-wrap">
+  <table class="article-table">
+    <thead><tr><th>Schritt</th><th>Betrag</th></tr></thead>
+    <tbody>
+      <tr><td>Erhaltene ETF-Ausschüttung</td><td>200,00 €</td></tr>
+      <tr><td>× Purification-Rate (1,5%)</td><td>× 0,015</td></tr>
+      <tr><td><strong>= Zu spendender Betrag</strong></td><td><strong>3,00 €</strong></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="yt-embed">
+  <iframe src="https://www.youtube-nocookie.com/embed/dweaAVqlFSs" title="Ist Apple HALAL? | Apple Aktie – Purification erklärt" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<p class="yt-caption">▶ Apple Halal-Check mit Purification-Erklärung auf Amana Aktien</p>
+
+<h2>Purification für thesaurierende ETFs</h2>
+<p>Wenn dein ETF thesaurierend ist (keine Ausschüttungen), gibt es zwei Meinungen:</p>
+<ul>
+  <li><strong>Mehrheitsmeinung:</strong> Purification nur bei tatsächlich erhaltenen Dividenden</li>
+  <li><strong>Vorsichtigere Meinung:</strong> Jährlich die Purification-Rate × Portfoliowert spenden</li>
+</ul>
+<p>Wir empfehlen bei thesaurierenden Fonds die vorsichtigere Variante. Der Betrag ist minimal – bei einem 10.000€-Portfolio und 1,5% Rate sind das 150€ pro Jahr.</p>
+
+<h2>Purification für Kursgewinne</h2>
+<p>Ob Purification auch auf realisierte Kursgewinne angewendet werden muss, ist unter Gelehrten umstritten. Die Mehrheitspraxis – die auch bei den meisten Scharia-zertifizierten Fonds angewendet wird – beschränkt Purification auf Dividenden. Wer vorsichtiger sein möchte, wendet dieselbe Rate auch auf realisierte Gewinne an.</p>
+
+<h2>Wohin spenden?</h2>
+<ul>
+  <li>Jede seriöse Wohltätigkeitsorganisation (Arme, Bildung, Gesundheit, Gemeindeprojekte)</li>
+  <li>Der Betrag soll das Vermögen reinigen, keine Belohnung (Thawab) erzielen</li>
+  <li>Viele Muslim-Investoren führen Purification-Spenden separat von Zakat und freiwilligem Sadaqa</li>
+</ul>
+
+<h2>Praktische Tipps zur Erfassung</h2>
+<ul>
+  <li>Führe eine einfache Tabelle: Datum, Dividende, Purification-Rate, Spendbetrag</li>
+  <li>Wenn du viele Positionen hast: Quartalsweise sammeln und einmal spenden</li>
+  <li>Purification-Raten jährlich aktualisieren, wenn neue Geschäftsberichte erscheinen</li>
+  <li>Bei ETFs: Purification-Rate beim ETF-Anbieter oder auf Screening-Plattformen nachschauen</li>
+</ul>
+
+<div class="takeaways">
+  <div class="takeaways-title">Wichtigste Punkte</div>
+  <ul>
+    <li>Purification ist eine islamische Pflicht – auch bei halalen Aktien</li>
+    <li>Die Rate liegt typischerweise bei 0,5–3% – ein sehr kleiner Betrag</li>
+    <li>Formel: Dividende × Purification-Rate = Spendbetrag</li>
+    <li>Purification ≠ Zakat – beides sind separate Pflichten</li>
+    <li>Bei thesaurierenden ETFs empfiehlt sich die vorsichtigere Variante</li>
+    <li>Raten jährlich prüfen – sie ändern sich mit neuen Geschäftszahlen</li>
+  </ul>
+</div>
+
+<div class="disclaimer"><strong>⚠️ Keine Anlageberatung.</strong> Dieser Artikel dient der Bildung. Er stellt keine Fatwa dar. Bei Unsicherheiten über die korrekte Berechnung konsultiere einen qualifizierten islamischen Gelehrten.</div>
+</div>
+
+<div class="related-section">
+  <div class="related-title">Weitere Artikel</div>
+  <div class="related-grid">
+    <a href="aaoifi-standard-erklaert.html" class="related-card">
+      <div class="related-card-cat">📊 Standards</div>
+      <div class="related-card-title">AAOIFI vs. DJIM vs. MSCI – Scharia-Standards</div>
+      <span class="related-card-link">Lesen →</span>
+    </a>
+    <a href="halal-etfs-2026.html" class="related-card">
+      <div class="related-card-cat">📈 ETFs</div>
+      <div class="related-card-title">Die besten Halal-ETFs 2026</div>
+      <span class="related-card-link">Lesen →</span>
+    </a>
+  </div>
+</div>
+
+</div>
+<footer>
+  <p>© 2026 Amana Aktien – Youssef Chafi · <a href="../impressum.html">Impressum</a> · <a href="../datenschutz.html">Datenschutz</a> · <a href="../disclaimer.html">Disclaimer</a></p>
+  <p style="margin-top:.5rem;">⚠️ Keine Anlageberatung. Alle Inhalte dienen der Information und Bildung. Investitionen sind mit Risiken verbunden.</p>
+</footer>
+</body></html>
