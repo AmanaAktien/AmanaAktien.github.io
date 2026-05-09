@@ -1,28 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-<loc>https://amanaaktien.github.io/</loc>
-</url>
+  <url>
+    <loc>https://amanaaktien.github.io/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<url>
-<loc>https://amanaaktien.github.io/blog.html</loc>
-</url>
+  <url>
+    <loc>https://amanaaktien.github.io/blog.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://amanaaktien.github.io/halal-etfs-2026.html</loc>
-</url>
+  <url>
+    <loc>https://amanaaktien.github.io/halal-etf-liste.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url>
-<loc>https://amanaaktien.github.io/halal-investieren-anfaenger.html</loc>
-</url>
+  <url>
+    <loc>https://amanaaktien.github.io/halal-investieren-anfaenger.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://amanaaktien.github.io/datenschutz.html</loc>
-</url>
+  <url>
+    <loc>https://amanaaktien.github.io/aaoifi-standard-erklaert.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
-<url>
-<loc>https://amanaaktien.github.io/impressum.html</loc>
-</url>
+  <url>
+    <loc>https://amanaaktien.github.io/sukuk-erklaert.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://amanaaktien.github.io/halal-etfs-2026.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://amanaaktien.github.io/ist-aktien-investieren-halal.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://amanaaktien.github.io/purification-erklaert.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://amanaaktien.github.io/halal-dividenden-etfs.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://amanaaktien.github.io/impressum.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://amanaaktien.github.io/datenschutz.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 
 </urlset>
