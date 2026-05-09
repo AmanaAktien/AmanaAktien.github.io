@@ -373,9 +373,7 @@ footer{background:#080808;border-top:1px solid var(--border);padding:2.5rem 2rem
     <div class="section-tag">▶ Neueste Analysen</div>
     <h2>Halal ETFs & Aktien im Check</h2>
     <p class="section-lead">Jede Woche neue Analysen zu scharia-konformen ETFs und Aktien. Fundamental bewertet, AAOIFI-geprüft, auf Deutsch erklärt.</p>
-    <div class="videos-grid" id="videosGrid">
-      <!-- Wird durch JS gefüllt -->
-    </div>
+    <div class="videos-grid" id="videosGrid"></div>
     <div class="videos-cta">
       <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer nofollow" class="btn-secondary">Alle 128+ Videos auf YouTube ansehen ↗</a>
     </div>
@@ -416,218 +414,252 @@ footer{background:#080808;border-top:1px solid var(--border);padding:2.5rem 2rem
   <div class="section-inner">
     <div class="section-tag">☪ Islamische Finanzen</div>
     <h2>Die Grundprinzipien</h2>
-    <p class="section-lead">Islamisches Investieren basiert auf klaren Regeln. Wir prüfen jede Anlage nach diesen Kriterien:</p>
+    <p class="section-lead">Islamisches Investieren basiert auf klaren Regeln. Wir prüfen jede Anlage nach diesen Prinzipien – transparent und nachvollziehbar.</p>
     <div class="principles-grid">
-        <div class="principle-card">
-            <div class="principle-arabic">رِبا</div>
-            <div class="principle-name">Kein Riba</div>
-            <div class="principle-desc">Vermeidung von Zinsen (aktiv & passiv) über den erlaubten Grenzwert hinaus.</div>
-        </div>
-        <div class="principle-card">
-            <div class="principle-arabic">غَرَر</div>
-            <div class="principle-name">Kein Gharar</div>
-            <div class="principle-desc">Keine exzessive Unsicherheit oder Glücksspiel-ähnliche Spekulation.</div>
-        </div>
-        <div class="principle-card">
-            <div class="principle-arabic">حرام</div>
-            <div class="principle-name">Kein Haram-Sektor</div>
-            <div class="principle-desc">Keine Investition in Alkohol, Waffen, Glücksspiel oder Tabak.</div>
-        </div>
-        <div class="principle-card">
-            <div class="principle-arabic">تطهير</div>
-            <div class="principle-name">Purification</div>
-            <div class="principle-desc">Reinigung kleiner Zinsanteile aus Dividenden für wohltätige Zwecke.</div>
-        </div>
+      <div class="principle-card"><div class="principle-arabic" lang="ar">الرِّبَا</div><div class="principle-name">Kein Riba (Zinsen)</div><p class="principle-desc">Zinsen sind im Islam verboten. Wir investieren nur in Unternehmen mit weniger als 5% Zinseinkommen.</p></div>
+      <div class="principle-card"><div class="principle-arabic" lang="ar">الغَرَر</div><div class="principle-name">Kein Gharar (Spekulation)</div><p class="principle-desc">Übermäßige Unsicherheit und Spekulation sind untersagt. Wir setzen auf fundierte, langfristige Analysen.</p></div>
+      <div class="principle-card"><div class="principle-arabic" lang="ar">الطَّهَارَة</div><div class="principle-name">Tazkiyah (Reinigung)</div><p class="principle-desc">Kleine unreine Einnahmen (max. 5%) werden durch Purification gereinigt – durch Spenden an wohltätige Zwecke.</p></div>
+      <div class="principle-card"><div class="principle-arabic" lang="ar">المُشَارَكَة</div><div class="principle-name">Musharaka (Partnerschaft)</div><p class="principle-desc">Echte Beteiligung am Unternehmenserfolg statt risikoloser Zinsen. Gewinn und Verlust werden geteilt.</p></div>
     </div>
   </div>
 </section>
 
 <!-- ══ PURIFICATION ══ -->
-<section class="section">
-    <div class="section-inner">
-        <div class="purif-inner">
-            <div>
-                <h2 class="purif-title">Dividenden-Reinigung (Purification)</h2>
-                <p class="purif-desc">Muslime müssen den Anteil der Dividende, der aus imperfekten (zinsbasierten) Quellen stammt, spenden. So bleibt das investierte Kapital sauber.</p>
-                <ul class="purif-steps">
-                    <li class="purif-step"><span class="step-num">1</span><span class="step-text">Prüfung des Zinsanteils im Geschäftsbericht.</span></li>
-                    <li class="purif-step"><span class="step-num">2</span><span class="step-text">Berechnung des Reinigungssatzes (Purification Ratio).</span></li>
-                    <li class="purif-step"><span class="step-num">3</span><span class="step-text">Spende des Betrags ohne Erwartung auf Belohnung (Sadaqa).</span></li>
-                </ul>
-            </div>
-            <div class="purif-formula">
-                <div class="purif-formula-label">Die Formel</div>
-                <div class="formula-row">
-                    <span class="formula-val">Dividende</span>
-                    <span class="formula-op">×</span>
-                    <span class="formula-val">Zinsanteil (%)</span>
-                </div>
-                <div class="formula-result">= Reinigungssumme</div>
-                <div class="formula-example">Beispiel: 100€ Dividende × 2% Zins = 2€ Spenden.</div>
-            </div>
-        </div>
+<section class="section" id="purification">
+  <div class="section-inner">
+    <div class="purif-inner">
+      <div>
+        <div class="section-tag" style="color:#3D9970">🌿 Purification</div>
+        <h2 class="purif-title">So reinigst du<br>deine Dividende</h2>
+        <p class="purif-desc">Auch halale Aktien können kleine Anteile unreiner Einnahmen haben. Diese musst du durch eine entsprechende Spende reinigen – so bleibt dein Investment vollständig halal.</p>
+        <ol class="purif-steps">
+          <li class="purif-step"><span class="step-num">1</span><span class="step-text">In der Analyse nachschauen: Wie hoch ist der Anteil unreiner Einnahmen? (z.B. 1,94% bei Apple)</span></li>
+          <li class="purif-step"><span class="step-num">2</span><span class="step-text">Berechnen: Dividende × Prozentsatz = Spendbetrag (z.B. 100 € × 1,94% = 1,94 €)</span></li>
+          <li class="purif-step"><span class="step-num">3</span><span class="step-text">Diesen Betrag an eine Wohltätigkeitsorganisation deiner Wahl spenden. 🤲</span></li>
+          <li class="purif-step"><span class="step-num">4</span><span class="step-text">Fertig – dein Investment ist gereinigt und vollständig halal.</span></li>
+        </ol>
+      </div>
+      <div class="purif-formula">
+        <div class="purif-formula-label">Beispiel-Berechnung</div>
+        <div class="formula-row"><div class="formula-val">100 €</div><div class="formula-op">×</div><div class="formula-val">1,94%</div><div class="formula-op">=</div></div>
+        <div class="formula-result">1,94 € spenden</div>
+        <div class="formula-example">Apple Dividende × unreiner Anteil = Spendbetrag</div>
+        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(61,153,112,.2);font-size:.75rem;color:#555;line-height:1.6">☪ AAOIFI-Standard: Unreiner Anteil &lt; 5% erlaubt durch Purification</div>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- ══ FAQ ══ -->
 <section class="section" id="faq">
-    <div class="section-inner">
-        <div class="section-tag">❓ Q&A</div>
-        <h2>Häufige Fragen</h2>
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-q">Sind normale Welt-ETFs (MSCI World) halal? <span class="faq-icon">+</span></button>
-                <div class="faq-a">Nein, herkömmliche MSCI World ETFs enthalten Banken, Versicherungen und Unternehmen mit hoher Verschuldung. Man benötigt die "Islamic" Varianten von iShares oder Invesco.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q">Was ist der AAOIFI-Standard? <span class="faq-icon">+</span></button>
-                <div class="faq-a">Die AAOIFI ist eine internationale Organisation, die Scharia-Standards für das Finanzwesen festlegt. Wir nutzen deren Kriterien für alle Aktien-Checks.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-q">Darf ich als Muslim Dividenden behalten? <span class="faq-icon">+</span></button>
-                <div class="faq-a">Ja, solange das Kerngeschäft halal ist. Der kleine Anteil an Zinseinkünften des Unternehmens muss jedoch "gereinigt" (gespendet) werden.</div>
-            </div>
-        </div>
+  <div class="section-inner">
+    <div class="section-tag">❓ Häufige Fragen</div>
+    <h2>Alles über Halal Investieren</h2>
+    <p class="section-lead" style="margin-bottom:0">Die wichtigsten Fragen zu scharia-konformem Investieren – einfach beantwortet.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Was ist Halal Investieren?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Halal Investieren bedeutet, Geld nach islamischen Grundsätzen anzulegen: keine Zinsen (Riba), keine Investitionen in verbotene Branchen (Alkohol, Glücksspiel, Tabak, Waffen) und keine übermäßige Spekulation (Gharar).</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Was ist der AAOIFI-Standard?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Die AAOIFI ist die führende internationale Organisation für islamische Finanzstandards. Ihre Kriterien: Schuldenquote unter 33% der Marktkapitalisierung, Zinseinkommen unter 5% des Gesamtumsatzes, Haram-Umsätze unter 5%.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Was ist Purification?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Purification ist die islamische Reinigung von Dividenden. Wenn ein Unternehmen z.B. 2% Zinseinkommen hat, spendet man 2% der erhaltenen Dividende. Beispiel: 100 € × 2% = 2 € Spende.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Sind ETFs halal?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Nicht alle ETFs sind halal. Es gibt spezielle Halal-ETFs wie den iShares MSCI World Islamic ETF oder den Invesco MWIM Islamic ETF, die nur scharia-konforme Unternehmen enthalten.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Ist Dividenden-Investieren halal?<span class="faq-icon">+</span></button>
+        <div class="faq-a">Ja, Dividenden aus halalen Aktien sind erlaubt. Falls das Unternehmen einen kleinen Anteil unreiner Einnahmen hat (max. 5%), muss der entsprechende Teil der Dividende durch Purification gereinigt werden.</div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ══ BLOG PREVIEW ══ -->
+<section class="section" id="blog" style="background:var(--surface)">
+  <div class="section-inner">
+    <div class="section-tag">📝 Wissen</div>
+    <h2>Halal-Wissen Blog</h2>
+    <p class="section-lead">Fundierte Guides zu Scharia-konformem Investieren – AAOIFI-Standard, Purification, Sukuk und ETF-Analysen auf Deutsch.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-bottom:2rem">
+      <a href="halal-investieren-anfaenger.html" style="display:block;background:#0D0D0D;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.borderColor='rgba(201,168,76,.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)';this.style.transform=''">
+        <img src="https://img.youtube.com/vi/Ss_CyIxKNeI/hqdefault.jpg" alt="Halal Investieren für Anfänger" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
+        <div style="padding:1.1rem"><div style="font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">🌙 Grundlagen</div><div style="font-size:.85rem;font-weight:700;line-height:1.4">Halal Investieren für Anfänger – Der komplette Guide 2026</div><div style="font-size:.72rem;color:var(--gold);margin-top:.65rem">Lesen →</div></div>
+      </a>
+      <a href="aaoifi-standard-erklaert.html" style="display:block;background:#0D0D0D;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.borderColor='rgba(201,168,76,.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)';this.style.transform=''">
+        <img src="https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg" alt="AAOIFI Standard erklärt" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
+        <div style="padding:1.1rem"><div style="font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">📊 Standards</div><div style="font-size:.85rem;font-weight:700;line-height:1.4">AAOIFI vs. DJIM vs. MSCI – Alle 5 Scharia-Standards erklärt</div><div style="font-size:.72rem;color:var(--gold);margin-top:.65rem">Lesen →</div></div>
+      </a>
+      <a href="sukuk-erklaert.html" style="display:block;background:#0D0D0D;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.borderColor='rgba(201,168,76,.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)';this.style.transform=''">
+        <img src="https://img.youtube.com/vi/hqtuQIk2OW4/hqdefault.jpg" alt="Sukuk erklärt" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
+        <div style="padding:1.1rem"><div style="font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">🏦 Sukuk</div><div style="font-size:.85rem;font-weight:700;line-height:1.4">Sukuk erklärt – Die islamische Alternative zu Anleihen</div><div style="font-size:.72rem;color:var(--gold);margin-top:.65rem">Lesen →</div></div>
+      </a>
+    </div>
+    <div style="text-align:center">
+      <a href="blog.html" class="btn-secondary" style="display:inline-flex;align-items:center;gap:.5rem">Alle Blog-Artikel ansehen →</a>
+    </div>
+  </div>
 </section>
 
 <!-- ══ SOCIAL ══ -->
-<section id="social" class="section">
-    <div class="social-inner">
-        <div class="section-tag">Bleib Verbunden</div>
-        <p class="social-tagline">Täglich neue Updates auf unseren Kanälen:</p>
-        <div class="social-grid">
-            <a href="https://www.youtube.com/@AmanaAktien" target="_blank" class="social-card">
-                <div class="social-icon yt">▶</div>
-                <div><div class="social-name">YouTube</div><div class="social-handle">@AmanaAktien</div></div>
-            </a>
-            <a href="https://www.tiktok.com/@amanaaktien" target="_blank" class="social-card">
-                <div class="social-icon tt">📱</div>
-                <div><div class="social-name">TikTok</div><div class="social-handle">@amanaaktien</div></div>
-            </a>
-            <a href="https://www.instagram.com/amanaaktien" target="_blank" class="social-card">
-                <div class="social-icon ig">📸</div>
-                <div><div class="social-name">Instagram</div><div class="social-handle">@amanaaktien</div></div>
-            </a>
-        </div>
-
-        <div class="broker-section">
-            <div class="broker-label">Empfohlene Broker für Halal-ETFs</div>
-            <div class="broker-cards">
-                <div class="broker-card">
-                    <div class="broker-logo" style="background:#000">TR</div>
-                    <div><div class="broker-name">Trade Republic</div><div class="broker-tag">Große ETF Auswahl</div></div>
-                </div>
-                <div class="broker-card">
-                    <div class="broker-logo" style="background:#2d4150">SC</div>
-                    <div><div class="broker-name">Scalable Capital</div><div class="broker-tag">Sparplan-Favorit</div></div>
-                </div>
-            </div>
-            <p class="broker-note">*Affiliate-Links unterstützen unsere Arbeit ohne Mehrkosten für dich.</p>
-        </div>
+<section id="social">
+  <div class="social-inner">
+    <div class="section-tag" style="justify-content:center;display:flex">☪ Community</div>
+    <h2 style="font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.75rem">Folge uns auf Social Media</h2>
+    <p class="social-tagline">Neue Halal-Analysen, Tipps und Kurzvideos – täglich auf allen Plattformen.</p>
+    <div class="social-grid">
+      <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer nofollow" class="social-card">
+        <div class="social-icon yt">▶</div>
+        <div><div class="social-name">YouTube</div><div class="social-handle">128 Videos · @AmanaAktien</div></div>
+      </a>
+      <a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener noreferrer nofollow" class="social-card">
+        <div class="social-icon tt">♪</div>
+        <div><div class="social-name">TikTok</div><div class="social-handle">857 Follower · 21,5K Likes</div></div>
+      </a>
+      <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer nofollow" class="social-card">
+        <div class="social-icon ig">◎</div>
+        <div><div class="social-name">Instagram</div><div class="social-handle">@amanaaktien</div></div>
+      </a>
     </div>
+    <div class="broker-section">
+      <div class="broker-label">🏦 Empfohlene Broker*</div>
+      <div class="broker-cards">
+        <a href="https://traderepublic.com/de-de/nocodereferral?code=xhmwwbv6" target="_blank" rel="noopener noreferrer nofollow sponsored" class="broker-card">
+          <div class="broker-logo" style="background:#FF3B30">TR</div>
+          <div><div class="broker-name">Trade Republic</div><div class="broker-tag">Kostenloses Depot · Willkommensbonus</div></div>
+        </a>
+        <a href="https://de.scalable.capital/einladung/b6qrtw" target="_blank" rel="noopener noreferrer nofollow sponsored" class="broker-card">
+          <div class="broker-logo" style="background:#00B374">SC</div>
+          <div><div class="broker-name">Scalable Capital</div><div class="broker-tag">ETF-Flatrate · Einladungslink</div></div>
+        </a>
+      </div>
+      <div class="broker-note">* Affiliate-Links. Für dich kostenlos – du unterstützt damit den Kanal. 🙏</div>
+    </div>
+  </div>
 </section>
 
 <!-- ══ FOOTER ══ -->
 <footer>
-    <div class="footer-inner">
-        <div class="footer-brand">
-            <div class="brand-title">Amana Aktien</div>
-            <p>Scharia-konformes Investieren einfach erklärt. Von Muslimen für Muslime.</p>
-        </div>
-        <div class="footer-links">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
-            <a href="disclaimer.html">Haftungsausschluss</a>
-            <a href="kontakt.html">Kontakt</a>
-        </div>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-brand">
+        <div class="nav-logo" style="width:28px;height:28px;font-size:.9rem">☪</div>
+        <div class="brand-title">Amana Aktien</div>
+      </div>
+      <p>Scharia-konforme Analysen auf Deutsch von Youssef Chafi. Für Muslime in Deutschland, Österreich und der Schweiz.</p>
     </div>
-    <div class="footer-bottom">
-        <div class="footer-copy">&copy; 2026 Amana Aktien. Alle Rechte vorbehalten.</div>
-        <div class="footer-disclaimer">Hinweis: Alle Inhalte dienen nur der Information und stellen keine Anlageberatung dar. Investitionen am Aktienmarkt sind mit Risiken verbunden.</div>
-    </div>
+    <nav aria-label="Footer Navigation">
+      <div class="footer-links">
+        <a href="blog.html">Blog</a>
+        <a href="halal-etf-liste.html">ETF Liste</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="https://aaoifi.com" target="_blank" rel="noopener noreferrer nofollow">AAOIFI ↗</a>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Amana Aktien – Youssef Chafi · Alle Rechte vorbehalten</div>
+    <div class="footer-disclaimer">⚠️ Keine Anlageberatung. Alle Inhalte dienen ausschließlich der Information und Bildung. Investitionen sind mit Risiken verbunden.</div>
+  </div>
 </footer>
 
 <!-- ══ COOKIE BANNER ══ -->
-<div id="cb">
-    <div id="cb-text">Wir nutzen Cookies, um dir die beste Erfahrung zu bieten. Mit Klick auf "Akzeptieren" stimmst du der Nutzung zu. <a href="datenschutz.html">Mehr erfahren</a></div>
-    <div id="cb-btns">
-        <button id="cb-decline">Nur Notwendige</button>
-        <button id="cb-accept">Alle Akzeptieren</button>
-    </div>
+<div id="cb" role="dialog" aria-label="Cookie-Einstellungen">
+  <p id="cb-text">☪ Diese Website nutzt externe Inhalte (YouTube, Google Fonts) und Affiliate-Links. Bei Ablehnung bleiben YouTube-Videos inaktiv. <a href="datenschutz.html">Datenschutzerklärung</a></p>
+  <div id="cb-btns">
+    <button id="cb-decline">Ablehnen</button>
+    <button id="cb-accept">Alles akzeptieren</button>
+  </div>
 </div>
-<button id="cb-reopen">Cookie-Einstellungen</button>
+<button id="cb-reopen" aria-label="Datenschutzeinstellungen öffnen">🔒 Datenschutz</button>
 
+<!-- ══ JAVASCRIPT ══ -->
 <script>
-/* ── VIDEOS DATA ── */
-const videos = [
-    { title: "iShares MSCI World Islamic – Die Basis?", id: "ge8o16VvrGw", badge: "ETF CHECK" },
-    { title: "ServiceNow: Wachstums-Star oder zu teuer?", id: "2vNn1v-eCBc", badge: "AKTIEN ANALYSE" },
-    { title: "Invesco MWIM: Besser als iShares?", id: "Ywtz7cn7_5I", badge: "ETF CHECK" },
-    { title: "Arista Networks: KI-Gewinner Halal?", id: "4ER2QhbDhIQ", badge: "AKTIEN ANALYSE" },
-    { title: "Nemetschek: Deutsche Qualität im Depot", id: "5Yk6rQh9v_E", badge: "AKTIEN ANALYSE" },
-    { title: "Halal Gold-ETCs: Sicher anlegen", id: "X6wT6N9Lh_Q", badge: "ROHSTOFFE" }
+'use strict';
+
+/* Videos */
+const VIDEOS = [
+  {id:'hqtuQIk2OW4',title:'XASB ETF Analyse: Über 5% Rendite & 100% Halal? (Sukuk ETF 2026)',cat:'ETF',views:'20',date:'vor 3 Tagen'},
+  {id:'2vNn1v-eCBc',title:'ServiceNow (NOW) – 58% gefallen! Jetzt kaufen? Aktienanalyse + Halal-Check 2026',cat:'Aktie',views:'76',date:'vor 4 Tagen'},
+  {id:'dweaAVqlFSs',title:'Ist Apple HALAL? Diese Zahl schockiert jeden Muslim-Investor 🍎 | Apple Aktie Analyse 2026',cat:'Aktie',views:'29',date:'vor 7 Tagen'},
+  {id:'wEGOTvuAlwM',title:'5 Halal Dividendenaktien aus Deutschland – die kaum jemand kennt!',cat:'Aktie',views:'46',date:'vor 8 Tagen'},
+  {id:'Ywtz7cn7_5I',title:'🕌 Dieser ETF ist HALAL & GLOBAL – Invesco MWIM Islamic ETF vollständige Analyse 2026',cat:'ETF',views:'38',date:'vor 9 Tagen'},
+  {id:'ge8o16VvrGw',title:'Halal investieren: Der iShares MSCI World Islamic ETF im Komplett-Check! (Beste Wahl)',cat:'ETF',views:'69',date:'vor 2 Wochen'},
+  {id:'N2hzVdBBo6c',title:'+30 % in 1 Jahr! Der UMMA ETF von Wahed im großen Halal-Check 🕌 | DJIW Analyse 2026',cat:'ETF',views:'24',date:'vor 13 Tagen'},
+  {id:'4ER2QhbDhIQ',title:'4.387% Rendite in 10 Jahren! 🔥 Arista Analyse 2026 – Halal-Check & Warnung',cat:'Aktie',views:'72',date:'vor 3 Wochen'},
+  {id:'V5mwdGxwSnc',title:'Invesco Physical Gold ETC – Ist dieser ETC wirklich HALAL? | Komplette Analyse 2026',cat:'Gold',views:'20',date:'vor 10 Tagen'},
 ];
 
-const videosGrid = document.getElementById('videosGrid');
-if(videosGrid) {
-    videosGrid.innerHTML = videos.map(v => `
-        <a href="https://www.youtube.com/watch?v=${v.id}" target="_blank" class="video-card">
-            <div class="video-thumb">
-                <img src="https://img.youtube.com/vi/${v.id}/mqdefault.jpg" alt="${v.title}" loading="lazy">
-                <div class="video-thumb-play"><div class="vid-play-btn"><div class="vid-play-icon"></div></div></div>
-            </div>
-            <div class="video-body">
-                <div class="video-badge">${v.badge}</div>
-                <h3 class="video-title">${v.title}</h3>
-                <div class="video-meta"><span>Amana Aktien</span><span>•</span><span>Vor kurzem</span></div>
-            </div>
-        </a>
-    `).join('');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function buildCard(v){
+  const c=v.cat==='ETF'?'#3D9970':v.cat==='Gold'?'#C9A84C':'#5B8DEF';
+  return `<a href="https://www.youtube.com/watch?v=${esc(v.id)}" target="_blank" rel="noopener noreferrer nofollow" class="video-card">
+    <div class="video-thumb">
+      <img width="320" height="180" loading="lazy" src="https://img.youtube.com/vi/${esc(v.id)}/hqdefault.jpg" alt="${esc(v.title)}" onerror="this.parentElement.innerHTML='<div style=\'background:#111;height:100%;display:flex;align-items:center;justify-content:center;color:#555;font-size:.75rem\'>Video</div>'">
+      <div class="video-thumb-play"><div class="vid-play-btn"><div class="vid-play-icon"></div></div></div>
+    </div>
+    <div class="video-body">
+      <span class="video-badge" style="color:${c};background:${c}22;border-color:${c}44">✅ ${esc(v.cat)} HALAL</span>
+      <div class="video-title">${esc(v.title)}</div>
+      <div class="video-meta"><span>👁 ${esc(v.views)} Aufrufe</span><span>·</span><span>${esc(v.date)}</span></div>
+    </div>
+  </a>`;
 }
 
-/* ── NAV LOGIC ── */
-const hmb = document.getElementById('hamburgerBtn');
-const mNav = document.getElementById('mobileNav');
-hmb?.addEventListener('click', () => {
-    const open = hmb.classList.toggle('open');
-    hmb.setAttribute('aria-expanded', open);
-    mNav?.classList.toggle('open');
-    document.body.style.overflow = open ? 'hidden' : '';
+const grid=document.getElementById('videosGrid');
+if(grid) grid.innerHTML=VIDEOS.map(buildCard).join('');
+
+/* Hamburger */
+const hBtn=document.getElementById('hamburgerBtn');
+const mNav=document.getElementById('mobileNav');
+if(hBtn&&mNav){
+  hBtn.addEventListener('click',()=>{
+    const o=mNav.classList.toggle('open');
+    hBtn.classList.toggle('open',o);
+    hBtn.setAttribute('aria-expanded',String(o));
+    document.body.style.overflow=o?'hidden':'';
+  });
+  mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mNav.classList.remove('open');hBtn.classList.remove('open');
+    hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';
+  }));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&mNav.classList.contains('open')){
+      mNav.classList.remove('open');hBtn.classList.remove('open');
+      hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';
+    }
+  });
+}
+
+/* FAQ */
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.closest('.faq-item');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false')});
+    if(!open){item.classList.add('open');q.setAttribute('aria-expanded','true')}
+  });
 });
 
-/* ── FAQ LOGIC ── */
-document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.toggle('open');
-        q.querySelector('.faq-icon').textContent = isOpen ? '×' : '+';
-    });
-});
-
-/* ── COOKIE LOGIC ── */
-const cb = document.getElementById('cb');
-const btnA = document.getElementById('cb-accept');
-const btnD = document.getElementById('cb-decline');
-const btnR = document.getElementById('cb-reopen');
-
-if(!localStorage.getItem('cookieConsent')) {
-    setTimeout(() => cb?.classList.remove('hidden'), 1000);
-} else {
-    cb?.classList.add('hidden');
-    if(btnR) btnR.style.display = 'block';
-}
-
-function closeCB() {
-    cb?.classList.add('hidden');
-    localStorage.setItem('cookieConsent', 'true');
-    if(btnR) btnR.style.display = 'block';
-}
-
-btnA?.addEventListener('click', closeCB);
-btnD?.addEventListener('click', closeCB);
-btnR?.addEventListener('click', () => cb?.classList.remove('hidden'));
+/* Cookie Banner */
+(function(){
+  const bar=document.getElementById('cb');
+  const reopen=document.getElementById('cb-reopen');
+  const KEY='aa_consent';
+  const saved=localStorage.getItem(KEY);
+  if(saved){bar.classList.add('hidden');reopen.style.display='block'}
+  document.getElementById('cb-accept').onclick=function(){localStorage.setItem(KEY,'accepted');bar.classList.add('hidden');reopen.style.display='block'};
+  document.getElementById('cb-decline').onclick=function(){localStorage.setItem(KEY,'declined');bar.classList.add('hidden');reopen.style.display='block'};
+  reopen.onclick=function(){localStorage.removeItem(KEY);bar.classList.remove('hidden');reopen.style.display='none'};
+})();
 </script>
-
 </body>
 </html>
