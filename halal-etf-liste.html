@@ -3,42 +3,67 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Alle Halal ETFs – Amana Aktien</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<title>Alle Halal ETFs für Deutschland 2026 – Amana Aktien</title>
+<meta name="description" content="Alle Shariah-konformen ETFs & ETCs für Deutschland auf einen Blick. Mit Performance, Kosten und Shariah-Board – von Amana Aktien.">
+<link rel="canonical" href="https://amanaaktien.github.io/halal-etf-liste.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8860B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white'>☪</text></svg>">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0b0f14;--surface:#111720;--surface2:#18212e;--surface3:#202c3c;
-  --border:#1e2d3d;--border2:#2a3e52;
-  --teal:#00c896;--teal-dim:#00c89618;--teal-soft:#00c89635;
-  --text:#e8edf3;--muted:#6b7c8f;--faint:#2a3a4a;
-  --scalable:#00c896;--scalable-dim:#00c89622;
-  --tr:#e0183c;--tr-dim:#e0183c20;
-  --gold:#f0a030;--gold-dim:#f0a03018;
-  --green:#22c55e;--red:#ef4444;
+  --bg:#0D0D0D;--surface:#161616;--surface2:#1E1E1E;--surface3:#242424;
+  --border:rgba(201,168,76,.2);--border2:rgba(201,168,76,.4);
+  --gold:#C9A84C;--gold-dim:#A07830;--gold-glow:rgba(201,168,76,.12);--gold-soft:rgba(201,168,76,.25);
+  --text:#E8E4DC;--muted:#888;
+  --green:#3D9970;--green-bg:rgba(61,153,112,.12);--green-border:rgba(61,153,112,.3);
+  --red:#ef4444;--red-bg:rgba(239,68,68,.12);
+  --scalable:#C9A84C;--tr:#FF3B30;
 }
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;padding:0 0 120px}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;padding:0 0 120px;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px}
+.nav-brand{display:flex;align-items:center;gap:.75rem}
+.nav-logo{width:36px;height:36px;border-radius:6px;background:var(--gold);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0}
+.brand-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:.02em}
+.brand-sub{font-size:.52rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:.35rem;list-style:none}
+.nav-links a{padding:.45rem .85rem;font-size:.78rem;font-weight:500;color:var(--muted);border-radius:4px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.nav-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:8px;transition:background .2s}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--border);border-radius:4px;padding:8px;cursor:pointer;width:38px;height:38px;align-items:center;justify-content:center}
+.hamburger span{display:block;width:18px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-nav{position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(13,13,13,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;z-index:99}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--text);transition:color .2s}
+.mobile-nav a:hover{color:var(--gold)}
 
 /* ── HERO ── */
 .hero{text-align:center;padding:64px 24px 40px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% -10%,#00c89612 0%,transparent 65%);pointer-events:none}
-.brand-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);background:var(--teal-dim);border:1px solid var(--teal-soft);border-radius:100px;padding:5px 16px;display:inline-block;margin-bottom:18px}
-h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:14px}
-h1 span{color:var(--teal)}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% -10%,rgba(201,168,76,.08) 0%,transparent 65%);pointer-events:none}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);background:var(--gold-glow);border:1px solid var(--border);border-radius:100px;padding:5px 18px;display:inline-block;margin-bottom:18px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.1;margin-bottom:14px;color:#fff}
+.hero h1 em{font-style:normal;color:var(--gold)}
 .hero-sub{font-size:14.5px;color:var(--muted);max-width:500px;margin:0 auto 28px;line-height:1.75;font-weight:300}
 .platform-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
 .plat-pill{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:500;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:5px 14px}
-.plat-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.plat-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
 .data-note{font-size:11px;color:var(--muted);margin-top:8px;opacity:.7}
 
 /* ── FILTER BAR ── */
 .filter-wrap{padding:0 24px 32px;display:flex;flex-direction:column;align-items:center;gap:12px}
 .filter-row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
 .filter-btn{font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:500;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:7px 16px;cursor:pointer;transition:all .17s}
-.filter-btn:hover,.filter-btn.active{color:var(--teal);border-color:var(--teal-soft);background:var(--teal-dim)}
+.filter-btn:hover,.filter-btn.active{color:var(--gold);border-color:var(--gold-soft);background:var(--gold-glow)}
 
-/* ── COUNT / SORT ── */
+/* ── TOOLBAR ── */
 .toolbar{display:flex;align-items:center;justify-content:space-between;max-width:1120px;margin:0 auto 20px;padding:0 24px;flex-wrap:wrap;gap:8px}
 .count-txt{font-size:13px;color:var(--muted)}
 .count-txt strong{color:var(--text);font-weight:500}
@@ -48,107 +73,95 @@ h1 span{color:var(--teal)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px;max-width:1120px;margin:0 auto;padding:0 24px}
 
 /* ── CARD ── */
-.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;display:flex;flex-direction:column;gap:0;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
-.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal) 0%,transparent 100%);opacity:0;transition:opacity .2s}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s;position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold) 0%,transparent 100%);opacity:0;transition:opacity .2s}
 .card:hover{border-color:var(--border2);transform:translateY(-2px)}
 .card:hover::after{opacity:1}
-.card.selected{border-color:var(--teal-soft);background:linear-gradient(180deg,#00c89606 0%,var(--surface) 40%)}
+.card.selected{border-color:var(--gold-soft);background:linear-gradient(180deg,rgba(201,168,76,.04) 0%,var(--surface) 40%)}
 .card.selected::after{opacity:1}
-.card.hidden{display:none}
 
 .card-inner{padding:20px 20px 0;display:flex;flex-direction:column;gap:12px;flex:1}
 
-/* checkbox */
 .card-check-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .compare-cb{display:flex;align-items:center;gap:6px;cursor:pointer;font-size:11px;color:var(--muted);user-select:none}
-.compare-cb input{accent-color:var(--teal);width:14px;height:14px;cursor:pointer}
-.compare-cb:hover{color:var(--teal)}
+.compare-cb input{accent-color:var(--gold);width:14px;height:14px;cursor:pointer}
+.compare-cb:hover{color:var(--gold)}
 
-/* type badges */
 .badges{display:flex;gap:6px;flex-wrap:wrap}
 .badge{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border-radius:100px;padding:3px 10px;white-space:nowrap}
-.badge-etf{background:#1a2e3a;color:#5bc8a8;border:1px solid #2a4a5a}
-.badge-etc{background:#2a2210;color:#d4a040;border:1px solid #4a3a18}
-.badge-aktiv{background:#221a30;color:#b07adc;border:1px solid #3a2a4a}
-.badge-global{background:#1a2535;color:#6aa0d8;border:1px solid #2a3a55}
-.badge-usa{background:#1a2535;color:#6aa0d8;border:1px solid #2a3a55}
-.badge-em{background:#2a1e30;color:#b07adc;border:1px solid #3a2a4a}
-.badge-sukuk{background:#2a2210;color:#d4a040;border:1px solid #4a3a18}
-.badge-gold{background:#2a2010;color:#d4a040;border:1px solid #4a3018}
-.badge-silver{background:#1e2a2e;color:#8ab8c8;border:1px solid #2a3e4a}
-.badge-neu{background:#12261a;color:#44c878;border:1px solid #1e4030;font-size:9px}
+.badge-etf{background:rgba(201,168,76,.1);color:var(--gold);border:1px solid var(--border)}
+.badge-etc{background:rgba(201,168,76,.08);color:#d4a040;border:1px solid rgba(201,168,76,.25)}
+.badge-aktiv{background:rgba(176,122,220,.1);color:#b07adc;border:1px solid rgba(176,122,220,.25)}
+.badge-global{background:rgba(100,160,220,.1);color:#6aa0d8;border:1px solid rgba(100,160,220,.25)}
+.badge-usa{background:rgba(100,160,220,.1);color:#6aa0d8;border:1px solid rgba(100,160,220,.25)}
+.badge-em{background:rgba(176,122,220,.1);color:#b07adc;border:1px solid rgba(176,122,220,.25)}
+.badge-sukuk{background:rgba(61,153,112,.1);color:#3D9970;border:1px solid rgba(61,153,112,.25)}
+.badge-gold{background:rgba(201,168,76,.1);color:var(--gold);border:1px solid var(--border)}
+.badge-silver{background:rgba(138,184,200,.1);color:#8ab8c8;border:1px solid rgba(138,184,200,.25)}
+.badge-neu{background:rgba(61,153,112,.1);color:#3D9970;border:1px solid rgba(61,153,112,.25);font-size:9px}
 
-/* ticker */
-.ticker{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:var(--teal);letter-spacing:.04em;line-height:1}
+.ticker{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:var(--gold);letter-spacing:.04em;line-height:1}
 .fund-name{font-size:13px;font-weight:500;color:var(--text);line-height:1.4}
 .isin-row{font-size:10.5px;color:var(--muted);display:flex;gap:10px}
 
-/* KPI grid */
 .kpi-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
-.kpi{background:var(--surface2);border-radius:9px;padding:10px 12px}
+.kpi{background:var(--surface2);border-radius:8px;padding:10px 12px;border:1px solid rgba(255,255,255,.03)}
 .kpi-lbl{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
-.kpi-val{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--text);letter-spacing:-.01em;line-height:1.1}
-.kpi-val.pos{color:var(--green)}
-.kpi-val.neg{color:var(--red)}
-.kpi-val.na{color:var(--muted);font-size:12px}
+.kpi-val{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--text);line-height:1.1}
+.kpi-val.na{color:var(--muted);font-size:12px;font-family:'DM Sans',sans-serif;font-weight:400}
 
-/* perf row */
 .perf-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
-.perf-cell{background:var(--surface2);border-radius:8px;padding:8px 10px;text-align:center}
+.perf-cell{background:var(--surface2);border-radius:8px;padding:8px 10px;text-align:center;border:1px solid rgba(255,255,255,.03)}
 .perf-lbl{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:3px}
-.perf-val{font-family:'Syne',sans-serif;font-size:13px;font-weight:700}
+.perf-val{font-family:'Playfair Display',serif;font-size:13px;font-weight:700}
 .perf-val.pos{color:var(--green)}
 .perf-val.neg{color:var(--red)}
-.perf-val.na{color:var(--muted);font-size:11px}
+.perf-val.na{color:var(--muted);font-size:11px;font-family:'DM Sans',sans-serif;font-weight:400}
 
-/* shariah */
 .shariah-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .shariah-info{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted)}
-.shariah-dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--teal);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.shariah-dot::after{content:'';width:5px;height:5px;border-radius:50%;background:var(--teal)}
-.cert-link{font-size:10.5px;color:var(--teal);text-decoration:none;background:var(--teal-dim);border:1px solid var(--teal-soft);border-radius:100px;padding:3px 10px;white-space:nowrap;flex-shrink:0;transition:background .15s}
-.cert-link:hover{background:var(--teal-soft)}
+.shariah-dot{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.shariah-dot::after{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.cert-link{font-size:10.5px;color:var(--gold);background:var(--gold-glow);border:1px solid var(--border);border-radius:100px;padding:3px 10px;white-space:nowrap;flex-shrink:0;transition:background .15s}
+.cert-link:hover{background:var(--gold-soft)}
 
-/* desc */
 .desc{font-size:12.5px;color:var(--muted);line-height:1.6;font-weight:300}
 
-/* card footer */
 .card-footer{padding:14px 20px 16px;border-top:1px solid var(--border);margin-top:12px;display:flex;flex-direction:column;gap:10px}
 .plat-tags{display:flex;gap:6px;flex-wrap:wrap}
 .plat-tag{font-size:10px;font-weight:500;padding:3px 10px;border-radius:100px;border:1px solid var(--border);color:var(--muted)}
 
 .buy-btns{display:flex;gap:8px}
-.buy-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Syne',sans-serif;font-size:11.5px;font-weight:700;text-decoration:none;border-radius:8px;padding:9px 8px;transition:all .17s;text-align:center;letter-spacing:.02em}
-.buy-btn-scalable{background:var(--scalable-dim);color:var(--scalable);border:1px solid var(--teal-soft)}
-.buy-btn-scalable:hover{background:var(--teal-soft)}
-.buy-btn-tr{background:var(--tr-dim);color:var(--tr);border:1px solid #e0183c35}
-.buy-btn-tr:hover{background:#e0183c30}
+.buy-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:6px;font-size:11.5px;font-weight:700;border-radius:6px;padding:9px 8px;transition:all .17s;text-align:center;letter-spacing:.02em}
+.buy-btn-scalable{background:var(--gold-glow);color:var(--gold);border:1px solid var(--border)}
+.buy-btn-scalable:hover{background:var(--gold-soft)}
+.buy-btn-tr{background:rgba(255,59,48,.1);color:#FF3B30;border:1px solid rgba(255,59,48,.25)}
+.buy-btn-tr:hover{background:rgba(255,59,48,.2)}
 .buy-btn-disabled{background:var(--surface2);color:var(--muted);border:1px solid var(--border);cursor:not-allowed;opacity:.5;pointer-events:none}
 
-/* ── COMPARE BAR (sticky bottom) ── */
-.compare-bar{position:fixed;bottom:0;left:0;right:0;background:var(--surface);border-top:1px solid var(--border);padding:14px 24px;display:none;align-items:center;justify-content:space-between;gap:12px;z-index:100;flex-wrap:wrap}
+/* ── COMPARE BAR ── */
+.compare-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(22,22,22,.97);border-top:1px solid var(--border);backdrop-filter:blur(12px);padding:14px 24px;display:none;align-items:center;justify-content:space-between;gap:12px;z-index:100;flex-wrap:wrap}
 .compare-bar.visible{display:flex}
 .compare-bar-left{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text)}
-.compare-bar-left strong{color:var(--teal)}
+.compare-bar-left strong{color:var(--gold)}
 .cb-chips{display:flex;gap:8px;flex-wrap:wrap}
-.cb-chip{font-size:11px;font-family:'Syne',sans-serif;font-weight:700;color:var(--teal);background:var(--teal-dim);border:1px solid var(--teal-soft);border-radius:100px;padding:4px 12px;display:flex;align-items:center;gap:6px}
-.cb-chip button{background:none;border:none;color:var(--teal);cursor:pointer;font-size:14px;line-height:1;padding:0}
-.compare-action-btn{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;background:var(--teal);color:#0b0f14;border:none;border-radius:10px;padding:11px 22px;cursor:pointer;transition:opacity .17s}
-.compare-action-btn:hover{opacity:.9}
+.cb-chip{font-size:11px;font-weight:700;color:var(--gold);background:var(--gold-glow);border:1px solid var(--border);border-radius:100px;padding:4px 12px;display:flex;align-items:center;gap:6px}
+.cb-chip button{background:none;border:none;color:var(--gold);cursor:pointer;font-size:14px;line-height:1;padding:0}
+.compare-action-btn{font-size:13px;font-weight:700;background:var(--gold);color:#0D0D0D;border:none;border-radius:6px;padding:11px 22px;cursor:pointer;transition:opacity .17s}
+.compare-action-btn:hover{background:var(--gold-dim)}
 .clear-compare{font-size:12px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 8px}
 .clear-compare:hover{color:var(--text)}
 
 /* ── COMPARE MODAL ── */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:none;align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto}
 .modal-overlay.visible{display:flex}
-.modal{background:var(--surface);border:1px solid var(--border2);border-radius:20px;max-width:1000px;width:100%;padding:28px}
+.modal{background:var(--surface);border:1px solid var(--border2);border-radius:12px;max-width:1000px;width:100%;padding:28px}
 .modal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-.modal-title{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--text)}
+.modal-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--text)}
 .modal-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:22px;line-height:1;padding:4px}
 .modal-close:hover{color:var(--text)}
 .compare-table{width:100%;border-collapse:collapse}
-.compare-table th{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--teal);text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);white-space:nowrap}
-.compare-table th.ticker-th{font-size:15px;letter-spacing:.04em}
+.compare-table th{font-size:13px;font-weight:700;color:var(--gold);text-align:left;padding:10px 14px;border-bottom:1px solid var(--border);white-space:nowrap;font-family:'Playfair Display',serif}
 .compare-table td{font-size:13px;color:var(--text);padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
 .compare-table tr:last-child td{border-bottom:none}
 .compare-table .row-lbl{color:var(--muted);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;font-weight:600;white-space:nowrap}
@@ -156,14 +169,14 @@ h1 span{color:var(--teal)}
 .compare-table td.neg{color:var(--red);font-weight:500}
 .compare-table td.na{color:var(--muted);font-size:12px}
 
-/* footer */
 .page-footer{text-align:center;font-size:11.5px;color:var(--muted);margin-top:56px;padding:0 24px;line-height:1.9;opacity:.7}
-.page-footer a{color:var(--teal);text-decoration:none}
+.page-footer a{color:var(--gold)}
 
+@media(max-width:860px){nav .nav-links{display:none}.hamburger{display:flex}}
 @media(max-width:600px){
   .grid{grid-template-columns:1fr}
   .kpi-grid{grid-template-columns:1fr 1fr}
-  h1{font-size:1.8rem}
+  .hero h1{font-size:1.8rem}
   .compare-bar{flex-direction:column;align-items:stretch}
   .modal{padding:16px;margin:0}
 }
@@ -171,10 +184,57 @@ h1 span{color:var(--teal)}
 </head>
 <body>
 
-<!-- HERO -->
+<!-- ══ NAV ══ -->
+<nav aria-label="Hauptnavigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" aria-label="Amana Aktien Startseite">
+      <div class="nav-logo" aria-hidden="true">☪</div>
+      <div><div class="brand-title">Amana Aktien</div><div class="brand-sub">Halal Investieren</div></div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="halal-etf-liste.html">ETF Liste</a></li>
+      <li>
+        <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"
+           class="nav-icon-btn" style="background:rgba(255,0,0,.15);border:1px solid rgba(255,0,0,.35);"
+           onmouseover="this.style.background='rgba(255,0,0,.3)'" onmouseout="this.style.background='rgba(255,0,0,.15)'">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener noreferrer nofollow" aria-label="TikTok"
+           class="nav-icon-btn" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);"
+           onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+          <svg viewBox="0 0 24 24" width="21" height="21" fill="#ffffff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.79a8.18 8.18 0 0 0 4.78 1.52V6.85a4.85 4.85 0 0 1-1.01-.16z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"
+           class="nav-icon-btn" style="background:rgba(193,53,132,.15);border:1px solid rgba(193,53,132,.4);"
+           onmouseover="this.style.background='rgba(193,53,132,.32)'" onmouseout="this.style.background='rgba(193,53,132,.15)'">
+          <svg viewBox="0 0 24 24" width="21" height="21"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobilmenü">
+  <a href="index.html">Startseite</a>
+  <a href="blog.html">Blog</a>
+  <a href="halal-etf-liste.html">ETF Liste</a>
+  <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer nofollow">▶ YouTube ↗</a>
+  <a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener noreferrer nofollow">TikTok ↗</a>
+  <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer nofollow">Instagram ↗</a>
+</div>
+
+<!-- ══ HERO ══ -->
 <div class="hero">
-  <div class="brand-label">Amana Aktien · Halal Investing</div>
-  <h1>Alle <span>Halal ETFs</span><br/>für Deutschland</h1>
+  <div class="hero-eyebrow">☪ Amana Aktien · Halal Investing</div>
+  <h1>Alle <em>Halal ETFs</em><br/>für Deutschland</h1>
   <p class="hero-sub">Jedes Shariah-konforme Produkt, das du in Deutschland kaufen kannst — mit Performance, Kosten und Shariah-Board auf einen Blick.</p>
   <div class="platform-row">
     <div class="plat-pill"><span class="dot"></span>Scalable Capital</div>
@@ -183,7 +243,7 @@ h1 span{color:var(--teal)}
   <p class="data-note">Daten von BlackRock iShares · Invesco · HANetf · DWS · Stand Mai 2026 · Renditen in EUR</p>
 </div>
 
-<!-- FILTERS -->
+<!-- ══ FILTERS ══ -->
 <div class="filter-wrap">
   <div class="filter-row" id="filter-row">
     <button class="filter-btn active" data-cat="alle">Alle</button>
@@ -197,16 +257,16 @@ h1 span{color:var(--teal)}
   </div>
 </div>
 
-<!-- TOOLBAR -->
+<!-- ══ TOOLBAR ══ -->
 <div class="toolbar">
   <p class="count-txt"><strong id="count-num">11</strong> Produkte gefunden</p>
-  <div class="compare-hint">Karten anklicken zum Vergleichen</div>
+  <div class="compare-hint">☪ Bis zu 4 Produkte vergleichen</div>
 </div>
 
-<!-- GRID -->
+<!-- ══ GRID ══ -->
 <div class="grid" id="etf-grid"></div>
 
-<!-- COMPARE BAR -->
+<!-- ══ COMPARE BAR ══ -->
 <div class="compare-bar" id="compare-bar">
   <div class="compare-bar-left">
     <span>Vergleich: <strong id="selected-count">0</strong> ausgewählt</span>
@@ -218,7 +278,7 @@ h1 span{color:var(--teal)}
   </div>
 </div>
 
-<!-- COMPARE MODAL -->
+<!-- ══ COMPARE MODAL ══ -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
   <div class="modal" id="modal-content">
     <div class="modal-header">
@@ -231,298 +291,59 @@ h1 span{color:var(--teal)}
   </div>
 </div>
 
-<!-- PAGE FOOTER -->
+<!-- ══ FOOTER ══ -->
 <p class="page-footer">
   Alle Angaben ohne Gewähr · Keine Anlageberatung · Renditen der Vergangenheit sind kein Indikator für die Zukunft<br/>
   Renditen in EUR inkl. Ausschüttungen · Datenquellen: <a href="https://www.ishares.com" target="_blank">BlackRock iShares</a> · <a href="https://www.invesco.com" target="_blank">Invesco</a> · <a href="https://hanetf.com" target="_blank">HANetf</a> · <a href="https://etf.dws.com" target="_blank">DWS Xtrackers</a> · Stand Mai 2026<br/>
-  <a href="https://www.amana-aktien.de" target="_blank">Amana Aktien</a> · Halal Investieren auf Deutsch
+  <a href="index.html">Amana Aktien</a> · Halal Investieren auf Deutsch · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a>
 </p>
 
 <script>
-// ══════════════════════════════════════════════════════════
-//  AFFILIATE-LINKS
-// ══════════════════════════════════════════════════════════
-const SCALABLE_LINK = "https://de.scalable.capital/einladung/b6qrtw";
-const TR_LINK       = "https://traderepublic.com/de-de/nocodereferral?code=xhmwwbv6";
+const SCALABLE_LINK="https://de.scalable.capital/einladung/b6qrtw";
+const TR_LINK="https://traderepublic.com/de-de/nocodereferral?code=xhmwwbv6";
 
-// ══════════════════════════════════════════════════════════
-//  ETF / ETC DATEN (Fondsanbieter-Seiten · Stand Mai 2026)
-// ══════════════════════════════════════════════════════════
-const products = [
-  {
-    id:"IUSD",
-    ticker:"IUSD",
-    name:"iShares MSCI World Islamic UCITS ETF",
-    isin:"IE00B27YCN58", wkn:"A0NA46",
-    category:"global", catLabel:"Global Developed",
-    type:"ETF", strategy:"Passiv",
-    ter:"0,30%", volume:"1,25 Mrd. $", positions:398,
-    distribution:"Ausschüttend", distFreq:"Halbjährlich",
-    perf1y:"+31,92%", perf3y:"+52,32%", perf5y:"+74,47%",
-    perfType:"equity",
-    shariah:"MSCI Shariah Advisory Committee",
-    shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/251394/ishares-msci-world-islamic-ucits-etf",
-    scalable:true, scalableSparplan:true,
-    tr:true, trSparplan:true,
-    desc:"Bewährtester globaler Halal-ETF seit 2007 — 398 Positionen, vollständige Replikation des MSCI World Islamic Index. Microsoft, Tesla & Micron als Top-Positionen.",
-    index:"MSCI World Islamic",
-    isNew:false
-  },
-  {
-    id:"IGDA",
-    ticker:"IGDA",
-    name:"Invesco Dow Jones Islamic Global Developed Markets UCITS ETF Acc",
-    isin:"IE000UOXRAM8", wkn:"A3C6Z0",
-    category:"global", catLabel:"Global Developed",
-    type:"ETF", strategy:"Passiv",
-    ter:"0,40%", volume:"1,09 Mrd. $", positions:1486,
-    distribution:"Thesaurierend", distFreq:"–",
-    perf1y:"+33,18%", perf3y:"+68,27%", perf5y:"n/a",
-    perfType:"equity",
-    shariah:"S&P Dow Jones Shari'ah Supervisory Board",
-    shariahLink:"https://www.invesco.com/de/de/financial-products/etfs/invesco-dow-jones-islamic-global-developed-markets-ucits-etf-acc.html",
-    scalable:true, scalableSparplan:false,
-    tr:true, trSparplan:true,
-    desc:"1.486 Positionen nach Dow-Jones-Islamic-Methodik — thesaurierend, ideal zum Reinvestieren. NVIDIA, Apple & Microsoft als Top-Werte. Jährliche Shariah-Compliance-Zertifikate verfügbar.",
-    index:"DJ Islamic Market Developed Markets",
-    isNew:false
-  },
-  {
-    id:"MWIM",
-    ticker:"MWIM",
-    name:"Invesco MSCI ACWI Islamic M-Series UCITS ETF Acc",
-    isin:"IE000LFC57H7", wkn:"A418RW",
-    category:"global-all", catLabel:"Global All-World",
-    type:"ETF", strategy:"Passiv",
-    ter:"0,35%", volume:"50,1 Mio. $", positions:396,
-    distribution:"Thesaurierend", distFreq:"–",
-    perf1y:"n/a", perf3y:"n/a", perf5y:"n/a",
-    perfType:"equity",
-    shariah:"MSCI Shariah Advisory Committee",
-    shariahLink:"https://www.invesco.com/de/de/financial-products/etfs/invesco-msci-acwi-islamic-m-series-ucits-etf-acc.html",
-    scalable:true, scalableSparplan:false,
-    tr:false, trSparplan:false,
-    desc:"NEU Feb. 2026 — einziger Halal-ETF, der Industrieländer UND Schwellenländer kombiniert (ACWI). 396 Positionen, thesaurierend. Noch kein 1J-Track-Record.",
-    index:"MSCI ACWI Islamic M-Series",
-    isNew:true
-  },
-  {
-    id:"IUSF",
-    ticker:"IUSF",
-    name:"iShares MSCI USA Islamic UCITS ETF",
-    isin:"IE00B296QM64", wkn:"A0NA48",
-    category:"usa", catLabel:"US Large & Mid Cap",
-    type:"ETF", strategy:"Passiv",
-    ter:"0,30%", volume:"431 Mio. $", positions:132,
-    distribution:"Ausschüttend", distFreq:"Halbjährlich",
-    perf1y:"+32,41%", perf3y:"+56,74%", perf5y:"+86,26%",
-    perfType:"equity",
-    shariah:"MSCI Shariah Advisory Committee",
-    shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/251393/ishares-msci-usa-islamic-ucits-etf",
-    scalable:true, scalableSparplan:true,
-    tr:true, trSparplan:true,
-    desc:"Reine US-Aktien nach Shariah-Screening — 132 Positionen. Microsoft (14,47%), Tesla (7,89%), Micron als Top-3. Ohne Banken, Versicherungen & Rüstung.",
-    index:"MSCI USA Islamic",
-    isNew:false
-  },
-  {
-    id:"ASWE",
-    ticker:"ASWE",
-    name:"HANetf Saturna Al-Kawthar Global Focused Equity UCITS ETF Acc",
-    isin:"IE00BMYMHS24", wkn:"A2P5A6",
-    category:"global", catLabel:"Global Developed",
-    type:"ETF", strategy:"Aktiv",
-    ter:"0,75%", volume:"18,7 Mio. $", positions:39,
-    distribution:"Thesaurierend", distFreq:"–",
-    perf1y:"+28,70%", perf3y:"+55,37%", perf5y:"+38,22%",
-    perfType:"equity",
-    shariah:"Saturna Capital · Halal Research",
-    shariahLink:"https://hanetf.com/de/fund/amal-saturna-al-kawthar-global-focused-equity-ucits-etf-acc/",
-    scalable:true, scalableSparplan:true,
-    tr:true, trSparplan:true,
-    desc:"Einziger aktiv gemanagter Halal-ETF — nur 39 konzentrierte Positionen. Shariah-Compliance-Zertifikat & Fatwa auf der Produktseite. TSMC, Prysmian, Alphabet als Top-Werte.",
-    index:"Aktiv – kein Index",
-    isNew:false
-  },
-  {
-    id:"IUSE",
-    ticker:"IUSE",
-    name:"iShares MSCI Emerging Markets Islamic UCITS ETF",
-    isin:"IE00B27YCP72", wkn:"A0NA47",
-    category:"em", catLabel:"Emerging Markets",
-    type:"ETF", strategy:"Passiv",
-    ter:"0,35%", volume:"684 Mio. $", positions:400,
-    distribution:"Ausschüttend", distFreq:"Halbjährlich",
-    perf1y:"+93,68%", perf3y:"+105,89%", perf5y:"+78,56%",
-    perfType:"equity",
-    shariah:"MSCI Shariah Advisory Committee",
-    shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/251392/ishares-msci-emerging-markets-islamic-ucits-etf",
-    scalable:true, scalableSparplan:true,
-    tr:true, trSparplan:true,
-    desc:"Einziger Halal-EM-ETF — 400 Positionen. Samsung (15,85%), SK Hynix (13,47%) als Top-Werte. Außergewöhnliche 1J-Rendite dank Südkorea-Halbleiter-Boom.",
-    index:"MSCI Emerging Markets Islamic",
-    isNew:false
-  },
-  {
-    id:"5W00",
-    ticker:"SKUK",
-    name:"iShares $ Sukuk UCITS ETF (Ticker in DE: 5W00)",
-    isin:"IE000929U2U9", wkn:"A3EP1K",
-    category:"sukuk", catLabel:"Sukuk",
-    type:"ETF", strategy:"Passiv",
-    ter:"0,40%", volume:"141 Mio. $", positions:216,
-    distribution:"Ausschüttend", distFreq:"Quartalsweise",
-    perf1y:"+1,66%", perf3y:"n/a", perf5y:"n/a",
-    kupon:"5,07%",
-    effverzinsung:"5,21%",
-    perfType:"sukuk",
-    shariah:"AAOIFI-Standards · J.P. Morgan Index",
-    shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/333903/ishares-sukuk-ucits-etf",
-    scalable:true, scalableSparplan:true,
-    tr:false, trSparplan:false,
-    desc:"Riba-freie Anleihealternative — 216 EM-Sukuk nach AAOIFI-Standards. Kupon 5,07% · Effektivverzinsung 5,21%. Quartalsweise Ausschüttung. Aufgelegt Jan. 2024.",
-    index:"J.P. Morgan EM Aggregate Sukuk",
-    isNew:false
-  },
-  {
-    id:"XASB",
-    ticker:"XASB",
-    name:"Xtrackers II Salam USD Global Aggregate Sukuk UCITS ETF 1D",
-    isin:"LU3123443510", wkn:"DBX0XH",
-    category:"sukuk", catLabel:"Sukuk",
-    type:"ETF", strategy:"Passiv",
-    ter:"0,40%", volume:"36,4 Mio. €", positions:168,
-    distribution:"Ausschüttend", distFreq:"Jährlich",
-    perf1y:"n/a", perf3y:"n/a", perf5y:"n/a",
-    kupon:"5,01%",
-    effverzinsung:"5,17%",
-    perfType:"sukuk",
-    shariah:"Bloomberg · Quartals-Shari'a-Zertifikat",
-    shariahLink:"https://etf.dws.com/de-de/LU3123443510-salam-usd-global-aggregate-sukuk-ucits-etf-1d/",
-    scalable:true, scalableSparplan:true,
-    tr:false, trSparplan:false,
-    desc:"NEU Okt. 2025 — globaler Sukuk-ETF von DWS Xtrackers. 168 USD-Sukuk, Kupon 5,01% · Effektivverzinsung 5,17%. Quartals-Shariah-Zertifikat vorhanden.",
-    index:"Bloomberg Global USD 500mn Sukuk",
-    isNew:true
-  },
-  {
-    id:"PPFB",
-    ticker:"PPFB",
-    name:"iShares Physical Gold ETC",
-    isin:"IE00B4ND3602", wkn:"A1KWPQ",
-    category:"gold", catLabel:"Gold ETC",
-    type:"ETC", strategy:"Physisch",
-    ter:"0,12%", volume:"39,4 Mrd. $", positions:null,
-    distribution:"Thesaurierend", distFreq:"–",
-    perf1y:"+34,80%", perf3y:"+116,86%", perf5y:"+161,79%",
-    perfType:"equity",
-    shariah:"Shariah-konform (BlackRock bestätigt)",
-    shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/258441/ishares-physical-gold-etc-fund",
-    scalable:true, scalableSparplan:true,
-    tr:true, trSparplan:true,
-    desc:"Größter physisch besicherter Gold-ETC der Welt (39,4 Mrd. $). BlackRock bestätigt Shariah-Konformität explizit. 100% LBMA-zertifiziertes Gold in London verwahrt.",
-    index:"LBMA Gold Price (USD)",
-    isNew:false
-  },
-  {
-    id:"8PSG",
-    ticker:"8PSG",
-    name:"Invesco Physical Gold ETC",
-    isin:"IE00B579F325", wkn:"A1AA5X",
-    category:"gold", catLabel:"Gold ETC",
-    type:"ETC", strategy:"Physisch",
-    ter:"0,12%", volume:"30,6 Mrd. $", positions:null,
-    distribution:"Thesaurierend", distFreq:"–",
-    perf1y:"+34,79%", perf3y:"+118,94%", perf5y:"+161,84%",
-    perfType:"equity",
-    shariah:"Jährl. Shariah-Zertifikat (Invesco)",
-    shariahLink:"https://www.invesco.com/de/de/financial-products/etfs/invesco-physical-gold-etc.html",
-    scalable:true, scalableSparplan:true,
-    tr:true, trSparplan:true,
-    desc:"Zweitgrößter Gold-ETC (30,6 Mrd. $) mit jährlichem Shariah-Compliance-Zertifikat von Invesco — lückenlos seit 2018. TER identisch zu iShares (0,12%).",
-    index:"LBMA Gold Price (USD)",
-    isNew:false
-  },
-  {
-    id:"8PSB",
-    ticker:"8PSB",
-    name:"Invesco Physical Silver ETC",
-    isin:"IE00B43VDT70", wkn:"A1KX35",
-    category:"silver", catLabel:"Silber ETC",
-    type:"ETC", strategy:"Physisch",
-    ter:"0,19%", volume:"1,2 Mrd. $", positions:null,
-    distribution:"Thesaurierend", distFreq:"–",
-    perf1y:"+137,23%", perf3y:"+193,72%", perf5y:"+197,62%",
-    perfType:"equity",
-    shariah:"Jährl. Shariah-Zertifikat (Invesco)",
-    shariahLink:"https://www.invesco.com/de/de/financial-products/etfs/invesco-physical-silver-etc.html",
-    scalable:true, scalableSparplan:true,
-    tr:true, trSparplan:true,
-    desc:"Günstigster Silber-ETC (0,19% TER) — 1,2 Mrd. $ Volumen. Physisch besichert mit jährlichem Shariah-Zertifikat. +137% in 1 Jahr — hohe Volatilität beachten.",
-    index:"LBMA Silver Price (USD)",
-    isNew:false
-  }
+const products=[
+  {id:"IUSD",ticker:"IUSD",name:"iShares MSCI World Islamic UCITS ETF",isin:"IE00B27YCN58",wkn:"A0NA46",category:"global",catLabel:"Global Developed",type:"ETF",strategy:"Passiv",ter:"0,30%",volume:"1,25 Mrd. $",positions:398,distribution:"Ausschüttend",distFreq:"Halbjährlich",perf1y:"+31,92%",perf3y:"+52,32%",perf5y:"+74,47%",perfType:"equity",shariah:"MSCI Shariah Advisory Committee",shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/251394/",scalable:true,scalableSparplan:true,tr:true,trSparplan:true,desc:"Bewährtester globaler Halal-ETF seit 2007 — 398 Positionen, vollständige Replikation des MSCI World Islamic Index. Microsoft, Tesla & Micron als Top-Positionen.",index:"MSCI World Islamic",isNew:false},
+  {id:"IGDA",ticker:"IGDA",name:"Invesco Dow Jones Islamic Global Developed Markets UCITS ETF Acc",isin:"IE000UOXRAM8",wkn:"A3C6Z0",category:"global",catLabel:"Global Developed",type:"ETF",strategy:"Passiv",ter:"0,40%",volume:"1,09 Mrd. $",positions:1486,distribution:"Thesaurierend",distFreq:"–",perf1y:"+33,18%",perf3y:"+68,27%",perf5y:"n/a",perfType:"equity",shariah:"S&P Dow Jones Shari'ah Supervisory Board",shariahLink:"https://www.invesco.com/de/de/financial-products/etfs/invesco-dow-jones-islamic-global-developed-markets-ucits-etf-acc.html",scalable:true,scalableSparplan:false,tr:true,trSparplan:true,desc:"1.486 Positionen nach Dow-Jones-Islamic-Methodik — thesaurierend, ideal zum Reinvestieren. NVIDIA, Apple & Microsoft als Top-Werte.",index:"DJ Islamic Market Developed Markets",isNew:false},
+  {id:"MWIM",ticker:"MWIM",name:"Invesco MSCI ACWI Islamic M-Series UCITS ETF Acc",isin:"IE000LFC57H7",wkn:"A418RW",category:"global-all",catLabel:"Global All-World",type:"ETF",strategy:"Passiv",ter:"0,35%",volume:"50,1 Mio. $",positions:396,distribution:"Thesaurierend",distFreq:"–",perf1y:"n/a",perf3y:"n/a",perf5y:"n/a",perfType:"equity",shariah:"MSCI Shariah Advisory Committee",shariahLink:"https://www.invesco.com/de/de/financial-products/etfs/invesco-msci-acwi-islamic-m-series-ucits-etf-acc.html",scalable:true,scalableSparplan:false,tr:false,trSparplan:false,desc:"NEU Feb. 2026 — einziger Halal-ETF, der Industrieländer UND Schwellenländer kombiniert (ACWI). 396 Positionen, thesaurierend. Noch kein 1J-Track-Record.",index:"MSCI ACWI Islamic M-Series",isNew:true},
+  {id:"IUSF",ticker:"IUSF",name:"iShares MSCI USA Islamic UCITS ETF",isin:"IE00B296QM64",wkn:"A0NA48",category:"usa",catLabel:"US Large & Mid Cap",type:"ETF",strategy:"Passiv",ter:"0,30%",volume:"431 Mio. $",positions:132,distribution:"Ausschüttend",distFreq:"Halbjährlich",perf1y:"+32,41%",perf3y:"+56,74%",perf5y:"+86,26%",perfType:"equity",shariah:"MSCI Shariah Advisory Committee",shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/251393/",scalable:true,scalableSparplan:true,tr:true,trSparplan:true,desc:"Reine US-Aktien nach Shariah-Screening — 132 Positionen. Microsoft (14,47%), Tesla (7,89%), Micron als Top-3. Ohne Banken, Versicherungen & Rüstung.",index:"MSCI USA Islamic",isNew:false},
+  {id:"ASWE",ticker:"ASWE",name:"HANetf Saturna Al-Kawthar Global Focused Equity UCITS ETF Acc",isin:"IE00BMYMHS24",wkn:"A2P5A6",category:"global",catLabel:"Global Developed",type:"ETF",strategy:"Aktiv",ter:"0,75%",volume:"18,7 Mio. $",positions:39,distribution:"Thesaurierend",distFreq:"–",perf1y:"+28,70%",perf3y:"+55,37%",perf5y:"+38,22%",perfType:"equity",shariah:"Saturna Capital · Halal Research",shariahLink:"https://hanetf.com/de/fund/amal-saturna-al-kawthar-global-focused-equity-ucits-etf-acc/",scalable:true,scalableSparplan:true,tr:true,trSparplan:true,desc:"Einziger aktiv gemanagter Halal-ETF — nur 39 konzentrierte Positionen. Shariah-Compliance-Zertifikat & Fatwa auf der Produktseite.",index:"Aktiv – kein Index",isNew:false},
+  {id:"IUSE",ticker:"IUSE",name:"iShares MSCI Emerging Markets Islamic UCITS ETF",isin:"IE00B27YCP72",wkn:"A0NA47",category:"em",catLabel:"Emerging Markets",type:"ETF",strategy:"Passiv",ter:"0,35%",volume:"684 Mio. $",positions:400,distribution:"Ausschüttend",distFreq:"Halbjährlich",perf1y:"+93,68%",perf3y:"+105,89%",perf5y:"+78,56%",perfType:"equity",shariah:"MSCI Shariah Advisory Committee",shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/251392/",scalable:true,scalableSparplan:true,tr:true,trSparplan:true,desc:"Einziger Halal-EM-ETF — 400 Positionen. Samsung (15,85%), SK Hynix (13,47%) als Top-Werte. Außergewöhnliche 1J-Rendite dank Südkorea-Halbleiter-Boom.",index:"MSCI Emerging Markets Islamic",isNew:false},
+  {id:"5W00",ticker:"SKUK",name:"iShares $ Sukuk UCITS ETF (Ticker in DE: 5W00)",isin:"IE000929U2U9",wkn:"A3EP1K",category:"sukuk",catLabel:"Sukuk",type:"ETF",strategy:"Passiv",ter:"0,40%",volume:"141 Mio. $",positions:216,distribution:"Ausschüttend",distFreq:"Quartalsweise",perf1y:"+1,66%",perf3y:"n/a",perf5y:"n/a",kupon:"5,07%",effverzinsung:"5,21%",perfType:"sukuk",shariah:"AAOIFI-Standards · J.P. Morgan Index",shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/333903/",scalable:true,scalableSparplan:true,tr:false,trSparplan:false,desc:"Riba-freie Anleihealternative — 216 EM-Sukuk nach AAOIFI-Standards. Kupon 5,07% · Effektivverzinsung 5,21%. Quartalsweise Ausschüttung. Aufgelegt Jan. 2024.",index:"J.P. Morgan EM Aggregate Sukuk",isNew:false},
+  {id:"XASB",ticker:"XASB",name:"Xtrackers II Salam USD Global Aggregate Sukuk UCITS ETF 1D",isin:"LU3123443510",wkn:"DBX0XH",category:"sukuk",catLabel:"Sukuk",type:"ETF",strategy:"Passiv",ter:"0,40%",volume:"36,4 Mio. €",positions:168,distribution:"Ausschüttend",distFreq:"Jährlich",perf1y:"n/a",perf3y:"n/a",perf5y:"n/a",kupon:"5,01%",effverzinsung:"5,17%",perfType:"sukuk",shariah:"Bloomberg · Quartals-Shari'a-Zertifikat",shariahLink:"https://etf.dws.com/de-de/LU3123443510-salam-usd-global-aggregate-sukuk-ucits-etf-1d/",scalable:true,scalableSparplan:true,tr:false,trSparplan:false,desc:"NEU Okt. 2025 — globaler Sukuk-ETF von DWS Xtrackers. 168 USD-Sukuk, Kupon 5,01% · Effektivverzinsung 5,17%. Quartals-Shariah-Zertifikat vorhanden.",index:"Bloomberg Global USD 500mn Sukuk",isNew:true},
+  {id:"PPFB",ticker:"PPFB",name:"iShares Physical Gold ETC",isin:"IE00B4ND3602",wkn:"A1KWPQ",category:"gold",catLabel:"Gold ETC",type:"ETC",strategy:"Physisch",ter:"0,12%",volume:"39,4 Mrd. $",positions:null,distribution:"Thesaurierend",distFreq:"–",perf1y:"+34,80%",perf3y:"+116,86%",perf5y:"+161,79%",perfType:"equity",shariah:"Shariah-konform (BlackRock bestätigt)",shariahLink:"https://www.ishares.com/de/privatanleger/de/produkte/258441/",scalable:true,scalableSparplan:true,tr:true,trSparplan:true,desc:"Größter physisch besicherter Gold-ETC der Welt (39,4 Mrd. $). BlackRock bestätigt Shariah-Konformität explizit. 100% LBMA-zertifiziertes Gold in London verwahrt.",index:"LBMA Gold Price (USD)",isNew:false},
+  {id:"8PSG",ticker:"8PSG",name:"Invesco Physical Gold ETC",isin:"IE00B579F325",wkn:"A1AA5X",category:"gold",catLabel:"Gold ETC",type:"ETC",strategy:"Physisch",ter:"0,12%",volume:"30,6 Mrd. $",positions:null,distribution:"Thesaurierend",distFreq:"–",perf1y:"+34,79%",perf3y:"+118,94%",perf5y:"+161,84%",perfType:"equity",shariah:"Jährl. Shariah-Zertifikat (Invesco)",shariahLink:"https://www.invesco.com/de/de/financial-products/etfs/invesco-physical-gold-etc.html",scalable:true,scalableSparplan:true,tr:true,trSparplan:true,desc:"Zweitgrößter Gold-ETC (30,6 Mrd. $) mit jährlichem Shariah-Compliance-Zertifikat von Invesco — lückenlos seit 2018.",index:"LBMA Gold Price (USD)",isNew:false},
+  {id:"8PSB",ticker:"8PSB",name:"Invesco Physical Silver ETC",isin:"IE00B43VDT70",wkn:"A1KX35",category:"silver",catLabel:"Silber ETC",type:"ETC",strategy:"Physisch",ter:"0,19%",volume:"1,2 Mrd. $",positions:null,distribution:"Thesaurierend",distFreq:"–",perf1y:"+137,23%",perf3y:"+193,72%",perf5y:"+197,62%",perfType:"equity",shariah:"Jährl. Shariah-Zertifikat (Invesco)",shariahLink:"https://www.invesco.com/de/de/financial-products/etfs/invesco-physical-silver-etc.html",scalable:true,scalableSparplan:true,tr:true,trSparplan:true,desc:"Günstigster Silber-ETC (0,19% TER) — 1,2 Mrd. $ Volumen. Physisch besichert mit jährlichem Shariah-Zertifikat. +137% in 1 Jahr — hohe Volatilität beachten.",index:"LBMA Silver Price (USD)",isNew:false}
 ];
 
-// ══════════════════════════════════════════════════════════
-//  STATE
-// ══════════════════════════════════════════════════════════
-let activeFilter = "alle";
-let selectedIds  = [];
+let activeFilter="alle";
+let selectedIds=[];
 
-// ══════════════════════════════════════════════════════════
-//  HELPERS
-// ══════════════════════════════════════════════════════════
-function perfClass(v){
-  if(!v||v==="n/a")return "na";
-  return v.startsWith("+")?"pos":"neg";
+function perfClass(v){if(!v||v==="n/a")return"na";return v.startsWith("+")?"pos":"neg"}
+function buildPerfLabels(p){return p.perfType==="sukuk"?["1 Jahr","Kupon p.a.","Effektivverzinsung"]:["1 Jahr","3 Jahre","5 Jahre"]}
+function buildPerfVals(p){return p.perfType==="sukuk"?[p.perf1y,p.kupon||"n/a",p.effverzinsung||"n/a"]:[p.perf1y,p.perf3y,p.perf5y]}
+
+function getBadgeClass(cat){
+  const m={global:"badge-global","global-all":"badge-global",usa:"badge-usa",em:"badge-em",sukuk:"badge-sukuk",gold:"badge-gold",silver:"badge-silver"};
+  return m[cat]||"badge-etf";
 }
 
-function buildPerfLabel(p){
-  if(p.perfType==="sukuk"){
-    return ["1 Jahr", "Kupon p.a.", "Effektivverzinsung"];
-  }
-  return ["1 Jahr", "3 Jahre", "5 Jahre"];
-}
-function buildPerfVals(p){
-  if(p.perfType==="sukuk"){
-    return [p.perf1y, p.kupon||"n/a", p.effverzinsung||"n/a"];
-  }
-  return [p.perf1y, p.perf3y, p.perf5y];
-}
-
-// ══════════════════════════════════════════════════════════
-//  RENDER CARDS
-// ══════════════════════════════════════════════════════════
 function renderCards(){
-  const grid = document.getElementById("etf-grid");
-  grid.innerHTML = "";
-  let count = 0;
-
+  const grid=document.getElementById("etf-grid");
+  grid.innerHTML="";
+  let count=0;
   products.forEach(p=>{
-    const visible = activeFilter==="alle" || p.category===activeFilter;
-    if(!visible) return;
+    if(activeFilter!=="alle"&&p.category!==activeFilter)return;
     count++;
-
-    const sel = selectedIds.includes(p.id);
-    const perfLabels = buildPerfLabel(p);
-    const perfVals   = buildPerfVals(p);
-
-    const card = document.createElement("div");
-    card.className = `card${sel?" selected":""}`;
-    card.dataset.id = p.id;
-    card.dataset.cat = p.category;
-
-    const scalableHref = p.scalable ? SCALABLE_LINK : "#";
-    const trHref       = p.tr       ? TR_LINK       : "#";
-
-    card.innerHTML = `
+    const sel=selectedIds.includes(p.id);
+    const pl=buildPerfLabels(p),pv=buildPerfVals(p);
+    const card=document.createElement("div");
+    card.className=`card${sel?" selected":""}`;
+    card.dataset.id=p.id;
+    card.innerHTML=`
       <div class="card-inner">
         <div class="card-check-row">
-          <label class="compare-cb">
-            <input type="checkbox" ${sel?"checked":""} onchange="toggleSelect('${p.id}',this)"/>
-            Vergleichen
-          </label>
+          <label class="compare-cb"><input type="checkbox" ${sel?"checked":""} onchange="toggleSelect('${p.id}',this)"/> Vergleichen</label>
           <div class="badges">
             <span class="badge ${p.type==="ETC"?"badge-etc":"badge-etf"}">${p.type}</span>
             ${p.strategy==="Aktiv"?'<span class="badge badge-aktiv">Aktiv</span>':""}
@@ -530,208 +351,126 @@ function renderCards(){
             <span class="badge ${getBadgeClass(p.category)}">${p.catLabel}</span>
           </div>
         </div>
-
         <div>
           <div class="ticker">${p.ticker}</div>
           <div class="fund-name" style="margin-top:5px">${p.name}</div>
-          <div class="isin-row" style="margin-top:4px">
-            <span>ISIN: ${p.isin}</span>
-            <span>WKN: ${p.wkn}</span>
-          </div>
+          <div class="isin-row" style="margin-top:4px"><span>ISIN: ${p.isin}</span><span>WKN: ${p.wkn}</span></div>
         </div>
-
         <div class="kpi-grid">
-          <div class="kpi">
-            <div class="kpi-lbl">TER / Jahr</div>
-            <div class="kpi-val">${p.ter}</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-lbl">Volumen</div>
-            <div class="kpi-val">${p.volume}</div>
-          </div>
-          <div class="kpi">
-            <div class="kpi-lbl">${p.positions?"Positionen":"Replikation"}</div>
-            <div class="kpi-val ${p.positions?"":'na'}" style="font-size:${p.positions?"14px":"12px"}">${p.positions||p.strategy}</div>
-          </div>
+          <div class="kpi"><div class="kpi-lbl">TER / Jahr</div><div class="kpi-val">${p.ter}</div></div>
+          <div class="kpi"><div class="kpi-lbl">Volumen</div><div class="kpi-val">${p.volume}</div></div>
+          <div class="kpi"><div class="kpi-lbl">${p.positions?"Positionen":"Replikation"}</div><div class="kpi-val ${p.positions?"":'na'}">${p.positions||p.strategy}</div></div>
         </div>
-
         <div class="perf-row">
-          ${perfLabels.map((lbl,i)=>`
-          <div class="perf-cell">
-            <div class="perf-lbl">${lbl}</div>
-            <div class="perf-val ${perfClass(perfVals[i])}">${perfVals[i]==="n/a"?"–":perfVals[i]}</div>
-          </div>`).join("")}
+          ${pl.map((l,i)=>`<div class="perf-cell"><div class="perf-lbl">${l}</div><div class="perf-val ${perfClass(pv[i])}">${pv[i]==="n/a"?"–":pv[i]}</div></div>`).join("")}
         </div>
-
         <div class="shariah-row">
-          <div class="shariah-info">
-            <div class="shariah-dot"></div>
-            <span>${p.shariah}</span>
-          </div>
+          <div class="shariah-info"><div class="shariah-dot"></div><span>${p.shariah}</span></div>
           <a href="${p.shariahLink}" target="_blank" rel="noopener" class="cert-link">Produktseite ↗</a>
         </div>
-
         <div class="desc">${p.desc}</div>
       </div>
-
       <div class="card-footer">
         <div class="plat-tags">
-          <span class="plat-tag">${p.distribution} ${p.distFreq!=="–"?"("+p.distFreq+")":""}</span>
-          ${p.scalableSparplan?'<span class="plat-tag" style="color:var(--teal);border-color:var(--teal-soft)">✓ Sparplan Scalable</span>':""}
-          ${p.trSparplan?'<span class="plat-tag" style="color:#e0183c;border-color:#e0183c35">✓ Sparplan TR</span>':""}
+          <span class="plat-tag">${p.distribution}${p.distFreq!=="–"?" ("+p.distFreq+")":""}</span>
+          ${p.scalableSparplan?'<span class="plat-tag" style="color:var(--gold);border-color:var(--border2)">✓ Sparplan Scalable</span>':""}
+          ${p.trSparplan?'<span class="plat-tag" style="color:#FF3B30;border-color:rgba(255,59,48,.3)">✓ Sparplan TR</span>':""}
         </div>
         <div class="buy-btns">
-          ${p.scalable
-            ?`<a href="${scalableHref}" target="_blank" rel="noopener" class="buy-btn buy-btn-scalable">Scalable Capital →</a>`
-            :`<span class="buy-btn buy-btn-disabled">Scalable n. verf.</span>`}
-          ${p.tr
-            ?`<a href="${trHref}" target="_blank" rel="noopener" class="buy-btn buy-btn-tr">Trade Republic →</a>`
-            :`<span class="buy-btn buy-btn-disabled">TR nicht verf.</span>`}
+          ${p.scalable?`<a href="${SCALABLE_LINK}" target="_blank" rel="noopener" class="buy-btn buy-btn-scalable">Scalable Capital →</a>`:'<span class="buy-btn buy-btn-disabled">Scalable n. verf.</span>'}
+          ${p.tr?`<a href="${TR_LINK}" target="_blank" rel="noopener" class="buy-btn buy-btn-tr">Trade Republic →</a>`:'<span class="buy-btn buy-btn-disabled">TR nicht verf.</span>'}
         </div>
-      </div>
-    `;
-
+      </div>`;
     grid.appendChild(card);
   });
-
-  document.getElementById("count-num").textContent = count;
+  document.getElementById("count-num").textContent=count;
 }
 
-function getBadgeClass(cat){
-  const map={global:"badge-global","global-all":"badge-global",usa:"badge-usa",em:"badge-em",sukuk:"badge-sukuk",gold:"badge-gold",silver:"badge-silver"};
-  return map[cat]||"badge-etf";
-}
-
-// ══════════════════════════════════════════════════════════
-//  FILTER
-// ══════════════════════════════════════════════════════════
 document.getElementById("filter-row").addEventListener("click",e=>{
-  const btn = e.target.closest(".filter-btn");
-  if(!btn) return;
+  const btn=e.target.closest(".filter-btn");
+  if(!btn)return;
   document.querySelectorAll(".filter-btn").forEach(b=>b.classList.remove("active"));
   btn.classList.add("active");
-  activeFilter = btn.dataset.cat;
+  activeFilter=btn.dataset.cat;
   renderCards();
 });
 
-// ══════════════════════════════════════════════════════════
-//  COMPARE SELECT / DESELECT
-// ══════════════════════════════════════════════════════════
-function toggleSelect(id, cb){
-  if(cb.checked){
-    if(selectedIds.length>=4){cb.checked=false;alert("Maximal 4 Produkte vergleichen.");return}
-    selectedIds.push(id);
-  } else {
-    selectedIds = selectedIds.filter(x=>x!==id);
-  }
+function toggleSelect(id,cb){
+  if(cb.checked){if(selectedIds.length>=4){cb.checked=false;alert("Maximal 4 Produkte vergleichen.");return}selectedIds.push(id);}
+  else{selectedIds=selectedIds.filter(x=>x!==id)}
   updateCompareBar();
-  // update card border
-  document.querySelectorAll(".card").forEach(c=>{
-    if(c.dataset.id===id){
-      c.classList.toggle("selected", selectedIds.includes(id));
-    }
-  });
+  document.querySelectorAll(".card").forEach(c=>{if(c.dataset.id===id)c.classList.toggle("selected",selectedIds.includes(id))});
 }
 
 function updateCompareBar(){
-  const bar = document.getElementById("compare-bar");
-  const cnt = document.getElementById("selected-count");
-  const chips = document.getElementById("cb-chips");
-  cnt.textContent = selectedIds.length;
-  if(selectedIds.length>=2){bar.classList.add("visible")}else{bar.classList.remove("visible")}
-  chips.innerHTML = selectedIds.map(id=>{
-    const p = products.find(x=>x.id===id);
-    return `<div class="cb-chip">${p.ticker} <button onclick="removeFromCompare('${id}')">×</button></div>`;
+  const bar=document.getElementById("compare-bar");
+  document.getElementById("selected-count").textContent=selectedIds.length;
+  if(selectedIds.length>=2)bar.classList.add("visible");else bar.classList.remove("visible");
+  document.getElementById("cb-chips").innerHTML=selectedIds.map(id=>{
+    const p=products.find(x=>x.id===id);
+    return`<div class="cb-chip">${p.ticker} <button onclick="removeFromCompare('${id}')">×</button></div>`;
   }).join("");
 }
 
 function removeFromCompare(id){
-  selectedIds = selectedIds.filter(x=>x!==id);
-  // uncheck card
-  document.querySelectorAll(".card").forEach(c=>{
-    if(c.dataset.id===id){
-      c.classList.remove("selected");
-      const cb = c.querySelector("input[type=checkbox]");
-      if(cb) cb.checked = false;
-    }
-  });
+  selectedIds=selectedIds.filter(x=>x!==id);
+  document.querySelectorAll(".card").forEach(c=>{if(c.dataset.id===id){c.classList.remove("selected");const cb=c.querySelector("input");if(cb)cb.checked=false;}});
   updateCompareBar();
 }
 
 function clearCompare(){
-  selectedIds = [];
-  document.querySelectorAll(".card").forEach(c=>{
-    c.classList.remove("selected");
-    const cb = c.querySelector("input[type=checkbox]");
-    if(cb) cb.checked = false;
-  });
+  selectedIds=[];
+  document.querySelectorAll(".card").forEach(c=>{c.classList.remove("selected");const cb=c.querySelector("input");if(cb)cb.checked=false;});
   updateCompareBar();
 }
 
-// ══════════════════════════════════════════════════════════
-//  COMPARE MODAL
-// ══════════════════════════════════════════════════════════
 function openModal(){
-  const sel = selectedIds.map(id=>products.find(p=>p.id===id)).filter(Boolean);
-  if(sel.length<2) return;
-
-  const rows = [
-    {key:"ticker",     lbl:"Ticker",        fn: p=>p.ticker},
-    {key:"type",       lbl:"Typ",           fn: p=>`${p.type} (${p.strategy})`},
-    {key:"category",   lbl:"Kategorie",     fn: p=>p.catLabel},
-    {key:"isin",       lbl:"ISIN",          fn: p=>`<span style="font-size:11px;color:var(--muted)">${p.isin}</span>`},
-    {key:"ter",        lbl:"TER / Jahr",    fn: p=>p.ter},
-    {key:"volume",     lbl:"Fondsvolumen",  fn: p=>p.volume},
-    {key:"positions",  lbl:"Positionen",    fn: p=>p.positions||"–"},
-    {key:"dist",       lbl:"Ausschüttung",  fn: p=>p.distribution+(p.distFreq!=="–"?" ("+p.distFreq+")":"")},
-    {key:"perf1y",     lbl:"Rendite 1 Jahr",fn: p=>p.perf1y, cls:true},
-    {key:"perf3y",     lbl:"Rendite 3 Jahre",fn:p=>p.perf3y, cls:true},
-    {key:"perf5y",     lbl:"Rendite 5 Jahre",fn:p=>p.perf5y, cls:true},
-    {key:"kupon",      lbl:"Kupon p.a. (Sukuk)", fn:p=>p.kupon||"–", cls:false},
-    {key:"effvz",      lbl:"Effektivverzinsung",  fn:p=>p.effverzinsung||"–", cls:false},
-    {key:"shariah",    lbl:"Shariah Board", fn: p=>p.shariah},
-    {key:"scalable",   lbl:"Scalable Capital", fn:p=>p.scalable?(p.scalableSparplan?"✓ inkl. Sparplan":"✓ Einzelkauf"):"✗"},
-    {key:"tr",         lbl:"Trade Republic", fn:p=>p.tr?(p.trSparplan?"✓ inkl. Sparplan":"✓ Einzelkauf"):"✗"},
-    {key:"index",      lbl:"Index",         fn:p=>p.index},
+  const sel=selectedIds.map(id=>products.find(p=>p.id===id)).filter(Boolean);
+  if(sel.length<2)return;
+  const rows=[
+    {lbl:"Ticker",fn:p=>p.ticker},{lbl:"Typ",fn:p=>`${p.type} (${p.strategy})`},{lbl:"Kategorie",fn:p=>p.catLabel},
+    {lbl:"ISIN",fn:p=>`<span style="font-size:11px;color:var(--muted)">${p.isin}</span>`},{lbl:"TER / Jahr",fn:p=>p.ter},
+    {lbl:"Fondsvolumen",fn:p=>p.volume},{lbl:"Positionen",fn:p=>p.positions||"–"},
+    {lbl:"Ausschüttung",fn:p=>p.distribution+(p.distFreq!=="–"?" ("+p.distFreq+")":"")},
+    {lbl:"Rendite 1 Jahr",fn:p=>p.perf1y,cls:true},{lbl:"Rendite 3 Jahre",fn:p=>p.perf3y,cls:true},{lbl:"Rendite 5 Jahre",fn:p=>p.perf5y,cls:true},
+    {lbl:"Kupon p.a. (Sukuk)",fn:p=>p.kupon||"–"},{lbl:"Effektivverzinsung",fn:p=>p.effverzinsung||"–"},
+    {lbl:"Shariah Board",fn:p=>p.shariah},
+    {lbl:"Scalable Capital",fn:p=>p.scalable?(p.scalableSparplan?"✓ inkl. Sparplan":"✓ Einzelkauf"):"✗",key:"sc"},
+    {lbl:"Trade Republic",fn:p=>p.tr?(p.trSparplan?"✓ inkl. Sparplan":"✓ Einzelkauf"):"✗",key:"tr"},
+    {lbl:"Index",fn:p=>p.index}
   ];
-
-  let html = "<tr><td class='row-lbl'></td>";
-  sel.forEach(p=>{ html+=`<th class="ticker-th">${p.ticker}</th>`; });
-  html += "</tr>";
-
+  let html="<tr><td class='row-lbl'></td>";
+  sel.forEach(p=>{html+=`<th>${p.ticker}</th>`});
+  html+="</tr>";
   rows.forEach(row=>{
-    const vals = sel.map(p=>{
-      const v = row.fn(p);
-      if(row.cls && v && v!=="–"){
-        const cls = perfClass(v);
-        return `<td class="${cls}">${v==="n/a"?"–":v}</td>`;
-      }
-      // color scalable / TR status
-      if(row.key==="scalable"){
-        return `<td style="color:${p.scalable?"var(--green)":"var(--muted)"}">${row.fn(p)}</td>`;
-      }
-      if(row.key==="tr"){
-        return `<td style="color:${p.tr?"var(--green)":"var(--muted)"}">${row.fn(p)}</td>`;
-      }
-      return `<td>${v}</td>`;
+    const vals=sel.map(p=>{
+      const v=row.fn(p);
+      if(row.cls&&v&&v!=="–")return`<td class="${perfClass(v)}">${v==="n/a"?"–":v}</td>`;
+      if(row.key==="sc")return`<td style="color:${p.scalable?"var(--green)":"var(--muted)"}">${v}</td>`;
+      if(row.key==="tr")return`<td style="color:${p.tr?"var(--green)":"var(--muted)"}">${v}</td>`;
+      return`<td>${v}</td>`;
     }).join("");
-    html += `<tr><td class="row-lbl">${row.lbl}</td>${vals}</tr>`;
+    html+=`<tr><td class="row-lbl">${row.lbl}</td>${vals}</tr>`;
   });
-
-  document.getElementById("compare-table").innerHTML = html;
+  document.getElementById("compare-table").innerHTML=html;
   document.getElementById("modal-overlay").classList.add("visible");
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow="hidden";
 }
 
 function closeModal(e){
-  if(e && e.target!==document.getElementById("modal-overlay")) return;
+  if(e&&e.target!==document.getElementById("modal-overlay"))return;
   document.getElementById("modal-overlay").classList.remove("visible");
-  document.body.style.overflow = "";
+  document.body.style.overflow="";
 }
 
-// ══════════════════════════════════════════════════════════
-//  INIT
-// ══════════════════════════════════════════════════════════
+// Hamburger
+const hBtn=document.getElementById('hamburgerBtn');
+const mNav=document.getElementById('mobileNav');
+if(hBtn&&mNav){
+  hBtn.addEventListener('click',()=>{const o=mNav.classList.toggle('open');hBtn.classList.toggle('open',o);hBtn.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';});
+  mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mNav.classList.remove('open');hBtn.classList.remove('open');hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';}));
+}
+
 renderCards();
 </script>
 </body>
