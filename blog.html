@@ -23,8 +23,6 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 :root{--gold:#C9A84C;--gold-dim:#A07830;--gold-glow:rgba(201,168,76,.15);--surface:#161616;--surface2:#1E1E1E;--border:rgba(201,168,76,.2);--text:#E8E4DC;--muted:#888;--green:#3D9970}
 h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
-
-/* ── NAV ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
@@ -44,13 +42,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-fil
 .mobile-nav.open{opacity:1;pointer-events:all}
 .mobile-nav a{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--text);transition:color .2s}
 .mobile-nav a:hover{color:var(--gold)}
-
-/* ── FOOTER ── */
 footer{background:#080808;border-top:1px solid var(--border);padding:2rem;text-align:center}
 footer p{font-size:.68rem;color:#333}
 footer a{color:var(--muted);transition:color .2s}
 footer a:hover{color:var(--gold)}
-
 @media(max-width:860px){nav .nav-links{display:none}.hamburger{display:flex}}
 @media(max-width:640px){h1{font-size:1.8rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
@@ -58,7 +53,6 @@ footer a:hover{color:var(--gold)}
 </head>
 <body>
 
-<!-- ══ NAV ══ -->
 <nav aria-label="Hauptnavigation">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand" aria-label="Amana Aktien Startseite">
@@ -96,7 +90,6 @@ footer a:hover{color:var(--gold)}
   </div>
 </nav>
 
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobilmenü">
   <a href="index.html">Startseite</a>
   <a href="blog.html">Blog</a>
@@ -106,7 +99,6 @@ footer a:hover{color:var(--gold)}
   <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer nofollow">Instagram ↗</a>
 </div>
 
-<!-- ══ INHALT ══ -->
 <div style="max-width:1100px;margin:0 auto;padding:4rem 2rem 6rem">
   <div style="margin-bottom:3rem">
     <div style="font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.4rem;margin-bottom:.75rem">☪ Wissen & Analysen</div>
@@ -125,7 +117,7 @@ footer a:hover{color:var(--gold)}
     <img src="https://img.youtube.com/vi/Ss_CyIxKNeI/hqdefault.jpg" alt="Halal Investieren für Anfänger" style="border-radius:8px;width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
   </a>
 
-  <!-- Grid -->
+  <!-- Grid — nur 4 Artikel (halal-etfs-2026 und halal-dividenden-etfs entfernt) -->
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem">
 
     <a href="ist-aktien-investieren-halal.html" style="display:block;background:var(--surface2);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(201,168,76,.2)'">
@@ -158,32 +150,12 @@ footer a:hover{color:var(--gold)}
       </div>
     </a>
 
-    <a href="halal-etfs-2026.html" style="display:block;background:var(--surface2);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(201,168,76,.2)'">
-      <img src="https://img.youtube.com/vi/Ywtz7cn7_5I/hqdefault.jpg" alt="Beste Halal ETFs 2026" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
-      <div style="padding:1.25rem">
-        <div style="font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">📈 ETFs</div>
-        <h3 style="font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.6rem;line-height:1.4">Die besten Halal-ETFs 2026 – Datenbasierter Vergleich</h3>
-        <p style="font-size:.78rem;color:var(--muted);line-height:1.6">iShares MSCI World Islamic, Invesco MWIM, AMAL, UMMA – alle analysiert und verglichen.</p>
-        <span style="display:block;margin-top:.75rem;font-size:.72rem;color:var(--gold)">Lesen →</span>
-      </div>
-    </a>
-
     <a href="sukuk-erklaert.html" style="display:block;background:var(--surface2);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(201,168,76,.2)'">
       <img src="https://img.youtube.com/vi/hqtuQIk2OW4/hqdefault.jpg" alt="Sukuk erklärt" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
       <div style="padding:1.25rem">
         <div style="font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">🏦 Sukuk</div>
         <h3 style="font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.6rem;line-height:1.4">Sukuk erklärt – Die islamische Alternative zu Anleihen</h3>
         <p style="font-size:.78rem;color:var(--muted);line-height:1.6">Was sind Sukuk, wie unterscheiden sie sich von Anleihen, und wie investierst du darin?</p>
-        <span style="display:block;margin-top:.75rem;font-size:.72rem;color:var(--gold)">Lesen →</span>
-      </div>
-    </a>
-
-    <a href="halal-dividenden-etfs.html" style="display:block;background:var(--surface2);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.transform='translateY(-3px)';this.style.borderColor='rgba(201,168,76,.5)'" onmouseout="this.style.transform='';this.style.borderColor='rgba(201,168,76,.2)'">
-      <img src="https://img.youtube.com/vi/wEGOTvuAlwM/hqdefault.jpg" alt="Halal Dividenden-ETFs" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
-      <div style="padding:1.25rem">
-        <div style="font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem">💰 Dividenden</div>
-        <h3 style="font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.6rem;line-height:1.4">Halal Dividenden-ETFs – Gibt es sie wirklich?</h3>
-        <p style="font-size:.78rem;color:var(--muted);line-height:1.6">Warum klassische Dividenden-ETFs scheitern und welche Alternativen es für Muslime gibt.</p>
         <span style="display:block;margin-top:.75rem;font-size:.72rem;color:var(--gold)">Lesen →</span>
       </div>
     </a>
@@ -200,22 +172,9 @@ footer a:hover{color:var(--gold)}
 const hBtn=document.getElementById('hamburgerBtn');
 const mNav=document.getElementById('mobileNav');
 if(hBtn&&mNav){
-  hBtn.addEventListener('click',()=>{
-    const o=mNav.classList.toggle('open');
-    hBtn.classList.toggle('open',o);
-    hBtn.setAttribute('aria-expanded',String(o));
-    document.body.style.overflow=o?'hidden':'';
-  });
-  mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-    mNav.classList.remove('open');hBtn.classList.remove('open');
-    hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';
-  }));
-  document.addEventListener('keydown',e=>{
-    if(e.key==='Escape'&&mNav.classList.contains('open')){
-      mNav.classList.remove('open');hBtn.classList.remove('open');
-      hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';
-    }
-  });
+  hBtn.addEventListener('click',()=>{const o=mNav.classList.toggle('open');hBtn.classList.toggle('open',o);hBtn.setAttribute('aria-expanded',String(o));document.body.style.overflow=o?'hidden':'';});
+  mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mNav.classList.remove('open');hBtn.classList.remove('open');hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';}));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mNav.classList.contains('open')){mNav.classList.remove('open');hBtn.classList.remove('open');hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';}});
 }
 </script>
 </body>
