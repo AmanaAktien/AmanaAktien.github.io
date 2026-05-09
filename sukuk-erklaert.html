@@ -11,6 +11,11 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8860B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white'>☪</text></svg>">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Sukuk erklärt – Die islamische Alternative zu Anleihen | Amana Aktien</title>
+<meta name="description" content="Was sind Sukuk? Wie unterscheiden sie sich von konventionellen Anleihen? Typen, Renditen, und wie du als Muslim in Sukuk investieren kannst – erklärt von Amana Aktien.">
+<meta property="og:title" content="Sukuk erklärt – Die islamische Alternative zu Anleihen | Amana Aktien">
+<meta property="og:description" content="Was sind Sukuk? Wie unterscheiden sie sich von konventionellen Anleihen? Typen, Renditen, und wie du als Muslim in Sukuk investieren kannst – erklärt von Amana Aktien.">
+<meta property="og:image" content="https://img.youtube.com/vi/hqtuQIk2OW4/hqdefault.jpg">
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -19,18 +24,29 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 :root{--gold:#C9A84C;--gold-dim:#A07830;--gold-glow:rgba(201,168,76,.15);--surface:#161616;--surface2:#1E1E1E;--border:rgba(201,168,76,.2);--text:#E8E4DC;--muted:#888;--green:#3D9970;--green-bg:rgba(61,153,112,.12)}
 h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
+
+/* ── NAV ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:62px}
 .nav-brand{display:flex;align-items:center;gap:.75rem}
 .nav-logo{width:36px;height:36px;border-radius:6px;background:var(--gold);display:grid;place-items:center;font-size:1.1rem;flex-shrink:0}
 .brand-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:.02em}
 .brand-sub{font-size:.52rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
+.nav-links{display:flex;align-items:center;gap:.35rem;list-style:none}
 .nav-links a{padding:.45rem .85rem;font-size:.78rem;font-weight:500;color:var(--muted);border-radius:4px;transition:color .2s,background .2s}
-.nav-links a:hover,.nav-links a.active{color:var(--text);background:rgba(255,255,255,.06)}
-.btn-yt{background:var(--gold)!important;color:#0D0D0D!important;font-weight:700!important;padding:.45rem 1rem!important;border-radius:4px!important;font-size:.76rem!important;letter-spacing:.04em}
-.btn-yt:hover{background:var(--gold-dim)!important}
-/* Article Layout */
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.06)}
+.nav-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:8px;transition:background .2s}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:1px solid var(--border);border-radius:4px;padding:8px;cursor:pointer;width:38px;height:38px;align-items:center;justify-content:center}
+.hamburger span{display:block;width:18px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mobile-nav{position:fixed;top:62px;left:0;right:0;bottom:0;background:rgba(13,13,13,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;opacity:0;pointer-events:none;transition:opacity .3s;z-index:99}
+.mobile-nav.open{opacity:1;pointer-events:all}
+.mobile-nav a{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--text);transition:color .2s}
+.mobile-nav a:hover{color:var(--gold)}
+
+/* ── ARTICLE ── */
 .article-wrap{max-width:780px;margin:0 auto;padding:4rem 2rem 6rem}
 .article-breadcrumb{font-size:.72rem;color:var(--muted);margin-bottom:2rem;display:flex;align-items:center;gap:.5rem}
 .article-breadcrumb a{color:var(--gold);transition:opacity .2s}
@@ -50,11 +66,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-fil
 .article-body strong{color:var(--text);font-weight:700}
 .article-body a{color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);transition:border-color .2s}
 .article-body a:hover{border-color:var(--gold)}
-/* Info box */
 .info-box{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:4px;padding:1.25rem 1.5rem;margin:2rem 0}
 .info-box-title{font-weight:700;font-size:.85rem;color:var(--gold);margin-bottom:.5rem}
 .info-box p{margin:0;font-size:.85rem;color:var(--muted);line-height:1.7}
-/* Table */
 .article-table-wrap{overflow-x:auto;margin:2rem 0;border-radius:6px;border:1px solid var(--border)}
 .article-table{width:100%;border-collapse:collapse;font-size:.82rem}
 .article-table th{background:var(--surface2);color:var(--gold);font-weight:700;padding:.75rem 1rem;text-align:left;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
@@ -62,20 +76,16 @@ nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-fil
 .article-table tr:hover td{background:rgba(255,255,255,.02)}
 .badge-halal{background:rgba(61,153,112,.15);color:#3D9970;border:1px solid rgba(61,153,112,.3);padding:.2rem .55rem;border-radius:3px;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
 .badge-haram{background:rgba(239,68,68,.12);color:#ef4444;border:1px solid rgba(239,68,68,.25);padding:.2rem .55rem;border-radius:3px;font-size:.65rem;font-weight:700;white-space:nowrap}
-/* YouTube embed */
 .yt-embed{margin:2.5rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);background:#000;aspect-ratio:16/9}
 .yt-embed iframe{width:100%;height:100%;border:none;display:block}
 .yt-caption{font-size:.72rem;color:var(--muted);margin-top:.5rem;text-align:center}
-/* Key Takeaways */
 .takeaways{background:linear-gradient(135deg,#0F1A0F,#152215);border:1px solid rgba(61,153,112,.25);border-radius:8px;padding:2rem;margin:3rem 0}
 .takeaways-title{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1rem}
 .takeaways ul{list-style:none;padding:0}
 .takeaways li{display:flex;align-items:flex-start;gap:.75rem;font-size:.85rem;color:#bbb;margin-bottom:.6rem;line-height:1.6}
 .takeaways li::before{content:"→";color:var(--green);font-weight:700;flex-shrink:0;margin-top:.05rem}
-/* Disclaimer */
 .disclaimer{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:1.25rem;margin:3rem 0;font-size:.72rem;color:#555;line-height:1.65}
 .disclaimer strong{color:#666}
-/* Related articles */
 .related-section{margin-top:4rem;padding-top:2.5rem;border-top:1px solid var(--border)}
 .related-title{font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
 .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
@@ -84,43 +94,68 @@ nav{position:sticky;top:0;z-index:100;background:rgba(13,13,13,.95);backdrop-fil
 .related-card-cat{font-size:.6rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
 .related-card-title{font-size:.85rem;font-weight:700;color:var(--text);line-height:1.4}
 .related-card-link{display:block;margin-top:.75rem;font-size:.72rem;color:var(--gold)}
-/* Footer */
 footer{background:#080808;border-top:1px solid var(--border);padding:2rem;text-align:center}
 footer p{font-size:.68rem;color:#333}
 footer a{color:var(--muted);transition:color .2s}
 footer a:hover{color:var(--gold)}
-@media(max-width:640px){
-  .article-wrap{padding:2.5rem 1rem 4rem}
-  .article-h1{font-size:1.7rem}
-  nav .nav-links{display:none}
-}
+
+@media(max-width:860px){nav .nav-links{display:none}.hamburger{display:flex}}
+@media(max-width:640px){.article-wrap{padding:2.5rem 1rem 4rem}.article-h1{font-size:1.7rem}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
-
-<title>Sukuk erklärt – Die islamische Alternative zu Anleihen | Amana Aktien</title>
-<meta name="description" content="Was sind Sukuk? Wie unterscheiden sie sich von konventionellen Anleihen? Typen, Renditen, und wie du als Muslim in Sukuk investieren kannst – erklärt von Amana Aktien.">
-<meta property="og:title" content="Sukuk erklärt – Die islamische Alternative zu Anleihen | Amana Aktien">
-<meta property="og:description" content="Was sind Sukuk? Wie unterscheiden sie sich von konventionellen Anleihen? Typen, Renditen, und wie du als Muslim in Sukuk investieren kannst – erklärt von Amana Aktien.">
-<meta property="og:image" content="https://img.youtube.com/vi/hqtuQIk2OW4/hqdefault.jpg">
 </head>
 <body>
+
+<!-- ══ NAV ══ -->
 <nav aria-label="Hauptnavigation">
   <div class="nav-inner">
-    <a href="blog.html" class="nav-brand" aria-label="Amana Aktien Startseite">
+    <a href="index.html" class="nav-brand" aria-label="Amana Aktien Startseite">
       <div class="nav-logo" aria-hidden="true">☪</div>
       <div><div class="brand-title">Amana Aktien</div><div class="brand-sub">Halal Investieren</div></div>
     </a>
     <ul class="nav-links" role="list">
-      <li><a href="index.html#videos">Videos</a></li>
-      <li><a href="index.html#about">Über uns</a></li>
-      <li><a href="index.html#principles">Grundlagen</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer nofollow" class="btn-yt" aria-label="YouTube Kanal">▶ YouTube</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="halal-etf-liste.html">ETF Liste</a></li>
+      <li>
+        <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer nofollow" aria-label="YouTube"
+           class="nav-icon-btn" style="background:rgba(255,0,0,.15);border:1px solid rgba(255,0,0,.35);"
+           onmouseover="this.style.background='rgba(255,0,0,.3)'" onmouseout="this.style.background='rgba(255,0,0,.15)'">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener noreferrer nofollow" aria-label="TikTok"
+           class="nav-icon-btn" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);"
+           onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.08)'">
+          <svg viewBox="0 0 24 24" width="21" height="21" fill="#ffffff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.79a8.18 8.18 0 0 0 4.78 1.52V6.85a4.85 4.85 0 0 1-1.01-.16z"/></svg>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instagram"
+           class="nav-icon-btn" style="background:rgba(193,53,132,.15);border:1px solid rgba(193,53,132,.4);"
+           onmouseover="this.style.background='rgba(193,53,132,.32)'" onmouseout="this.style.background='rgba(193,53,132,.15)'">
+          <svg viewBox="0 0 24 24" width="21" height="21"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        </a>
+      </li>
     </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-expanded="false" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
-<div class="article-wrap">
 
+<!-- Mobile Nav -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobilmenü">
+  <a href="index.html">Startseite</a>
+  <a href="blog.html">Blog</a>
+  <a href="halal-etf-liste.html">ETF Liste</a>
+  <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener noreferrer nofollow">▶ YouTube ↗</a>
+  <a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener noreferrer nofollow">TikTok ↗</a>
+  <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener noreferrer nofollow">Instagram ↗</a>
+</div>
+
+<!-- ══ ARTIKEL ══ -->
+<div class="article-wrap">
 <nav class="article-breadcrumb" aria-label="Breadcrumb">
   <a href="blog.html">Blog</a><span>›</span><span>Sukuk</span>
 </nav>
@@ -235,10 +270,34 @@ footer a:hover{color:var(--gold)}
     </a>
   </div>
 </div>
-
 </div>
+
 <footer>
-  <p>© 2026 Amana Aktien – Youssef Chafi · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="disclaimer.html">Disclaimer</a></p>
-  <p style="margin-top:.5rem;">⚠️ Keine Anlageberatung. Alle Inhalte dienen der Information und Bildung. Investitionen sind mit Risiken verbunden.</p>
+  <p>© 2026 Amana Aktien – Youssef Chafi · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
+  <p style="margin-top:.5rem">⚠️ Keine Anlageberatung. Alle Inhalte dienen der Information und Bildung. Investitionen sind mit Risiken verbunden.</p>
 </footer>
-</body></html>
+
+<script>
+const hBtn=document.getElementById('hamburgerBtn');
+const mNav=document.getElementById('mobileNav');
+if(hBtn&&mNav){
+  hBtn.addEventListener('click',()=>{
+    const o=mNav.classList.toggle('open');
+    hBtn.classList.toggle('open',o);
+    hBtn.setAttribute('aria-expanded',String(o));
+    document.body.style.overflow=o?'hidden':'';
+  });
+  mNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mNav.classList.remove('open');hBtn.classList.remove('open');
+    hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';
+  }));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&mNav.classList.contains('open')){
+      mNav.classList.remove('open');hBtn.classList.remove('open');
+      hBtn.setAttribute('aria-expanded','false');document.body.style.overflow='';
+    }
+  });
+}
+</script>
+</body>
+</html>
