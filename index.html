@@ -662,6 +662,192 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+/* ══════════════════════════════════════════════
+   SCREENER SECTION – NEU HINZUGEFÜGT
+   Alle Klassen mit sc- Prefix → kein Konflikt
+   ══════════════════════════════════════════════ */
+:root {
+  --red: #C0392B;
+  --red-bg: rgba(192,57,43,.12);
+  --amber: #D4A017;
+  --amber-bg: rgba(212,160,23,.12);
+}
+#screener {
+  background: var(--surface2);
+  position: relative;
+  overflow: visible;
+}
+#screener::before {
+  content: '';
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(201,168,76,.05) 0%, transparent 65%);
+}
+.sc-section-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.sc-wrap {
+  position: relative;
+  max-width: 560px;
+  margin: 0 auto;
+  z-index: 50;
+}
+.sc-icon {
+  position: absolute; left: 16px; top: 50%;
+  transform: translateY(-50%); font-size: 1.1rem;
+  pointer-events: none; z-index: 1;
+}
+#scSearchInput {
+  width: 100%;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 17px 52px 17px 46px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+#scSearchInput:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,168,76,.12);
+}
+#scSearchInput::placeholder { color: var(--muted); }
+.sc-clear-btn {
+  position: absolute; right: 14px; top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  background: var(--surface2); border: none; border-radius: 50%;
+  width: 28px; height: 28px; color: var(--muted);
+  cursor: pointer; font-size: .8rem;
+  align-items: center; justify-content: center;
+  transition: background .15s, color .15s;
+}
+.sc-clear-btn:hover { background: rgba(201,168,76,.15); color: var(--gold); }
+.sc-clear-btn.show { display: flex; }
+
+/* Dropdown */
+.sc-dropdown {
+  display: none;
+  position: fixed;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 9998;
+  box-shadow: 0 24px 48px rgba(0,0,0,.85);
+  max-height: 340px;
+  overflow-y: auto;
+}
+.sc-dropdown.show { display: block; }
+.sc-drop-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 16px; cursor: pointer;
+  border-bottom: 1px solid rgba(201,168,76,.06);
+  transition: background .12s;
+}
+.sc-drop-item:last-child { border-bottom: none; }
+.sc-drop-item:hover { background: var(--surface2); }
+.sc-dl-logo {
+  width: 36px; height: 36px; border-radius: 7px; background: #fff;
+  flex-shrink: 0; overflow: hidden; border: 1px solid rgba(0,0,0,.08);
+  display: flex; align-items: center; justify-content: center;
+}
+.sc-dl-logo img { width: 80%; height: 80%; object-fit: contain; }
+.sc-dl-init {
+  width: 36px; height: 36px; border-radius: 7px;
+  background: var(--gold-glow); border: 1px solid var(--border);
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: var(--gold);
+}
+.sc-dl-name { font-size: .85rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sc-dl-meta { font-size: .7rem; color: var(--muted); margin-top: 1px; display: flex; gap: 6px; }
+.sc-drop-hint { padding: 14px 16px; color: var(--muted); font-size: .8rem; text-align: center; }
+.sc-drop-direct {
+  padding: 11px 16px; color: var(--gold); font-size: .8rem; cursor: pointer;
+  transition: background .12s; border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.sc-drop-direct:hover { background: var(--surface2); }
+
+/* Status */
+#scStatus {
+  display: none; text-align: center; padding: 13px;
+  border-radius: 6px; font-size: .82rem;
+  max-width: 560px; margin: 16px auto 0;
+}
+#scStatus.loading { background: var(--surface); color: var(--gold); border: 1px solid var(--border); }
+#scStatus.error { background: var(--red-bg); color: #E57373; border: 1px solid rgba(192,57,43,.3); }
+
+/* Result */
+#scResult { display: none; max-width: 560px; margin: 28px auto 0; text-align: left; }
+.sc-result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.sc-co-head { padding: 22px 22px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.sc-co-logo { width: 58px; height: 58px; border-radius: 10px; background: #fff; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(0,0,0,.08); }
+.sc-co-logo img { width: 80%; height: 80%; object-fit: contain; }
+.sc-co-init { width: 58px; height: 58px; border-radius: 10px; background: var(--gold-glow); border: 1px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); }
+.sc-co-meta { flex: 1; min-width: 0; }
+.sc-co-ticker { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; line-height: 1; }
+.sc-co-name { color: var(--muted); font-size: .78rem; margin-top: 3px; }
+.sc-co-sector { color: var(--muted); font-size: .7rem; margin-top: 2px; opacity: .65; }
+.sc-status-badge { flex-shrink: 0; padding: 8px 18px; border-radius: 4px; font-size: .75rem; font-weight: 700; border: 1px solid; }
+.sc-sb-halal { background: var(--green-bg); color: var(--green); border-color: rgba(61,153,112,.3); }
+.sc-sb-haram { background: var(--red-bg); color: #E57373; border-color: rgba(192,57,43,.3); }
+.sc-sb-unklar { background: var(--amber-bg); color: var(--amber); border-color: rgba(212,160,23,.3); }
+.sc-sb-unbekannt { background: rgba(120,120,140,.12); color: rgba(255,255,255,.45); border-color: rgba(255,255,255,.1); }
+.sc-badges-row { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.sc-bb-very-high { background: rgba(192,57,43,.15); color: #E57373; border-color: rgba(192,57,43,.4); font-size: .62rem; }
+.sc-bb-high { background: rgba(200,80,20,.12); color: #E8885A; border-color: rgba(200,80,20,.35); font-size: .62rem; }
+.sc-bb-medium { background: rgba(201,168,76,.1); color: var(--amber); border-color: rgba(201,168,76,.3); font-size: .62rem; }
+.sc-bb-low { background: rgba(255,255,255,.05); color: rgba(255,255,255,.4); border-color: rgba(255,255,255,.1); font-size: .62rem; }
+.sc-haram-banner { background: rgba(192,57,43,.08); border-bottom: 1px solid rgba(192,57,43,.2); padding: 13px 22px; display: flex; align-items: flex-start; gap: 10px; font-size: .8rem; color: #E57373; line-height: 1.65; }
+.sc-haram-banner strong { color: #fff; display: block; font-size: .83rem; margin-bottom: 3px; }
+.sc-haram-cat { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; background: rgba(192,57,43,.15); border: 1px solid rgba(192,57,43,.3); border-radius: 4px; padding: 3px 9px; font-size: .7rem; font-weight: 700; color: #E57373; }
+.sc-unklar-banner { background: rgba(212,160,23,.07); border-bottom: 1px solid rgba(212,160,23,.2); padding: 13px 22px; display: flex; align-items: flex-start; gap: 10px; font-size: .8rem; color: var(--amber); line-height: 1.65; }
+.sc-unklar-banner strong { color: #fff; display: block; font-size: .83rem; margin-bottom: 3px; }
+.sc-unbekannt-banner { background: rgba(120,120,140,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 13px 22px; display: flex; align-items: flex-start; gap: 10px; font-size: .8rem; color: rgba(255,255,255,.45); line-height: 1.65; }
+.sc-unbekannt-banner strong { color: rgba(255,255,255,.8); display: block; font-size: .83rem; margin-bottom: 3px; }
+.sc-standards { padding: 12px 22px; border-bottom: 1px solid var(--border); display: flex; gap: 7px; flex-wrap: wrap; background: rgba(0,0,0,.25); }
+.sc-std { padding: 5px 11px; border-radius: 4px; font-size: .7rem; font-weight: 700; font-family: monospace; border: 1px solid; }
+.sc-std.ok { background: var(--green-bg); color: var(--green); border-color: rgba(61,153,112,.25); }
+.sc-std.fail { background: var(--red-bg); color: #E57373; border-color: rgba(192,57,43,.25); }
+.sc-std.uk { background: var(--amber-bg); color: var(--amber); border-color: rgba(212,160,23,.25); }
+.sc-stand { padding: 7px 22px; font-size: .67rem; color: var(--muted); border-bottom: 1px solid var(--border); }
+.sc-kz-block { padding: 20px 22px; border-bottom: 1px solid var(--border); }
+.sc-kz-head { font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.sc-kz-item { margin-bottom: 14px; }
+.sc-kz-item:last-child { margin-bottom: 0; }
+.sc-kz-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; gap: 8px; }
+.sc-kz-label { color: var(--muted); font-size: .82rem; flex: 1; }
+.sc-kz-right { text-align: right; white-space: nowrap; }
+.sc-kz-val { font-weight: 700; font-family: monospace; font-size: .9rem; }
+.sc-kz-limit { color: var(--muted); font-size: .68rem; font-family: monospace; margin-left: 3px; }
+.sc-kv-ok { color: var(--green); }
+.sc-kv-warn { color: var(--amber); }
+.sc-kv-bad { color: #E57373; }
+.sc-kv-neu { color: var(--gold); }
+.sc-balken { height: 3px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden; margin-top: 1px; }
+.sc-balken-fill { height: 100%; border-radius: 2px; }
+.sc-kz-formel { font-size: .71rem; color: rgba(255,255,255,.28); font-family: monospace; margin-top: 4px; }
+.sc-kz-item-neutral { margin-bottom: 6px; opacity: .7; }
+.sc-erl-block { padding: 20px 22px; background: rgba(0,0,0,.3); }
+.sc-erl-head { font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.sc-erl-list { list-style: none; font-size: .8rem; color: var(--muted); line-height: 2; }
+.sc-erl-list li { display: flex; gap: 8px; }
+.sc-erl-list li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+.sc-purif { margin: 0 22px 20px; padding: 14px 16px; background: var(--green-bg); border: 1px solid rgba(61,153,112,.2); border-radius: 6px; font-size: .78rem; color: var(--green); line-height: 1.7; }
+.sc-purif strong { color: #fff; }
+.sc-new-search { display: block; text-align: center; padding: 13px; font-size: .8rem; color: var(--gold); cursor: pointer; border-top: 1px solid var(--border); transition: background .15s; }
+.sc-new-search:hover { background: rgba(201,168,76,.05); }
+@keyframes scFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.sc-fade-in { animation: scFadeUp .4s ease both; }
+@media (max-width: 540px) { #scResult { padding: 0 .5rem; } .sc-section-inner { padding: 0 .5rem; } }
 </style>
 </head>
 <body>
@@ -677,6 +863,7 @@ footer {
       </div>
     </a>
     <ul class="nav-links" role="list">
+      <li><a href="#screener">Screener</a></li>
       <li><a href="#videos">Videos</a></li>
       <li><a href="#about">Über uns</a></li>
       <li><a href="#principles">Grundlagen</a></li>
@@ -699,6 +886,7 @@ footer {
 
 <!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobilmenü">
+  <a href="#screener" class="mobile-link">Screener</a>
   <a href="#videos" class="mobile-link">Videos</a>
   <a href="#about" class="mobile-link">Über uns</a>
   <a href="#principles" class="mobile-link">Grundlagen</a>
@@ -727,11 +915,11 @@ footer {
         Österreich und der Schweiz. Fundamentalbasiert. Zinsfrei. Langfristig.
       </p>
       <div class="hero-actions">
-        <a href="#videos" class="btn-primary">
-          <span aria-hidden="true">▶</span> Neueste Analysen
+        <a href="#screener" class="btn-primary">
+          <span aria-hidden="true">🔍</span> Aktie prüfen
         </a>
-        <a href="#about" class="btn-secondary">
-          Über Amana Aktien
+        <a href="#videos" class="btn-secondary">
+          <span aria-hidden="true">▶</span> Neueste Analysen
         </a>
       </div>
       <div class="hero-stats" role="list">
@@ -816,6 +1004,33 @@ footer {
     </span>
   </div>
 </div>
+
+<!-- ══════════════════════════════════════════════════════
+     SCREENER – NEU HINZUGEFÜGT · direkt nach Trust Bar
+     ══════════════════════════════════════════════════════ -->
+<section class="section" id="screener" aria-labelledby="screener-heading">
+  <div class="sc-section-inner">
+    <div class="section-tag" style="justify-content:center;display:inline-flex;">🔍 Halal-Check</div>
+    <h2 id="screener-heading" style="margin-bottom:.75rem;">
+      Ist diese Aktie <span style="color:var(--gold);">Halal?</span>
+    </h2>
+    <p class="section-lead" style="margin:0 auto 2rem;max-width:480px;text-align:center;">
+      Einfach Firmennamen oder Ticker eingeben – wir prüfen sofort nach
+      AAOIFI, DJIM, FTSE, MSCI &amp; S&amp;P Standard. Kostenlos, auf Deutsch.
+    </p>
+    <div class="sc-wrap">
+      <span class="sc-icon" aria-hidden="true">🔍</span>
+      <input type="text" id="scSearchInput"
+        placeholder="z.B. Tesla, Apple, Siemens, SAP, Nestlé…"
+        autocomplete="off" spellcheck="false"
+        aria-label="Aktie suchen">
+      <button class="sc-clear-btn" id="scClearBtn" onclick="scClear()" aria-label="Suche löschen">✕</button>
+      <div class="sc-dropdown" id="scDropdown" role="listbox"></div>
+    </div>
+    <div id="scStatus" role="status" aria-live="polite"></div>
+    <div id="scResult" aria-live="polite"></div>
+  </div>
+</section>
 
 <!-- ══ VIDEOS ══════════════════════════════════ -->
 <section class="section" id="videos" aria-labelledby="videos-heading">
@@ -1073,7 +1288,6 @@ footer {
   </div>
 </section>
 
-
 <!-- ══ BLOG PREVIEW ══════════════════════════════════ -->
 <section class="section" id="blog" style="background:var(--surface);" aria-labelledby="blog-heading">
   <div class="section-inner">
@@ -1202,7 +1416,6 @@ footer {
         <a href="blog.html">Blog</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
-        
         <a href="https://aaoifi.com" target="_blank" rel="noopener noreferrer nofollow">AAOIFI ↗</a>
       </div>
     </nav>
@@ -1217,7 +1430,7 @@ footer {
   </div>
 </footer>
 
-<!-- ══ JAVASCRIPT ════════════════════════════════ -->
+<!-- ══ JAVASCRIPT (ORIGINAL – UNVERÄNDERT) ══════ -->
 <script>
 'use strict';
 
@@ -1331,6 +1544,357 @@ document.querySelectorAll('.faq-q').forEach(q => {
 });
 </script>
 
+<!-- ══ SCREENER JAVASCRIPT – NEU HINZUGEFÜGT ══ -->
+<!-- Vollständig in IIFE gekapselt → kein Konflikt mit bestehendem Code -->
+<script>
+(function () {
+'use strict';
+
+const SC_WORKER = "https://amana-screener.youssefchafi110800.workers.dev";
+
+// ── Hilfsfunktionen (sc-Prefix) ──────────────────────────────
+function scE(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function scPct(v,d=2){return v==null||!isFinite(v)?"N/A":v.toFixed(d)+"%";}
+function scDom(u){if(!u)return"";try{return new URL(u).hostname.replace(/^www\./,"");}catch{return "";}}
+function scFmt(n,currency){
+  if(n==null||!isFinite(n))return"N/A";
+  const c=currency==="EUR"?"€":currency==="GBP"?"£":currency==="CHF"?"Fr.":"$";
+  const a=Math.abs(n);
+  if(a>=1e12)return(n/1e12).toFixed(2).replace(".",",")+"\u00a0Bio.\u00a0"+c;
+  if(a>=1e9) return(n/1e9).toFixed(2).replace(".",",")+"\u00a0Mrd.\u00a0"+c;
+  if(a>=1e6) return(n/1e6).toFixed(2).replace(".",",")+"\u00a0Mio.\u00a0"+c;
+  return n.toLocaleString("de-DE")+"\u00a0"+c;
+}
+function scSetSt(c,m){const e=document.getElementById("scStatus");e.className=c;e.textContent=m;e.style.display="block";}
+function scHideSt(){document.getElementById("scStatus").style.display="none";}
+
+// ── Ticker-Datenbank ──────────────────────────────────────────
+const SC_TICKERS={
+  "V":{status:"halal_override",grund:"Visa ist ein reines Zahlungsnetzwerk. Keine Zinsen – nur Transaktionsgebühren. Halal nach Musaffa & Zoya."},
+  "MA":{status:"halal_override",grund:"Mastercard ist ein reines Zahlungsnetzwerk ohne eigenes Kreditgeschäft. Halal nach Musaffa & Zoya."},
+  "PYPL":{status:"unklar",emoji:"💳",cat:"Zahlungsabwicklung + Kreditgeschäft",grund:"PayPal betreibt PayPal Credit und BNPL (zinstragende Konsumkredite). Prüfe Zinseinnahmen-Anteil."},
+  "SQ":{status:"unklar",emoji:"💳",cat:"Fintech + Kreditgeschäft",grund:"Block/Cash App Borrow – zinsbasiertes Mikrokreditprodukt neben Zahlungsabwicklung."},
+  "AXP":{status:"unklar",emoji:"💳",cat:"Kreditkartengeschäft mit Zinsen",grund:"American Express ist selbst Kreditgeber mit hohen revolvierende Zinssätzen – Riba."},
+  "BA":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"Boeing: weltgrößter Rüstungskonzern – Kampfjets, Raketen, Drohnen. Klar HARAM."},
+  "LMT":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"Lockheed Martin: F-35, Javelin, HIMARS. HARAM."},
+  "NOC":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"Northrop Grumman: Stealth-Bomber, Drohnen, Raketensysteme. HARAM."},
+  "RTX":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"RTX/Raytheon: Tomahawk-Raketen, Patriot-Systeme. HARAM."},
+  "GD":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"General Dynamics: Abrams-Panzer, Kriegsschiffe. HARAM."},
+  "HII":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"Huntington Ingalls: ausschließlich Kriegsschiffe für US Navy. HARAM."},
+  "PLTR":{status:"haram",emoji:"🕵️",cat:"Militär-KI & Überwachung",grund:"Palantir: Haupteinnahmen aus US-Militär, CIA, NSA – Drohnenangriffe & Massenüberwachung. HARAM."},
+  "AXON":{status:"haram",emoji:"⚔️",cat:"Waffenproduktion",grund:"Axon/Taser produziert Elektroschockwaffen und Bodycams für Militär & Polizei. HARAM."},
+  "MO":{status:"haram",emoji:"🚬",cat:"Tabak",grund:"Altria (Marlboro). HARAM."},
+  "PM":{status:"haram",emoji:"🚬",cat:"Tabak",grund:"Philip Morris International. HARAM."},
+  "BTI":{status:"haram",emoji:"🚬",cat:"Tabak",grund:"British American Tobacco. HARAM."},
+  "BUD":{status:"haram",emoji:"🍺",cat:"Alkohol",grund:"AB InBev – weltgrößter Brauereikonzern (Budweiser, Corona, Stella). HARAM."},
+  "DEO":{status:"haram",emoji:"🍺",cat:"Alkohol",grund:"Diageo – Johnnie Walker, Guinness. HARAM."},
+  "LVS":{status:"haram",emoji:"🎰",cat:"Glücksspiel",grund:"Las Vegas Sands – Casinos weltweit. HARAM."},
+  "WYNN":{status:"haram",emoji:"🎰",cat:"Glücksspiel",grund:"Wynn Resorts – Casinos. HARAM."},
+  "MGM":{status:"haram",emoji:"🎰",cat:"Glücksspiel",grund:"MGM Resorts – Casinos. HARAM."},
+};
+
+const SC_HARAM_R=[
+  {cat:"Rüstung & Waffen",emoji:"⚔️",grund:"Rüstungsunternehmen sind nach allen Shariah-Standards verboten.",kw:["aerospace & defense","aerospace and defense","defense contractor","weapons","ammunition","arms manufacturer","armament","warfare","military contractor","ordnance","combat systems","naval systems","defense electronics","military aircraft"]},
+  {cat:"Alkohol",emoji:"🍺",grund:"Produktion und Vertrieb von Alkohol sind im Islam verboten.",kw:["brewery","brewers","distillery","distillers","wine","winery","wineries","spirits","alcohol","beer","beverages—brewers","beverages - brewers","beverages—wineries","liquor","malt beverages"]},
+  {cat:"Tabak & Nikotin",emoji:"🚬",grund:"Tabakproduktion und -vertrieb sind nach Shariah verboten.",kw:["tobacco","cigarette","cigars","vaping","e-cigarettes","nicotine products"]},
+  {cat:"Glücksspiel",emoji:"🎰",grund:"Glücksspiel (Maysir) ist im Islam kategorisch verboten.",kw:["gambling","casino","casinos & gaming","casinos and gaming","lottery","lotteries","betting","wagering","sports betting","gaming equipment","slot machine"]},
+  {cat:"Pornografie",emoji:"🔞",grund:"Pornografie und Erwachsenenunterhaltung sind nach Shariah verboten.",kw:["adult entertainment","pornography","adult content","adult clubs"]},
+  {cat:"Konventionelles Banking",emoji:"🏦",grund:"Zinsenbasiertes Banking (Riba) ist nach Shariah verboten.",kw:["banks—diversified","banks—regional","banks - diversified","banks - regional","bank—diversified","bank - diversified","mortgage finance","consumer lending","payday lending","money center banks","savings & loans"]},
+  {cat:"Konventionelle Versicherung",emoji:"📋",grund:"Konventionelle Versicherungen enthalten Gharar und Riba.",kw:["insurance—diversified","insurance—life","insurance—property","insurance—specialty","insurance—reinsurance","insurance - diversified","insurance - life","insurance - property","property & casualty insurance","life insurance","reinsurance"]},
+  {cat:"Cannabis (Freizeit)",emoji:"🌿",grund:"Freizeithanf ist als berauschendes Mittel nach Shariah verboten.",kw:["cannabis","marijuana","recreational cannabis","cannabis dispensary"]},
+];
+
+const SC_FRAGW_R=[
+  {cat:"Unterhaltung & Medien",emoji:"📺",grund:"Streaming- und Medienunternehmen können erhebliche haram-Inhalte produzieren. Einnahmestruktur manuell prüfen.",kw:["entertainment","broadcasting","media","streaming","movies & entertainment","music & entertainment","film production"]},
+  {cat:"Werbung & Marketing",emoji:"📣",grund:"Werbeunternehmen bewerben oft haram-Produkte. Hauptkunden prüfen.",kw:["advertising","advertising agencies","marketing services","public relations"]},
+  {cat:"Kapitalmarkt & Brokerage",emoji:"📊",grund:"Traditionelle Kapitalmarktfirmen verdienen oft durch zinsbehaftete Produkte und Derivate.",kw:["capital markets","investment banking","brokerage","asset management","financial conglomerates"]},
+];
+
+function scBizChk(sector,industry,symbol){
+  const sym=(symbol||"").toUpperCase();
+  if(SC_TICKERS[sym]){const e=SC_TICKERS[sym];return{status:e.status==="halal_override"?"halal_override":e.status,cat:e.cat||null,emoji:e.emoji||null,grund:e.grund};}
+  const s=((sector||"")+" "+(industry||"")).toLowerCase();
+  for(const r of SC_HARAM_R){for(const k of r.kw){if(s.includes(k))return{status:"haram",cat:r.cat,emoji:r.emoji,grund:r.grund};}}
+  if((sector||"").toLowerCase()==="financial services"){
+    const isP=s.includes("payment")||s.includes("transaction processing")||s.includes("fintech");
+    const isI=s.includes("islamic")||s.includes("takaful")||s.includes("shariah");
+    if(!isP&&!isI)return{status:"unklar",cat:"Finanzdienstleistungen",emoji:"🏦",grund:`Finanzsektor enthält oft Riba-Elemente. Prüfe ob zinsbehaftete Produkte das Hauptgeschäft sind.`};
+  }
+  for(const r of SC_FRAGW_R){for(const k of r.kw){if(s.includes(k))return{status:"unklar",cat:r.cat,emoji:r.emoji,grund:r.grund};}}
+  return{status:"ok",cat:null,emoji:null,grund:null};
+}
+
+function scOvSt(d,biz){
+  if(biz.status==="halal_override")return"halal";
+  if(biz.status==="haram"||d.is_compliant===false)return"haram";
+  if(biz.status==="unklar")return"unklar";
+  const p=[d.aaoifi_compliant,d.djim_compliant,d.ftse_compliant,d.msci_compliant,d.sp_compliant].filter(Boolean).length;
+  if(p>=4)return"halal";
+  if(p>=2)return"unklar";
+  return"haram";
+}
+
+const SC_BOYC={
+  "AAPL":{level:"low",reason:"R&D-Zentren in Israel"},
+  "CSCO":{level:"high",reason:"Tochtergesellschaften liefern Dienste ans israelische Militär"},
+  "DELL":{level:"high",reason:"150 Mio. $ Server-Auftrag für israelisches Verteidigungsministerium (2023)"},
+  "GOOGL":{level:"medium",reason:"Project Nimbus: Cloud-Dienste für israelische Regierung & Militär"},
+  "GOOG":{level:"medium",reason:"Project Nimbus: Cloud-Dienste für israelische Regierung & Militär"},
+  "INTC":{level:"very_high",reason:"25 Mrd. $ Chipfabrik in Israel (Fab 28, Kiryat Gat)"},
+  "MSFT":{level:"medium",reason:"R&D in Israel, Azure Datacenter Region in Israel (2023)"},
+  "NVDA":{level:"medium",reason:"KI-Aktivitäten in Israel, Übernahme von Mellanox Technologies"},
+  "CAT":{level:"very_high",reason:"D9-Bulldozer für Abriss palästinensischer Häuser eingesetzt"},
+  "AMZN":{level:"medium",reason:"Project Nimbus: Cloud-Dienste für israelische Regierung & Militär"},
+  "ABNB":{level:"very_high",reason:"Listings in illegalen Siedlungen auf besetztem palästinensischem Land"},
+  "BKNG":{level:"very_high",reason:"Bewirbt Unterkünfte in israelischen Siedlungen auf besetztem Land"},
+  "JPM":{level:"high",reason:"Erhebliche Finanzbeziehungen mit israelischen Unternehmen"},
+  "KO":{level:"high",reason:"Coca-Cola Israel: exklusiver Franchisee in Israel"},
+  "PEP":{level:"medium",reason:"Übernahme SodaStream (3,2 Mrd. $), Joint Venture mit Sabra"},
+  "SIE.DE":{level:"high",reason:"Verkehrskontrollsysteme im besetzten Westjordanland"},
+};
+const SC_BCFG={
+  "very_high":{label:"🔴 Boykott: SEHR HOCH",cls:"sc-bb-very-high"},
+  "high":{label:"🟠 Boykott: HOCH",cls:"sc-bb-high"},
+  "medium":{label:"🟡 Boykott: MITTEL",cls:"sc-bb-medium"},
+  "low":{label:"⚪ Boykott: NIEDRIG",cls:"sc-bb-low"},
+};
+function scGtBovc(sym){
+  const b=(sym||"").toUpperCase().split(".")[0];
+  if(SC_BOYC[sym])return SC_BOYC[sym];
+  for(const k of Object.keys(SC_BOYC)){if(k.split(".")[0]===b)return SC_BOYC[k];}
+  return null;
+}
+
+// ── Sucheingabe ───────────────────────────────────────────────
+const scInp=document.getElementById("scSearchInput");
+const scDrop=document.getElementById("scDropdown");
+const scCBtn=document.getElementById("scClearBtn");
+let scDT=null,scLQ="";
+
+function scPosDrop(){
+  const r=scInp.getBoundingClientRect();
+  scDrop.style.left=r.left+"px";
+  scDrop.style.top=(r.bottom+6)+"px";
+  scDrop.style.width=r.width+"px";
+}
+function scCloseDrop(){scDrop.classList.remove("show");scLQ="";}
+
+scInp.addEventListener("input",()=>{
+  const q=scInp.value.trim();
+  scCBtn.classList.toggle("show",q.length>0);
+  if(q.length>0){document.getElementById("scResult").style.display="none";scHideSt();}
+  if(q.length<2){scCloseDrop();return;}
+  clearTimeout(scDT);
+  scDT=setTimeout(()=>scDoSrch(q),380);
+});
+scInp.addEventListener("keydown",e=>{
+  if(e.key==="Enter"){e.preventDefault();scEntDir();}
+  if(e.key==="Escape"){scCloseDrop();scInp.blur();}
+});
+window.addEventListener("scroll",()=>{if(scDrop.classList.contains("show"))scPosDrop();});
+window.addEventListener("resize",()=>{if(scDrop.classList.contains("show"))scPosDrop();});
+document.addEventListener("click",e=>{
+  if(!e.target.closest(".sc-wrap")&&!e.target.closest(".sc-dropdown"))scCloseDrop();
+});
+
+async function scDoSrch(q){
+  if(q===scLQ)return;
+  scLQ=q;
+  scPosDrop();
+  scDrop.innerHTML=`<div class="sc-drop-hint">Suche läuft…</div>`;
+  scDrop.classList.add("show");
+  try{
+    const res=await fetch(`${SC_WORKER}/search?q=${encodeURIComponent(q)}`);
+    const items=await res.json();
+    if(!Array.isArray(items)||!items.length){
+      scDrop.innerHTML=`<div class="sc-drop-hint">Keine Ergebnisse für „${scE(q)}"</div>
+        <div class="sc-drop-direct" onclick="scEntDir()">🔍 „${scE(q)}" direkt als Ticker prüfen →</div>`;
+      return;
+    }
+    scDrop.innerHTML=items.map(it=>{
+      const sym=it.symbol||"",name=it.name||sym;
+      const dom=scDom(it.website||""),init=(name||sym).charAt(0).toUpperCase();
+      const lEl=dom
+        ?`<div class="sc-dl-logo"><img src="https://logo.clearbit.com/${dom}" alt="" loading="lazy"
+            onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?sz=64&domain=${dom}';
+            this.onerror=function(){this.parentElement.className='sc-dl-init';this.parentElement.innerHTML='${init}';}"></div>`
+        :`<div class="sc-dl-init">${init}</div>`;
+      return`<div class="sc-drop-item" onclick="scDoScreen('${scE(sym)}','${scE(name)}')">
+        ${lEl}
+        <div style="flex:1;min-width:0">
+          <div class="sc-dl-name">${scE(name)}</div>
+          <div class="sc-dl-meta"><span>${scE(sym)}</span>${it.exchange?`<span>${scE(it.exchange)}</span>`:""}</div>
+        </div>
+      </div>`;
+    }).join("");
+    scPosDrop();
+  }catch{
+    scDrop.innerHTML=`<div class="sc-drop-hint">Verbindungsfehler.</div>
+      <div class="sc-drop-direct" onclick="scEntDir()">🔍 Direkt als Ticker prüfen →</div>`;
+  }
+}
+
+function scEntDir(){const q=scInp.value.trim().toUpperCase();if(!q)return;scCloseDrop();window.scDoScreen(q,q);}
+
+// ── Globale Funktionen (werden von onclick-Attributen aufgerufen) ──
+window.scClear=function(){
+  scInp.value="";scCBtn.classList.remove("show");scCloseDrop();
+  document.getElementById("scResult").style.display="none";
+  scHideSt();scInp.focus();
+};
+
+window.scEntDir=scEntDir;
+
+window.scDoScreen=async function(ticker,nameHint){
+  scCloseDrop();
+  scInp.value=nameHint||ticker;
+  scSetSt("loading",`Prüfe ${nameHint||ticker}…`);
+  document.getElementById("scResult").style.display="none";
+  try{
+    const res=await fetch(`${SC_WORKER}/screen/${encodeURIComponent(ticker)}`);
+    if(!res.ok)throw new Error(`HTTP ${res.status}`);
+    const data=await res.json();
+    if(data.error)throw new Error(data.error);
+    scRender(data);
+    scHideSt();
+    setTimeout(()=>document.getElementById("scResult").scrollIntoView({behavior:"smooth",block:"nearest"}),100);
+  }catch(e){
+    scSetSt("error","Fehler: "+e.message);
+  }
+};
+
+// ── Render ────────────────────────────────────────────────────
+function scRender(d){
+  const biz=scBizChk(d.sector,d.industry,d.symbol);
+  const boyc=scGtBovc(d.symbol);
+  const fehl=[];
+  if(d.market_cap==null)fehl.push("Börsenwert (Market Cap)");
+  if(d.total_assets==null)fehl.push("Bilanzsumme (Total Assets)");
+  if(d.total_debt==null)fehl.push("Schulden (Total Debt)");
+  if(d.total_revenue==null)fehl.push("Jahresumsatz (Total Revenue)");
+  const dUnv=fehl.length>0&&biz.status!=="haram";
+  const st=dUnv?"unbekannt":scOvSt(d,biz);
+  const bCls=st==="halal"?"sc-sb-halal":st==="haram"?"sc-sb-haram":st==="unbekannt"?"sc-sb-unbekannt":"sc-sb-unklar";
+  const bTxt=st==="halal"?"✅ Halal":st==="haram"?"❌ Nicht Halal":st==="unbekannt"?"❓ Kein Urteil":"⚠️ Fragwürdig";
+
+  const dom=scDom(d.website||"");
+  const init=((d.name||d.symbol||"?").charAt(0)).toUpperCase();
+  const lEl=dom
+    ?`<div class="sc-co-logo"><img src="https://logo.clearbit.com/${dom}" alt="${scE(d.name||'')}"
+        onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?sz=128&domain=${dom}';
+        this.onerror=function(){this.parentElement.className='sc-co-init';this.parentElement.innerHTML='${init}';}"></div>`
+    :`<div class="sc-co-init">${init}</div>`;
+
+  const cur=d.currency||"USD";
+  const sMK=d.debt_to_market_cap_ratio!=null?d.debt_to_market_cap_ratio*100:null;
+  const zRev=d.interest_income_to_revenue_ratio!=null?d.interest_income_to_revenue_ratio*100:null;
+  const rein=d.purification_rate!=null?d.purification_rate:null;
+  const cash=d.cash_to_assets_ratio!=null?d.cash_to_assets_ratio*100:null;
+  const rD=d.total_debt,rM=d.market_cap,rC=d.cash_and_equivalents,rT=d.total_assets,rR=d.total_revenue,rI=d.interest_income;
+  const dTA=(rD!=null&&rT!=null&&rT>0)?(rD/rT)*100:null;
+
+  const stds=[
+    {id:"AAOIFI",ok:d.aaoifi_compliant},
+    {id:"DJIM",ok:d.djim_compliant},
+    {id:"FTSE",ok:d.ftse_compliant&&(dTA==null||dTA<=33)},
+    {id:"MSCI",ok:d.msci_compliant&&(dTA==null||dTA<=33.33)},
+    {id:"S&P",ok:d.sp_compliant},
+  ];
+
+  const kzIt=[
+    sMK!=null&&{label:"Schulden / Marktwert",val:sMK,limit:30,formel:rD!=null&&rM!=null?`${scFmt(rD,cur)} ÷ ${scFmt(rM,cur)}`:null},
+    dTA!=null&&{label:"Schulden / Bilanzsumme",val:dTA,limit:33,formel:rD!=null&&rT!=null?`${scFmt(rD,cur)} ÷ ${scFmt(rT,cur)}`:null},
+    zRev!=null&&{label:"Zinserträge / Umsatz",val:zRev,limit:5,formel:rI!=null&&rR!=null?`${scFmt(rI,cur)} ÷ ${scFmt(rR,cur)}`:null},
+    rein!=null&&{label:"Reinigungssatz",val:rein,limit:5,formel:null},
+  ].filter(Boolean);
+
+  const dat=d.last_checked_at?d.last_checked_at.split("T")[0]:new Date().toISOString().split("T")[0];
+
+  const buls=[];
+  if(biz.status==="halal_override")buls.push(biz.grund);
+  else if(biz.status!=="ok")buls.push(biz.grund);
+  else buls.push(d.business_screen_reason||"Geschäftsbereich ist scharia-konform.");
+  if(sMK!=null)buls.push(`Schulden/Marktwert: ${scPct(sMK)} (AAOIFI ≤30%)`);
+  if(dTA!=null)buls.push(`Schulden/Bilanzsumme: ${scPct(dTA)} (FTSE/MSCI ≤33%)`);
+  if(cash!=null)buls.push(`Cash-Quote: ${scPct(cash)}`);
+  if(zRev!=null)buls.push(`Zinserträge: ${scPct(zRev)}`);
+  if(rein!=null)buls.push(`Reinigungssatz: ${scPct(rein)}`);
+  if(boyc)buls.push(`⚠️ Boykott-Hinweis: ${boyc.reason}`);
+  buls.push("AAOIFI: Schulden/MK ≤30%, Zinsen ≤5% | FTSE/MSCI: Schulden/Bilanzsumme ≤33%");
+
+  let ban="";
+  if(dUnv){
+    ban=`<div class="sc-unbekannt-banner"><span style="font-size:1.4rem;flex-shrink:0">❓</span>
+      <div><strong>Bilanzdaten unvollständig — kein Urteil möglich</strong>
+      <ul style="margin:6px 0 0;padding-left:16px;font-size:.8rem;opacity:.8">${fehl.map(f=>`<li>${scE(f)}</li>`).join("")}</ul>
+      <div style="margin-top:8px;font-size:.75rem;opacity:.6">Nach dem nächsten nächtlichen Update (02:00 UTC) werden die Daten ergänzt.</div>
+      </div></div>`;
+  }else if(biz.status==="haram"){
+    ban=`<div class="sc-haram-banner"><span style="font-size:1.4rem;flex-shrink:0">${biz.emoji||"🚫"}</span>
+      <div><strong>Verbotene Branche – Nicht Halal</strong>${scE(biz.grund)}
+      ${biz.cat?`<div><span class="sc-haram-cat">🚫 ${scE(biz.cat)}</span></div>`:""}</div></div>`;
+  }else if(biz.status==="unklar"){
+    ban=`<div class="sc-unklar-banner"><span style="font-size:1.4rem;flex-shrink:0">${biz.emoji||"⚠️"}</span>
+      <div><strong>⚠️ Manuelle Prüfung empfohlen – ${scE(biz.cat||"Fragwürdige Branche")}</strong>${scE(biz.grund)}</div></div>`;
+  }else if(biz.status==="halal_override"){
+    ban=`<div class="sc-unklar-banner" style="background:rgba(61,153,112,.07);border-bottom-color:rgba(61,153,112,.2)">
+      <span style="font-size:1.4rem;flex-shrink:0">✅</span>
+      <div style="color:var(--green)"><strong style="color:#fff">Hauptgeschäft geprüft – Zahlungsnetzwerk (kein Riba)</strong>${scE(biz.grund)}</div></div>`;
+  }
+
+  document.getElementById("scResult").innerHTML=`
+  <div class="sc-result-card sc-fade-in">
+    <div class="sc-co-head">
+      ${lEl}
+      <div class="sc-co-meta">
+        <div class="sc-co-ticker">${scE(d.symbol||"")}</div>
+        <div class="sc-co-name">${scE(d.name||"")}</div>
+        <div class="sc-co-sector">${scE(d.sector||"")}${d.industry?" · "+scE(d.industry):""}</div>
+      </div>
+      <div class="sc-badges-row">
+        <div class="sc-status-badge ${bCls}">${bTxt}</div>
+        ${boyc?`<div class="sc-status-badge ${SC_BCFG[boyc.level].cls}">${SC_BCFG[boyc.level].label}</div>`:""}
+      </div>
+    </div>
+    ${ban}
+    <div class="sc-standards">
+      ${dUnv
+        ?stds.map(s=>`<div class="sc-std uk">? ${scE(s.id)}</div>`).join("")
+        :stds.map(s=>{const c=s.ok==null?"uk":s.ok?"ok":"fail";const i=s.ok==null?"?":s.ok?"✓":"✗";return`<div class="sc-std ${c}">${i} ${scE(s.id)}</div>`;}).join("")
+      }
+    </div>
+    <div class="sc-stand">Shariah-Status · Geprüft am: ${dat}</div>
+    ${kzIt.length?`<div class="sc-kz-block"><div class="sc-kz-head">Finanzkennzahlen</div>
+      ${kzIt.map(r=>{
+        const ok=r.val<=r.limit,w2=r.val<=r.limit*1.3;
+        const c2=ok?"sc-kv-ok":w2?"sc-kv-warn":"sc-kv-bad";
+        const col=ok?"#3D9970":w2?"#C9A84C":"#C0392B";
+        const wp=Math.min((r.val/(r.limit*1.5))*100,100).toFixed(1);
+        return`<div class="sc-kz-item">
+          <div class="sc-kz-row"><span class="sc-kz-label">${r.label}</span>
+            <span class="sc-kz-right"><span class="sc-kz-val ${c2}">${scPct(r.val)}</span><span class="sc-kz-limit">/ ≤${r.limit}%</span></span>
+          </div>
+          <div class="sc-balken"><div class="sc-balken-fill" style="width:${wp}%;background:${col}"></div></div>
+          ${r.formel?`<div class="sc-kz-formel">${scE(r.formel)} = ${scPct(r.val)}</div>`:""}
+        </div>`;
+      }).join("")}
+      ${cash!=null?`<div class="sc-kz-item sc-kz-item-neutral"><div class="sc-kz-row"><span class="sc-kz-label">Cash-Quote</span><span class="sc-kz-val sc-kv-neu">${scPct(cash)}</span></div></div>`:""}
+      ${rM!=null?`<div class="sc-kz-item sc-kz-item-neutral"><div class="sc-kz-row"><span class="sc-kz-label">Börsenwert</span><span class="sc-kz-val" style="color:var(--gold)">${scFmt(rM,cur)}</span></div></div>`:""}
+      ${rR!=null?`<div class="sc-kz-item sc-kz-item-neutral"><div class="sc-kz-row"><span class="sc-kz-label">Jahresumsatz</span><span class="sc-kz-val" style="color:var(--gold)">${scFmt(rR,cur)}</span></div></div>`:""}
+    </div>`:""}
+    <div class="sc-erl-block"><div class="sc-erl-head">Erläuterung</div>
+      <ul class="sc-erl-list">${buls.map(b=>`<li>${scE(b)}</li>`).join("")}</ul>
+    </div>
+    ${st==="halal"&&rein!=null&&rein>0?`<div class="sc-purif">
+      🌿 <strong>Purification:</strong> Pro 100 € Dividende <strong>${scPct(rein)}</strong> spenden = <strong>${rein.toFixed(2)} €</strong>.
+    </div>`:""}
+    <div class="sc-new-search" onclick="scClear()">↩ Neue Suche starten</div>
+  </div>`;
+  document.getElementById("scResult").style.display="block";
+}
+
+})();
+</script>
 
 <!-- ═══════════════════════════════════════
   DSGVO Cookie-Banner – Amana Aktien Design
