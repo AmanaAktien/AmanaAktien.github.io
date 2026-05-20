@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,1999 +7,799 @@
 <meta name="description" content="Scharia-konforme Aktien- und ETF-Analysen auf Deutsch. Nach AAOIFI-Standard geprüft. Für Muslime in Deutschland, Österreich und der Schweiz – von Youssef Chafi.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://amanaaktien.github.io/">
-<meta name="geo.region" content="DE">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Amana Aktien – Halal Investieren auf Deutsch">
 <meta property="og:description" content="Scharia-konforme ETF- und Aktienanalysen nach AAOIFI-Standard. Für Muslime im DACH-Raum.">
-<meta property="og:url" content="https://amanaaktien.github.io/">
 <meta property="og:image" content="https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg">
 <meta property="og:locale" content="de_DE">
 <meta name="twitter:card" content="summary_large_image">
-
-<!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8860B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white'>☪</text></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8860B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white'>☪</text></svg>">
 
-<!-- Fonts: Playfair Display + DM Sans, self-hosted via Google Fonts proxy -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-<!-- JSON-LD: Organization -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Amana Aktien",
-  "url": "https://amanaaktien.github.io",
-  "logo": "https://amanaaktien.github.io/favicon.svg",
-  "founder": {"@type": "Person", "name": "Youssef Chafi"},
-  "sameAs": [
-    "https://www.youtube.com/@AmanaAktien",
-    "https://www.instagram.com/amanaaktien",
-    "https://www.tiktok.com/@amanaaktien"
-  ],
-  "description": "Scharia-konforme Aktien- und ETF-Analysen nach AAOIFI-Standard auf Deutsch."
-}
+<!-- Apply theme before page renders to avoid flash -->
+<script>
+(function(){
+  var t=localStorage.getItem('aa_theme')||'dark';
+  document.documentElement.setAttribute('data-theme',t);
+})();
 </script>
 
-<!-- JSON-LD: FAQPage -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "Was ist Halal Investieren?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Halal Investieren bedeutet Geld nach islamischen Grundsätzen anlegen: kein Zins (Riba), keine Investitionen in verbotene Branchen und keine übermäßige Spekulation."}},
-    {"@type": "Question", "name": "Was ist der AAOIFI-Standard?",
-     "acceptedAnswer": {"@type": "Answer", "text": "AAOIFI legt Grenzwerte für scharia-konforme Investments fest: Schuldenquote unter 33%, Zinseinnahmen unter 5% des Umsatzes."}},
-    {"@type": "Question", "name": "Was ist Purification?",
-     "acceptedAnswer": {"@type": "Answer", "text": "Purification ist die Reinigung kleiner unreiner Einnahmen (max. 5%) durch eine Spende in entsprechender Höhe an wohltätige Zwecke."}}
-  ]
-}
+{"@context":"https://schema.org","@type":"Organization","name":"Amana Aktien","url":"https://amanaaktien.github.io","founder":{"@type":"Person","name":"Youssef Chafi"},"sameAs":["https://www.youtube.com/@AmanaAktien","https://www.instagram.com/amanaaktien","https://www.tiktok.com/@amanaaktien"],"description":"Scharia-konforme Aktien- und ETF-Analysen nach AAOIFI-Standard auf Deutsch."}
 </script>
 
 <style>
-/* ── RESET & BASE ───────────────────────────── */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: #0D0D0D;
-  color: #E8E4DC;
-  line-height: 1.6;
-  overflow-x: hidden;
+/* ════════════════════════════════════════════════
+   THEME TOKENS
+   ════════════════════════════════════════════════ */
+:root,[data-theme="dark"]{
+  --bg:#0D0D0D;--bg2:#161616;--bg3:#1E1E1E;
+  --text:#E8E4DC;--text2:#bbb;--muted:#666;
+  --border:rgba(201,168,76,.2);--border2:rgba(255,255,255,.06);
+  --gold:#C9A84C;--gold-glow:rgba(201,168,76,.12);--gold-dim:#A07830;
+  --green:#3D9970;--green-bg:rgba(61,153,112,.1);
+  --nav-bg:rgba(13,13,13,.96);
+  --shadow:0 8px 40px rgba(0,0,0,.5);
+  --card-shadow:0 4px 20px rgba(0,0,0,.4);
 }
-a { text-decoration: none; color: inherit; }
-img { display: block; max-width: 100%; }
-
-/* ── TOKENS ────────────────────────────────── */
-:root {
-  --gold: #C9A84C;
-  --gold-dim: #A07830;
-  --gold-glow: rgba(201, 168, 76, 0.15);
-  --surface: #161616;
-  --surface2: #1E1E1E;
-  --border: rgba(201, 168, 76, 0.2);
-  --text: #E8E4DC;
-  --muted: #888;
-  --green: #3D9970;
-  --green-bg: rgba(61, 153, 112, 0.12);
+[data-theme="light"]{
+  --bg:#F8F6F1;--bg2:#FFFFFF;--bg3:#F0EDE6;
+  --text:#1A1814;--text2:#555;--muted:#999;
+  --border:rgba(160,120,48,.2);--border2:rgba(0,0,0,.06);
+  --gold:#A07830;--gold-glow:rgba(160,120,48,.1);--gold-dim:#7A5C20;
+  --green:#2D7A55;--green-bg:rgba(45,122,85,.09);
+  --nav-bg:rgba(248,246,241,.97);
+  --shadow:0 8px 40px rgba(0,0,0,.1);
+  --card-shadow:0 4px 20px rgba(0,0,0,.08);
 }
 
-/* ── TYPOGRAPHY ────────────────────────────── */
-h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.15; }
+/* ════════════════════════════════════════════════
+   RESET & BASE
+   ════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);color:var(--text);
+  line-height:1.6;overflow-x:hidden;
+  transition:background .25s ease,color .25s ease;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.15}
 
-/* ── NAV ───────────────────────────────────── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(13, 13, 13, 0.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 2rem;
+/* ════════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════════ */
+.hero{
+  min-height:92vh;display:flex;align-items:center;
+  position:relative;overflow:hidden;padding:5rem 2rem 4rem;
 }
-.nav-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  height: 62px;
+.hero-bg{
+  position:absolute;inset:0;pointer-events:none;
 }
-.nav-brand {
-  display: flex; align-items: center; gap: .75rem;
+.hero-bg::before{
+  content:'';position:absolute;
+  top:-80px;right:-60px;width:500px;height:500px;
+  background:radial-gradient(ellipse at center,rgba(201,168,76,.09) 0%,transparent 65%);
+  border-radius:50%;
+  transition:background .25s;
 }
-.nav-logo {
-  width: 36px; height: 36px; border-radius: 6px;
-  background: var(--gold); display: grid; place-items: center;
-  font-size: 1.1rem; flex-shrink: 0;
+[data-theme="light"] .hero-bg::before{
+  background:radial-gradient(ellipse at center,rgba(160,120,48,.08) 0%,transparent 65%);
 }
-.brand-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem; font-weight: 700;
-  color: var(--text); letter-spacing: .02em;
-}
-.brand-sub {
-  font-size: .52rem; font-weight: 600; letter-spacing: .2em;
-  text-transform: uppercase; color: var(--gold);
-}
-.nav-links {
-  display: flex; align-items: center; gap: .25rem; list-style: none;
-}
-.nav-links a {
-  padding: .45rem .85rem; font-size: .78rem; font-weight: 500;
-  color: var(--muted); border-radius: 4px;
-  transition: color .2s, background .2s;
-}
-.nav-links a:hover { color: var(--text); background: rgba(255,255,255,.06); }
-.btn-yt {
-  background: var(--gold); color: #0D0D0D !important;
-  font-weight: 700 !important; padding: .45rem 1rem !important;
-  border-radius: 4px !important; font-size: .76rem !important;
-  letter-spacing: .04em;
-  transition: background .2s !important;
-}
-.btn-yt:hover { background: var(--gold-dim) !important; }
-
-/* Mobile hamburger */
-.hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: 1px solid var(--border);
-  border-radius: 4px; padding: 8px; cursor: pointer;
-  width: 38px; height: 38px; align-items: center; justify-content: center;
-}
-.hamburger span {
-  display: block; width: 18px; height: 1.5px;
-  background: var(--text); border-radius: 2px;
-  transition: all .3s;
-}
-.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-.mobile-nav {
-  position: fixed; top: 62px; left: 0; right: 0; bottom: 0;
-  background: rgba(13,13,13,.97);
-  display: flex; flex-direction: column; align-items: center;
-  justify-content: center; gap: 1.5rem;
-  opacity: 0; pointer-events: none;
-  transition: opacity .3s;
-  z-index: 99;
-}
-.mobile-nav.open { opacity: 1; pointer-events: all; }
-.mobile-nav a {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem; color: var(--text);
-  transition: color .2s;
-}
-.mobile-nav a:hover { color: var(--gold); }
-
-/* ── HERO ──────────────────────────────────── */
-.hero {
-  min-height: 90vh;
-  display: flex; align-items: center;
-  position: relative; overflow: hidden;
-  padding: 5rem 2rem;
-}
-
-/* Geometric background */
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(201,168,76,.08) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(61,153,112,.06) 0%, transparent 50%);
-  pointer-events: none;
-}
-.hero-grid-lines {
-  position: absolute; inset: 0;
+.hero-grid{
+  position:absolute;inset:0;
   background-image:
-    linear-gradient(rgba(201,168,76,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,168,76,.04) 1px, transparent 1px);
-  background-size: 80px 80px;
-  pointer-events: none;
+    linear-gradient(var(--border2) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border2) 1px,transparent 1px);
+  background-size:80px 80px;
+}
+.hero-inner{
+  max-width:1100px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;
+  position:relative;z-index:1;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--gold);background:var(--gold-glow);
+  border:1px solid var(--border);
+  padding:.35rem .85rem;border-radius:20px;margin-bottom:1.5rem;
+}
+.hero h1{
+  font-size:clamp(2.2rem,4vw,3.6rem);
+  font-weight:900;color:var(--text);line-height:1.08;margin-bottom:1.25rem;
+}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-desc{
+  font-size:.95rem;color:var(--muted);line-height:1.85;
+  margin-bottom:2rem;max-width:440px;
+}
+.hero-actions{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--gold);color:#0D0D0D;
+  font-weight:700;font-size:.82rem;
+  padding:.75rem 1.5rem;border-radius:4px;letter-spacing:.04em;
+  transition:opacity .2s,transform .15s;
+}
+.btn-primary:hover{opacity:.88;transform:translateY(-1px)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:transparent;color:var(--text2);
+  font-weight:600;font-size:.82rem;
+  padding:.75rem 1.5rem;border-radius:4px;
+  border:1px solid var(--border);
+  transition:border-color .2s,background .2s;
+}
+.btn-secondary:hover{border-color:var(--gold);background:var(--gold-glow)}
+.hero-stats{
+  display:flex;gap:2.5rem;margin-top:2.5rem;
+  padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap;
+}
+.stat-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold)}
+.stat-lbl{font-size:.67rem;color:var(--muted);margin-top:.2rem;text-transform:uppercase;letter-spacing:.08em}
+
+/* Hero mosaic */
+.hero-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.mosaic-card{
+  position:relative;border-radius:8px;overflow:hidden;
+  background:var(--bg3);border:1px solid var(--border);
+  aspect-ratio:16/9;transition:transform .3s,border-color .3s;
+}
+.mosaic-card:hover{transform:scale(1.02);border-color:var(--gold)}
+.mosaic-card img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:opacity .3s}
+.mosaic-card:hover img{opacity:1}
+.mosaic-play{
+  position:absolute;inset:0;display:flex;
+  align-items:center;justify-content:center;
+  opacity:0;transition:opacity .25s;
+}
+.mosaic-card:hover .mosaic-play{opacity:1}
+.play-circle{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(0,0,0,.6);border:1.5px solid rgba(255,255,255,.5);
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.mosaic-card:hover .play-circle{background:var(--gold);border-color:var(--gold)}
+.play-tri{
+  width:0;height:0;border-style:solid;
+  border-width:5px 0 5px 9px;
+  border-color:transparent transparent transparent #fff;margin-left:2px;
+}
+.mosaic-card:hover .play-tri{border-color:transparent transparent transparent #0D0D0D}
+
+/* ════════════════════════════════════════════════
+   TRUST BAR
+   ════════════════════════════════════════════════ */
+.trust-bar{
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:var(--bg2);padding:.85rem 2rem;
+  transition:background .25s,border-color .25s;
+}
+.trust-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:2.5rem;flex-wrap:wrap;
+}
+.trust-item{
+  display:flex;align-items:center;gap:.4rem;
+  font-size:.7rem;font-weight:600;color:var(--muted);white-space:nowrap;
+}
+.trust-item.gold{color:var(--gold)}
+
+/* ════════════════════════════════════════════════
+   SECTIONS (generic)
+   ════════════════════════════════════════════════ */
+.section{padding:5.5rem 2rem}
+.section-inner{max-width:1100px;margin:0 auto}
+.section.alt{background:var(--bg2);transition:background .25s}
+.section-tag{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;
+}
+.section-tag::after{content:'';display:block;width:20px;height:1px;background:var(--gold)}
+.section h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--text);margin-bottom:.6rem}
+.section-lead{font-size:.9rem;color:var(--muted);max-width:520px;line-height:1.85;margin-bottom:3rem}
+
+/* ════════════════════════════════════════════════
+   LATEST ANALYSES GRID
+   ════════════════════════════════════════════════ */
+.analyses-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;
+}
+.analyse-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:8px;
+  overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;
+  display:flex;flex-direction:column;position:relative;
+}
+.analyse-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.analyse-card:hover{
+  transform:translateY(-3px);border-color:rgba(201,168,76,.45);
+  box-shadow:var(--card-shadow);
+}
+.analyse-card:hover::before{opacity:1}
+.card-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#111;flex-shrink:0}
+.card-thumb img{
+  width:100%;height:100%;object-fit:cover;
+  opacity:.82;transition:opacity .3s,transform .4s;
+}
+.analyse-card:hover .card-thumb img{opacity:1;transform:scale(1.03)}
+.thumb-play{
+  position:absolute;inset:0;display:flex;align-items:center;
+  justify-content:center;opacity:0;transition:opacity .25s;
+}
+.analyse-card:hover .thumb-play{opacity:1}
+.thumb-play-circle{
+  width:46px;height:46px;border-radius:50%;background:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+}
+.thumb-play-tri{
+  width:0;height:0;border-style:solid;
+  border-width:7px 0 7px 12px;
+  border-color:transparent transparent transparent #0D0D0D;margin-left:2px;
+}
+.card-badges{position:absolute;top:.6rem;left:.6rem;display:flex;gap:.35rem;flex-wrap:wrap}
+.badge{
+  font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.22rem .55rem;border-radius:3px;
+}
+.badge-halal{background:rgba(61,153,112,.85);color:#fff}
+.badge-haram{background:rgba(220,38,38,.8);color:#fff}
+.badge-pending{background:rgba(251,191,36,.8);color:#0D0D0D}
+.badge-sector{background:rgba(0,0,0,.7);color:var(--gold);border:1px solid rgba(201,168,76,.4)}
+.card-body{padding:1.1rem 1.25rem 1.4rem;display:flex;flex-direction:column;gap:.6rem;flex:1}
+.card-ticker{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;color:var(--text)}
+.card-company{font-size:.77rem;color:var(--muted);margin-top:.1rem}
+.card-desc{font-size:.8rem;color:var(--text2);line-height:1.65;flex:1}
+.card-meta{display:flex;align-items:center;gap:.5rem;font-size:.68rem;color:var(--muted);flex-wrap:wrap}
+.card-footer{
+  display:flex;gap:.5rem;padding:.9rem 1.25rem;
+  border-top:1px solid var(--border2);
+}
+.btn-video{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.04em;
+  padding:.42rem .85rem;border-radius:4px;
+  background:var(--gold);color:#0D0D0D;border:none;
+  flex:1;justify-content:center;transition:opacity .2s;
+}
+.btn-video:hover{opacity:.88}
+.btn-artikel{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-size:.7rem;font-weight:700;letter-spacing:.04em;
+  padding:.42rem .85rem;border-radius:4px;
+  background:transparent;color:var(--muted);border:1px solid var(--border);
+  flex:1;justify-content:center;transition:color .2s,border-color .2s;
+}
+.btn-artikel:hover{color:var(--text);border-color:rgba(255,255,255,.2)}
+
+/* All Analyses CTA */
+.analyses-cta{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;margin-top:2.5rem;
+  padding-top:2rem;border-top:1px solid var(--border);
+}
+.analyses-cta p{font-size:.85rem;color:var(--muted)}
+.analyses-cta strong{color:var(--text)}
+
+/* ════════════════════════════════════════════════
+   PREMIUM TEASER
+   ════════════════════════════════════════════════ */
+.premium-section{
+  background:linear-gradient(135deg,var(--bg2) 0%,var(--bg3) 100%);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:5rem 2rem;
+  transition:background .25s;
+}
+.premium-inner{
+  max-width:900px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;
+}
+.premium-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);background:var(--gold-glow);
+  border:1px solid var(--border);padding:.35rem .85rem;border-radius:20px;margin-bottom:1.25rem;
+}
+.premium-inner h2{font-size:clamp(1.6rem,3vw,2.4rem);color:var(--text);margin-bottom:1rem}
+.premium-inner p{font-size:.9rem;color:var(--muted);line-height:1.85;margin-bottom:1.75rem}
+.premium-features{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.premium-features li{
+  display:flex;align-items:flex-start;gap:.75rem;
+  font-size:.85rem;color:var(--text2);line-height:1.6;
+}
+.premium-features li::before{
+  content:'✓';color:var(--green);font-weight:700;flex-shrink:0;margin-top:.1rem;
+}
+.premium-card{
+  background:var(--bg2);border:1px solid var(--border);border-radius:12px;
+  padding:2rem;display:flex;flex-direction:column;gap:1.25rem;
+  box-shadow:var(--card-shadow);
+}
+.premium-price{
+  font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;
+  color:var(--text);line-height:1;
+}
+.premium-price span{font-size:.9rem;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:400}
+.premium-price-note{font-size:.75rem;color:var(--muted);margin-top:.25rem}
+.btn-premium{
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.85rem 1.5rem;border-radius:6px;
+  background:var(--gold);color:#0D0D0D;
+  font-weight:700;font-size:.88rem;letter-spacing:.04em;
+  transition:opacity .2s,transform .15s;text-align:center;
+}
+.btn-premium:hover{opacity:.9;transform:translateY(-1px)}
+.premium-note{font-size:.7rem;color:var(--muted);text-align:center;line-height:1.6}
+
+/* ════════════════════════════════════════════════
+   PRINCIPLES
+   ════════════════════════════════════════════════ */
+.principles-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.25rem;margin-top:1rem;
+}
+.principle-card{
+  padding:2rem 1.5rem;text-align:center;
+  background:var(--bg);border:1px solid var(--border);border-radius:8px;
+  transition:border-color .25s,transform .25s,background .25s;
+}
+.principle-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.principle-arabic{font-size:1.8rem;font-weight:700;color:var(--gold);direction:rtl;margin-bottom:.6rem;line-height:1.2}
+.principle-name{font-weight:700;font-size:.85rem;margin-bottom:.5rem;color:var(--text)}
+.principle-desc{font-size:.76rem;color:var(--muted);line-height:1.65}
+
+/* ════════════════════════════════════════════════
+   BLOG PREVIEW
+   ════════════════════════════════════════════════ */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-bottom:2.5rem}
+.blog-card{
+  display:block;background:var(--bg2);border:1px solid var(--border);
+  border-radius:8px;overflow:hidden;
+  transition:transform .25s,border-color .25s;color:var(--text);
+}
+.blog-card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,.5)}
+.blog-card img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.blog-card-body{padding:1.1rem}
+.blog-cat{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.blog-title{font-size:.85rem;font-weight:700;line-height:1.4;color:var(--text)}
+.blog-link{display:block;font-size:.72rem;color:var(--gold);margin-top:.65rem}
+
+/* ════════════════════════════════════════════════
+   SOCIAL / BROKERS
+   ════════════════════════════════════════════════ */
+.social-grid{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:2.5rem 0}
+.social-card{
+  display:flex;align-items:center;gap:.85rem;
+  padding:1rem 1.5rem;border-radius:6px;
+  border:1px solid var(--border);background:var(--bg2);
+  transition:border-color .2s,transform .2s;min-width:160px;
+}
+.social-card:hover{border-color:var(--gold);transform:translateY(-2px)}
+.social-icon{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.social-name{font-weight:700;font-size:.82rem;color:var(--text)}
+.social-handle{font-size:.68rem;color:var(--muted)}
+.broker-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:2rem;margin-bottom:1rem;text-align:center}
+.broker-cards{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+.broker-card{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.85rem 1.25rem;border-radius:6px;
+  border:1px solid var(--border);background:var(--bg2);
+  transition:border-color .2s;
+}
+.broker-card:hover{border-color:rgba(201,168,76,.4)}
+.broker-logo{width:32px;height:32px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;color:#fff;flex-shrink:0}
+.broker-name{font-weight:700;font-size:.8rem;color:var(--text)}
+.broker-tag{font-size:.64rem;color:var(--muted)}
+.broker-note{font-size:.65rem;color:var(--muted);margin-top:1rem;text-align:center}
+
+/* ════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════ */
+footer{
+  background:var(--bg2);border-top:1px solid var(--border);
+  padding:2.5rem 2rem 1.5rem;
+  transition:background .25s,border-color .25s;
+}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;align-items:flex-start;justify-content:space-between;
+  gap:2rem;flex-wrap:wrap;
+}
+.footer-brand-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--gold)}
+.footer-brand p{font-size:.72rem;color:var(--muted);margin-top:.4rem;max-width:260px;line-height:1.65}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-links a{font-size:.74rem;color:var(--muted);transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{
+  max-width:1100px;margin:1.5rem auto 0;
+  padding-top:1.25rem;border-top:1px solid var(--border2);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.75rem;
+}
+.footer-copy{font-size:.68rem;color:var(--muted)}
+.footer-disc{font-size:.62rem;color:var(--muted);max-width:500px;line-height:1.5}
+
+/* ════════════════════════════════════════════════
+   COOKIE BANNER
+   ════════════════════════════════════════════════ */
+#cb{
+  position:fixed;bottom:0;left:0;right:0;z-index:9999;
+  background:var(--bg2);border-top:1px solid var(--border);
+  backdrop-filter:blur(12px);padding:1.1rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1.25rem;flex-wrap:wrap;
+  font-family:'DM Sans',sans-serif;
+  box-shadow:0 -8px 32px rgba(0,0,0,.4);
+  transition:transform .4s ease;
+}
+#cb.hidden{transform:translateY(100%)}
+#cb-text{font-size:.8rem;color:var(--muted);max-width:580px;line-height:1.6}
+#cb-text a{color:var(--gold)}
+#cb-btns{display:flex;gap:.65rem;flex-shrink:0}
+#cb-btns button{
+  font-family:'DM Sans',sans-serif;font-size:.76rem;font-weight:700;
+  border:none;border-radius:4px;padding:.55rem 1.1rem;cursor:pointer;letter-spacing:.03em;
+}
+#cb-accept{background:var(--gold);color:#0D0D0D}
+#cb-decline{background:var(--bg3);color:var(--text);border:1px solid var(--border)!important}
+#cb-reopen{
+  position:fixed;bottom:1.25rem;right:1.25rem;z-index:9998;
+  background:var(--bg2);border:1px solid var(--border);
+  color:var(--gold);font-size:.7rem;font-weight:700;
+  padding:.45rem .85rem;border-radius:20px;cursor:pointer;
+  font-family:'DM Sans',sans-serif;letter-spacing:.05em;display:none;
 }
 
-.hero-inner {
-  max-width: 1100px; margin: 0 auto; width: 100%;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: center;
-  position: relative; z-index: 1;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: .5rem;
-  font-size: .68rem; font-weight: 700; letter-spacing: .25em;
-  text-transform: uppercase; color: var(--gold);
-  background: var(--gold-glow);
-  border: 1px solid var(--border);
-  padding: .35rem .85rem; border-radius: 20px;
-  margin-bottom: 1.5rem;
-}
-.hero h1 {
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  font-weight: 900; color: #fff;
-  line-height: 1.1; margin-bottom: 1.25rem;
-}
-.hero h1 em { font-style: normal; color: var(--gold); }
-.hero-desc {
-  font-size: .95rem; color: var(--muted);
-  line-height: 1.8; margin-bottom: 2rem;
-  max-width: 440px;
-}
-.hero-actions {
-  display: flex; gap: .75rem; flex-wrap: wrap;
-}
-.btn-primary {
-  display: inline-flex; align-items: center; gap: .5rem;
-  background: var(--gold); color: #0D0D0D;
-  font-weight: 700; font-size: .82rem;
-  padding: .75rem 1.5rem; border-radius: 4px;
-  letter-spacing: .04em;
-  transition: background .2s, transform .15s;
-}
-.btn-primary:hover { background: var(--gold-dim); transform: translateY(-1px); }
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: .5rem;
-  background: transparent; color: var(--text);
-  font-weight: 600; font-size: .82rem;
-  padding: .75rem 1.5rem; border-radius: 4px;
-  border: 1px solid var(--border);
-  transition: border-color .2s, background .2s;
-}
-.btn-secondary:hover { border-color: var(--gold); background: var(--gold-glow); }
-
-/* Stats row */
-.hero-stats {
-  display: flex; gap: 2.5rem; margin-top: 2.5rem;
-  padding-top: 2rem; border-top: 1px solid var(--border);
-}
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem; font-weight: 700; color: var(--gold);
-  line-height: 1;
-}
-.stat-lbl { font-size: .68rem; color: var(--muted); margin-top: .2rem; }
-
-/* Hero right: video mosaic */
-.hero-videos {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: .75rem;
-}
-.hero-video-card {
-  position: relative; border-radius: 8px; overflow: hidden;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  transition: transform .3s, border-color .3s;
-  aspect-ratio: 16/9;
-}
-.hero-video-card:hover { transform: scale(1.02); border-color: var(--gold); }
-.hero-video-card img {
-  width: 100%; height: 100%; object-fit: cover;
-  opacity: .8; transition: opacity .3s;
-}
-.hero-video-card:hover img { opacity: 1; }
-.hero-video-play {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-}
-.play-btn {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(0,0,0,.65);
-  display: flex; align-items: center; justify-content: center;
-  border: 1.5px solid rgba(255,255,255,.5);
-  transition: background .2s, transform .2s;
-}
-.hero-video-card:hover .play-btn {
-  background: var(--gold); border-color: var(--gold);
-  transform: scale(1.1);
-}
-.play-icon {
-  width: 0; height: 0;
-  border-style: solid;
-  border-width: 5px 0 5px 9px;
-  border-color: transparent transparent transparent #fff;
-  margin-left: 2px;
-}
-.hero-video-card:hover .play-icon { border-color: transparent transparent transparent #0D0D0D; }
-
-/* ── TRUST BAR ─────────────────────────────── */
-.trust-bar {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background: var(--surface);
-  padding: 1rem 2rem;
-}
-.trust-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: center;
-  gap: 2.5rem; flex-wrap: wrap;
-}
-.trust-item {
-  display: flex; align-items: center; gap: .45rem;
-  font-size: .72rem; font-weight: 600; color: var(--gold);
-  white-space: nowrap;
-}
-.trust-item .ti-icon { font-size: .9rem; }
-.trust-item.trust-gold { color: var(--gold); }
-
-/* ── SECTIONS ──────────────────────────────── */
-.section { padding: 6rem 2rem; }
-.section-inner { max-width: 1100px; margin: 0 auto; }
-.section-tag {
-  display: inline-flex; align-items: center; gap: .4rem;
-  font-size: .62rem; font-weight: 700; letter-spacing: .22em;
-  text-transform: uppercase; color: var(--gold);
-  margin-bottom: 1rem;
-}
-.section-tag::after { content: ''; display: block; width: 20px; height: 1px; background: var(--gold); }
-.section h2 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 700; color: #fff;
-  margin-bottom: .6rem;
-}
-.section-lead {
-  font-size: .9rem; color: var(--muted); max-width: 520px; line-height: 1.8;
-  margin-bottom: 3rem;
-}
-
-/* ── VIDEOS GRID ───────────────────────────── */
-#videos { background: var(--surface); }
-.videos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.25rem;
-}
-.video-card {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 8px; overflow: hidden;
-  transition: transform .25s, border-color .25s;
-  display: block; color: var(--text);
-}
-.video-card:hover { transform: translateY(-3px); border-color: rgba(201,168,76,.5); }
-.video-thumb {
-  position: relative; aspect-ratio: 16/9;
-  overflow: hidden; background: #111;
-}
-.video-thumb img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform .4s; opacity: .85;
-}
-.video-card:hover .video-thumb img { transform: scale(1.04); opacity: 1; }
-.video-thumb-play {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; transition: opacity .25s;
-}
-.video-card:hover .video-thumb-play { opacity: 1; }
-.vid-play-btn {
-  width: 44px; height: 44px; border-radius: 50%;
-  background: var(--gold);
-  display: flex; align-items: center; justify-content: center;
-}
-.vid-play-icon {
-  width: 0; height: 0; border-style: solid;
-  border-width: 6px 0 6px 11px;
-  border-color: transparent transparent transparent #0D0D0D;
-  margin-left: 3px;
-}
-.video-body { padding: .9rem 1rem 1.1rem; }
-.video-badge {
-  display: inline-block;
-  background: var(--green-bg); color: var(--green);
-  border: 1px solid rgba(61,153,112,.3);
-  font-size: .58rem; font-weight: 700; letter-spacing: .1em;
-  text-transform: uppercase; padding: .2rem .55rem; border-radius: 3px;
-  margin-bottom: .6rem;
-}
-.video-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: .82rem; font-weight: 600;
-  color: var(--text); line-height: 1.4;
-  display: -webkit-box; -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; overflow: hidden;
-}
-.video-meta {
-  display: flex; align-items: center; gap: .75rem;
-  margin-top: .5rem; font-size: .68rem; color: var(--muted);
-}
-.videos-cta {
-  text-align: center; margin-top: 2.5rem;
-}
-
-/* ── ABOUT ─────────────────────────────────── */
-#about .about-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 5rem; align-items: center;
-}
-.about-text p {
-  font-size: .9rem; color: var(--muted); line-height: 1.85; margin-bottom: 1rem;
-}
-.about-author {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1.25rem 1.5rem;
-  background: var(--surface); border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  border-radius: 4px; margin-top: 2rem;
-}
-.author-avatar {
-  width: 52px; height: 52px; border-radius: 50%;
-  background: var(--gold); flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif; font-size: 1.1rem;
-  font-weight: 700; color: #0D0D0D;
-}
-.author-name { font-weight: 700; font-size: .9rem; }
-.author-role { font-size: .75rem; color: var(--muted); margin-top: .1rem; }
-.author-mission { font-size: .7rem; color: var(--gold); font-weight: 600; margin-top: .2rem; }
-
-/* Pillars */
-.pillars { display: flex; flex-direction: column; gap: 1.25rem; }
-.pillar {
-  display: flex; gap: 1.25rem; align-items: flex-start;
-  padding: 1.25rem;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 6px; transition: border-color .2s;
-}
-.pillar:hover { border-color: rgba(201,168,76,.4); }
-.pillar-icon {
-  width: 44px; height: 44px; border-radius: 8px;
-  background: var(--gold-glow); border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; flex-shrink: 0;
-}
-.pillar h4 { font-size: .88rem; font-weight: 700; margin-bottom: .25rem; }
-.pillar p { font-size: .78rem; color: var(--muted); line-height: 1.65; }
-
-/* ── PRINCIPLES ────────────────────────────── */
-#principles { background: var(--surface); }
-.principles-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem; margin-top: 2.5rem;
-}
-.principle-card {
-  padding: 2rem 1.5rem; text-align: center;
-  background: #0D0D0D; border: 1px solid var(--border);
-  border-radius: 8px; transition: border-color .25s, transform .25s;
-}
-.principle-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-.principle-arabic {
-  font-size: 1.8rem; font-weight: 700; color: var(--gold);
-  direction: rtl; margin-bottom: .6rem; line-height: 1.2;
-}
-.principle-name {
-  font-weight: 700; font-size: .85rem; margin-bottom: .5rem; color: #fff;
-}
-.principle-desc { font-size: .76rem; color: var(--muted); line-height: 1.65; }
-
-/* ── PURIFICATION ──────────────────────────── */
-#purification .purif-inner {
-  background: linear-gradient(135deg, #0F1F0F, #152215);
-  border: 1px solid rgba(61,153,112,.3);
-  border-radius: 12px; padding: 3rem;
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 4rem; align-items: center;
-}
-.purif-title { font-size: 1.6rem; color: #fff; margin-bottom: 1rem; }
-.purif-desc { font-size: .88rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
-.purif-steps { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
-.purif-step {
-  display: flex; align-items: flex-start; gap: .9rem;
-}
-.step-num {
-  width: 26px; height: 26px; border-radius: 50%;
-  background: var(--green); color: #fff; flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .72rem; font-weight: 700;
-}
-.step-text { font-size: .82rem; color: var(--muted); line-height: 1.6; padding-top: .2rem; }
-.purif-formula {
-  background: rgba(0,0,0,.4);
-  border: 1px solid rgba(61,153,112,.25);
-  border-radius: 8px; padding: 2rem; text-align: center;
-}
-.purif-formula-label {
-  font-size: .68rem; font-weight: 700; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--green); margin-bottom: 1.5rem;
-}
-.formula-row {
-  display: flex; align-items: center; justify-content: center;
-  gap: .75rem; flex-wrap: wrap; margin-bottom: .5rem;
-}
-.formula-val {
-  background: rgba(61,153,112,.15); border: 1px solid rgba(61,153,112,.3);
-  border-radius: 4px; padding: .5rem .9rem;
-  font-family: 'Playfair Display', serif; font-size: 1rem;
-  font-weight: 700; color: #fff;
-}
-.formula-op { font-size: 1.1rem; color: var(--muted); }
-.formula-result {
-  font-family: 'Playfair Display', serif; font-size: 1.3rem;
-  font-weight: 700; color: var(--green); margin-top: .75rem;
-}
-.formula-example { font-size: .72rem; color: var(--muted); margin-top: .5rem; }
-
-/* ── FAQ ───────────────────────────────────── */
-#faq { background: var(--surface); }
-.faq-list { display: flex; flex-direction: column; gap: .5rem; margin-top: 2.5rem; }
-.faq-item {
-  background: #0D0D0D; border: 1px solid var(--border);
-  border-radius: 6px; overflow: hidden;
-  transition: border-color .2s;
-}
-.faq-item.open { border-color: rgba(201,168,76,.4); }
-.faq-q {
-  width: 100%; text-align: left; background: none; border: none;
-  padding: 1.1rem 1.25rem; cursor: pointer; color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  font-size: .88rem; font-weight: 600;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-}
-.faq-q:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
-.faq-icon {
-  width: 22px; height: 22px; border-radius: 50%;
-  border: 1.5px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: .9rem; color: var(--gold); flex-shrink: 0;
-  transition: transform .3s, border-color .3s;
-}
-.faq-item.open .faq-icon { transform: rotate(45deg); border-color: var(--gold); }
-.faq-a {
-  font-size: .82rem; color: var(--muted); line-height: 1.75;
-  max-height: 0; overflow: hidden;
-  transition: max-height .35s ease, padding .35s ease;
-  padding: 0 1.25rem;
-}
-.faq-item.open .faq-a { max-height: 200px; padding: 0 1.25rem 1.1rem; }
-
-/* ── SOCIAL ────────────────────────────────── */
-#social {
-  padding: 6rem 2rem;
-  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,168,76,.06) 0%, transparent 70%),
-              var(--surface2);
-}
-.social-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-.social-tagline { font-size: .78rem; color: var(--muted); margin-bottom: .5rem; }
-.social-grid {
-  display: flex; justify-content: center; gap: 1rem;
-  flex-wrap: wrap; margin: 2.5rem 0;
-}
-.social-card {
-  display: flex; align-items: center; gap: .85rem;
-  padding: 1rem 1.5rem; border-radius: 6px;
-  border: 1px solid var(--border); background: var(--surface);
-  transition: border-color .2s, transform .2s;
-  min-width: 160px;
-}
-.social-card:hover { border-color: var(--gold); transform: translateY(-2px); }
-.social-icon {
-  width: 38px; height: 38px; border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; flex-shrink: 0;
-}
-.social-icon.yt { background: rgba(255, 0, 0, .15); }
-.social-icon.ig { background: rgba(193, 53, 132, .15); }
-.social-icon.tt { background: rgba(0, 0, 0, .4); border: 1px solid var(--border); }
-.social-name { font-weight: 700; font-size: .82rem; color: var(--text); }
-.social-handle { font-size: .68rem; color: var(--muted); }
-.broker-section { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
-.broker-label { font-size: .65rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
-.broker-cards {
-  display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;
-}
-.broker-card {
-  display: flex; align-items: center; gap: .75rem;
-  padding: .85rem 1.25rem; border-radius: 6px;
-  border: 1px solid var(--border); background: var(--surface);
-  transition: border-color .2s;
-}
-.broker-card:hover { border-color: rgba(201,168,76,.4); }
-.broker-logo {
-  width: 32px; height: 32px; border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: .7rem; font-weight: 900; color: #fff; flex-shrink: 0;
-}
-.broker-name { font-weight: 700; font-size: .8rem; color: var(--text); }
-.broker-tag { font-size: .64rem; color: var(--muted); }
-.broker-note { font-size: .65rem; color: var(--muted); margin-top: 1rem; }
-
-/* ── FOOTER ────────────────────────────────── */
-footer {
-  background: #080808; border-top: 1px solid var(--border);
-  padding: 2.5rem 2rem 1.5rem;
-}
-.footer-inner {
-  max-width: 1100px; margin: 0 auto;
-  display: flex; align-items: flex-start; justify-content: space-between;
-  gap: 2rem; flex-wrap: wrap;
-}
-.footer-brand .brand-title { color: var(--gold); font-size: 1rem; }
-.footer-brand p { font-size: .72rem; color: var(--muted); margin-top: .4rem; max-width: 260px; line-height: 1.65; }
-.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.footer-links a { font-size: .74rem; color: var(--muted); transition: color .2s; }
-.footer-links a:hover { color: var(--gold); }
-.footer-bottom {
-  max-width: 1100px; margin: 1.5rem auto 0;
-  padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,.05);
-  display: flex; justify-content: space-between; flex-wrap: wrap; gap: .75rem;
-}
-.footer-copy { font-size: .68rem; color: #333; }
-.footer-disclaimer { font-size: .62rem; color: #222; max-width: 500px; line-height: 1.5; }
-
-/* ── RESPONSIVE ────────────────────────────── */
-@media (max-width: 860px) {
-  nav .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-videos { display: grid; grid-template-columns: 1fr 1fr; max-width: 420px; }
-  #about .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .purif-inner { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
-}
-@media (max-width: 540px) {
-  nav { padding: 0 1rem; }
-  .hero { padding: 3.5rem 1rem; }
-  .hero h1 { font-size: 2rem; }
-  .hero-videos { display: none; }
-  .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
-  .trust-inner { gap: 1rem; }
-  .section { padding: 4rem 1rem; }
-  .principles-grid { grid-template-columns: 1fr 1fr; }
-  .social-grid { flex-direction: column; align-items: center; }
-  .footer-inner { flex-direction: column; }
-  .footer-bottom { flex-direction: column; }
-}
-
-/* ── ANIMATIONS ────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero-content > * { animation: fadeUp .7s ease both; }
-.hero-eyebrow    { animation-delay: .1s; }
-.hero h1         { animation-delay: .2s; }
-.hero-desc       { animation-delay: .3s; }
-.hero-actions    { animation-delay: .4s; }
-.hero-stats      { animation-delay: .5s; }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
-}
-
-/* ══════════════════════════════════════════════
-   SCREENER SECTION – NEU HINZUGEFÜGT
-   Alle Klassen mit sc- Prefix → kein Konflikt
-   ══════════════════════════════════════════════ */
-:root {
-  --red: #C0392B;
-  --red-bg: rgba(192,57,43,.12);
-  --amber: #D4A017;
-  --amber-bg: rgba(212,160,23,.12);
-}
-#screener {
-  background: var(--surface2);
-  position: relative;
-  overflow: visible;
-}
-#screener::before {
-  content: '';
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(201,168,76,.05) 0%, transparent 65%);
-}
-.sc-section-inner {
-  max-width: 640px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.sc-wrap {
-  position: relative;
-  max-width: 560px;
-  margin: 0 auto;
-  z-index: 50;
-}
-.sc-icon {
-  position: absolute; left: 16px; top: 50%;
-  transform: translateY(-50%); font-size: 1.1rem;
-  pointer-events: none; z-index: 1;
-}
-#scSearchInput {
-  width: 100%;
-  background: var(--surface);
-  border: 2px solid var(--border);
-  border-radius: 6px;
-  color: var(--text);
-  padding: 17px 52px 17px 46px;
-  font-size: 1rem;
-  font-weight: 500;
-  font-family: 'DM Sans', sans-serif;
-  outline: none;
-  transition: border-color .2s, box-shadow .2s;
-}
-#scSearchInput:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(201,168,76,.12);
-}
-#scSearchInput::placeholder { color: var(--muted); }
-.sc-clear-btn {
-  position: absolute; right: 14px; top: 50%;
-  transform: translateY(-50%);
-  display: none;
-  background: var(--surface2); border: none; border-radius: 50%;
-  width: 28px; height: 28px; color: var(--muted);
-  cursor: pointer; font-size: .8rem;
-  align-items: center; justify-content: center;
-  transition: background .15s, color .15s;
-}
-.sc-clear-btn:hover { background: rgba(201,168,76,.15); color: var(--gold); }
-.sc-clear-btn.show { display: flex; }
-
-/* Dropdown */
-.sc-dropdown {
-  display: none;
-  position: fixed;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-  z-index: 9998;
-  box-shadow: 0 24px 48px rgba(0,0,0,.85);
-  max-height: 340px;
-  overflow-y: auto;
-}
-.sc-dropdown.show { display: block; }
-.sc-drop-item {
-  display: flex; align-items: center; gap: 12px;
-  padding: 11px 16px; cursor: pointer;
-  border-bottom: 1px solid rgba(201,168,76,.06);
-  transition: background .12s;
-}
-.sc-drop-item:last-child { border-bottom: none; }
-.sc-drop-item:hover { background: var(--surface2); }
-.sc-dl-logo {
-  width: 36px; height: 36px; border-radius: 7px; background: #fff;
-  flex-shrink: 0; overflow: hidden; border: 1px solid rgba(0,0,0,.08);
-  display: flex; align-items: center; justify-content: center;
-}
-.sc-dl-logo img { width: 80%; height: 80%; object-fit: contain; }
-.sc-dl-init {
-  width: 36px; height: 36px; border-radius: 7px;
-  background: var(--gold-glow); border: 1px solid var(--border);
-  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif; font-size: .95rem; font-weight: 700; color: var(--gold);
-}
-.sc-dl-name { font-size: .85rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.sc-dl-meta { font-size: .7rem; color: var(--muted); margin-top: 1px; display: flex; gap: 6px; }
-.sc-drop-hint { padding: 14px 16px; color: var(--muted); font-size: .8rem; text-align: center; }
-.sc-drop-direct {
-  padding: 11px 16px; color: var(--gold); font-size: .8rem; cursor: pointer;
-  transition: background .12s; border-top: 1px solid var(--border);
-  display: flex; align-items: center; gap: 8px;
-}
-.sc-drop-direct:hover { background: var(--surface2); }
-
-/* Status */
-#scStatus {
-  display: none; text-align: center; padding: 13px;
-  border-radius: 6px; font-size: .82rem;
-  max-width: 560px; margin: 16px auto 0;
-}
-#scStatus.loading { background: var(--surface); color: var(--gold); border: 1px solid var(--border); }
-#scStatus.error { background: var(--red-bg); color: #E57373; border: 1px solid rgba(192,57,43,.3); }
-
-/* Result */
-#scResult { display: none; max-width: 560px; margin: 28px auto 0; text-align: left; }
-.sc-result-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-.sc-co-head { padding: 22px 22px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
-.sc-co-logo { width: 58px; height: 58px; border-radius: 10px; background: #fff; flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(0,0,0,.08); }
-.sc-co-logo img { width: 80%; height: 80%; object-fit: contain; }
-.sc-co-init { width: 58px; height: 58px; border-radius: 10px; background: var(--gold-glow); border: 1px solid var(--border); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); }
-.sc-co-meta { flex: 1; min-width: 0; }
-.sc-co-ticker { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; line-height: 1; }
-.sc-co-name { color: var(--muted); font-size: .78rem; margin-top: 3px; }
-.sc-co-sector { color: var(--muted); font-size: .7rem; margin-top: 2px; opacity: .65; }
-.sc-status-badge { flex-shrink: 0; padding: 8px 18px; border-radius: 4px; font-size: .75rem; font-weight: 700; border: 1px solid; }
-.sc-sb-halal { background: var(--green-bg); color: var(--green); border-color: rgba(61,153,112,.3); }
-.sc-sb-haram { background: var(--red-bg); color: #E57373; border-color: rgba(192,57,43,.3); }
-.sc-sb-unklar { background: var(--amber-bg); color: var(--amber); border-color: rgba(212,160,23,.3); }
-.sc-sb-unbekannt { background: rgba(120,120,140,.12); color: rgba(255,255,255,.45); border-color: rgba(255,255,255,.1); }
-.sc-badges-row { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-.sc-bb-very-high { background: rgba(192,57,43,.15); color: #E57373; border-color: rgba(192,57,43,.4); font-size: .62rem; }
-.sc-bb-high { background: rgba(200,80,20,.12); color: #E8885A; border-color: rgba(200,80,20,.35); font-size: .62rem; }
-.sc-bb-medium { background: rgba(201,168,76,.1); color: var(--amber); border-color: rgba(201,168,76,.3); font-size: .62rem; }
-.sc-bb-low { background: rgba(255,255,255,.05); color: rgba(255,255,255,.4); border-color: rgba(255,255,255,.1); font-size: .62rem; }
-.sc-haram-banner { background: rgba(192,57,43,.08); border-bottom: 1px solid rgba(192,57,43,.2); padding: 13px 22px; display: flex; align-items: flex-start; gap: 10px; font-size: .8rem; color: #E57373; line-height: 1.65; }
-.sc-haram-banner strong { color: #fff; display: block; font-size: .83rem; margin-bottom: 3px; }
-.sc-haram-cat { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; background: rgba(192,57,43,.15); border: 1px solid rgba(192,57,43,.3); border-radius: 4px; padding: 3px 9px; font-size: .7rem; font-weight: 700; color: #E57373; }
-.sc-unklar-banner { background: rgba(212,160,23,.07); border-bottom: 1px solid rgba(212,160,23,.2); padding: 13px 22px; display: flex; align-items: flex-start; gap: 10px; font-size: .8rem; color: var(--amber); line-height: 1.65; }
-.sc-unklar-banner strong { color: #fff; display: block; font-size: .83rem; margin-bottom: 3px; }
-.sc-unbekannt-banner { background: rgba(120,120,140,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 13px 22px; display: flex; align-items: flex-start; gap: 10px; font-size: .8rem; color: rgba(255,255,255,.45); line-height: 1.65; }
-.sc-unbekannt-banner strong { color: rgba(255,255,255,.8); display: block; font-size: .83rem; margin-bottom: 3px; }
-.sc-standards { padding: 12px 22px; border-bottom: 1px solid var(--border); display: flex; gap: 7px; flex-wrap: wrap; background: rgba(0,0,0,.25); }
-.sc-std { padding: 5px 11px; border-radius: 4px; font-size: .7rem; font-weight: 700; font-family: monospace; border: 1px solid; }
-.sc-std.ok { background: var(--green-bg); color: var(--green); border-color: rgba(61,153,112,.25); }
-.sc-std.fail { background: var(--red-bg); color: #E57373; border-color: rgba(192,57,43,.25); }
-.sc-std.uk { background: var(--amber-bg); color: var(--amber); border-color: rgba(212,160,23,.25); }
-.sc-stand { padding: 7px 22px; font-size: .67rem; color: var(--muted); border-bottom: 1px solid var(--border); }
-.sc-kz-block { padding: 20px 22px; border-bottom: 1px solid var(--border); }
-.sc-kz-head { font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
-.sc-kz-item { margin-bottom: 14px; }
-.sc-kz-item:last-child { margin-bottom: 0; }
-.sc-kz-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; gap: 8px; }
-.sc-kz-label { color: var(--muted); font-size: .82rem; flex: 1; }
-.sc-kz-right { text-align: right; white-space: nowrap; }
-.sc-kz-val { font-weight: 700; font-family: monospace; font-size: .9rem; }
-.sc-kz-limit { color: var(--muted); font-size: .68rem; font-family: monospace; margin-left: 3px; }
-.sc-kv-ok { color: var(--green); }
-.sc-kv-warn { color: var(--amber); }
-.sc-kv-bad { color: #E57373; }
-.sc-kv-neu { color: var(--gold); }
-.sc-balken { height: 3px; background: rgba(255,255,255,.06); border-radius: 2px; overflow: hidden; margin-top: 1px; }
-.sc-balken-fill { height: 100%; border-radius: 2px; }
-.sc-kz-formel { font-size: .71rem; color: rgba(255,255,255,.28); font-family: monospace; margin-top: 4px; }
-.sc-kz-item-neutral { margin-bottom: 6px; opacity: .7; }
-.sc-erl-block { padding: 20px 22px; background: rgba(0,0,0,.3); }
-.sc-erl-head { font-size: .62rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
-.sc-erl-list { list-style: none; font-size: .8rem; color: var(--muted); line-height: 2; }
-.sc-erl-list li { display: flex; gap: 8px; }
-.sc-erl-list li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
-.sc-purif { margin: 0 22px 20px; padding: 14px 16px; background: var(--green-bg); border: 1px solid rgba(61,153,112,.2); border-radius: 6px; font-size: .78rem; color: var(--green); line-height: 1.7; }
-.sc-purif strong { color: #fff; }
-.sc-new-search { display: block; text-align: center; padding: 13px; font-size: .8rem; color: var(--gold); cursor: pointer; border-top: 1px solid var(--border); transition: background .15s; }
-.sc-new-search:hover { background: rgba(201,168,76,.05); }
-@keyframes scFadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
-.sc-fade-in { animation: scFadeUp .4s ease both; }
-@media (max-width: 540px) { #scResult { padding: 0 .5rem; } .sc-section-inner { padding: 0 .5rem; } }
+/* ════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════ */
+@media(max-width:860px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-mosaic{max-width:420px}
+  .premium-inner{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hero{padding:3.5rem 1rem;min-height:auto}
+  .section{padding:3.5rem 1rem}
+  .premium-section{padding:3.5rem 1rem}
+  .hero-mosaic{display:none}
+  .trust-inner{gap:1rem}
+  .hero-stats{gap:1.5rem}
+  footer{padding:2rem 1rem 1rem}
+  #cb{padding:1rem;flex-direction:column;align-items:flex-start}
+  #cb-btns{width:100%}
+  #cb-btns button{flex:1}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 </style>
 </head>
 <body>
 
-<!-- ══ NAVIGATION ══════════════════════════════ -->
-<nav aria-label="Hauptnavigation">
-  <div class="nav-inner">
-    <a href="#" class="nav-brand" aria-label="Amana Aktien Startseite">
-      <div class="nav-logo" aria-hidden="true">☪</div>
-      <div>
-        <div class="brand-title">Amana Aktien</div>
-        <div class="brand-sub">Halal Investieren</div>
-      </div>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="#screener">Screener</a></li>
-      <li><a href="#videos">Videos</a></li>
-      <li><a href="#about">Über uns</a></li>
-      <li><a href="#principles">Grundlagen</a></li>
-      <li><a href="#faq">FAQ</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li>
-        <a href="https://www.youtube.com/@AmanaAktien" target="_blank"
-           rel="noopener noreferrer nofollow" class="btn-yt"
-           aria-label="YouTube Kanal von Amana Aktien">
-          ▶ YouTube
-        </a>
-      </li>
-    </ul>
-    <button class="hamburger" id="hamburgerBtn"
-            aria-expanded="false" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<!-- Nav injected by nav.js -->
+<div id="site-nav"></div>
+<script src="nav.js"></script>
 
-<!-- Mobile Nav -->
-<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Mobilmenü">
-  <a href="#screener" class="mobile-link">Screener</a>
-  <a href="#videos" class="mobile-link">Videos</a>
-  <a href="#about" class="mobile-link">Über uns</a>
-  <a href="#principles" class="mobile-link">Grundlagen</a>
-  <a href="#faq" class="mobile-link">FAQ</a>
-  <a href="blog.html" class="mobile-link">Blog</a>
-  <a href="https://www.youtube.com/@AmanaAktien" target="_blank"
-     rel="noopener noreferrer nofollow">YouTube ↗</a>
-</div>
-
-<!-- ══ HERO ════════════════════════════════════ -->
+<!-- ══ HERO ══════════════════════════════════════ -->
 <header class="hero" id="home">
-  <div class="hero-grid-lines" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grid"></div>
+  </div>
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-eyebrow">
-        <span aria-hidden="true">☪</span>
-        <span>AAOIFI-Standard · Seit 2026</span>
-      </div>
-      <h1>
-        Halal<br>
-        <em>Investieren</em><br>
-        auf Deutsch
-      </h1>
+      <div class="hero-tag"><span>☪</span><span>AAOIFI-Standard · Seit 2026</span></div>
+      <h1>Halal<br><em>Investieren</em><br>auf Deutsch</h1>
       <p class="hero-desc">
         Scharia-konforme Aktien- und ETF-Analysen für Muslime in Deutschland,
         Österreich und der Schweiz. Fundamentalbasiert. Zinsfrei. Langfristig.
       </p>
       <div class="hero-actions">
-        <a href="#screener" class="btn-primary">
-          <span aria-hidden="true">🔍</span> Aktie prüfen
-        </a>
-        <a href="#videos" class="btn-secondary">
-          <span aria-hidden="true">▶</span> Neueste Analysen
-        </a>
+        <a href="aktien-analysen.html" class="btn-primary">📊 Aktienanalysen</a>
+        <a href="halal-etf-liste.html" class="btn-secondary">☪ Halal ETFs</a>
       </div>
-      <div class="hero-stats" role="list">
-        <div role="listitem">
-          <div class="stat-num">128+</div>
-          <div class="stat-lbl">Videos</div>
-        </div>
-        <div role="listitem">
-          <div class="stat-num">21,5K</div>
-          <div class="stat-lbl">TikTok Likes</div>
-        </div>
-        <div role="listitem">
-          <div class="stat-num">100%</div>
-          <div class="stat-lbl">Halal-Fokus</div>
-        </div>
+      <div class="hero-stats">
+        <div><div class="stat-num">128+</div><div class="stat-lbl">Videos</div></div>
+        <div><div class="stat-num">AAOIFI</div><div class="stat-lbl">Standard</div></div>
+        <div><div class="stat-num">100%</div><div class="stat-lbl">Halal-Fokus</div></div>
       </div>
     </div>
-
-    <!-- Featured Videos Mosaic -->
-    <div class="hero-videos" aria-label="Neueste Videos">
-      <a href="https://www.youtube.com/watch?v=ge8o16VvrGw" target="_blank"
-         rel="noopener noreferrer nofollow" class="hero-video-card"
-         aria-label="iShares MSCI World Islamic ETF Analyse">
-        <img src="https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg"
-             alt="iShares MSCI World Islamic ETF Halal-Check" width="320" height="180"
-             loading="eager" decoding="async">
-        <div class="hero-video-play">
-          <div class="play-btn" aria-hidden="true"><div class="play-icon"></div></div>
-        </div>
+    <div class="hero-mosaic" aria-label="Neueste Analysen">
+      <a href="https://www.youtube.com/watch?v=ge8o16VvrGw" target="_blank" rel="noopener nofollow" class="mosaic-card">
+        <img src="https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg" alt="iShares MSCI World Islamic ETF" width="320" height="180" loading="eager" decoding="async">
+        <div class="mosaic-play"><div class="play-circle"><div class="play-tri"></div></div></div>
       </a>
-      <a href="https://www.youtube.com/watch?v=2vNn1v-eCBc" target="_blank"
-         rel="noopener noreferrer nofollow" class="hero-video-card"
-         aria-label="ServiceNow Aktienanalyse">
-        <img src="https://img.youtube.com/vi/2vNn1v-eCBc/hqdefault.jpg"
-             alt="ServiceNow Halal Aktienanalyse 2026" width="320" height="180"
-             loading="lazy" decoding="async">
-        <div class="hero-video-play">
-          <div class="play-btn" aria-hidden="true"><div class="play-icon"></div></div>
-        </div>
+      <a href="https://www.youtube.com/watch?v=2vNn1v-eCBc" target="_blank" rel="noopener nofollow" class="mosaic-card">
+        <img src="https://img.youtube.com/vi/2vNn1v-eCBc/hqdefault.jpg" alt="ServiceNow Analyse" width="320" height="180" loading="lazy" decoding="async">
+        <div class="mosaic-play"><div class="play-circle"><div class="play-tri"></div></div></div>
       </a>
-      <a href="https://www.youtube.com/watch?v=Ywtz7cn7_5I" target="_blank"
-         rel="noopener noreferrer nofollow" class="hero-video-card"
-         aria-label="Invesco MWIM Islamic ETF Analyse">
-        <img src="https://img.youtube.com/vi/Ywtz7cn7_5I/hqdefault.jpg"
-             alt="Invesco MWIM Islamic ETF vollständige Analyse" width="320" height="180"
-             loading="lazy" decoding="async">
-        <div class="hero-video-play">
-          <div class="play-btn" aria-hidden="true"><div class="play-icon"></div></div>
-        </div>
+      <a href="https://www.youtube.com/watch?v=4ER2QhbDhIQ" target="_blank" rel="noopener nofollow" class="mosaic-card">
+        <img src="https://img.youtube.com/vi/4ER2QhbDhIQ/hqdefault.jpg" alt="Arista Networks Analyse" width="320" height="180" loading="lazy" decoding="async">
+        <div class="mosaic-play"><div class="play-circle"><div class="play-tri"></div></div></div>
       </a>
-      <a href="https://www.youtube.com/watch?v=4ER2QhbDhIQ" target="_blank"
-         rel="noopener noreferrer nofollow" class="hero-video-card"
-         aria-label="Arista Networks Aktienanalyse">
-        <img src="https://img.youtube.com/vi/4ER2QhbDhIQ/hqdefault.jpg"
-             alt="Arista Networks Halal Aktienanalyse" width="320" height="180"
-             loading="lazy" decoding="async">
-        <div class="hero-video-play">
-          <div class="play-btn" aria-hidden="true"><div class="play-icon"></div></div>
-        </div>
+      <a href="https://www.youtube.com/watch?v=dweaAVqlFSs" target="_blank" rel="noopener nofollow" class="mosaic-card">
+        <img src="https://img.youtube.com/vi/dweaAVqlFSs/hqdefault.jpg" alt="Apple Halal-Check" width="320" height="180" loading="lazy" decoding="async">
+        <div class="mosaic-play"><div class="play-circle"><div class="play-tri"></div></div></div>
       </a>
     </div>
   </div>
 </header>
 
-<!-- ══ TRUST BAR ═══════════════════════════════ -->
-<div class="trust-bar" role="list" aria-label="Vertrauens-Signale">
+<!-- ══ TRUST BAR ══════════════════════════════════ -->
+<div class="trust-bar">
   <div class="trust-inner">
-    <span class="trust-item trust-gold" role="listitem">
-      <span class="ti-icon" aria-hidden="true">✅</span> Alle Analysen HALAL-geprüft
-    </span>
-    <span class="trust-item" role="listitem">
-      <span class="ti-icon" aria-hidden="true">☪</span> AAOIFI-Standard
-    </span>
-    <span class="trust-item" role="listitem">
-      <span class="ti-icon" aria-hidden="true">🇩🇪</span> Aus Deutschland
-    </span>
-    <span class="trust-item" role="listitem">
-      <span class="ti-icon" aria-hidden="true">📊</span> Fundamentalanalyse
-    </span>
-    <span class="trust-item" role="listitem">
-      <span class="ti-icon" aria-hidden="true">🕌</span> Kein Riba · Kein Gharar
-    </span>
+    <span class="trust-item gold">✅ HALAL-geprüft</span>
+    <span class="trust-item">☪ AAOIFI-Standard</span>
+    <span class="trust-item">🇩🇪 Aus Deutschland</span>
+    <span class="trust-item">📊 Fundamentalanalyse</span>
+    <span class="trust-item">🕌 Kein Riba · Kein Gharar</span>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════
-     SCREENER – NEU HINZUGEFÜGT · direkt nach Trust Bar
-     ══════════════════════════════════════════════════════ -->
-<section class="section" id="screener" aria-labelledby="screener-heading">
-  <div class="sc-section-inner">
-    <div class="section-tag" style="justify-content:center;display:inline-flex;">🔍 Halal-Check</div>
-    <h2 id="screener-heading" style="margin-bottom:.75rem;">
-      Ist diese Aktie <span style="color:var(--gold);">Halal?</span>
-    </h2>
-    <p class="section-lead" style="margin:0 auto 2rem;max-width:480px;text-align:center;">
-      Einfach Firmennamen oder Ticker eingeben – wir prüfen sofort nach
-      AAOIFI, DJIM, FTSE, MSCI &amp; S&amp;P Standard. Kostenlos, auf Deutsch.
-    </p>
-    <div class="sc-wrap">
-      <span class="sc-icon" aria-hidden="true">🔍</span>
-      <input type="text" id="scSearchInput"
-        placeholder="z.B. Tesla, Apple, Siemens, SAP, Nestlé…"
-        autocomplete="off" spellcheck="false"
-        aria-label="Aktie suchen">
-      <button class="sc-clear-btn" id="scClearBtn" onclick="scClear()" aria-label="Suche löschen">✕</button>
-      <div class="sc-dropdown" id="scDropdown" role="listbox"></div>
-    </div>
-    <div id="scStatus" role="status" aria-live="polite"></div>
-    <div id="scResult" aria-live="polite"></div>
-  </div>
-</section>
-
-<!-- ══ VIDEOS ══════════════════════════════════ -->
-<section class="section" id="videos" aria-labelledby="videos-heading">
+<!-- ══ NEUESTE ANALYSEN ════════════════════════════ -->
+<section class="section" id="analysen">
   <div class="section-inner">
-    <div class="section-tag">▶ Neueste Analysen</div>
-    <h2 id="videos-heading">Halal ETFs & Aktien im Check</h2>
-    <p class="section-lead">
-      Jede Woche neue Analysen zu scharia-konformen ETFs und Aktien.
-      Fundamental bewertet, AAOIFI-geprüft, auf Deutsch erklärt.
-    </p>
-    <div class="videos-grid" id="videosGrid">
-      <!-- Wird dynamisch befüllt -->
-    </div>
-    <div class="videos-cta">
-      <a href="https://www.youtube.com/@AmanaAktien" target="_blank"
-         rel="noopener noreferrer nofollow" class="btn-secondary"
-         aria-label="Alle Videos auf YouTube ansehen">
-        Alle 128+ Videos auf YouTube ansehen ↗
-      </a>
+    <div class="section-tag">📊 Aktienanalysen</div>
+    <h2>Neueste Halal-Analysen</h2>
+    <p class="section-lead">Fundierte Fundamentalanalysen scharia-konformer Aktien – auf Deutsch, mit Halal-Check nach AAOIFI-Standard.</p>
+    <div class="analyses-grid" id="analysesGrid"></div>
+    <div class="analyses-cta">
+      <p>Noch mehr Analysen? <strong>Alle Aktien-Analysen ansehen →</strong></p>
+      <a href="aktien-analysen.html" class="btn-primary">Alle Analysen</a>
     </div>
   </div>
 </section>
 
-<!-- ══ ABOUT ════════════════════════════════════ -->
-<section class="section" id="about" aria-labelledby="about-heading">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-text">
-        <div class="section-tag">☪ Mission</div>
-        <h2 id="about-heading">Halal. Fundamental. Langfristig.</h2>
-        <p>
-          Amana Aktien ist der führende deutschsprachige Kanal für scharia-konforme
-          Aktien- und ETF-Analysen. Unser Ziel: Muslimen im DACH-Raum zeigen,
-          dass Vermögensaufbau und islamische Prinzipien Hand in Hand gehen können.
-        </p>
-        <p>
-          Jede Analyse umfasst: Fundamentalanalyse, AAOIFI-Halal-Check,
-          Schuldenquote, Zinsanteil und langfristiges Wachstumspotenzial –
-          verständlich erklärt auf Deutsch.
-        </p>
-        <p>
-          Wir prüfen ETFs, Aktien, Gold-ETCs und Sukuk-Fonds nach den weltweit
-          anerkannten AAOIFI-Standards (Accounting and Auditing Organization
-          for Islamic Financial Institutions).
-        </p>
-        <div class="about-author">
-          <div class="author-avatar" aria-hidden="true">YC</div>
-          <div>
-            <div class="author-name">Youssef Chafi</div>
-            <div class="author-role">Gründer & Analyst · Amana Aktien</div>
-            <div class="author-mission">Mission: Finanzielle Freiheit ohne Scharia-Kompromisse.</div>
-          </div>
-        </div>
+<!-- ══ PREMIUM TEASER ════════════════════════════ -->
+<div class="premium-section" id="premium">
+  <div class="premium-inner">
+    <div>
+      <div class="premium-badge">⭐ Amana Premium</div>
+      <h2>Tiefer analysieren.<br>Besser investieren.</h2>
+      <p>Premium-Mitglieder erhalten vollständige Analysen mit allen Finanzkennzahlen, exklusive Screening-Berichte und Scharia-Urteile nach AAOIFI, DJIM, FTSE, MSCI & S&P – bevor sie auf YouTube erscheinen.</p>
+      <ul class="premium-features">
+        <li>Vollständige Halal-Analyse aller 5 Screening-Standards</li>
+        <li>Schuldenquote, Zinsanteil & Purification-Rate</li>
+        <li>Exklusive Analysen vor YouTube-Veröffentlichung</li>
+        <li>Monatlicher Halal-Watchlist Report</li>
+        <li>Direkter Zugang zu unserem Scharia-Analyse-Tool</li>
+      </ul>
+    </div>
+    <div class="premium-card">
+      <div>
+        <div class="premium-price">7,99 € <span>/ Monat</span></div>
+        <div class="premium-price-note">oder 69,99 € / Jahr (25% sparen)</div>
       </div>
-
-      <div class="pillars" aria-label="Was wir analysieren">
-        <div class="pillar">
-          <div class="pillar-icon" aria-hidden="true">📊</div>
-          <div>
-            <h4>Halal ETF-Analysen</h4>
-            <p>iShares Islamic, Invesco MWIM, AMAL, UMMA, Sukuk-ETFs –
-               vollständig geprüft mit Rendite, Kosten und Scharia-Governance.</p>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon" aria-hidden="true">📈</div>
-          <div>
-            <h4>Halal Aktien-Analysen</h4>
-            <p>Arista Networks, ServiceNow, Apple, Nemetschek, Krones und mehr –
-               fundamentalbasiert und AAOIFI-geprüft.</p>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon" aria-hidden="true">🥇</div>
-          <div>
-            <h4>Gold & Edelmetall-ETCs</h4>
-            <p>iShares Physical Gold, Invesco Physical Silver – mit offizieller
-               Scharia-Zertifizierung von Amanie Advisors.</p>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon" aria-hidden="true">📚</div>
-          <div>
-            <h4>Grundlagen des Halal Investierens</h4>
-            <p>Purification, Riba-Vermeidung, Broker-Empfehlungen –
-               einfach und verständlich für Anfänger und Fortgeschrittene.</p>
-          </div>
-        </div>
-      </div>
+      <a href="premium.html" class="btn-premium">☪ Jetzt Premium werden</a>
+      <p class="premium-note">Jederzeit kündbar · Keine versteckten Kosten<br>Halal – kein Riba in unserem Geschäftsmodell</p>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ══ PRINCIPLES ═══════════════════════════════ -->
-<section class="section" id="principles" aria-labelledby="principles-heading">
+<!-- ══ GRUNDLAGEN ════════════════════════════════ -->
+<section class="section alt" id="grundlagen">
   <div class="section-inner">
     <div class="section-tag">☪ Islamische Finanzen</div>
-    <h2 id="principles-heading">Die Grundprinzipien</h2>
-    <p class="section-lead">
-      Islamisches Investieren basiert auf klaren Regeln. Wir prüfen jede
-      Anlage nach diesen Prinzipien – transparent und nachvollziehbar.
-    </p>
+    <h2>Die Grundprinzipien</h2>
+    <p class="section-lead">Islamisches Investieren basiert auf klaren Regeln. Wir prüfen jede Anlage transparent und nachvollziehbar.</p>
     <div class="principles-grid">
       <div class="principle-card">
         <div class="principle-arabic" lang="ar">الرِّبَا</div>
         <div class="principle-name">Kein Riba (Zinsen)</div>
-        <p class="principle-desc">Zinsen sind im Islam verboten. Wir investieren
-           nur in Unternehmen mit weniger als 5% Zinseinkommen.</p>
+        <p class="principle-desc">Zinsen sind im Islam verboten. Wir investieren nur in Unternehmen mit weniger als 5% Zinseinkommen.</p>
       </div>
       <div class="principle-card">
         <div class="principle-arabic" lang="ar">الغَرَر</div>
         <div class="principle-name">Kein Gharar (Spekulation)</div>
-        <p class="principle-desc">Übermäßige Unsicherheit und Spekulation sind
-           untersagt. Wir setzen auf fundierte, langfristige Analysen.</p>
+        <p class="principle-desc">Übermäßige Unsicherheit ist untersagt. Wir setzen auf fundierte, langfristige Fundamentalanalysen.</p>
       </div>
       <div class="principle-card">
         <div class="principle-arabic" lang="ar">الطَّهَارَة</div>
         <div class="principle-name">Tazkiyah (Reinigung)</div>
-        <p class="principle-desc">Kleine unreine Einnahmen (max. 5%) werden durch
-           Purification gereinigt – durch Spenden an wohltätige Zwecke.</p>
+        <p class="principle-desc">Kleine unreine Einnahmen werden durch Purification gereinigt – durch Spenden an wohltätige Zwecke.</p>
       </div>
       <div class="principle-card">
         <div class="principle-arabic" lang="ar">المُشَارَكَة</div>
         <div class="principle-name">Musharaka (Partnerschaft)</div>
-        <p class="principle-desc">Echte Beteiligung am Unternehmenserfolg statt
-           risikoloser Zinsen. Gewinn und Verlust werden geteilt.</p>
+        <p class="principle-desc">Echte Beteiligung am Unternehmenserfolg statt risikoloser Zinsen. Gewinn und Verlust werden geteilt.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ PURIFICATION ══════════════════════════════ -->
-<section class="section" id="purification">
-  <div class="section-inner">
-    <div class="purif-inner">
-      <div>
-        <div class="section-tag" style="color:#3D9970;">🌿 Purification</div>
-        <h2 class="purif-title">So reinigst du<br>deine Dividende</h2>
-        <p class="purif-desc">
-          Auch halale Aktien können kleine Anteile unreiner Einnahmen haben
-          (z.B. Zinsen auf Kassenbestände). Diese musst du durch eine
-          entsprechende Spende reinigen – so bleibt dein Investment vollständig halal.
-        </p>
-        <ol class="purif-steps" aria-label="Purification Schritte">
-          <li class="purif-step">
-            <span class="step-num" aria-hidden="true">1</span>
-            <span class="step-text">In der Analyse nachschauen: Wie hoch ist der Anteil unreiner Einnahmen? (z.B. 1,94% bei Apple)</span>
-          </li>
-          <li class="purif-step">
-            <span class="step-num" aria-hidden="true">2</span>
-            <span class="step-text">Berechnen: Dividende × Prozentsatz = Spendbetrag (z.B. 100 € × 1,94% = 1,94 €)</span>
-          </li>
-          <li class="purif-step">
-            <span class="step-num" aria-hidden="true">3</span>
-            <span class="step-text">Diesen Betrag an eine Wohltätigkeitsorganisation deiner Wahl spenden. 🤲</span>
-          </li>
-          <li class="purif-step">
-            <span class="step-num" aria-hidden="true">4</span>
-            <span class="step-text">Fertig – dein Investment ist gereinigt und vollständig halal.</span>
-          </li>
-        </ol>
-      </div>
-      <div class="purif-formula" role="presentation">
-        <div class="purif-formula-label">Beispiel-Berechnung</div>
-        <div class="formula-row">
-          <div class="formula-val">100 €</div>
-          <div class="formula-op">×</div>
-          <div class="formula-val">1,94%</div>
-          <div class="formula-op">=</div>
-        </div>
-        <div class="formula-result">1,94 € spenden</div>
-        <div class="formula-example">Apple Dividende × unreiner Anteil = Spendbetrag</div>
-        <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(61,153,112,.2);font-size:.75rem;color:#555;line-height:1.6;">
-          ☪ AAOIFI-Standard: Unreiner Anteil &lt; 5% erlaubt durch Purification
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FAQ ══════════════════════════════════════ -->
-<section class="section" id="faq" aria-labelledby="faq-heading">
-  <div class="section-inner">
-    <div class="section-tag">❓ Häufige Fragen</div>
-    <h2 id="faq-heading">Alles über Halal Investieren</h2>
-    <p class="section-lead" style="margin-bottom:0;">
-      Die wichtigsten Fragen zu scharia-konformem Investieren – einfach beantwortet.
-    </p>
-    <div class="faq-list" role="list">
-      <div class="faq-item" role="listitem">
-        <button class="faq-q" aria-expanded="false">
-          Was ist Halal Investieren?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          Halal Investieren bedeutet, Geld nach islamischen Grundsätzen anzulegen:
-          keine Zinsen (Riba), keine Investitionen in verbotene Branchen (Alkohol,
-          Glücksspiel, Tabak, Waffen) und keine übermäßige Spekulation (Gharar).
-          Als Muslim kannst du trotzdem an der Börse investieren – du musst nur
-          die richtigen Unternehmen und ETFs auswählen.
-        </div>
-      </div>
-      <div class="faq-item" role="listitem">
-        <button class="faq-q" aria-expanded="false">
-          Was ist der AAOIFI-Standard?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          Die AAOIFI (Accounting and Auditing Organization for Islamic Financial
-          Institutions) ist die führende internationale Organisation für islamische
-          Finanzstandards. Ihre Kriterien: Schuldenquote unter 33% der Marktkapitalisierung,
-          Zinseinkommen unter 5% des Gesamtumsatzes, Haram-Umsätze unter 5%.
-          Dies ist der weltweit am häufigsten verwendete Standard für Halal-Investments.
-        </div>
-      </div>
-      <div class="faq-item" role="listitem">
-        <button class="faq-q" aria-expanded="false">
-          Was ist Purification und muss ich das machen?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          Purification ist die islamische Reinigung von Dividenden. Wenn ein Unternehmen
-          z.B. 2% Zinseinkommen hat, spendet man 2% der erhaltenen Dividende. Beispiel:
-          100 € Dividende × 2% = 2 € Spende. Dieser Prozess macht dein Investment
-          vollständig halal – es ist verpflichtend für Aktien mit unreinen Einnahmen.
-        </div>
-      </div>
-      <div class="faq-item" role="listitem">
-        <button class="faq-q" aria-expanded="false">
-          Sind ETFs halal?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          Nicht alle ETFs sind halal. Es gibt spezielle Halal-ETFs wie den iShares
-          MSCI World Islamic ETF oder den Invesco MWIM Islamic ETF, die nur
-          scharia-konforme Unternehmen enthalten und von islamischen Gelehrten
-          überprüft werden. Standard-ETFs wie der MSCI World sind hingegen nicht
-          halal, da sie Banken und andere verbotene Unternehmen enthalten.
-        </div>
-      </div>
-      <div class="faq-item" role="listitem">
-        <button class="faq-q" aria-expanded="false">
-          Ist Dividenden-Investieren halal?
-          <span class="faq-icon" aria-hidden="true">+</span>
-        </button>
-        <div class="faq-a" role="region">
-          Ja, Dividenden aus halalen Aktien sind erlaubt. Falls das Unternehmen
-          einen kleinen Anteil unreiner Einnahmen hat (max. 5%), muss der
-          entsprechende Teil der Dividende durch Purification gereinigt werden.
-          Bei komplett reinen Unternehmen (0% Zinseinnahmen) ist keine Purification
-          notwendig.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ BLOG PREVIEW ══════════════════════════════════ -->
-<section class="section" id="blog" style="background:var(--surface);" aria-labelledby="blog-heading">
+<!-- ══ BLOG PREVIEW ═══════════════════════════════ -->
+<section class="section" id="blog">
   <div class="section-inner">
     <div class="section-tag">📝 Wissen</div>
-    <h2 id="blog-heading">Halal-Wissen Blog</h2>
-    <p class="section-lead">
-      Fundierte Guides zu Scharia-konformem Investieren – AAOIFI-Standard, Purification,
-      Sukuk und ETF-Analysen auf Deutsch.
-    </p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.25rem;margin-bottom:2rem">
-      <a href="halal-investieren-anfaenger.html" style="display:block;background:#0D0D0D;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.borderColor='rgba(201,168,76,.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)';this.style.transform=''">
-        <img src="https://img.youtube.com/vi/Ss_CyIxKNeI/hqdefault.jpg" alt="Halal Investieren für Anfänger" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
-        <div style="padding:1.1rem">
-          <div style="font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">🌙 Grundlagen</div>
-          <div style="font-size:.85rem;font-weight:700;line-height:1.4">Halal Investieren für Anfänger – Der komplette Guide 2026</div>
-          <div style="font-size:.72rem;color:var(--gold);margin-top:.65rem">Lesen →</div>
+    <h2>Halal-Wissen Blog</h2>
+    <p class="section-lead">Fundierte Guides zu scharia-konformem Investieren – kostenlos, auf Deutsch.</p>
+    <div class="blog-grid">
+      <a href="halal-investieren-anfaenger.html" class="blog-card">
+        <img src="https://img.youtube.com/vi/Ss_CyIxKNeI/hqdefault.jpg" alt="Halal Investieren für Anfänger" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-cat">🌙 Grundlagen</div>
+          <div class="blog-title">Halal Investieren für Anfänger – Der komplette Guide 2026</div>
+          <span class="blog-link">Lesen →</span>
         </div>
       </a>
-      <a href="aaoifi-standard-erklaert.html" style="display:block;background:#0D0D0D;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.borderColor='rgba(201,168,76,.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)';this.style.transform=''">
-        <img src="https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg" alt="AAOIFI Standard erklärt" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
-        <div style="padding:1.1rem">
-          <div style="font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">📊 Standards</div>
-          <div style="font-size:.85rem;font-weight:700;line-height:1.4">AAOIFI vs. DJIM vs. MSCI – Alle 5 Scharia-Standards erklärt</div>
-          <div style="font-size:.72rem;color:var(--gold);margin-top:.65rem">Lesen →</div>
+      <a href="aaoifi-standard-erklaert.html" class="blog-card">
+        <img src="https://img.youtube.com/vi/ge8o16VvrGw/hqdefault.jpg" alt="AAOIFI Standard" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-cat">📊 Standards</div>
+          <div class="blog-title">AAOIFI vs. DJIM vs. MSCI – Alle 5 Scharia-Standards erklärt</div>
+          <span class="blog-link">Lesen →</span>
         </div>
       </a>
-      <a href="sukuk-erklaert.html" style="display:block;background:#0D0D0D;border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;color:var(--text)" onmouseover="this.style.borderColor='rgba(201,168,76,.5)';this.style.transform='translateY(-3px)'" onmouseout="this.style.borderColor='rgba(201,168,76,.2)';this.style.transform=''">
-        <img src="https://img.youtube.com/vi/hqtuQIk2OW4/hqdefault.jpg" alt="Sukuk erklärt" style="width:100%;aspect-ratio:16/9;object-fit:cover" loading="lazy">
-        <div style="padding:1.1rem">
-          <div style="font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">🏦 Sukuk</div>
-          <div style="font-size:.85rem;font-weight:700;line-height:1.4">Sukuk erklärt – Die islamische Alternative zu Anleihen</div>
-          <div style="font-size:.72rem;color:var(--gold);margin-top:.65rem">Lesen →</div>
+      <a href="sukuk-erklaert.html" class="blog-card">
+        <img src="https://img.youtube.com/vi/hqtuQIk2OW4/hqdefault.jpg" alt="Sukuk erklärt" loading="lazy">
+        <div class="blog-card-body">
+          <div class="blog-cat">🏦 Sukuk</div>
+          <div class="blog-title">Sukuk erklärt – Die islamische Alternative zu Anleihen</div>
+          <span class="blog-link">Lesen →</span>
         </div>
       </a>
     </div>
     <div style="text-align:center">
-      <a href="blog.html" class="btn-secondary" style="display:inline-flex;align-items:center;gap:.5rem">
-        Alle Blog-Artikel ansehen →
-      </a>
+      <a href="blog.html" class="btn-secondary" style="display:inline-flex;align-items:center;gap:.5rem">Alle Blog-Artikel ansehen →</a>
     </div>
   </div>
 </section>
 
-<!-- ══ SOCIAL & CTA ══════════════════════════════ -->
-<section id="social" aria-labelledby="social-heading">
-  <div class="social-inner">
-    <div class="section-tag" style="justify-content:center;display:flex;">☪ Community</div>
-    <h2 id="social-heading" style="font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.75rem;">
-      Folge uns auf Social Media
-    </h2>
-    <p class="social-tagline">
-      Neue Halal-Analysen, Tipps und Kurzvideos – täglich auf allen Plattformen.
-    </p>
-    <div class="social-grid" role="list">
-      <a href="https://www.youtube.com/@AmanaAktien" target="_blank"
-         rel="noopener noreferrer nofollow" class="social-card" role="listitem"
-         aria-label="YouTube: 128 Videos">
-        <div class="social-icon yt" aria-hidden="true">▶</div>
-        <div>
-          <div class="social-name">YouTube</div>
-          <div class="social-handle">128 Videos · @AmanaAktien</div>
-        </div>
+<!-- ══ SOCIAL & BROKER ════════════════════════════ -->
+<section class="section alt" id="community">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-tag" style="justify-content:center;display:inline-flex">☪ Community</div>
+    <h2>Folge uns auf Social Media</h2>
+    <p class="section-lead" style="margin:0 auto 0;max-width:480px">Neue Halal-Analysen, Tipps und Kurzvideos – täglich auf allen Plattformen.</p>
+    <div class="social-grid">
+      <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener nofollow" class="social-card">
+        <div class="social-icon" style="background:rgba(255,0,0,.15)">▶</div>
+        <div><div class="social-name">YouTube</div><div class="social-handle">128+ Videos</div></div>
       </a>
-      <a href="https://www.tiktok.com/@amanaaktien" target="_blank"
-         rel="noopener noreferrer nofollow" class="social-card" role="listitem"
-         aria-label="TikTok: 857 Follower, 21.5K Likes">
-        <div class="social-icon tt" aria-hidden="true">♪</div>
-        <div>
-          <div class="social-name">TikTok</div>
-          <div class="social-handle">857 Follower · 21,5K Likes</div>
-        </div>
+      <a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener nofollow" class="social-card">
+        <div class="social-icon" style="background:rgba(255,255,255,.08);border:1px solid var(--border)">♪</div>
+        <div><div class="social-name">TikTok</div><div class="social-handle">21,5K Likes</div></div>
       </a>
-      <a href="https://www.instagram.com/amanaaktien" target="_blank"
-         rel="noopener noreferrer nofollow" class="social-card" role="listitem"
-         aria-label="Instagram: 36 Follower">
-        <div class="social-icon ig" aria-hidden="true">◎</div>
-        <div>
-          <div class="social-name">Instagram</div>
-          <div class="social-handle">@amanaaktien</div>
-        </div>
+      <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener nofollow" class="social-card">
+        <div class="social-icon" style="background:rgba(193,53,132,.15)">◎</div>
+        <div><div class="social-name">Instagram</div><div class="social-handle">@amanaaktien</div></div>
       </a>
     </div>
-
-    <!-- Broker-Empfehlungen -->
-    <div class="broker-section">
-      <div class="broker-label">🏦 Empfohlene Broker*</div>
-      <div class="broker-cards">
-        <a href="https://refnocode.trade.re/xhmwwbv6" target="_blank"
-           rel="noopener noreferrer nofollow sponsored" class="broker-card"
-           aria-label="Trade Republic – Kostenloses Depot">
-          <div class="broker-logo" style="background:#FF3B30;" aria-hidden="true">TR</div>
-          <div>
-            <div class="broker-name">Trade Republic</div>
-            <div class="broker-tag">Kostenloses Depot · Willkommensbonus</div>
-          </div>
-        </a>
-        <a href="https://de.scalable.capital/einladung/b6qrtw" target="_blank"
-           rel="noopener noreferrer nofollow sponsored" class="broker-card"
-           aria-label="Scalable Capital – ETF-Flatrate">
-          <div class="broker-logo" style="background:#00B374;" aria-hidden="true">SC</div>
-          <div>
-            <div class="broker-name">Scalable Capital</div>
-            <div class="broker-tag">ETF-Flatrate · Einladungslink</div>
-          </div>
-        </a>
-      </div>
-      <div class="broker-note">
-        * Affiliate-Links. Für dich kostenlos – du unterstützt damit den Kanal. 🙏
-      </div>
+    <div class="broker-label">🏦 Empfohlene Broker*</div>
+    <div class="broker-cards">
+      <a href="https://refnocode.trade.re/xhmwwbv6" target="_blank" rel="noopener nofollow sponsored" class="broker-card">
+        <div class="broker-logo" style="background:#FF3B30">TR</div>
+        <div><div class="broker-name">Trade Republic</div><div class="broker-tag">Kostenloses Depot · Bonus</div></div>
+      </a>
+      <a href="https://de.scalable.capital/einladung/b6qrtw" target="_blank" rel="noopener nofollow sponsored" class="broker-card">
+        <div class="broker-logo" style="background:#00B374">SC</div>
+        <div><div class="broker-name">Scalable Capital</div><div class="broker-tag">ETF-Flatrate</div></div>
+      </a>
     </div>
+    <div class="broker-note">* Affiliate-Links. Für dich kostenlos – du unterstützt damit den Kanal. 🙏</div>
   </div>
 </section>
 
-<!-- ══ FOOTER ═══════════════════════════════════ -->
-<footer role="contentinfo">
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div class="nav-brand">
-        <div class="nav-logo" style="width:28px;height:28px;font-size:.9rem;" aria-hidden="true">☪</div>
-        <div class="brand-title">Amana Aktien</div>
+      <div style="display:flex;align-items:center;gap:.6rem">
+        <div style="width:28px;height:28px;border-radius:5px;background:var(--gold);display:grid;place-items:center;font-size:.9rem">☪</div>
+        <span class="footer-brand-title">Amana Aktien</span>
       </div>
       <p>Scharia-konforme Analysen auf Deutsch von Youssef Chafi. Für Muslime in Deutschland, Österreich und der Schweiz.</p>
     </div>
     <nav aria-label="Footer Navigation">
       <div class="footer-links">
+        <a href="aktien-analysen.html">Aktienanalysen</a>
+        <a href="halal-etf-liste.html">Halal ETFs</a>
         <a href="blog.html">Blog</a>
+        <a href="premium.html">Premium</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
-        <a href="https://aaoifi.com" target="_blank" rel="noopener noreferrer nofollow">AAOIFI ↗</a>
       </div>
     </nav>
   </div>
   <div class="footer-bottom">
     <div class="footer-copy">© 2026 Amana Aktien – Youssef Chafi · Alle Rechte vorbehalten</div>
-    <div class="footer-disclaimer">
-      ⚠️ Keine Anlageberatung. Alle Inhalte dienen ausschließlich der Information und Bildung.
-      Investitionen sind mit Risiken verbunden. Amana Aktien übernimmt keine Gewähr für die
-      Richtigkeit der Scharia-Konformitätsprüfung.
-    </div>
+    <div class="footer-disc">⚠️ Keine Anlageberatung. Alle Inhalte dienen ausschließlich der Information und Bildung.</div>
   </div>
 </footer>
 
-<!-- ══ JAVASCRIPT (ORIGINAL – UNVERÄNDERT) ══════ -->
-<script>
-'use strict';
-
-// ── Video-Daten (echte Videos) ──
-const VIDEOS = [
-  { id: 'hqtuQIk2OW4', title: 'XASB ETF Analyse: Über 5% Rendite & 100% Halal? (Sukuk ETF 2026)', cat: 'ETF', views: '20', date: 'vor 3 Tagen' },
-  { id: '2vNn1v-eCBc', title: 'ServiceNow (NOW) – 58% gefallen! Jetzt kaufen? Aktienanalyse + Halal-Check 2026', cat: 'Aktie', views: '76', date: 'vor 4 Tagen' },
-  { id: 'dweaAVqlFSs', title: 'Ist Apple HALAL? Diese Zahl schockiert jeden Muslim-Investor 🍎 | Apple Aktie Analyse 2026', cat: 'Aktie', views: '29', date: 'vor 7 Tagen' },
-  { id: 'wEGOTvuAlwM', title: '5 Halal Dividendenaktien aus Deutschland – die kaum jemand kennt!', cat: 'Aktie', views: '46', date: 'vor 8 Tagen' },
-  { id: 'Ywtz7cn7_5I', title: '🕌 Dieser ETF ist HALAL & GLOBAL – Invesco MWIM Islamic ETF vollständige Analyse 2026', cat: 'ETF', views: '38', date: 'vor 9 Tagen' },
-  { id: 'ge8o16VvrGw', title: 'Halal investieren: Der iShares MSCI World Islamic ETF im Komplett-Check! (Beste Wahl)', cat: 'ETF', views: '69', date: 'vor 2 Wochen' },
-  { id: 'N2hzVdBBo6c', title: '+30 % in 1 Jahr! Der UMMA ETF von Wahed im großen Halal-Check 🕌 | DJIW Analyse 2026', cat: 'ETF', views: '24', date: 'vor 13 Tagen' },
-  { id: '4ER2QhbDhIQ', title: '4.387% Rendite in 10 Jahren! 🔥 Arista Analyse 2026 – Halal-Check & Warnung', cat: 'Aktie', views: '72', date: 'vor 3 Wochen' },
-  { id: 'V5mwdGxwSnc', title: 'Invesco Physical Gold ETC – Ist dieser ETC wirklich HALAL? | Komplette Analyse 2026', cat: 'Gold', views: '20', date: 'vor 10 Tagen' },
-];
-
-function escHtml(str) {
-  return String(str)
-    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function buildVideoCard(v) {
-  const catColor = v.cat === 'ETF' ? '#3D9970' : v.cat === 'Gold' ? '#C9A84C' : '#5B8DEF';
-  return `
-    <a href="https://www.youtube.com/watch?v=${escHtml(v.id)}"
-       target="_blank" rel="noopener noreferrer nofollow"
-       class="video-card"
-       aria-label="${escHtml(v.title)} – auf YouTube ansehen">
-      <div class="video-thumb">
-        <img
-          width="320" height="180" loading="lazy" decoding="async"
-          src="https://img.youtube.com/vi/${escHtml(v.id)}/hqdefault.jpg"
-          alt="${escHtml(v.title)}"
-          data-fallback="thumb">
-        <div class="video-thumb-play" aria-hidden="true">
-          <div class="vid-play-btn"><div class="vid-play-icon"></div></div>
-        </div>
-      </div>
-      <div class="video-body">
-        <span class="video-badge" style="color:${catColor};background:${catColor}22;border-color:${catColor}44;">
-          ✅ ${escHtml(v.cat)} HALAL
-        </span>
-        <div class="video-title">${escHtml(v.title)}</div>
-        <div class="video-meta">
-          <span>👁 ${escHtml(v.views)} Aufrufe</span>
-          <span>·</span>
-          <span>${escHtml(v.date)}</span>
-        </div>
-      </div>
-    </a>`;
-}
-
-// Render videos
-const grid = document.getElementById('videosGrid');
-if (grid) grid.innerHTML = VIDEOS.map(buildVideoCard).join('');
-
-// Image fallback
-document.querySelectorAll('img[data-fallback="thumb"]').forEach(img => {
-  img.addEventListener('error', () => {
-    img.src = '';
-    const parent = img.closest('.video-thumb');
-    if (parent) {
-      parent.innerHTML = '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#111;color:#555;font-size:.75rem;">Video</div>';
-    }
-  });
-});
-
-// ── Hamburger ──
-const btn = document.getElementById('hamburgerBtn');
-const mobileNav = document.getElementById('mobileNav');
-if (btn && mobileNav) {
-  btn.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('open');
-    btn.classList.toggle('open', open);
-    btn.setAttribute('aria-expanded', String(open));
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  mobileNav.querySelectorAll('.mobile-link, a').forEach(a => {
-    a.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
-      mobileNav.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
-  });
-}
-
-// ── FAQ ──
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', () => {
-    const item = q.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
-    });
-    if (!isOpen) {
-      item.classList.add('open');
-      q.setAttribute('aria-expanded', 'true');
-    }
-  });
-});
-</script>
-
-<!-- ══ SCREENER JAVASCRIPT – NEU HINZUGEFÜGT ══ -->
-<!-- Vollständig in IIFE gekapselt → kein Konflikt mit bestehendem Code -->
-<script>
-(function () {
-'use strict';
-
-const SC_WORKER = "https://amana-screener.youssefchafi110800.workers.dev";
-
-// ── Hilfsfunktionen (sc-Prefix) ──────────────────────────────
-function scE(s){return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
-function scPct(v,d=2){return v==null||!isFinite(v)?"N/A":v.toFixed(d)+"%";}
-function scDom(u){if(!u)return"";try{return new URL(u).hostname.replace(/^www\./,"");}catch{return "";}}
-function scFmt(n,currency){
-  if(n==null||!isFinite(n))return"N/A";
-  const c=currency==="EUR"?"€":currency==="GBP"?"£":currency==="CHF"?"Fr.":"$";
-  const a=Math.abs(n);
-  if(a>=1e12)return(n/1e12).toFixed(2).replace(".",",")+"\u00a0Bio.\u00a0"+c;
-  if(a>=1e9) return(n/1e9).toFixed(2).replace(".",",")+"\u00a0Mrd.\u00a0"+c;
-  if(a>=1e6) return(n/1e6).toFixed(2).replace(".",",")+"\u00a0Mio.\u00a0"+c;
-  return n.toLocaleString("de-DE")+"\u00a0"+c;
-}
-function scSetSt(c,m){const e=document.getElementById("scStatus");e.className=c;e.textContent=m;e.style.display="block";}
-function scHideSt(){document.getElementById("scStatus").style.display="none";}
-
-// ── Ticker-Datenbank ──────────────────────────────────────────
-const SC_TICKERS={
-  "V":{status:"halal_override",grund:"Visa ist ein reines Zahlungsnetzwerk. Keine Zinsen – nur Transaktionsgebühren. Halal nach Musaffa & Zoya."},
-  "MA":{status:"halal_override",grund:"Mastercard ist ein reines Zahlungsnetzwerk ohne eigenes Kreditgeschäft. Halal nach Musaffa & Zoya."},
-  "PYPL":{status:"unklar",emoji:"💳",cat:"Zahlungsabwicklung + Kreditgeschäft",grund:"PayPal betreibt PayPal Credit und BNPL (zinstragende Konsumkredite). Prüfe Zinseinnahmen-Anteil."},
-  "SQ":{status:"unklar",emoji:"💳",cat:"Fintech + Kreditgeschäft",grund:"Block/Cash App Borrow – zinsbasiertes Mikrokreditprodukt neben Zahlungsabwicklung."},
-  "AXP":{status:"unklar",emoji:"💳",cat:"Kreditkartengeschäft mit Zinsen",grund:"American Express ist selbst Kreditgeber mit hohen revolvierende Zinssätzen – Riba."},
-  "BA":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"Boeing: weltgrößter Rüstungskonzern – Kampfjets, Raketen, Drohnen. Klar HARAM."},
-  "LMT":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"Lockheed Martin: F-35, Javelin, HIMARS. HARAM."},
-  "NOC":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"Northrop Grumman: Stealth-Bomber, Drohnen, Raketensysteme. HARAM."},
-  "RTX":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"RTX/Raytheon: Tomahawk-Raketen, Patriot-Systeme. HARAM."},
-  "GD":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"General Dynamics: Abrams-Panzer, Kriegsschiffe. HARAM."},
-  "HII":{status:"haram",emoji:"⚔️",cat:"Rüstung & Waffen",grund:"Huntington Ingalls: ausschließlich Kriegsschiffe für US Navy. HARAM."},
-  "PLTR":{status:"haram",emoji:"🕵️",cat:"Militär-KI & Überwachung",grund:"Palantir: Haupteinnahmen aus US-Militär, CIA, NSA – Drohnenangriffe & Massenüberwachung. HARAM."},
-  "AXON":{status:"haram",emoji:"⚔️",cat:"Waffenproduktion",grund:"Axon/Taser produziert Elektroschockwaffen und Bodycams für Militär & Polizei. HARAM."},
-  "MO":{status:"haram",emoji:"🚬",cat:"Tabak",grund:"Altria (Marlboro). HARAM."},
-  "PM":{status:"haram",emoji:"🚬",cat:"Tabak",grund:"Philip Morris International. HARAM."},
-  "BTI":{status:"haram",emoji:"🚬",cat:"Tabak",grund:"British American Tobacco. HARAM."},
-  "BUD":{status:"haram",emoji:"🍺",cat:"Alkohol",grund:"AB InBev – weltgrößter Brauereikonzern (Budweiser, Corona, Stella). HARAM."},
-  "DEO":{status:"haram",emoji:"🍺",cat:"Alkohol",grund:"Diageo – Johnnie Walker, Guinness. HARAM."},
-  "LVS":{status:"haram",emoji:"🎰",cat:"Glücksspiel",grund:"Las Vegas Sands – Casinos weltweit. HARAM."},
-  "WYNN":{status:"haram",emoji:"🎰",cat:"Glücksspiel",grund:"Wynn Resorts – Casinos. HARAM."},
-  "MGM":{status:"haram",emoji:"🎰",cat:"Glücksspiel",grund:"MGM Resorts – Casinos. HARAM."},
-};
-
-const SC_HARAM_R=[
-  {cat:"Rüstung & Waffen",emoji:"⚔️",grund:"Rüstungsunternehmen sind nach allen Shariah-Standards verboten.",kw:["aerospace & defense","aerospace and defense","defense contractor","weapons","ammunition","arms manufacturer","armament","warfare","military contractor","ordnance","combat systems","naval systems","defense electronics","military aircraft"]},
-  {cat:"Alkohol",emoji:"🍺",grund:"Produktion und Vertrieb von Alkohol sind im Islam verboten.",kw:["brewery","brewers","distillery","distillers","wine","winery","wineries","spirits","alcohol","beer","beverages—brewers","beverages - brewers","beverages—wineries","liquor","malt beverages"]},
-  {cat:"Tabak & Nikotin",emoji:"🚬",grund:"Tabakproduktion und -vertrieb sind nach Shariah verboten.",kw:["tobacco","cigarette","cigars","vaping","e-cigarettes","nicotine products"]},
-  {cat:"Glücksspiel",emoji:"🎰",grund:"Glücksspiel (Maysir) ist im Islam kategorisch verboten.",kw:["gambling","casino","casinos & gaming","casinos and gaming","lottery","lotteries","betting","wagering","sports betting","gaming equipment","slot machine"]},
-  {cat:"Pornografie",emoji:"🔞",grund:"Pornografie und Erwachsenenunterhaltung sind nach Shariah verboten.",kw:["adult entertainment","pornography","adult content","adult clubs"]},
-  {cat:"Konventionelles Banking",emoji:"🏦",grund:"Zinsenbasiertes Banking (Riba) ist nach Shariah verboten.",kw:["banks—diversified","banks—regional","banks - diversified","banks - regional","bank—diversified","bank - diversified","mortgage finance","consumer lending","payday lending","money center banks","savings & loans"]},
-  {cat:"Konventionelle Versicherung",emoji:"📋",grund:"Konventionelle Versicherungen enthalten Gharar und Riba.",kw:["insurance—diversified","insurance—life","insurance—property","insurance—specialty","insurance—reinsurance","insurance - diversified","insurance - life","insurance - property","property & casualty insurance","life insurance","reinsurance"]},
-  {cat:"Cannabis (Freizeit)",emoji:"🌿",grund:"Freizeithanf ist als berauschendes Mittel nach Shariah verboten.",kw:["cannabis","marijuana","recreational cannabis","cannabis dispensary"]},
-];
-
-const SC_FRAGW_R=[
-  {cat:"Unterhaltung & Medien",emoji:"📺",grund:"Streaming- und Medienunternehmen können erhebliche haram-Inhalte produzieren. Einnahmestruktur manuell prüfen.",kw:["entertainment","broadcasting","media","streaming","movies & entertainment","music & entertainment","film production"]},
-  {cat:"Werbung & Marketing",emoji:"📣",grund:"Werbeunternehmen bewerben oft haram-Produkte. Hauptkunden prüfen.",kw:["advertising","advertising agencies","marketing services","public relations"]},
-  {cat:"Kapitalmarkt & Brokerage",emoji:"📊",grund:"Traditionelle Kapitalmarktfirmen verdienen oft durch zinsbehaftete Produkte und Derivate.",kw:["capital markets","investment banking","brokerage","asset management","financial conglomerates"]},
-];
-
-function scBizChk(sector,industry,symbol){
-  const sym=(symbol||"").toUpperCase();
-  if(SC_TICKERS[sym]){const e=SC_TICKERS[sym];return{status:e.status==="halal_override"?"halal_override":e.status,cat:e.cat||null,emoji:e.emoji||null,grund:e.grund};}
-  const s=((sector||"")+" "+(industry||"")).toLowerCase();
-  for(const r of SC_HARAM_R){for(const k of r.kw){if(s.includes(k))return{status:"haram",cat:r.cat,emoji:r.emoji,grund:r.grund};}}
-  if((sector||"").toLowerCase()==="financial services"){
-    const isP=s.includes("payment")||s.includes("transaction processing")||s.includes("fintech");
-    const isI=s.includes("islamic")||s.includes("takaful")||s.includes("shariah");
-    if(!isP&&!isI)return{status:"unklar",cat:"Finanzdienstleistungen",emoji:"🏦",grund:`Finanzsektor enthält oft Riba-Elemente. Prüfe ob zinsbehaftete Produkte das Hauptgeschäft sind.`};
-  }
-  for(const r of SC_FRAGW_R){for(const k of r.kw){if(s.includes(k))return{status:"unklar",cat:r.cat,emoji:r.emoji,grund:r.grund};}}
-  return{status:"ok",cat:null,emoji:null,grund:null};
-}
-
-function scOvSt(d,biz){
-  if(biz.status==="halal_override")return"halal";
-  if(biz.status==="haram"||d.is_compliant===false)return"haram";
-  if(biz.status==="unklar")return"unklar";
-  const p=[d.aaoifi_compliant,d.djim_compliant,d.ftse_compliant,d.msci_compliant,d.sp_compliant].filter(Boolean).length;
-  if(p>=4)return"halal";
-  if(p>=2)return"unklar";
-  return"haram";
-}
-
-const SC_BOYC={
-  "AAPL":{level:"low",reason:"R&D-Zentren in Israel"},
-  "CSCO":{level:"high",reason:"Tochtergesellschaften liefern Dienste ans israelische Militär"},
-  "DELL":{level:"high",reason:"150 Mio. $ Server-Auftrag für israelisches Verteidigungsministerium (2023)"},
-  "GOOGL":{level:"medium",reason:"Project Nimbus: Cloud-Dienste für israelische Regierung & Militär"},
-  "GOOG":{level:"medium",reason:"Project Nimbus: Cloud-Dienste für israelische Regierung & Militär"},
-  "INTC":{level:"very_high",reason:"25 Mrd. $ Chipfabrik in Israel (Fab 28, Kiryat Gat)"},
-  "MSFT":{level:"medium",reason:"R&D in Israel, Azure Datacenter Region in Israel (2023)"},
-  "NVDA":{level:"medium",reason:"KI-Aktivitäten in Israel, Übernahme von Mellanox Technologies"},
-  "CAT":{level:"very_high",reason:"D9-Bulldozer für Abriss palästinensischer Häuser eingesetzt"},
-  "AMZN":{level:"medium",reason:"Project Nimbus: Cloud-Dienste für israelische Regierung & Militär"},
-  "ABNB":{level:"very_high",reason:"Listings in illegalen Siedlungen auf besetztem palästinensischem Land"},
-  "BKNG":{level:"very_high",reason:"Bewirbt Unterkünfte in israelischen Siedlungen auf besetztem Land"},
-  "JPM":{level:"high",reason:"Erhebliche Finanzbeziehungen mit israelischen Unternehmen"},
-  "KO":{level:"high",reason:"Coca-Cola Israel: exklusiver Franchisee in Israel"},
-  "PEP":{level:"medium",reason:"Übernahme SodaStream (3,2 Mrd. $), Joint Venture mit Sabra"},
-  "SIE.DE":{level:"high",reason:"Verkehrskontrollsysteme im besetzten Westjordanland"},
-};
-const SC_BCFG={
-  "very_high":{label:"🔴 Boykott: SEHR HOCH",cls:"sc-bb-very-high"},
-  "high":{label:"🟠 Boykott: HOCH",cls:"sc-bb-high"},
-  "medium":{label:"🟡 Boykott: MITTEL",cls:"sc-bb-medium"},
-  "low":{label:"⚪ Boykott: NIEDRIG",cls:"sc-bb-low"},
-};
-function scGtBovc(sym){
-  const b=(sym||"").toUpperCase().split(".")[0];
-  if(SC_BOYC[sym])return SC_BOYC[sym];
-  for(const k of Object.keys(SC_BOYC)){if(k.split(".")[0]===b)return SC_BOYC[k];}
-  return null;
-}
-
-// ── Sucheingabe ───────────────────────────────────────────────
-const scInp=document.getElementById("scSearchInput");
-const scDrop=document.getElementById("scDropdown");
-const scCBtn=document.getElementById("scClearBtn");
-let scDT=null,scLQ="";
-
-function scPosDrop(){
-  const r=scInp.getBoundingClientRect();
-  scDrop.style.left=r.left+"px";
-  scDrop.style.top=(r.bottom+6)+"px";
-  scDrop.style.width=r.width+"px";
-}
-function scCloseDrop(){scDrop.classList.remove("show");scLQ="";}
-
-scInp.addEventListener("input",()=>{
-  const q=scInp.value.trim();
-  scCBtn.classList.toggle("show",q.length>0);
-  if(q.length>0){document.getElementById("scResult").style.display="none";scHideSt();}
-  if(q.length<2){scCloseDrop();return;}
-  clearTimeout(scDT);
-  scDT=setTimeout(()=>scDoSrch(q),380);
-});
-scInp.addEventListener("keydown",e=>{
-  if(e.key==="Enter"){e.preventDefault();scEntDir();}
-  if(e.key==="Escape"){scCloseDrop();scInp.blur();}
-});
-window.addEventListener("scroll",()=>{if(scDrop.classList.contains("show"))scPosDrop();});
-window.addEventListener("resize",()=>{if(scDrop.classList.contains("show"))scPosDrop();});
-document.addEventListener("click",e=>{
-  if(!e.target.closest(".sc-wrap")&&!e.target.closest(".sc-dropdown"))scCloseDrop();
-});
-
-async function scDoSrch(q){
-  if(q===scLQ)return;
-  scLQ=q;
-  scPosDrop();
-  scDrop.innerHTML=`<div class="sc-drop-hint">Suche läuft…</div>`;
-  scDrop.classList.add("show");
-  try{
-    const res=await fetch(`${SC_WORKER}/search?q=${encodeURIComponent(q)}`);
-    const items=await res.json();
-    if(!Array.isArray(items)||!items.length){
-      scDrop.innerHTML=`<div class="sc-drop-hint">Keine Ergebnisse für „${scE(q)}"</div>
-        <div class="sc-drop-direct" onclick="scEntDir()">🔍 „${scE(q)}" direkt als Ticker prüfen →</div>`;
-      return;
-    }
-    scDrop.innerHTML=items.map(it=>{
-      const sym=it.symbol||"",name=it.name||sym;
-      const dom=scDom(it.website||""),init=(name||sym).charAt(0).toUpperCase();
-      const lEl=dom
-        ?`<div class="sc-dl-logo"><img src="https://logo.clearbit.com/${dom}" alt="" loading="lazy"
-            onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?sz=64&domain=${dom}';
-            this.onerror=function(){this.parentElement.className='sc-dl-init';this.parentElement.innerHTML='${init}';}"></div>`
-        :`<div class="sc-dl-init">${init}</div>`;
-      return`<div class="sc-drop-item" onclick="scDoScreen('${scE(sym)}','${scE(name)}')">
-        ${lEl}
-        <div style="flex:1;min-width:0">
-          <div class="sc-dl-name">${scE(name)}</div>
-          <div class="sc-dl-meta"><span>${scE(sym)}</span>${it.exchange?`<span>${scE(it.exchange)}</span>`:""}</div>
-        </div>
-      </div>`;
-    }).join("");
-    scPosDrop();
-  }catch{
-    scDrop.innerHTML=`<div class="sc-drop-hint">Verbindungsfehler.</div>
-      <div class="sc-drop-direct" onclick="scEntDir()">🔍 Direkt als Ticker prüfen →</div>`;
-  }
-}
-
-function scEntDir(){const q=scInp.value.trim().toUpperCase();if(!q)return;scCloseDrop();window.scDoScreen(q,q);}
-
-// ── Globale Funktionen (werden von onclick-Attributen aufgerufen) ──
-window.scClear=function(){
-  scInp.value="";scCBtn.classList.remove("show");scCloseDrop();
-  document.getElementById("scResult").style.display="none";
-  scHideSt();scInp.focus();
-};
-
-window.scEntDir=scEntDir;
-
-window.scDoScreen=async function(ticker,nameHint){
-  scCloseDrop();
-  scInp.value=nameHint||ticker;
-  scSetSt("loading",`Prüfe ${nameHint||ticker}…`);
-  document.getElementById("scResult").style.display="none";
-  try{
-    const res=await fetch(`${SC_WORKER}/screen/${encodeURIComponent(ticker)}`);
-    if(!res.ok)throw new Error(`HTTP ${res.status}`);
-    const data=await res.json();
-    if(data.error)throw new Error(data.error);
-    scRender(data);
-    scHideSt();
-    setTimeout(()=>document.getElementById("scResult").scrollIntoView({behavior:"smooth",block:"nearest"}),100);
-  }catch(e){
-    scSetSt("error","Fehler: "+e.message);
-  }
-};
-
-// ── Render ────────────────────────────────────────────────────
-function scRender(d){
-  const biz=scBizChk(d.sector,d.industry,d.symbol);
-  const boyc=scGtBovc(d.symbol);
-  const fehl=[];
-  if(d.market_cap==null)fehl.push("Börsenwert (Market Cap)");
-  if(d.total_assets==null)fehl.push("Bilanzsumme (Total Assets)");
-  if(d.total_debt==null)fehl.push("Schulden (Total Debt)");
-  if(d.total_revenue==null)fehl.push("Jahresumsatz (Total Revenue)");
-  const dUnv=fehl.length>0&&biz.status!=="haram";
-  const st=dUnv?"unbekannt":scOvSt(d,biz);
-  const bCls=st==="halal"?"sc-sb-halal":st==="haram"?"sc-sb-haram":st==="unbekannt"?"sc-sb-unbekannt":"sc-sb-unklar";
-  const bTxt=st==="halal"?"✅ Halal":st==="haram"?"❌ Nicht Halal":st==="unbekannt"?"❓ Kein Urteil":"⚠️ Fragwürdig";
-
-  const dom=scDom(d.website||"");
-  const init=((d.name||d.symbol||"?").charAt(0)).toUpperCase();
-  const lEl=dom
-    ?`<div class="sc-co-logo"><img src="https://logo.clearbit.com/${dom}" alt="${scE(d.name||'')}"
-        onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?sz=128&domain=${dom}';
-        this.onerror=function(){this.parentElement.className='sc-co-init';this.parentElement.innerHTML='${init}';}"></div>`
-    :`<div class="sc-co-init">${init}</div>`;
-
-  const cur=d.currency||"USD";
-  const sMK=d.debt_to_market_cap_ratio!=null?d.debt_to_market_cap_ratio*100:null;
-  const zRev=d.interest_income_to_revenue_ratio!=null?d.interest_income_to_revenue_ratio*100:null;
-  const rein=d.purification_rate!=null?d.purification_rate:null;
-  const cash=d.cash_to_assets_ratio!=null?d.cash_to_assets_ratio*100:null;
-  const rD=d.total_debt,rM=d.market_cap,rC=d.cash_and_equivalents,rT=d.total_assets,rR=d.total_revenue,rI=d.interest_income;
-  const dTA=(rD!=null&&rT!=null&&rT>0)?(rD/rT)*100:null;
-
-  const stds=[
-    {id:"AAOIFI",ok:d.aaoifi_compliant},
-    {id:"DJIM",ok:d.djim_compliant},
-    {id:"FTSE",ok:d.ftse_compliant&&(dTA==null||dTA<=33)},
-    {id:"MSCI",ok:d.msci_compliant&&(dTA==null||dTA<=33.33)},
-    {id:"S&P",ok:d.sp_compliant},
-  ];
-
-  const kzIt=[
-    sMK!=null&&{label:"Schulden / Marktwert",val:sMK,limit:30,formel:rD!=null&&rM!=null?`${scFmt(rD,cur)} ÷ ${scFmt(rM,cur)}`:null},
-    dTA!=null&&{label:"Schulden / Bilanzsumme",val:dTA,limit:33,formel:rD!=null&&rT!=null?`${scFmt(rD,cur)} ÷ ${scFmt(rT,cur)}`:null},
-    zRev!=null&&{label:"Zinserträge / Umsatz",val:zRev,limit:5,formel:rI!=null&&rR!=null?`${scFmt(rI,cur)} ÷ ${scFmt(rR,cur)}`:null},
-    rein!=null&&{label:"Reinigungssatz",val:rein,limit:5,formel:null},
-  ].filter(Boolean);
-
-  const dat=d.last_checked_at?d.last_checked_at.split("T")[0]:new Date().toISOString().split("T")[0];
-
-  const buls=[];
-  if(biz.status==="halal_override")buls.push(biz.grund);
-  else if(biz.status!=="ok")buls.push(biz.grund);
-  else buls.push(d.business_screen_reason||"Geschäftsbereich ist scharia-konform.");
-  if(sMK!=null)buls.push(`Schulden/Marktwert: ${scPct(sMK)} (AAOIFI ≤30%)`);
-  if(dTA!=null)buls.push(`Schulden/Bilanzsumme: ${scPct(dTA)} (FTSE/MSCI ≤33%)`);
-  if(cash!=null)buls.push(`Cash-Quote: ${scPct(cash)}`);
-  if(zRev!=null)buls.push(`Zinserträge: ${scPct(zRev)}`);
-  if(rein!=null)buls.push(`Reinigungssatz: ${scPct(rein)}`);
-  if(boyc)buls.push(`⚠️ Boykott-Hinweis: ${boyc.reason}`);
-  buls.push("AAOIFI: Schulden/MK ≤30%, Zinsen ≤5% | FTSE/MSCI: Schulden/Bilanzsumme ≤33%");
-
-  let ban="";
-  if(dUnv){
-    ban=`<div class="sc-unbekannt-banner"><span style="font-size:1.4rem;flex-shrink:0">❓</span>
-      <div><strong>Bilanzdaten unvollständig — kein Urteil möglich</strong>
-      <ul style="margin:6px 0 0;padding-left:16px;font-size:.8rem;opacity:.8">${fehl.map(f=>`<li>${scE(f)}</li>`).join("")}</ul>
-      <div style="margin-top:8px;font-size:.75rem;opacity:.6">Nach dem nächsten nächtlichen Update (02:00 UTC) werden die Daten ergänzt.</div>
-      </div></div>`;
-  }else if(biz.status==="haram"){
-    ban=`<div class="sc-haram-banner"><span style="font-size:1.4rem;flex-shrink:0">${biz.emoji||"🚫"}</span>
-      <div><strong>Verbotene Branche – Nicht Halal</strong>${scE(biz.grund)}
-      ${biz.cat?`<div><span class="sc-haram-cat">🚫 ${scE(biz.cat)}</span></div>`:""}</div></div>`;
-  }else if(biz.status==="unklar"){
-    ban=`<div class="sc-unklar-banner"><span style="font-size:1.4rem;flex-shrink:0">${biz.emoji||"⚠️"}</span>
-      <div><strong>⚠️ Manuelle Prüfung empfohlen – ${scE(biz.cat||"Fragwürdige Branche")}</strong>${scE(biz.grund)}</div></div>`;
-  }else if(biz.status==="halal_override"){
-    ban=`<div class="sc-unklar-banner" style="background:rgba(61,153,112,.07);border-bottom-color:rgba(61,153,112,.2)">
-      <span style="font-size:1.4rem;flex-shrink:0">✅</span>
-      <div style="color:var(--green)"><strong style="color:#fff">Hauptgeschäft geprüft – Zahlungsnetzwerk (kein Riba)</strong>${scE(biz.grund)}</div></div>`;
-  }
-
-  document.getElementById("scResult").innerHTML=`
-  <div class="sc-result-card sc-fade-in">
-    <div class="sc-co-head">
-      ${lEl}
-      <div class="sc-co-meta">
-        <div class="sc-co-ticker">${scE(d.symbol||"")}</div>
-        <div class="sc-co-name">${scE(d.name||"")}</div>
-        <div class="sc-co-sector">${scE(d.sector||"")}${d.industry?" · "+scE(d.industry):""}</div>
-      </div>
-      <div class="sc-badges-row">
-        <div class="sc-status-badge ${bCls}">${bTxt}</div>
-        ${boyc?`<div class="sc-status-badge ${SC_BCFG[boyc.level].cls}">${SC_BCFG[boyc.level].label}</div>`:""}
-      </div>
-    </div>
-    ${ban}
-    <div class="sc-standards">
-      ${dUnv
-        ?stds.map(s=>`<div class="sc-std uk">? ${scE(s.id)}</div>`).join("")
-        :stds.map(s=>{const c=s.ok==null?"uk":s.ok?"ok":"fail";const i=s.ok==null?"?":s.ok?"✓":"✗";return`<div class="sc-std ${c}">${i} ${scE(s.id)}</div>`;}).join("")
-      }
-    </div>
-    <div class="sc-stand">Shariah-Status · Geprüft am: ${dat}</div>
-    ${kzIt.length?`<div class="sc-kz-block"><div class="sc-kz-head">Finanzkennzahlen</div>
-      ${kzIt.map(r=>{
-        const ok=r.val<=r.limit,w2=r.val<=r.limit*1.3;
-        const c2=ok?"sc-kv-ok":w2?"sc-kv-warn":"sc-kv-bad";
-        const col=ok?"#3D9970":w2?"#C9A84C":"#C0392B";
-        const wp=Math.min((r.val/(r.limit*1.5))*100,100).toFixed(1);
-        return`<div class="sc-kz-item">
-          <div class="sc-kz-row"><span class="sc-kz-label">${r.label}</span>
-            <span class="sc-kz-right"><span class="sc-kz-val ${c2}">${scPct(r.val)}</span><span class="sc-kz-limit">/ ≤${r.limit}%</span></span>
-          </div>
-          <div class="sc-balken"><div class="sc-balken-fill" style="width:${wp}%;background:${col}"></div></div>
-          ${r.formel?`<div class="sc-kz-formel">${scE(r.formel)} = ${scPct(r.val)}</div>`:""}
-        </div>`;
-      }).join("")}
-      ${cash!=null?`<div class="sc-kz-item sc-kz-item-neutral"><div class="sc-kz-row"><span class="sc-kz-label">Cash-Quote</span><span class="sc-kz-val sc-kv-neu">${scPct(cash)}</span></div></div>`:""}
-      ${rM!=null?`<div class="sc-kz-item sc-kz-item-neutral"><div class="sc-kz-row"><span class="sc-kz-label">Börsenwert</span><span class="sc-kz-val" style="color:var(--gold)">${scFmt(rM,cur)}</span></div></div>`:""}
-      ${rR!=null?`<div class="sc-kz-item sc-kz-item-neutral"><div class="sc-kz-row"><span class="sc-kz-label">Jahresumsatz</span><span class="sc-kz-val" style="color:var(--gold)">${scFmt(rR,cur)}</span></div></div>`:""}
-    </div>`:""}
-    <div class="sc-erl-block"><div class="sc-erl-head">Erläuterung</div>
-      <ul class="sc-erl-list">${buls.map(b=>`<li>${scE(b)}</li>`).join("")}</ul>
-    </div>
-    ${st==="halal"&&rein!=null&&rein>0?`<div class="sc-purif">
-      🌿 <strong>Purification:</strong> Pro 100 € Dividende <strong>${scPct(rein)}</strong> spenden = <strong>${rein.toFixed(2)} €</strong>.
-    </div>`:""}
-    <div class="sc-new-search" onclick="scClear()">↩ Neue Suche starten</div>
-  </div>`;
-  document.getElementById("scResult").style.display="block";
-}
-
-})();
-</script>
-
-<!-- ═══════════════════════════════════════
-  DSGVO Cookie-Banner – Amana Aktien Design
-  ═══════════════════════════════════════ -->
-<style>
-#cb{
-  position:fixed;bottom:0;left:0;right:0;z-index:9999;
-  background:rgba(13,13,13,.97);
-  border-top:1px solid rgba(201,168,76,.3);
-  backdrop-filter:blur(12px);
-  padding:1.1rem 2rem;
-  display:flex;align-items:center;justify-content:space-between;
-  gap:1.25rem;flex-wrap:wrap;
-  font-family:'DM Sans',sans-serif;
-  box-shadow:0 -8px 32px rgba(0,0,0,.6);
-  transition:transform .4s ease;
-}
-#cb.hidden{transform:translateY(100%)}
-#cb-text{font-size:.8rem;color:#999;max-width:580px;line-height:1.6}
-#cb-text a{color:#C9A84C;border-bottom:1px solid rgba(201,168,76,.3)}
-#cb-text a:hover{border-color:#C9A84C}
-#cb-btns{display:flex;gap:.65rem;flex-shrink:0}
-#cb-btns button{
-  font-family:'DM Sans',sans-serif;
-  font-size:.76rem;font-weight:700;
-  border:none;border-radius:4px;
-  padding:.55rem 1.1rem;cursor:pointer;
-  transition:opacity .15s;letter-spacing:.03em
-}
-#cb-btns button:hover{opacity:.85}
-#cb-accept{background:#C9A84C;color:#0D0D0D}
-#cb-decline{background:rgba(255,255,255,.08);color:#E8E4DC;border:1px solid rgba(255,255,255,.12)!important}
-#cb-reopen{
-  position:fixed;bottom:1.25rem;right:1.25rem;z-index:9998;
-  background:rgba(13,13,13,.9);border:1px solid rgba(201,168,76,.3);
-  color:#C9A84C;font-size:.7rem;font-weight:700;
-  padding:.45rem .85rem;border-radius:20px;cursor:pointer;
-  font-family:'DM Sans',sans-serif;letter-spacing:.05em;
-  display:none;transition:border-color .2s
-}
-#cb-reopen:hover{border-color:#C9A84C}
-@media(max-width:600px){
-  #cb{padding:1rem;flex-direction:column;align-items:flex-start}
-  #cb-btns{width:100%;justify-content:stretch}
-  #cb-btns button{flex:1}
-}
-</style>
-
+<!-- ══ COOKIE BANNER ══════════════════════════════ -->
 <div id="cb" role="dialog" aria-label="Cookie-Einstellungen">
-  <p id="cb-text">
-    ☪ Diese Website nutzt externe Inhalte (YouTube, Google Fonts) und Affiliate-Links.
-    Bei Ablehnung bleiben YouTube-Videos inaktiv.
-    <a href="datenschutz.html">Datenschutzerklärung</a>
-  </p>
+  <p id="cb-text">☪ Diese Website nutzt externe Inhalte (YouTube, Google Fonts) und Affiliate-Links. <a href="datenschutz.html">Datenschutzerklärung</a></p>
   <div id="cb-btns">
     <button id="cb-decline">Ablehnen</button>
-    <button id="cb-accept">Alles akzeptieren</button>
+    <button id="cb-accept">Akzeptieren</button>
   </div>
 </div>
+<button id="cb-reopen" aria-label="Datenschutzeinstellungen">🔒 Datenschutz</button>
 
-<button id="cb-reopen" aria-label="Datenschutzeinstellungen öffnen">🔒 Datenschutz</button>
-
+<!-- ══ JAVASCRIPT ════════════════════════════════ -->
 <script>
-(function(){
-  var bar=document.getElementById('cb');
-  var reopen=document.getElementById('cb-reopen');
-  var KEY='aa_consent';
+'use strict';
 
-  function loadYT(){
-    document.querySelectorAll('iframe[data-src]').forEach(function(f){
-      if(!f.src||f.src==='about:blank'||f.src===''){
-        f.src=f.dataset.src;
+/* ── Analysen data (neueste 4 auf Startseite) ── */
+const ANALYSEN_HOME = [
+  {
+    ticker:'NOW', name:'ServiceNow', sektor:'tech', sektorLabel:'Enterprise Software',
+    halal:true, standard:'AAOIFI', ytId:'2vNn1v-eCBc',
+    desc:'58% gefallen – Kaufchance oder Value Trap? SaaS-Weltmarktführer für IT-Workflows mit >25% Umsatzwachstum.',
+    datum:'Mai 2026', artikel:null
+  },
+  {
+    ticker:'ANET', name:'Arista Networks', sektor:'tech', sektorLabel:'Netzwerk-Technologie',
+    halal:true, standard:'AAOIFI', ytId:'4ER2QhbDhIQ',
+    desc:'4.387% Rendite in 10 Jahren. Weltmarktführer für Cloud-Netzwerk-Switches – fundamentalstarkes Wachstumsunternehmen.',
+    datum:'April 2026', artikel:null
+  },
+  {
+    ticker:'AAPL', name:'Apple', sektor:'tech', sektorLabel:'Consumer Electronics',
+    halal:null, standard:'AAOIFI / DJIM / MSCI', ytId:'dweaAVqlFSs',
+    desc:'Halal nach DJIM und MSCI, nicht nach AAOIFI. Die Schulden-Kennzahl überschreitet knapp die AAOIFI-Schwelle.',
+    datum:'Mai 2026', artikel:'ist-aktien-investieren-halal.html'
+  },
+  {
+    ticker:'DIVI', name:'5 Halal Dividendenaktien aus DE', sektor:'dividend', sektorLabel:'Dividenden-Screening',
+    halal:true, standard:'AAOIFI', ytId:'wEGOTvuAlwM',
+    desc:'Fünf deutsche Dividendenaktien die kaum jemand kennt – alle bestehen das Scharia-Screening.',
+    datum:'April 2026', artikel:null
+  },
+];
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function halalBadge(h){
+  if(h===true) return '<span class="badge badge-halal">✓ Halal</span>';
+  if(h===false) return '<span class="badge badge-haram">✗ Nicht Halal</span>';
+  return '<span class="badge badge-pending">⏳ Prüfung</span>';
+}
+
+function buildCard(a){
+  return `<article class="analyse-card">
+    <div class="card-thumb">
+      <a href="https://www.youtube.com/watch?v=${esc(a.ytId)}" target="_blank" rel="noopener nofollow">
+        <img src="https://img.youtube.com/vi/${esc(a.ytId)}/hqdefault.jpg" alt="${esc(a.name)}" loading="lazy" decoding="async" width="320" height="180">
+        <div class="thumb-play"><div class="thumb-play-circle"><div class="thumb-play-tri"></div></div></div>
+      </a>
+      <div class="card-badges">${halalBadge(a.halal)}<span class="badge badge-sector">${esc(a.sektorLabel)}</span></div>
+    </div>
+    <div class="card-body">
+      <div><div class="card-ticker">${esc(a.ticker)}</div><div class="card-company">${esc(a.name)}</div></div>
+      <p class="card-desc">${esc(a.desc)}</p>
+      <div class="card-meta"><span>📅 ${esc(a.datum)}</span><span>·</span><span style="color:var(--gold)">☪ ${esc(a.standard)}</span></div>
+    </div>
+    <div class="card-footer">
+      <a href="https://www.youtube.com/watch?v=${esc(a.ytId)}" target="_blank" rel="noopener nofollow" class="btn-video">▶ Video</a>
+      ${a.artikel
+        ? `<a href="${esc(a.artikel)}" class="btn-artikel">Artikel →</a>`
+        : `<span class="btn-artikel" style="opacity:.4;cursor:default">Artikel folgt</span>`
       }
-    });
-  }
+    </div>
+  </article>`;
+}
 
-  function applyConsent(c){
-    if(c==='accepted') loadYT();
-  }
+const grid = document.getElementById('analysesGrid');
+if(grid) grid.innerHTML = ANALYSEN_HOME.map(buildCard).join('');
 
-  var saved=localStorage.getItem(KEY);
-  if(saved){
-    bar.classList.add('hidden');
-    reopen.style.display='block';
-    applyConsent(saved);
-  }
-
-  document.getElementById('cb-accept').onclick=function(){
-    localStorage.setItem(KEY,'accepted');
-    bar.classList.add('hidden');
-    reopen.style.display='block';
-    loadYT();
-  };
-
-  document.getElementById('cb-decline').onclick=function(){
-    localStorage.setItem(KEY,'declined');
-    bar.classList.add('hidden');
-    reopen.style.display='block';
-  };
-
-  reopen.onclick=function(){
-    localStorage.removeItem(KEY);
-    bar.classList.remove('hidden');
-    reopen.style.display='none';
-  };
+/* ── Cookie Banner ── */
+(function(){
+  var bar=document.getElementById('cb'),reopen=document.getElementById('cb-reopen'),KEY='aa_consent';
+  if(localStorage.getItem(KEY)){bar.classList.add('hidden');reopen.style.display='block'}
+  document.getElementById('cb-accept').onclick=function(){localStorage.setItem(KEY,'accepted');bar.classList.add('hidden');reopen.style.display='block'};
+  document.getElementById('cb-decline').onclick=function(){localStorage.setItem(KEY,'declined');bar.classList.add('hidden');reopen.style.display='block'};
+  reopen.onclick=function(){localStorage.removeItem(KEY);bar.classList.remove('hidden');reopen.style.display='none'};
 })();
 </script>
 </body>
