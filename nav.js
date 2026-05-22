@@ -1,18 +1,16 @@
-Hier ist dein kompletter, korrigierter nav.js – einfach 1:1 ersetzen:
-
 /* ════════════════════════════════════════════════════════════════
-   AMANA AKTIEN – nav.js (korrigiert)
-   - Google Analytics mit Consent Mode v2 (DSGVO-konform)
-   - Memberstack 2.0 (DOM) korrekt eingebunden
-   - Theme-System (Dark/Light)
-   - Responsive Navigation mit Hamburger
+   AMANA AKTIEN – nav.js
+   • Google Analytics (gtag.js) mit Consent Mode v2 (DSGVO-konform)
+   • Memberstack 2.0 (korrekte Script-URL)
+   • Theme-System (Dark/Light, Persistenz via localStorage)
+   • Responsive Navigation mit Hamburger
    ════════════════════════════════════════════════════════════════ */
 
-/* ── 1. GOOGLE ANALYTICS (gtag.js) mit Consent Mode v2 ────────── */
+/* ── 1. GOOGLE ANALYTICS mit Consent Mode v2 ──────────────────── */
 window.dataLayer = window.dataLayer || [];
 function gtag(){ window.dataLayer.push(arguments); }
 
-// Default: alles abgelehnt, bis User zustimmt (DSGVO!)
+/* Standard: alles abgelehnt, bis Cookie-Banner Zustimmung gibt */
 gtag('consent', 'default', {
   'ad_storage'        : 'denied',
   'analytics_storage' : 'denied',
@@ -21,55 +19,49 @@ gtag('consent', 'default', {
   'wait_for_update'   : 500
 });
 
-const gtagScript = document.createElement('script');
-gtagScript.async = true;
-gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-VBKDTGTEV9';
-document.head.appendChild(gtagScript);
+(function loadGtag() {
+  const s = document.createElement('script');
+  s.async = true;
+  s.src   = 'https://www.googletagmanager.com/gtag/js?id=G-VBKDTGTEV9';
+  document.head.appendChild(s);
+})();
 
 gtag('js', new Date());
 gtag('config', 'G-VBKDTGTEV9', { anonymize_ip: true });
 
-/* Wenn dein Cookie-Banner Zustimmung bekommt, ruf irgendwo auf:
-   gtag('consent', 'update', {
-     ad_storage:'granted', analytics_storage:'granted',
-     ad_user_data:'granted', ad_personalization:'granted'
-   });
+/* Wenn dein Cookie-Banner Einwilligung erhält, ruf folgendes auf:
+     gtag('consent', 'update', {
+       ad_storage:'granted', analytics_storage:'granted',
+       ad_user_data:'granted', ad_personalization:'granted'
+     });
 */
 
-/* ── 2. MEMBERSTACK 2.0 (DOM) ─────────────────────────────────── */
-/* ✅ Korrekter Loader für Memberstack 2.0 mit pk_-Key.
-   Falls dein Dashboard einen anderen Script-Pfad zeigt,
-   ersetze ihn 1:1. */
-const msScript = document.createElement('script');
-msScript.src   = 'https://static.memberstack.com/scripts/v1/memberstack-dom.js';
-msScript.defer = true;
-msScript.setAttribute('data-memberstack-app', 'pk_84fbce5f80187f13ea28');
-document.head.appendChild(msScript);
+/* ── 2. MEMBERSTACK 2.0 ───────────────────────────────────────── */
+/* Offizielle, korrekte URL für statisches HTML */
+(function loadMemberstack() {
+  const s = document.createElement('script');
+  s.src   = 'https://static.memberstack.com/scripts/v1/memberstack.js';
+  s.defer = true;
+  s.setAttribute('data-memberstack-app', 'pk_84fbce5f80187f13ea28');
+  document.head.appendChild(s);
+})();
 
-/*
-  ════════════════════════════════════════════════════════════════
-  MEMBERSTACK – CONTENT SCHUTZ ANLEITUNG
-  ════════════════════════════════════════════════════════════════
+/*  MEMBERSTACK – KURZANLEITUNG
+    ─────────────────────────────
+    Inhalte schützen:
+      <div data-ms-content="premium">…nur für Premium…</div>
+      <div data-ms-content="!premium">
+        <a href="#/ms/signup" data-ms-modal="signup">Premium werden</a>
+      </div>
 
-  1) EINZELNE INHALTE SCHÜTZEN:
-     <div data-ms-content="premium">…Premium-Inhalt…</div>
-     <div data-ms-content="!premium">
-       <p>Nur für Premium-Mitglieder.</p>
-       <a href="#/ms/signup" data-ms-modal="signup">Jetzt Premium werden</a>
-     </div>
+    Ganze Seite sperren (im <head>):
+      <meta name="memberstack-page" content="protected"
+            data-ms-plan="pln_DEINE_PLAN_ID">
 
-  2) GANZE SEITE SPERREN (z.B. premium.html):
-     <meta name="memberstack-page" content="protected"
-           data-ms-plan="pln_DEINE_PLAN_ID">
-
-  3) STRIPE einmalig im Memberstack-Dashboard verbinden,
-     dann Plan anlegen (z.B. 4,99 €/Monat).
-
-  4) Eingeloggten User abfragen:
-     window.$memberstackDom.getCurrentMember().then(({ data: member }) => {
-       if (member) console.log('Eingeloggt als:', member.auth.email);
-     });
-  ════════════════════════════════════════════════════════════════
+    Eingeloggten User abfragen:
+      window.$memberstackDom.getCurrentMember().then(({ data: m }) => {
+        if (m) console.log('Eingeloggt:', m.auth.email);
+      });
 */
 
 (function () {
@@ -83,7 +75,8 @@ document.head.appendChild(msScript);
     localStorage.setItem(THEME_KEY, theme);
     const btn = document.getElementById('aa-theme-btn');
     if (btn) {
-      btn.setAttribute('aria-label', theme === 'dark' ? 'Helles Design aktivieren' : 'Dunkles Design aktivieren');
+      btn.setAttribute('aria-label',
+        theme === 'dark' ? 'Helles Design aktivieren' : 'Dunkles Design aktivieren');
       btn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
     }
   }
@@ -93,7 +86,7 @@ document.head.appendChild(msScript);
     applyTheme(current === 'dark' ? 'light' : 'dark');
   }
 
-  /* Saved theme sofort anwenden (vor DOM-Load → kein Flash) */
+  /* Theme sofort anwenden (vor DOM-Load → kein Flash) */
   const savedTheme = localStorage.getItem(THEME_KEY) || 'dark';
   document.documentElement.setAttribute('data-theme', savedTheme);
 
@@ -240,11 +233,11 @@ document.head.appendChild(msScript);
   `;
   document.head.appendChild(style);
 
-  /* ── Active link detection ── */
+  /* ── Active-Link Erkennung ── */
   const page = window.location.pathname.split('/').pop() || 'index.html';
   const isActive = (href) => page === href ? 'class="aa-nav-active"' : '';
 
-  /* ── Build HTML ── */
+  /* ── HTML zusammenbauen ── */
   const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
   const themeIcon    = currentTheme === 'dark' ? '☀️' : '🌙';
   const themeLabel   = currentTheme === 'dark' ? 'Helles Design aktivieren' : 'Dunkles Design aktivieren';
@@ -284,19 +277,22 @@ document.head.appendChild(msScript);
     <a href="#/ms/signup" data-ms-modal="signup" class="aa-mobile-cta">☪ Premium</a>
   </div>`;
 
-  /* ── Inject nav ── */
-  const placeholder = document.getElementById('site-nav');
-  if (placeholder) {
-    placeholder.outerHTML = navHTML;
-  } else {
-    document.body.insertAdjacentHTML('afterbegin', navHTML);
+  /* ── Nav einfügen ── */
+  function injectNav() {
+    const placeholder = document.getElementById('site-nav');
+    if (placeholder) {
+      placeholder.outerHTML = navHTML;
+    } else {
+      document.body.insertAdjacentHTML('afterbegin', navHTML);
+    }
+
+    const themeBtn = document.getElementById('aa-theme-btn');
+    if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
+
+    initHamburger();
   }
 
-  /* ── Theme Toggle wiring ── */
-  const themeBtn = document.getElementById('aa-theme-btn');
-  if (themeBtn) themeBtn.addEventListener('click', toggleTheme);
-
-  /* ── Hamburger ── */
+  /* ── Hamburger Logik ── */
   function initHamburger() {
     const btn = document.getElementById('aa-hamburgerBtn');
     const mob = document.getElementById('aa-mobileNav');
@@ -328,9 +324,10 @@ document.head.appendChild(msScript);
     });
   }
 
+  /* ── Start, sobald body verfügbar ist ── */
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initHamburger);
+    document.addEventListener('DOMContentLoaded', injectNav);
   } else {
-    initHamburger();
+    injectNav();
   }
 })();
