@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium Zugang wird aktiviert</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background: white;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #667eea;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    h2 { color: #333; margin: 20px 0; }
+    .error { color: #e74c3c; }
+    .success { color: #27ae60; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner"></div>
+    <h2>⏳ Dein Premium Zugang wird aktiviert...</h2>
+    <p id="status">Einen Moment bitte...</p>
+  </div>
+
+  <script>
+    async function activatePremium() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get('token');
+      const email = urlParams.get('email');
+
+      const statusEl = document.getElementById('status');
+
+      if (!token || !email) {
+        statusEl.innerHTML = '<p class="error">❌ Ungültiger Link</p>';
+        return;
+      }
+
+      try {
+        // Option 1: Token lokal speichern (schnell, aber unsicher)
+        localStorage.setItem('premiumToken', token);
+        localStorage.setItem('premiumEmail', email);
+        localStorage.setItem('premiumExpiry', Date.now() + 30*24*60*60*1000); // 30 Tage
+
+        // Option 2: Server validieren (sicherer - später aktivieren)
+        // const response = await fetch('/.netlify/functions/verify-magic-link', {
+        //   method: 'POST',
+        //   body: JSON.stringify({ token, email })
+        // });
+        // if (!response.ok) throw new Error('Token ungültig');
+
+        statusEl.innerHTML = '<p class="success">✅ Zugang aktiviert! Weiterleitung...</p>';
+        
+        // Nach 2 Sekunden weiterleiten
+        setTimeout(() => {
+          window.location.href = '/premium-content.html';
+        }, 2000);
+
+      } catch (err) {
+        statusEl.innerHTML = `<p class="error">❌ Fehler: ${err.message}</p>`;
+      }
+    }
+
+    activatePremium();
+  </script>
+</body>
+</html>
