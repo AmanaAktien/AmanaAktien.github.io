@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Amana Club – Premium Inhalte</title>
+
+  <script>
+    (function() {
+      const theme = localStorage.getItem('aa_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root, [data-theme="dark"] {
+      --bg: #080808;
+      --bg2: #111111;
+      --bg3: #181818;
+      --text: #F0ECE3;
+      --text2: #B8B0A0;
+      --muted: #6E6860;
+      --border: rgba(201, 168, 76, 0.15);
+      --gold: #C9A84C;
+      --gold-glow: rgba(201, 168, 76, 0.08);
+      --green: #3D9970;
+    }
+    [data-theme="light"] {
+      --bg: #F5F2EC;
+      --bg2: #FFFFFF;
+      --bg3: #EDE9E0;
+      --text: #1A1814;
+      --text2: #524A3C;
+      --muted: #9A9080;
+      --border: rgba(140, 100, 30, 0.18);
+      --gold: #9A7228;
+      --gold-glow: rgba(140, 100, 30, 0.07);
+      --green: #2D7A55;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== NAV ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 8, 8, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.85rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .theme-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.4rem 0.7rem;
+      cursor: pointer;
+      color: var(--text2);
+      transition: all 0.15s ease;
+    }
+
+    .theme-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .logout-btn {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.15s ease;
+    }
+
+    .logout-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* ===== LOGIN SECTION ===== */
+    .login-section {
+      max-width: 500px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .login-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+
+    .login-section p {
+      color: var(--text2);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text2);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.15s ease;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--gold);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .login-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .login-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .error-msg {
+      color: #FF4444;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      background: rgba(255, 68, 68, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 68, 68, 0.2);
+    }
+
+    .success-msg {
+      color: var(--green);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      background: rgba(61, 153, 112, 0.1);
+      border-radius: 8px;
+      border: 1px solid rgba(61, 153, 112, 0.2);
+    }
+
+    /* ===== CONTENT SECTION ===== */
+    .content-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    .welcome-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .welcome-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: var(--gold);
+    }
+
+    .welcome-header p {
+      color: var(--text2);
+      font-size: 1.05rem;
+    }
+
+    .user-email {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ===== CONTENT GRID ===== */
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .content-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: all 0.2s ease;
+    }
+
+    .content-card:hover {
+      border-color: rgba(201, 168, 76, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .content-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--text);
+    }
+
+    .content-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .content-link {
+      display: inline-block;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.15s ease;
+    }
+
+    .content-link:hover {
+      transform: translateX(4px);
+    }
+
+    /* ===== COMING SOON ===== */
+    .coming-soon {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, rgba(201, 168, 76, 0.08), rgba(201, 168, 76, 0.02));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-top: 3rem;
+    }
+
+    .coming-soon h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+
+    .coming-soon p {
+      color: var(--text2);
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .welcome-header h1 {
+        font-size: 1.8rem;
+      }
+
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        padding: 0.75rem 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <a href="/" class="nav-logo">Amana Aktien</a>
+    <div class="nav-right">
+      <button class="theme-btn" id="themeToggle" aria-label="Theme wechseln">☀︎</button>
+      <button class="logout-btn" id="logoutBtn" style="display:none;">Abmelden</button>
+    </div>
+  </nav>
+
+  <!-- ===== LOGIN SECTION ===== -->
+  <div id="loginContainer">
+    <section class="login-section">
+      <h2>🔐 Club beitreten</h2>
+      <p>Gib deine Email ein um Zugriff auf deine Premium-Inhalte zu bekommen</p>
+      
+      <div id="errorMsg" class="error-msg" style="display:none;"></div>
+      <div id="successMsg" class="success-msg" style="display:none;"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email Adresse</label>
+          <input 
+            type="email" 
+            id="email" 
+            placeholder="deine@email.com" 
+            required
+            autocomplete="email"
+          >
+        </div>
+        <button type="submit" class="login-btn" id="submitBtn">Zugriff gewähren</button>
+      </form>
+
+      <p style="margin-top: 2rem; font-size: 0.8rem; color: var(--muted);">
+        Noch nicht Mitglied? <a href="amana_club_pricing_page.html" style="color: var(--gold); font-weight: 600;">Jetzt abonnieren</a>
+      </p>
+    </section>
+  </div>
+
+  <!-- ===== CONTENT SECTION ===== -->
+  <div id="contentContainer" class="content-section">
+    <div class="welcome-header">
+      <h1>✨ Willkommen im Amana Club</h1>
+      <p>Schön dich wiederzusehen, <span class="user-email" id="userEmail"></span></p>
+    </div>
+
+    <div class="content-grid">
+      <!-- HALAL AKTIENANALYSEN -->
+      <div class="content-card">
+        <div class="content-card-icon">📊</div>
+        <h3>Halal Aktienanalysen</h3>
+        <p>Handgeprüfte Research-Berichte zu unterbewerteten Aktien nach AAOIFI-Standard. Mit Video, Kennzahlen und Scharia-Konformität.</p>
+        <a href="#analysen" class="content-link">Zu den Analysen →</a>
+      </div>
+
+      <!-- WATCHLIST -->
+      <div class="content-card">
+        <div class="content-card-icon">📈</div>
+        <h3>Halal Watchlist</h3>
+        <p>Deine persönliche Übersicht über empfohlene halal Aktien. Kurse, Kennzahlen und AAOIFI-Status live aktualisiert.</p>
+        <a href="#watchlist" class="content-link">Watchlist öffnen →</a>
+      </div>
+
+      <!-- ECHTGELD DEPOT -->
+      <div class="content-card">
+        <div class="content-card-icon">💼</div>
+        <h3>Live Echtgeld-Depot</h3>
+        <p>Monatliche echte Käufe ins Amana Cashflow-Depot. Sehe genau was wir kaufen, wann und warum – vollständige Transparenz.</p>
+        <a href="#depot" class="content-link">Zum Depot →</a>
+      </div>
+
+      <!-- COMMUNITY -->
+      <div class="content-card">
+        <div class="content-card-icon">🤝</div>
+        <h3>Premium Community</h3>
+        <p>Geschlossenes Forum mit gleichgesinnten muslimischen Investoren. Fragen stellen, Ideen teilen, mitentscheiden.</p>
+        <a href="#community" class="content-link">Community beitreten →</a>
+      </div>
+
+      <!-- MONATLICHE VERANSTALTUNGEN -->
+      <div class="content-card">
+        <div class="content-card-icon">🎓</div>
+        <h3>Monatliche Livestreams</h3>
+        <p>Exklusive Live-Sessions mit Deep-Dives zu Halal-Investing, Scharia-Konformität und Vermögensaufbau.</p>
+        <a href="#livestreams" class="content-link">Zu den Livestreams →</a>
+      </div>
+
+      <!-- PODCAST -->
+      <div class="content-card">
+        <div class="content-card-icon">🎧</div>
+        <h3>Premium Podcasts</h3>
+        <p>Alle Analysen auch als Audio-Format. Perfekt für deinen Weg zur Arbeit, beim Sport oder entspannt am Abend.</p>
+        <a href="#podcasts" class="content-link">Zu den Podcasts →</a>
+      </div>
+    </div>
+
+    <!-- COMING SOON -->
+    <div class="coming-soon">
+      <h2>🚀 Coming Soon</h2>
+      <p>Deine Premium-Inhalte werden aktuell aufgebaut. In den nächsten Tagen werden alle Analysen, Videos und der Community-Bereich freigeschaltet. Danke für deine Geduld!</p>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // Theme Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('aa_theme', theme);
+      themeBtn.textContent = theme === 'dark' ? '☀︎' : '☾';
+    }
+
+    const savedTheme = localStorage.getItem('aa_theme') || 'dark';
+    applyTheme(savedTheme);
+
+    themeBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    // ===== MEMBER SYSTEM =====
+    const MEMBERS_KEY = 'amana_members';
+    const SESSION_KEY = 'amana_session';
+
+    // Simulierte Member DB (in Zukunft: echter Backend)
+    function initMembers() {
+      let members = localStorage.getItem(MEMBERS_KEY);
+      if (!members) {
+        const defaultMembers = [
+          { email: 'test@gmail.com', plan: 'monthly', expiresAt: new Date(Date.now() + 30*24*60*60*1000).toISOString() },
+          { email: 'demo@example.com', plan: 'yearly', expiresAt: new Date(Date.now() + 365*24*60*60*1000).toISOString() }
+        ];
+        localStorage.setItem(MEMBERS_KEY, JSON.stringify(defaultMembers));
+      }
+    }
+
+    initMembers();
+
+    // Check if user is already logged in
+    function checkSession() {
+      const session = localStorage.getItem(SESSION_KEY);
+      if (session) {
+        const { email, timestamp } = JSON.parse(session);
+        // Session valid for 30 days
+        if (Date.now() - timestamp < 30 * 24 * 60 * 60 * 1000) {
+          showContent(email);
+          return;
+        } else {
+          localStorage.removeItem(SESSION_KEY);
+        }
+      }
+    }
+
+    function isMember(email) {
+      const members = JSON.parse(localStorage.getItem(MEMBERS_KEY) || '[]');
+      return members.find(m => m.email.toLowerCase() === email.toLowerCase() && new Date(m.expiresAt) > new Date());
+    }
+
+    function showContent(email) {
+      document.getElementById('loginContainer').style.display = 'none';
+      document.getElementById('contentContainer').classList.add('active');
+      document.getElementById('userEmail').textContent = email;
+      document.getElementById('logoutBtn').style.display = 'inline-block';
+    }
+
+    function showLogin() {
+      document.getElementById('loginContainer').style.display = 'block';
+      document.getElementById('contentContainer').classList.remove('active');
+      document.getElementById('logoutBtn').style.display = 'none';
+      localStorage.removeItem(SESSION_KEY);
+    }
+
+    // Form Handler
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const errorMsg = document.getElementById('errorMsg');
+      const successMsg = document.getElementById('successMsg');
+      const submitBtn = document.getElementById('submitBtn');
+
+      errorMsg.style.display = 'none';
+      successMsg.style.display = 'none';
+      submitBtn.disabled = true;
+
+      // Validate email
+      if (!email.includes('@')) {
+        errorMsg.textContent = '❌ Bitte gib eine gültige Email ein';
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        return;
+      }
+
+      // Check membership
+      if (isMember(email)) {
+        // Create session
+        localStorage.setItem(SESSION_KEY, JSON.stringify({
+          email: email,
+          timestamp: Date.now()
+        }));
+        
+        successMsg.textContent = '✅ Willkommen! Du wirst weitergeleitet...';
+        successMsg.style.display = 'block';
+        
+        setTimeout(() => {
+          showContent(email);
+          submitBtn.disabled = false;
+        }, 500);
+      } else {
+        errorMsg.textContent = '❌ Diese Email ist nicht in unserem Club. Bitte abonniere zuerst.';
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Logout Handler
+    document.getElementById('logoutBtn').addEventListener('click', showLogin);
+
+    // Check session on load
+    checkSession();
+  </script>
+</body>
+
+</html>
