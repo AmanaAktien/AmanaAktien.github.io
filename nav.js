@@ -89,6 +89,16 @@
     }
     .aa-nav-links a:hover { color:var(--text); background:var(--gold-glow); }
     .aa-nav-links a.aa-nav-active { color:var(--gold); background:var(--gold-glow); }
+    .aa-nav-links a.aa-nav-premium {
+      background:var(--gold);
+      color:#0D0D0D;
+      font-weight:700;
+      padding:.5rem 1rem;
+    }
+    .aa-nav-links a.aa-nav-premium:hover {
+      opacity:.9;
+      background:var(--gold);
+    }
     .aa-nav-right { display:flex; align-items:center; gap:.5rem; }
     #aa-theme-btn {
       background:var(--bg3); border:1px solid var(--border);
@@ -125,6 +135,14 @@
       font-size:1.6rem; color:var(--text);
       text-decoration:none;
     }
+    .aa-mobile-nav a.aa-mobile-premium {
+      background:var(--gold);
+      color:#0D0D0D;
+      padding:.8rem 2rem;
+      border-radius:6px;
+      font-size:1.2rem;
+      font-weight:700;
+    }
     @media (max-width:768px) {
       .aa-nav-links { display:none !important; }
       .aa-hamburger { display:flex !important; }
@@ -157,6 +175,7 @@
         <li><a href="aktien-analysen.html" ${isActive('aktien-analysen.html')}>Halal Aktienanalysen</a></li>
         <li><a href="halal-etf-liste.html" ${isActive('halal-etf-liste.html')}>Halal ETFs</a></li>
         <li><a href="blog.html" ${isActive('blog.html')}>Blog</a></li>
+        <li><a href="amana_club_pricing_page.html" ${isActive('amana_club_pricing_page.html')} class="aa-nav-premium">✨ Amana Club Premium</a></li>
       </ul>
       <div class="aa-nav-right">
         <button id="aa-theme-btn" aria-label="Theme wechseln">${themeIcon}</button>
@@ -171,6 +190,7 @@
     <a href="aktien-analysen.html">Halal Aktienanalysen</a>
     <a href="halal-etf-liste.html">Halal ETFs</a>
     <a href="blog.html">Blog</a>
+    <a href="amana_club_pricing_page.html" class="aa-mobile-premium">✨ Amana Club Premium</a>
   </div>`;
 
   /* ── Nav einfügen + Events ── */
