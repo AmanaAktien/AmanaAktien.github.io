@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="dark">
+<html lang="de" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,14 +15,24 @@
 <meta property="og:url" content="https://amanaaktien.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8860B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white'>☪</text></svg>">
-<script>(function(){var t=localStorage.getItem('aa_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root,[data-theme="dark"]{--bg:#0D0D0D;--bg2:#161616;--bg3:#1E1E1E;--text:#E8E4DC;--text2:#bbb;--muted:#888;--border:rgba(201,168,76,.2);--gold:#C9A84C;--gold-glow:rgba(201,168,76,.12);--green:#3D9970}
-[data-theme="light"]{--bg:#F8F6F1;--bg2:#FFFFFF;--bg3:#F0EDE6;--text:#1A1814;--text2:#444;--muted:#888;--border:rgba(160,120,48,.22);--gold:#A07830;--gold-glow:rgba(160,120,48,.1);--green:#2D7A55}
+/* Nur noch das helle Theme ist aktiv */
+:root {
+  --bg:#F8F6F1;
+  --bg2:#FFFFFF;
+  --bg3:#F0EDE6;
+  --text:#1A1814;
+  --text2:#444;
+  --muted:#888;
+  --border:rgba(160,120,48,.22);
+  --gold:#A07830;
+  --gold-glow:rgba(160,120,48,.1);
+  --green:#2D7A55;
+}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;transition:background .25s,color .25s}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
@@ -34,7 +44,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
 .hero h1 em{font-style:normal;color:var(--gold)}
 .hero-lead{font-size:1.05rem;color:var(--text2);max-width:600px;margin:0 auto 2.25rem;line-height:1.8}
 .hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
-.btn-primary{background:var(--gold);color:#0D0D0D;font-weight:700;font-size:.85rem;padding:.8rem 1.6rem;border-radius:6px;letter-spacing:.04em;transition:transform .15s,opacity .2s}
+.btn-primary{background:var(--gold);color:#FFFFFF;font-weight:700;font-size:.85rem;padding:.8rem 1.6rem;border-radius:6px;letter-spacing:.04em;transition:transform .15s,opacity .2s}
 .btn-primary:hover{opacity:.9;transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--text);font-weight:700;font-size:.85rem;padding:.8rem 1.6rem;border-radius:6px;border:1px solid var(--border);transition:border-color .2s,background .2s}
 .btn-secondary:hover{border-color:var(--gold);background:var(--gold-glow)}
@@ -47,7 +57,7 @@ h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
 .sec-sub{text-align:center;color:var(--muted);max-width:580px;margin:0 auto 2.5rem;font-size:.92rem;line-height:1.7}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
 .card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.75rem;transition:transform .2s,border-color .2s;display:flex;flex-direction:column;gap:.75rem}
-.card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,.5)}
+.card:hover{transform:translateY(-3px);border-color:rgba(160,120,48,.5)}
 .card-icon{width:44px;height:44px;border-radius:8px;background:var(--gold-glow);display:grid;place-items:center;font-size:1.3rem;margin-bottom:.25rem}
 .card h3{font-size:1.1rem;color:var(--text)}
 .card p{font-size:.85rem;color:var(--muted);line-height:1.7;flex:1}
@@ -69,7 +79,8 @@ footer a:hover{color:var(--gold)}
 <body>
 
 <div id="site-nav"></div>
-<script src="nav.js"></script>
+<!-- Durch das ?v=1.1 zwingen wir den Browser das neue Menü sofort zu laden -->
+<script src="nav.js?v=1.1"></script>
 
 <section class="hero">
   <div class="hero-inner">
