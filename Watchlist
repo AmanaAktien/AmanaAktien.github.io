@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Qualitätsaktien Watchlist | Amana Aktien</title>
-<meta name="description" content="Täglich aktualisierte Watchlist deutscher Qualitätsaktien mit Halal-Status, Kursen und Analysten-Einschätzungen.">
+<meta name="description" content="Täglich aktualisierte deutsche Qualitätsaktien Watchlist mit Halal-Status und Kursen.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -23,14 +23,8 @@
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family:'DM Sans',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.7;
-}
+body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
 
-/* Navigation wird geladen */
 .hero {
   background: linear-gradient(135deg, #1a2f22 0%, #2a4635 100%);
   padding: 4.5rem 2rem 3rem;
@@ -56,75 +50,34 @@ body {
 }
 .hero p { max-width: 620px; margin: 0 auto 2rem; font-size: 1.05rem; opacity: 0.9; }
 
-/* Controls */
 .controls {
-  max-width: 1280px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  align-items: center;
+  max-width: 1280px; margin: 2rem auto; padding: 0 2rem;
+  display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
 }
 .search-wrap { position: relative; flex: 1; min-width: 260px; }
-.search-wrap svg {
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--muted);
-}
+.search-wrap svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); }
 input[type="text"], select {
-  width: 100%;
-  padding: 12px 14px 12px 42px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg2);
-  font-size: 15px;
+  width: 100%; padding: 12px 14px 12px 42px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg2); font-size: 15px;
 }
 input:focus, select:focus { border-color: var(--gold); outline: none; }
 
 .filter-btn {
-  padding: 11px 18px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--bg2);
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s;
+  padding: 11px 18px; border: 1px solid var(--border);
+  border-radius: var(--radius); background: var(--bg2);
+  cursor: pointer; font-weight: 500;
 }
 .filter-btn:hover, .filter-btn.active {
-  background: var(--gold);
-  color: white;
-  border-color: var(--gold);
+  background: var(--gold); color: white; border-color: var(--gold);
 }
 
-/* Tabelle */
-.table-wrap {
-  max-width: 1280px;
-  margin: 0 auto 3rem;
-  padding: 0 2rem;
-  overflow-x: auto;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--bg2);
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
+.table-wrap { max-width: 1280px; margin: 0 auto 3rem; padding: 0 2rem; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: var(--bg2); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
 thead th {
-  padding: 14px 16px;
-  text-align: left;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  background: var(--bg3);
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
+  padding: 14px 16px; text-align: left; font-size: 0.78rem; font-weight: 600;
+  color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px;
+  background: var(--bg3); border-bottom: 1px solid var(--border); cursor: pointer;
 }
 tbody tr { border-bottom: 1px solid var(--border); transition: background 0.2s; }
 tbody tr:hover { background: #f9f7f2; }
@@ -132,45 +85,29 @@ td { padding: 16px; vertical-align: middle; }
 
 .stock-name { font-weight: 600; font-size: 1.02rem; }
 .stock-symbol {
-  display: inline-block;
-  padding: 2px 7px;
-  background: #f0ede6;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--gold);
+  display: inline-block; padding: 2px 7px; background: #f0ede6;
+  border-radius: 4px; font-size: 0.85rem; font-weight: 600; color: var(--gold);
 }
-.sector-badge { padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
-.price-cell { font-weight: 600; font-size: 1.1rem; }
 .change-cell.positive { color: var(--green); }
 .change-cell.negative { color: #c2410c; }
 .halal-yes { background: #e6f0eb; color: var(--green); }
 .halal-check { background: #fef9c3; color: #92400e; }
 
 .disclaimer {
-  max-width: 1280px;
-  margin: 0 auto 2rem;
-  padding: 1rem 1.5rem;
-  background: #fefce8;
-  border: 1px solid #fef08a;
-  border-radius: var(--radius);
-  font-size: 0.85rem;
-  color: #713f12;
+  max-width: 1280px; margin: 0 auto 2rem; padding: 1rem 1.5rem;
+  background: #fefce8; border: 1px solid #fef08a; border-radius: var(--radius);
+  font-size: 0.85rem; color: #713f12;
 }
 footer {
-  background: var(--bg2);
-  border-top: 1px solid var(--border);
-  padding: 2.5rem 2rem;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--muted);
+  background: var(--bg2); border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem; text-align: center; font-size: 0.85rem; color: var(--muted);
 }
 </style>
 </head>
 <body>
 
 <div id="site-nav"></div>
-<script src="nav.js?v=1.2"></script>
+<script src="nav.js?v=1.3"></script>
 
 <section class="hero">
   <h1>Deutsche Qualitätsaktien Watchlist</h1>
@@ -226,9 +163,9 @@ footer {
 </footer>
 
 <script>
-// === HIER DEIN KOMPLETTES JAVASCRIPT EINFÜGEN ===
-const STOCKS = [ /* dein gesamtes STOCKS-Array aus der alten Datei */ ];
-// ... alle Funktionen: sectorBadge, halalBadge, renderTable, fetchLivePrices usw.
+// === KOPIERE HIER DEIN GANZES JAVASCRIPT AUS DER ALTEN WATCHLIST REIN ===
+const STOCKS = [ ... dein Array ... ];
+// alle Funktionen: sectorBadge, halalBadge, renderTable, fetchLivePrices usw.
 </script>
 </body>
 </html>
