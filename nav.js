@@ -1,9 +1,6 @@
 /* ════════════════════════════════════════════════════════════════
    AMANA AKTIEN – nav.js (Anpassung: Nur Light Mode & Watchlist)
    ════════════════════════════════════════════════════════════════ */
-<a href="watchlist.html">📊 Watchlist</a>
-(function () {
-  'use strict';
 
   /* ── Theme System (Fixiert auf Light) ─────────────────────────── */
   // Wir setzen das Theme hart auf light und entfernen die Umschalt-Logik
