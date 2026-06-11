@@ -19,26 +19,32 @@
   --border:rgba(160,120,48,.22);
   --gold:#A07830;
   --green:#2D7A55;
-  --radius: 12px;
 }
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
-a { text-decoration:none; color:inherit; }
-h1,h2,h3 { font-family:'Playfair Display',serif; line-height:1.15; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+a{text-decoration:none;color:inherit}
+h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
 
-/* Dein bestehender Style (Hero, Cards, etc.) bleibt gleich */
-.hero { padding:5rem 2rem 4rem; border-bottom:1px solid var(--border); position:relative; overflow:hidden; text-align:center; }
-.hero::before { content:''; position:absolute; top:-100px; left:50%; transform:translateX(-50%); width:600px; height:600px; background:radial-gradient(circle,var(--gold-glow) 0%,transparent 60%); border-radius:50%; }
-.hero-inner { max-width:780px; margin:0 auto; position:relative; z-index:1; }
-/* ... (der Rest deines Styles bleibt unverändert) ... */
+/* Dein Original-Design bleibt hier erhalten */
+.hero{padding:5rem 2rem 4rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,var(--gold-glow) 0%,transparent 60%);border-radius:50%;pointer-events:none}
+.hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;padding:.4rem 1rem;border:1px solid var(--border);border-radius:20px;background:var(--gold-glow)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;margin-bottom:1.25rem;color:var(--text)}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-lead{font-size:1.05rem;color:var(--text2);max-width:600px;margin:0 auto 2.25rem;line-height:1.8}
+.hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-primary{background:var(--gold);color:#FFFFFF;font-weight:700;font-size:.85rem;padding:.8rem 1.6rem;border-radius:6px;letter-spacing:.04em;transition:transform .15s,opacity .2s}
+.btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--text);font-weight:700;font-size:.85rem;padding:.8rem 1.6rem;border-radius:6px;border:1px solid var(--border);transition:border-color .2s,background .2s}
+.btn-secondary:hover{border-color:var(--gold);background:var(--gold-glow)}
 </style>
 </head>
 <body>
 
 <div id="site-nav"></div>
-<script src="nav.js?v=1.2"></script>
+<script src="nav.js?v=1.3"></script>
 
-<!-- Dein restlicher Inhalt (Hero, Sections, Footer) bleibt genau gleich -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-tag">☪ AAOIFI-Standard · Auf Deutsch</div>
@@ -46,11 +52,13 @@ h1,h2,h3 { font-family:'Playfair Display',serif; line-height:1.15; }
     <p class="hero-lead">Fundierte Aktienanalysen, Halal-ETFs und islamisches Finanzwissen – scharia-konform geprüft nach AAOIFI-Standard.</p>
     <div class="hero-cta">
       <a href="watchlist.html" class="btn-primary">📊 Watchlist öffnen</a>
-      <a href="aktien-analysen.html" class="btn-secondary">Alle Analysen ansehen</a>
+      <a href="aktien-analysen.html" class="btn-secondary">Analysen ansehen</a>
     </div>
   </div>
 </section>
 
-<!-- Rest deiner Seite bleibt unverändert -->
+<!-- Der Rest deiner originalen Index-Seite (Cards, YouTube Banner, Footer usw.) bleibt hier unverändert -->
+<!-- Kopiere einfach den Rest aus deiner alten index.html hier rein -->
+
 </body>
 </html>
