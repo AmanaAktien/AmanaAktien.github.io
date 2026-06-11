@@ -1,76 +1,36 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Qualitätsaktien Watchlist | Amana Aktien</title>
-<meta name="description" content="Automatisch aktualisierte Watchlist deutscher Qualitätsaktien – täglich aktualisierte Kurse, Halal-Status und Analysen von Amana Aktien.">
+<meta name="description" content="Täglich aktualisierte Watchlist deutscher Qualitätsaktien mit Halal-Status, Kursen und Analysten-Einschätzungen.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --bg: #F8F6F1;
-  --bg2: #FFFFFF;
-  --bg3: #F0EDE6;
-  --text: #1A1814;
-  --text2: #444;
-  --muted: #888;
-  --border: rgba(160,120,48,.22);
-  --gold: #A07830;
-  --green: #2D7A55;
+  --bg:#F8F6F1;
+  --bg2:#FFFFFF;
+  --bg3:#F0EDE6;
+  --text:#1A1814;
+  --text2:#444;
+  --muted:#888;
+  --border:rgba(160,120,48,.22);
+  --gold:#A07830;
+  --green:#2D7A55;
   --radius: 12px;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
 }
 
-header {
-  background: var(--bg2);
-  border-bottom: 1px solid var(--border);
-  padding: 0 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-.header-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-}
-.logo-icon {
-  width: 42px; height: 42px;
-  background: var(--gold);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  color: white;
-}
-.logo-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.35rem;
-  font-weight: 900;
-  color: var(--text);
-}
-.logo-sub { font-size: 0.8rem; color: var(--muted); }
-
-/* Hero */
+/* Navigation wird geladen */
 .hero {
   background: linear-gradient(135deg, #1a2f22 0%, #2a4635 100%);
   padding: 4.5rem 2rem 3rem;
@@ -82,11 +42,9 @@ header {
 .hero::before {
   content: '';
   position: absolute;
-  top: -150px;
-  left: 50%;
+  top: -150px; left: 50%;
   transform: translateX(-50%);
-  width: 700px;
-  height: 700px;
+  width: 700px; height: 700px;
   background: radial-gradient(circle, rgba(160,120,48,0.15) 0%, transparent 60%);
   border-radius: 50%;
 }
@@ -96,12 +54,7 @@ header {
   font-weight: 900;
   margin-bottom: 1rem;
 }
-.hero p {
-  max-width: 620px;
-  margin: 0 auto 2rem;
-  font-size: 1.05rem;
-  opacity: 0.9;
-}
+.hero p { max-width: 620px; margin: 0 auto 2rem; font-size: 1.05rem; opacity: 0.9; }
 
 /* Controls */
 .controls {
@@ -129,10 +82,8 @@ input[type="text"], select {
   background: var(--bg2);
   font-size: 15px;
 }
-input[type="text"]:focus, select:focus {
-  border-color: var(--gold);
-  outline: none;
-}
+input:focus, select:focus { border-color: var(--gold); outline: none; }
+
 .filter-btn {
   padding: 11px 18px;
   border: 1px solid var(--border);
@@ -148,7 +99,7 @@ input[type="text"]:focus, select:focus {
   border-color: var(--gold);
 }
 
-/* Table */
+/* Tabelle */
 .table-wrap {
   max-width: 1280px;
   margin: 0 auto 3rem;
@@ -175,14 +126,10 @@ thead th {
   border-bottom: 1px solid var(--border);
   cursor: pointer;
 }
-tbody tr {
-  border-bottom: 1px solid var(--border);
-  transition: background 0.2s;
-}
-tbody tr:hover {
-  background: #f9f7f2;
-}
+tbody tr { border-bottom: 1px solid var(--border); transition: background 0.2s; }
+tbody tr:hover { background: #f9f7f2; }
 td { padding: 16px; vertical-align: middle; }
+
 .stock-name { font-weight: 600; font-size: 1.02rem; }
 .stock-symbol {
   display: inline-block;
@@ -193,12 +140,7 @@ td { padding: 16px; vertical-align: middle; }
   font-weight: 600;
   color: var(--gold);
 }
-.sector-badge {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 500;
-}
+.sector-badge { padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
 .price-cell { font-weight: 600; font-size: 1.1rem; }
 .change-cell.positive { color: var(--green); }
 .change-cell.negative { color: #c2410c; }
@@ -227,17 +169,8 @@ footer {
 </head>
 <body>
 
-<header>
-  <div class="header-inner">
-    <a href="https://amanaaktien.github.io" class="logo">
-      <div class="logo-icon">☾</div>
-      <div>
-        <div class="logo-text">Amana Aktien</div>
-        <div class="logo-sub">Halal Investing · AAOIFI</div>
-      </div>
-    </a>
-  </div>
-</header>
+<div id="site-nav"></div>
+<script src="nav.js?v=1.2"></script>
 
 <section class="hero">
   <h1>Deutsche Qualitätsaktien Watchlist</h1>
@@ -285,27 +218,17 @@ footer {
 </div>
 
 <div class="disclaimer">
-  ⚠️ <strong>Keine Anlageberatung.</strong> Diese Watchlist dient rein zu Informationszwecken. Die Halal-Bewertungen basieren auf dem AAOIFI-Standard Nr. 21 und stellen keine religiöse Fatwa dar.
+  ⚠️ <strong>Keine Anlageberatung.</strong> Diese Watchlist dient rein zu Informationszwecken. Halal-Bewertungen basieren auf AAOIFI-Standard Nr. 21.
 </div>
 
 <footer>
-  <p><strong>Amana Aktien</strong> — Halal Investing für den deutschsprachigen Raum</p>
+  <p>© 2026 Amana Aktien – Youssef Chafi · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></p>
 </footer>
 
 <script>
-// === DEIN ORIGINAL JAVASCRIPT (leicht angepasst) ===
-const STOCKS = [ /* ... dein komplettes STOCKS-Array hier einfügen ... */ ];
-
-const SECTOR_COLORS = { /* ... dein SECTOR_COLORS Objekt ... */ };
-
-let liveData = {};
-let currentFilter = { search: '', sector: '', halal: 'all', sort: 'default', sortDir: 1 };
-
-/* Alle deine Funktionen (sectorBadge, halalBadge, videoCell, sparplanCell, renderTable usw.) hier einfügen */
-
-populateSectorFilter();
-fetchLivePrices();
-setInterval(fetchLivePrices, 5 * 60 * 1000);
+// === HIER DEIN KOMPLETTES JAVASCRIPT EINFÜGEN ===
+const STOCKS = [ /* dein gesamtes STOCKS-Array aus der alten Datei */ ];
+// ... alle Funktionen: sectorBadge, halalBadge, renderTable, fetchLivePrices usw.
 </script>
 </body>
 </html>
