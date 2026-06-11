@@ -1,7 +1,7 @@
 /* ════════════════════════════════════════════════════════════════
    AMANA AKTIEN – nav.js (Anpassung: Nur Light Mode & Watchlist)
    ════════════════════════════════════════════════════════════════ */
-
+<a href="watchlist.html">📊 Watchlist</a>
 (function () {
   'use strict';
 
