@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="light">
+<html lang="de" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amana Aktien – Halal Investieren auf Deutsch</title>
-<meta name="description" content="Halal Investieren für Muslime in Deutschland: AAOIFI-geprüfte Aktienanalysen, Halal-ETFs und Wissen auf Deutsch.">
+<meta name="robots" content="index, follow">
 <link rel="canonical" href="https://amanaaktien.github.io/">
+<title>Amana Aktien – Halal Investieren auf Deutsch | AAOIFI-geprüfte Aktien & ETFs</title>
+<meta name="description" content="Halal Investieren für Muslime in Deutschland: AAOIFI-geprüfte Aktienanalysen, Halal-ETFs, Sukuk & Purification – verständlich auf Deutsch erklärt.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Amana Aktien – Halal Investieren auf Deutsch">
+<meta property="og:description" content="AAOIFI-geprüfte Aktienanalysen, Halal-ETFs & Wissen für Muslime in Deutschland.">
+<meta property="og:image" content="https://img.youtube.com/vi/Ss_CyIxKNeI/maxresdefault.jpg">
+<meta property="og:url" content="https://amanaaktien.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8860B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white'>☪</text></svg>">
+<script>(function(){var t=localStorage.getItem('aa_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <style>
-:root {
-  --bg:#F8F6F1;
-  --bg2:#FFFFFF;
-  --bg3:#F0EDE6;
-  --text:#1A1814;
-  --text2:#444;
-  --muted:#888;
-  --border:rgba(160,120,48,.22);
-  --gold:#A07830;
-  --green:#2D7A55;
-}
+:root,[data-theme="dark"]{--bg:#0D0D0D;--bg2:#161616;--bg3:#1E1E1E;--text:#E8E4DC;--text2:#bbb;--muted:#888;--border:rgba(201,168,76,.2);--gold:#C9A84C;--gold-glow:rgba(201,168,76,.12);--green:#3D9970}
+[data-theme="light"]{--bg:#F8F6F1;--bg2:#FFFFFF;--bg3:#F0EDE6;--text:#1A1814;--text2:#444;--muted:#888;--border:rgba(160,120,48,.22);--gold:#A07830;--gold-glow:rgba(160,120,48,.1);--green:#2D7A55}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;transition:background .25s,color .25s}
 a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
 h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
-
-/* Dein Original-Design bleibt hier erhalten */
 .hero{padding:5rem 2rem 4rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;text-align:center}
 .hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,var(--gold-glow) 0%,transparent 60%);border-radius:50%;pointer-events:none}
 .hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
@@ -34,31 +34,124 @@ h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
 .hero h1 em{font-style:normal;color:var(--gold)}
 .hero-lead{font-size:1.05rem;color:var(--text2);max-width:600px;margin:0 auto 2.25rem;line-height:1.8}
 .hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
-.btn-primary{background:var(--gold);color:#FFFFFF;font-weight:700;font-size:.85rem;padding:.8rem 1.6rem;border-radius:6px;letter-spacing:.04em;transition:transform .15s,opacity .2s}
+.btn-primary{background:var(--gold);color:#0D0D0D;font-weight:700;font-size:.85rem;padding:.8rem 1.6rem;border-radius:6px;letter-spacing:.04em;transition:transform .15s,opacity .2s}
 .btn-primary:hover{opacity:.9;transform:translateY(-1px)}
 .btn-secondary{background:transparent;color:var(--text);font-weight:700;font-size:.85rem;padding:.8rem 1.6rem;border-radius:6px;border:1px solid var(--border);transition:border-color .2s,background .2s}
 .btn-secondary:hover{border-color:var(--gold);background:var(--gold-glow)}
+.hero-stats{display:flex;gap:2.5rem;justify-content:center;padding-top:2rem;border-top:1px solid var(--border);flex-wrap:wrap}
+.stat-val{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--gold)}
+.stat-lbl{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+.sec{max-width:1100px;margin:0 auto;padding:4rem 2rem}
+.sec-label{font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;text-align:center}
+.sec-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;text-align:center;margin-bottom:.75rem}
+.sec-sub{text-align:center;color:var(--muted);max-width:580px;margin:0 auto 2.5rem;font-size:.92rem;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.75rem;transition:transform .2s,border-color .2s;display:flex;flex-direction:column;gap:.75rem}
+.card:hover{transform:translateY(-3px);border-color:rgba(201,168,76,.5)}
+.card-icon{width:44px;height:44px;border-radius:8px;background:var(--gold-glow);display:grid;place-items:center;font-size:1.3rem;margin-bottom:.25rem}
+.card h3{font-size:1.1rem;color:var(--text)}
+.card p{font-size:.85rem;color:var(--muted);line-height:1.7;flex:1}
+.card-link{font-size:.78rem;font-weight:700;color:var(--gold);display:inline-flex;align-items:center;gap:.3rem;transition:gap .2s}
+.card:hover .card-link{gap:.55rem}
+.yt-banner{background:linear-gradient(135deg,rgba(255,0,0,.08),transparent);border:1px solid rgba(255,0,0,.3);border-radius:12px;padding:2rem;margin:3rem auto;max-width:900px;display:flex;align-items:center;gap:2rem;flex-wrap:wrap}
+.yt-banner-text{flex:1;min-width:220px}
+.yt-banner-text strong{display:block;font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--text);margin-bottom:.4rem}
+.yt-banner-text p{font-size:.88rem;color:var(--muted);line-height:1.7}
+.btn-yt{background:#FF0000;color:#fff;font-weight:700;font-size:.85rem;padding:.8rem 1.5rem;border-radius:6px;display:inline-flex;align-items:center;gap:.5rem;flex-shrink:0;transition:opacity .2s,transform .15s}
+.btn-yt:hover{opacity:.9;transform:translateY(-1px)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;transition:background .25s}
+footer p{font-size:.72rem;color:var(--muted)}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--gold)}
+@media(max-width:640px){.hero{padding:3rem 1rem 2.5rem}.sec{padding:2.5rem 1rem}.yt-banner{padding:1.5rem;flex-direction:column;text-align:center}}
 </style>
 </head>
 <body>
 
 <div id="site-nav"></div>
-<script src="nav.js?v=1.3"></script>
+<script src="nav.js"></script>
 
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-tag">☪ AAOIFI-Standard · Auf Deutsch</div>
     <h1>Halal <em>Investieren</em> für Muslime in Deutschland</h1>
-    <p class="hero-lead">Fundierte Aktienanalysen, Halal-ETFs und islamisches Finanzwissen – scharia-konform geprüft nach AAOIFI-Standard.</p>
+    <p class="hero-lead">Fundierte Aktienanalysen, Halal-ETFs und islamisches Finanzwissen – scharia-konform geprüft nach AAOIFI-Standard. Alles auf Deutsch, kostenlos, ohne Schnickschnack.</p>
     <div class="hero-cta">
-      <a href="watchlist.html" class="btn-primary">📊 Watchlist öffnen</a>
-      <a href="aktien-analysen.html" class="btn-secondary">Analysen ansehen</a>
+      <a href="aktien-analysen.html" class="btn-primary">📊 Aktienanalysen ansehen</a>
+      <a href="halal-investieren-anfaenger.html" class="btn-secondary">🌙 Anfänger-Guide lesen</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-val">165+</div><div class="stat-lbl">YouTube-Videos</div></div>
+      <div><div class="stat-val">AAOIFI</div><div class="stat-lbl">Standard</div></div>
+      <div><div class="stat-val">100%</div><div class="stat-lbl">Auf Deutsch</div></div>
     </div>
   </div>
 </section>
 
-<!-- Der Rest deiner originalen Index-Seite (Cards, YouTube Banner, Footer usw.) bleibt hier unverändert -->
-<!-- Kopiere einfach den Rest aus deiner alten index.html hier rein -->
+<section class="sec">
+  <div class="sec-label">Was du hier findest</div>
+  <h2 class="sec-title">Dein Einstieg ins Halal Investieren</h2>
+  <p class="sec-sub">Drei Wege, dein Vermögen scharia-konform zu vermehren – wähle den passenden für dich.</p>
+  <div class="cards">
+    <a href="aktien-analysen.html" class="card">
+      <div class="card-icon">📊</div>
+      <h3>Halal Aktienanalysen</h3>
+      <p>Fundierte Einzelaktien-Analysen nach AAOIFI mit Video, Kennzahlen und Halal-Urteil.</p>
+      <span class="card-link">Analysen ansehen →</span>
+    </a>
+    <a href="halal-etf-liste.html" class="card">
+      <div class="card-icon">💼</div>
+      <h3>Halal ETFs</h3>
+      <p>Alle Halal-ETFs für deutsche Anleger – iShares, Invesco, AMAL, UMMA & Sukuk.</p>
+      <span class="card-link">ETF-Liste öffnen →</span>
+    </a>
+    <a href="blog.html" class="card">
+      <div class="card-icon">📚</div>
+      <h3>Wissen & Guides</h3>
+      <p>AAOIFI erklärt, Purification berechnen, Sukuk verstehen – Schritt für Schritt.</p>
+      <span class="card-link">Blog lesen →</span>
+    </a>
+  </div>
+</section>
+
+<div class="yt-banner">
+  <div class="yt-banner-text">
+    <strong>165+ Halal-Analysen auf YouTube</strong>
+    <p>Apple, ServiceNow, Arista, Tesla, Nike, Adobe – alles AAOIFI-geprüft. Kostenlos. Auf Deutsch.</p>
+  </div>
+  <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener nofollow" class="btn-yt">▶ Kanal abonnieren</a>
+</div>
+
+<section class="sec">
+  <div class="sec-label">Erste Schritte</div>
+  <h2 class="sec-title">Neu beim Halal Investieren?</h2>
+  <p class="sec-sub">Diese 3 Artikel beantworten 90% deiner Anfänger-Fragen.</p>
+  <div class="cards">
+    <a href="ist-aktien-investieren-halal.html" class="card">
+      <div class="card-icon">☪</div>
+      <h3>Ist Aktien-Investieren halal?</h3>
+      <p>Der islamische Leitfaden – mit Belegen aus Quran und Sunnah.</p>
+      <span class="card-link">Lesen →</span>
+    </a>
+    <a href="aaoifi-standard-erklaert.html" class="card">
+      <div class="card-icon">📊</div>
+      <h3>AAOIFI vs. DJIM vs. MSCI</h3>
+      <p>Alle 5 Scharia-Standards im Vergleich – warum ist Apple uneinheitlich?</p>
+      <span class="card-link">Lesen →</span>
+    </a>
+    <a href="purification-erklaert.html" class="card">
+      <div class="card-icon">🌿</div>
+      <h3>Purification berechnen</h3>
+      <p>So reinigst du deine Dividende richtig – mit Beispiel-Rechnung.</p>
+      <span class="card-link">Lesen →</span>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Amana Aktien – Youssef Chafi · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="disclaimer.html">Disclaimer</a></p>
+  <p style="margin-top:.5rem">⚠️ Keine Anlageberatung. Alle Inhalte dienen der Information und Bildung.</p>
+</footer>
 
 </body>
 </html>
