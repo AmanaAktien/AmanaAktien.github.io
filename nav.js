@@ -1,9 +1,28 @@
 /* ════════════════════════════════════════════════════════════════
-   AMANA AKTIEN – nav.js  (Etappe 1: Nur Navigation)
+   AMANA AKTIEN – nav.js  (Etappe 1: Navigation & Analytics)
    ════════════════════════════════════════════════════════════════ */
 
 (function () {
   'use strict';
+
+  /* ── Google Analytics (gtag.js) Integration ────────────────── */
+  try {
+    // 1. Externes Google-Skript erstellen und asynchron in den <head> einbinden
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-VBKDTGTEV9';
+    document.head.appendChild(gaScript);
+
+    // 2. Google Analytics Datenschicht (dataLayer) und Funktionen initialisieren
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function() { dataLayer.push(arguments); };
+    gtag('js', new Date());
+    
+    // Konfiguration laden
+    gtag('config', 'G-VBKDTGTEV9');
+  } catch (e) {
+    console.warn('Google Analytics konnte nicht geladen werden:', e);
+  }
 
   /* ── Theme System ─────────────────────────────────────────── */
   const THEME_KEY = 'aa_theme';
