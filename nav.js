@@ -192,6 +192,7 @@
       </a>
       <ul class="aa-nav-links" role="list">
         <li><a href="aktien-analysen.html" ${isActive('aktien-analysen.html')}>Halal Aktienanalysen</a></li>
+        <li><a href="watchlist.html" ${isActive('watchlist.html')}>📋 Watchlist</a></li>
         <li><a href="halal-etf-liste.html" ${isActive('halal-etf-liste.html')}>Halal ETFs</a></li>
         <li><a href="blog.html" ${isActive('blog.html')}>Blog</a></li>
         <li><a href="amana_club_pricing_page.html" ${isActive('amana_club_pricing_page.html')} class="aa-nav-premium">✨ Amana Club Premium</a></li>
@@ -207,6 +208,7 @@
   <div class="aa-mobile-nav" id="aa-mobileNav">
     <a href="index.html">Startseite</a>
     <a href="aktien-analysen.html">Halal Aktienanalysen</a>
+    <a href="watchlist.html">📋 Watchlist</a>
     <a href="halal-etf-liste.html">Halal ETFs</a>
     <a href="blog.html">Blog</a>
     <a href="amana_club_pricing_page.html" class="aa-mobile-premium">✨ Amana Club Premium</a>
