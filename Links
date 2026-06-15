@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amana Aktien – Alle Kanäle</title>
+  <meta name="description" content="Halal Investieren im DACH-Raum – alle Kanäle von Amana Aktien auf einen Blick." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1a12;
+      --surface:   #152210;
+      --card:      #1a2d18;
+      --card-hover:#203620;
+      --gold:      #c8a84b;
+      --gold-soft: #e6c97a;
+      --green:     #2e7d50;
+      --text:      #e8e8e0;
+      --muted:     #8a9a88;
+      --border:    rgba(200,168,75,0.18);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px 60px;
+    }
+
+    /* ── Background ornament ── */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(46,125,80,0.18) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── Header ── */
+    header {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 52px 0 36px;
+      gap: 16px;
+    }
+
+    .logo-ring {
+      position: relative;
+      width: 88px;
+      height: 88px;
+    }
+
+    .logo-ring svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      animation: spin 18s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .logo-ring svg { animation: none; } }
+
+    .logo-inner {
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      color: var(--gold);
+      letter-spacing: -1px;
+      border: 1.5px solid var(--border);
+    }
+
+    .crescent {
+      position: absolute;
+      top: -6px;
+      right: -2px;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .brand-name span {
+      color: var(--gold);
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .gold-line {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 2px;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      width: 100%;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      font-weight: 600;
+      padding: 0 4px 10px;
+      margin-top: 4px;
+    }
+
+    /* ── Link cards ── */
+    .links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200,168,75,0.05), transparent 60%);
+      opacity: 0;
+      transition: opacity 0.18s ease;
+    }
+
+    .link-card:hover {
+      background: var(--card-hover);
+      border-color: rgba(200,168,75,0.4);
+      transform: translateY(-2px);
+    }
+
+    .link-card:hover::after { opacity: 1; }
+
+    .link-card:active { transform: translateY(0px); }
+
+    .icon-wrap {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .icon-wrap svg { width: 24px; height: 24px; }
+
+    .card-text { flex: 1; min-width: 0; }
+
+    .card-platform {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .card-arrow {
+      color: var(--gold);
+      opacity: 0.6;
+      flex-shrink: 0;
+      transition: opacity 0.18s, transform 0.18s;
+    }
+
+    .link-card:hover .card-arrow {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+
+    /* Platform icon colors */
+    .ic-web  { background: rgba(46,125,80,0.2); }
+    .ic-yt   { background: rgba(255,0,0,0.15); }
+    .ic-ig   { background: rgba(225,48,108,0.15); }
+    .ic-wa   { background: rgba(37,211,102,0.15); }
+    .ic-tt   { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.08); }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(200,168,75,0.08);
+      border: 1px solid rgba(200,168,75,0.2);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    .footer-copy {
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="logo-ring">
+        <!-- Rotating dashed gold ring -->
+        <svg viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="44" cy="44" r="40" stroke="#c8a84b" stroke-width="1.5"
+            stroke-dasharray="4 6" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <div class="logo-inner">
+          AA
+          <span class="crescent">🌙</span>
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <div class="brand-name">Amana <span>Aktien</span></div>
+      </div>
+
+      <div class="tagline">Halal Investieren · DACH</div>
+      <div class="gold-line"></div>
+    </header>
+
+    <!-- Links -->
+    <div style="width:100%;">
+      <div class="section-label">Unsere Kanäle</div>
+      <div class="links">
+
+        <!-- Website -->
+        <a class="link-card" href="https://amanaaktien.github.io/" target="_blank" rel="noopener">
+          <div class="icon-wrap ic-web">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <div class="card-text">
+            <div class="card-platform">Website</div>
+            <div class="card-title">amanaaktien.github.io</div>
+            <div class="card-sub">Watchlist · Analysen · Tools</div>
+          </div>
+          <div class="card-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- YouTube -->
+        <a class="link-card" href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener">
+          <div class="icon-wrap ic-yt">
+            <svg viewBox="0 0 24 24" fill="#ff0000" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon fill="white" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/>
+            </svg>
+          </div>
+          <div class="card-text">
+            <div class="card-platform">YouTube</div>
+            <div class="card-title">@AmanaAktien</div>
+            <div class="card-sub">Videos · Analysen · Bildung</div>
+          </div>
+          <div class="card-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a class="link-card" href="https://www.instagram.com/amanaaktien/" target="_blank" rel="noopener">
+          <div class="icon-wrap ic-ig">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="ig-grad" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#f09433"/>
+                  <stop offset="25%" stop-color="#e6683c"/>
+                  <stop offset="50%" stop-color="#dc2743"/>
+                  <stop offset="75%" stop-color="#cc2366"/>
+                  <stop offset="100%" stop-color="#bc1888"/>
+                </linearGradient>
+              </defs>
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#ig-grad)"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="card-text">
+            <div class="card-platform">Instagram</div>
+            <div class="card-title">@amanaaktien</div>
+            <div class="card-sub">Reels · Stories · Updates</div>
+          </div>
+          <div class="card-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- WhatsApp -->
+        <a class="link-card" href="https://whatsapp.com/channel/0029Vb7wzI6FnSz3Jd8TD83f" target="_blank" rel="noopener">
+          <div class="icon-wrap ic-wa">
+            <svg viewBox="0 0 24 24" fill="#25d366" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.978-1.418A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.946 7.946 0 0 1-4.31-1.267l-.31-.183-3.12.89.846-3.14-.202-.32A7.952 7.952 0 0 1 4 12c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8z"/>
+            </svg>
+          </div>
+          <div class="card-text">
+            <div class="card-platform">WhatsApp Kanal</div>
+            <div class="card-title">Amana Aktien</div>
+            <div class="card-sub">Signale · News · Community</div>
+          </div>
+          <div class="card-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- TikTok placeholder – add your link -->
+        <a class="link-card" href="https://www.tiktok.com/@amana.aktien" target="_blank" rel="noopener" id="tiktok-link">
+          <div class="icon-wrap ic-tt">
+            <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.32 6.32 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
+            </svg>
+          </div>
+          <div class="card-text">
+            <div class="card-platform">TikTok</div>
+            <div class="card-title">@amanaaktien</div>
+            <div class="card-sub">Shorts · Tipps · Trends</div>
+          </div>
+          <div class="card-arrow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-badge">
+        <span>🌙</span>
+        AAOIFI-geprüfte Aktienanalysen
+      </div>
+      <div class="footer-copy">© 2025 Amana Aktien · Halal investieren im DACH-Raum</div>
+    </footer>
+
+  </div>
+</body>
+</html>
