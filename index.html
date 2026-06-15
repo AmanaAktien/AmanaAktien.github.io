@@ -15,7 +15,6 @@
 <meta property="og:url" content="https://amanaaktien.github.io/">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- ─── HIER NEU: GOOGLE MARKENNAME & LOGO (FAVICON) ─── -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -26,7 +25,6 @@
 </script>
 <link rel="icon" type="image/png" sizes="192x192" href="https://amanaaktien.github.io/favicon.png">
 <link rel="apple-touch-icon" href="https://amanaaktien.github.io/favicon.png">
-<!-- ────────────────────────────────────────────────── -->
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23B8860B'/><text x='16' y='22' font-size='16' text-anchor='middle' fill='white'>☪</text></svg>">
 <script>(function(){var t=localStorage.getItem('aa_theme')||'dark';document.documentElement.setAttribute('data-theme',t);})();</script>
@@ -40,6 +38,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);lin
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15}
+
+/* ─── SOCIAL BAR ─── */
+.social-bar{display:flex;align-items:center;justify-content:center;gap:1.25rem;margin-bottom:2rem;flex-wrap:wrap}
+.social-link{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:10px;border:1px solid var(--border);background:var(--gold-glow);transition:transform .18s,border-color .2s,background .2s}
+.social-link:hover{transform:translateY(-2px);border-color:rgba(201,168,76,.6);background:rgba(201,168,76,.2)}
+.social-link svg{display:block}
+.social-link.screener{width:auto;padding:0 14px;gap:6px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.social-divider{width:1px;height:26px;background:var(--border)}
+
 .hero{padding:5rem 2rem 4rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden;text-align:center}
 .hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,var(--gold-glow) 0%,transparent 60%);border-radius:50%;pointer-events:none}
 .hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1}
@@ -77,7 +84,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;tex
 footer p{font-size:.72rem;color:var(--muted)}
 footer a{color:var(--muted)}
 footer a:hover{color:var(--gold)}
-@media(max-width:640px){.hero{padding:3rem 1rem 2.5rem}.sec{padding:2.5rem 1rem}.yt-banner{padding:1.5rem;flex-direction:column;text-align:center}}
+@media(max-width:640px){.hero{padding:3rem 1rem 2.5rem}.sec{padding:2.5rem 1rem}.yt-banner{padding:1.5rem;flex-direction:column;text-align:center}.social-bar{gap:.75rem}}
 </style>
 </head>
 <body>
@@ -87,16 +94,70 @@ footer a:hover{color:var(--gold)}
 
 <section class="hero">
   <div class="hero-inner">
+
+    <!-- ─── SOCIAL BAR ─── -->
+    <div class="social-bar">
+
+      <!-- YouTube -->
+      <a href="https://www.youtube.com/@AmanaAktien" target="_blank" rel="noopener nofollow"
+         class="social-link" title="YouTube" aria-label="YouTube auf @AmanaAktien">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="#FF0000"/>
+          <path d="M9.75 15.02L15.5 12 9.75 8.98v6.04z" fill="#fff"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@amanaaktien" target="_blank" rel="noopener nofollow"
+         class="social-link" title="TikTok" aria-label="TikTok auf @amanaaktien">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.75a8.23 8.23 0 0 0 4.82 1.54V6.84a4.85 4.85 0 0 1-1.05-.15z" fill="var(--text)"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/amanaaktien" target="_blank" rel="noopener nofollow"
+         class="social-link" title="Instagram" aria-label="Instagram auf @amanaaktien">
+        <svg width="22" height="22" viewBox="0 0 24 24">
+          <defs>
+            <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#f09433"/>
+              <stop offset="25%" stop-color="#e6683c"/>
+              <stop offset="50%" stop-color="#dc2743"/>
+              <stop offset="75%" stop-color="#cc2366"/>
+              <stop offset="100%" stop-color="#bc1888"/>
+            </linearGradient>
+          </defs>
+          <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig-grad)"/>
+          <rect x="6.5" y="6.5" width="11" height="11" rx="3" fill="none" stroke="#fff" stroke-width="1.6"/>
+          <circle cx="12" cy="12" r="3" fill="none" stroke="#fff" stroke-width="1.6"/>
+          <circle cx="16.5" cy="7.5" r="1.1" fill="#fff"/>
+        </svg>
+      </a>
+
+      <div class="social-divider" aria-hidden="true"></div>
+
+      <!-- Amana Screener -->
+      <a href="screener.html" class="social-link screener" title="Amana Screener" aria-label="Amana Halal Screener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+          <path d="M3 4h18v2.5L13 12v7l-2-1V12L3 6.5V4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        Screener
+      </a>
+
+    </div>
+    <!-- ─── END SOCIAL BAR ─── -->
+
     <div class="hero-tag">☪ AAOIFI-Standard · Auf Deutsch</div>
     <h1>Halal <em>Investieren</em> für Muslime in Deutschland</h1>
     <p class="hero-lead">Fundierte Aktienanalysen, Halal-ETFs und islamisches Finanzwissen – scharia-konform geprüft nach AAOIFI-Standard. Alles auf Deutsch, kostenlos, ohne Schnickschnack.</p>
-   
- <div class="hero-cta">
-  <a href="aktien-analysen.html" class="btn-primary">📊 Aktienanalysen ansehen</a>
-  <a href="halal-investieren-anfaenger.html" class="btn-secondary">🌙 Anfänger-Guide lesen</a>
-  <a href="watchlist.html" class="btn-secondary">📋 Halal Watchlist</a>  <!-- NEU -->
-</div>
-    
+
+    <div class="hero-cta">
+      <a href="aktien-analysen.html" class="btn-primary">📊 Aktienanalysen ansehen</a>
+      <a href="halal-investieren-anfaenger.html" class="btn-secondary">🌙 Anfänger-Guide lesen</a>
+      <a href="watchlist.html" class="btn-secondary">📋 Halal Watchlist</a>
+    </div>
+
     <div class="hero-stats">
       <div><div class="stat-val">165+</div><div class="stat-lbl">YouTube-Videos</div></div>
       <div><div class="stat-val">AAOIFI</div><div class="stat-lbl">Standard</div></div>
