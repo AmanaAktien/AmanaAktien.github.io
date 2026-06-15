@@ -165,6 +165,7 @@ footer a:hover{color:var(--gold)}
     <button class="filter-btn" data-filter="tech">🖥 Tech <span class="filter-count" id="countTech">0</span></button>
     <button class="filter-btn" data-filter="dividend">💰 Dividende <span class="filter-count" id="countDividend">0</span></button>
     <button class="filter-btn" data-filter="industrie">🏭 Industrie <span class="filter-count" id="countIndustrie">0</span></button>
+    <button class="filter-btn" data-filter="auto">🏎 Automobil <span class="filter-count" id="countAuto">0</span></button>
     <button class="filter-btn" data-filter="sonstige">📦 Sonstige <span class="filter-count" id="countSonstige">0</span></button>
   </div>
 </div>
@@ -188,6 +189,12 @@ footer a:hover{color:var(--gold)}
 <script>
 'use strict';
 const ANALYSEN = [
+  {
+    ticker:'RACE',name:'Ferrari N.V.',sektor:'auto',sektorLabel:'Luxus-Automobil',
+    halal:true,standard:'AAOIFI',ytId:'Ss_CyIxKNeI',
+    desc:'Ferrari besteht das AAOIFI-Screening mit Bravour. Schulden weit unter 30%, Zinsanteil minimal – einer der saubersten Luxuswerte für halal-bewusste Anleger.',
+    datum:'2026',artikel:'ferrari-aktie-halal-oder-haram.html'
+  },
   {
     ticker:'ANET',name:'Arista Networks',sektor:'tech',sektorLabel:'Netzwerk-Technologie',
     halal:true,standard:'AAOIFI',ytId:'4ER2QhbDhIQ',
