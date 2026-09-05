@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kimberly-Clark (KMB) Aktienanalyse 2026 – Geschäftsmodell, Kennzahlen, Dividende & Halal-Check | AmanaAktien</title>
+<meta name="description" content="Kimberly-Clark (KMB) Aktienanalyse: Produkte, Burggraben, alle Kennzahlen, Q2/H1 2026 Ergebnisse, Kenvue-Übernahme, Dividendensicherheit, Chancen & Risiken sowie ein Sharia-Screening – ist die Aktie halal oder haram?">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://amanaaktien.github.io/kimberly-clark-aktie-halal-oder-haram.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kimberly-Clark (KMB) Aktienanalyse 2026 – Halal oder Haram?">
+<meta property="og:description" content="Vollständige Analyse: Geschäftsmodell, Burggraben, Kennzahlen, Dividendensicherheit, Kenvue-Übernahme und Sharia-Screening.">
+<meta property="og:url" content="https://amanaaktien.github.io/kimberly-clark-aktie-halal-oder-haram.html">
+
+<style>
+  :root{
+    --bg:#faf9f6;
+    --card:#ffffff;
+    --ink:#1c2321;
+    --ink-soft:#4b5450;
+    --muted:#7c8681;
+    --line:#e4e2da;
+    --primary:#0e4d44;
+    --primary-dark:#0a3a33;
+    --gold:#b6893f;
+    --halal:#1f7a4d;
+    --halal-bg:#e9f5ee;
+    --haram:#a13d3d;
+    --haram-bg:#faeaea;
+    --warn:#8a6d1f;
+    --warn-bg:#fbf3e1;
+    --radius:14px;
+    --maxw:880px;
+    font-size:17px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Georgia","Cambria","Times New Roman",serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sans{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+
+  a{color:var(--primary);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+
+  /* ---------- NAV ---------- */
+  header.site-nav{
+    background:var(--primary-dark);
+    padding:0.9rem 1.2rem;
+  }
+  .nav-inner{
+    max-width:1100px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+    flex-wrap:wrap;gap:0.6rem;
+  }
+  .brand{
+    font-family:"Georgia",serif;color:#fff;font-size:1.25rem;font-weight:700;
+    letter-spacing:0.02em;
+  }
+  .brand span{color:var(--gold);}
+  nav.links{display:flex;gap:1.1rem;flex-wrap:wrap;font-family:inherit;}
+  nav.links a{
+    color:#dfeee9;font-size:0.92rem;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    padding:0.3rem 0.1rem;
+  }
+  nav.links a:hover{color:#fff;text-decoration:none;border-bottom:2px solid var(--gold);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color:#fff;padding:3.2rem 1.2rem 2.6rem;
+  }
+  .hero-inner{max-width:var(--maxw);margin:0 auto;}
+  .breadcrumb{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:0.82rem;color:#bcd9cf;margin-bottom:1rem;
+  }
+  .breadcrumb a{color:#bcd9cf;}
+  .kicker{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    text-transform:uppercase;letter-spacing:0.14em;font-size:0.78rem;color:var(--gold);
+    margin-bottom:0.8rem;font-weight:600;
+  }
+  h1{
+    font-size:2.15rem;line-height:1.25;margin:0 0 0.9rem;color:#fff;
+  }
+  .hero-sub{color:#d8e8e2;font-size:1.05rem;max-width:680px;}
+  .meta-row{
+    display:flex;gap:1.4rem;flex-wrap:wrap;margin-top:1.4rem;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:0.85rem;color:#bcd9cf;
+  }
+  .verdict-badge{
+    display:inline-flex;align-items:center;gap:0.5rem;
+    background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);
+    border-radius:999px;padding:0.45rem 1rem;margin-top:1.3rem;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:0.88rem;color:#fff;
+  }
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--gold);display:inline-block;}
+
+  /* ---------- LAYOUT ---------- */
+  main{max-width:var(--maxw);margin:0 auto;padding:2.4rem 1.2rem 1rem;}
+
+  .toc{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.3rem 1.5rem;margin-bottom:2.2rem;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .toc h2{margin-top:0;font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--primary);font-family:inherit;}
+  .toc ol{margin:0;padding-left:1.2rem;columns:2;column-gap:2rem;}
+  .toc li{margin-bottom:0.45rem;font-size:0.92rem;}
+  @media (max-width:640px){.toc ol{columns:1;}}
+
+  section{margin-bottom:2.6rem;}
+  h2{
+    font-size:1.55rem;color:var(--primary-dark);margin:0 0 0.9rem;
+    padding-bottom:0.5rem;border-bottom:2px solid var(--line);
+  }
+  h3{font-size:1.15rem;color:var(--ink);margin:1.6rem 0 0.6rem;}
+  p{margin:0 0 1rem;color:var(--ink-soft);}
+  ul,ol{color:var(--ink-soft);padding-left:1.3rem;}
+  li{margin-bottom:0.5rem;}
+  strong{color:var(--ink);}
+
+  .note{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--warn-bg);border:1px solid #e7d7ab;color:#6b551a;
+    border-radius:10px;padding:0.9rem 1.1rem;font-size:0.9rem;margin:1rem 0;
+  }
+
+  /* stat grid */
+  .stat-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:0.9rem;margin:1.2rem 0 1.6rem;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .stat{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:1rem 1.1rem;
+  }
+  .stat .val{font-size:1.4rem;font-weight:700;color:var(--primary-dark);font-family:"Georgia",serif;}
+  .stat .lab{font-size:0.8rem;color:var(--muted);margin-top:0.2rem;}
+
+  /* tables */
+  .table-wrap{overflow-x:auto;margin:1rem 0 1.6rem;border:1px solid var(--line);border-radius:12px;}
+  table{
+    width:100%;border-collapse:collapse;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:0.88rem;min-width:520px;
+  }
+  thead th{
+    background:var(--primary-dark);color:#fff;text-align:left;
+    padding:0.65rem 0.9rem;font-weight:600;
+  }
+  tbody td{padding:0.6rem 0.9rem;border-bottom:1px solid var(--line);color:var(--ink-soft);}
+  tbody tr:nth-child(even){background:#f6f5f0;}
+  tbody tr:last-child td{border-bottom:none;}
+
+  /* card grid (products / moat) */
+  .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin:1.2rem 0;}
+  .card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:1.2rem 1.3rem;
+  }
+  .card h4{
+    margin:0 0 0.5rem;font-size:1rem;color:var(--primary-dark);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .card p{font-size:0.92rem;margin:0;}
+
+  /* halal screening box */
+  .halal-box{
+    border-radius:var(--radius);padding:1.5rem 1.6rem;margin:1.3rem 0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .halal-box.pass{background:var(--halal-bg);border:1px solid #bfe3cd;}
+  .halal-box.warn{background:var(--warn-bg);border:1px solid #e7d7ab;}
+  .screen-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:0.55rem 0;border-bottom:1px solid rgba(0,0,0,0.06);font-size:0.92rem;
+  }
+  .screen-row:last-child{border-bottom:none;}
+  .tag{
+    font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;
+    padding:0.2rem 0.6rem;border-radius:999px;
+  }
+  .tag.ok{background:var(--halal);color:#fff;}
+  .tag.check{background:var(--gold);color:#fff;}
+
+  .verdict-final{
+    display:flex;align-items:center;gap:0.9rem;
+    background:#fff;border:2px solid var(--halal);border-radius:14px;
+    padding:1.1rem 1.3rem;margin-top:1.2rem;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .verdict-final .icon{
+    width:42px;height:42px;border-radius:50%;background:var(--halal);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.3rem;flex:none;
+  }
+  .verdict-final .txt strong{display:block;color:var(--halal);font-size:1.02rem;}
+  .verdict-final .txt span{font-size:0.87rem;color:var(--muted);}
+
+  blockquote{
+    border-left:4px solid var(--gold);margin:1.4rem 0;padding:0.4rem 0 0.4rem 1.1rem;
+    color:var(--ink-soft);font-style:italic;
+  }
+
+  .divider{height:1px;background:var(--line);margin:2.4rem 0;border:none;}
+
+  .cta-box{
+    background:var(--primary);color:#fff;border-radius:var(--radius);
+    padding:1.6rem 1.7rem;text-align:center;margin:2.2rem 0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .cta-box h3{color:#fff;margin-top:0;}
+  .cta-box p{color:#d8e8e2;}
+  .btn{
+    display:inline-block;background:var(--gold);color:#231a06;font-weight:700;
+    padding:0.65rem 1.4rem;border-radius:999px;margin-top:0.5rem;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:0.92rem;
+  }
+  .btn:hover{text-decoration:none;filter:brightness(1.05);}
+
+  .related{
+    display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  .related a{
+    flex:1 1 220px;background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:0.9rem 1rem;font-size:0.88rem;color:var(--ink);
+  }
+  .related a:hover{border-color:var(--primary);text-decoration:none;}
+
+  footer.site-footer{
+    background:var(--primary-dark);color:#cfe3dc;padding:2.4rem 1.2rem 1.6rem;margin-top:3rem;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size:0.85rem;
+  }
+  .footer-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1.2rem;}
+  .footer-links{display:flex;gap:1.1rem;flex-wrap:wrap;}
+  .footer-links a{color:#cfe3dc;}
+  .footer-note{max-width:1100px;margin:1.4rem auto 0;font-size:0.75rem;color:#8fae a3;color:#9dbdb2;}
+
+  @media (max-width:600px){
+    h1{font-size:1.7rem;}
+    :root{font-size:16px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <div class="brand">Amana<span>Aktien</span></div>
+    <nav class="links">
+      <a href="index.html">Start</a>
+      <a href="aktien-analysen.html">Aktien-Analysen</a>
+      <a href="halal-etf-liste.html">Halal-ETFs</a>
+      <a href="watchlist.html">Watchlist</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb"><a href="index.html">Start</a> &nbsp;›&nbsp; <a href="aktien-analysen.html">Aktien-Analysen</a> &nbsp;›&nbsp; Kimberly-Clark</div>
+    <div class="kicker">Aktienanalyse · Konsumgüter &amp; Hygiene</div>
+    <h1>Kimberly-Clark (KMB) Aktienanalyse: Geschäftsmodell, Kennzahlen, Dividende und Halal-Check</h1>
+    <p class="hero-sub">Huggies, Kleenex, Kotex, Depend — Kimberly-Clark ist einer der größten Hygienekonzerne der Welt und ein „Dividend King“ mit 54 Jahren Erhöhungshistorie. Wir gehen Geschäftsmodell, Burggraben, alle Kennzahlen, die Kenvue-Übernahme und die Dividendensicherheit durch — und prüfen, ob die Aktie nach islamischen Kriterien halal ist.</p>
+    <div class="meta-row">
+      <span>📅 Stand: Q2 / H1 2026</span>
+      <span>🏷️ Ticker: NASDAQ: KMB</span>
+      <span>⏱️ Lesezeit: ca. 16 Minuten</span>
+    </div>
+    <div class="verdict-badge"><span class="dot"></span> Halal-Einschätzung: siehe Sharia-Screening weiter unten</div>
+  </div>
+</div>
+
+<main>
+
+  <div class="toc sans">
+    <h2>Inhalt dieser Analyse</h2>
+    <ol>
+      <li><a href="#ueberblick">Unternehmensüberblick</a></li>
+      <li><a href="#produkte">Was Kimberly-Clark verkauft</a></li>
+      <li><a href="#burggraben">Der Burggraben</a></li>
+      <li><a href="#kennzahlen">Kennzahlen im Detail</a></li>
+      <li><a href="#quartal">Q2 / H1 2026 im Detail</a></li>
+      <li><a href="#kenvue">Die Kenvue-Übernahme</a></li>
+      <li><a href="#management">Management &amp; Governance</a></li>
+      <li><a href="#dividende">Dividende &amp; Sicherheit</a></li>
+      <li><a href="#halal">Halal-Check: Sharia-Screening</a></li>
+      <li><a href="#chancen-risiken">Chancen &amp; Risiken</a></li>
+      <li><a href="#fazit">Fazit</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. ÜBERBLICK -->
+  <section id="ueberblick">
+    <h2>1. Unternehmensüberblick</h2>
+    <p>Kimberly-Clark ist ein US-amerikanischer Konsumgüterkonzern mit über 150-jähriger Geschichte, Hauptsitz in Dallas, Texas, notiert an der Nasdaq unter dem Kürzel <strong>KMB</strong>. Das Unternehmen befindet sich aktuell in der größten Transformation seiner Geschichte: der Ausgliederung des internationalen Tissue-Geschäfts in ein Joint Venture mit Suzano (Arbex) und der geplanten milliardenschweren Übernahme von Kenvue.</p>
+    <div class="stat-grid">
+      <div class="stat"><div class="val">≈ 30–33 Mrd. $</div><div class="lab">Marktkapitalisierung</div></div>
+      <div class="stat"><div class="val">≈ 16,5 Mrd. $</div><div class="lab">Umsatz 2025/26e</div></div>
+      <div class="stat"><div class="val">36.000</div><div class="lab">Mitarbeiter</div></div>
+      <div class="stat"><div class="val">54 Jahre</div><div class="lab">Dividendenerhöhung in Folge</div></div>
+    </div>
+    <p>Der Umsatz verteilt sich zu rund 65 % auf Nordamerika und zu rund 35 % auf das internationale Personal-Care-Geschäft.</p>
+  </section>
+
+  <!-- 2. PRODUKTE -->
+  <section id="produkte">
+    <h2>2. Was Kimberly-Clark ganz genau verkauft</h2>
+    <p>Kimberly-Clark ist im Kern ein Hersteller von Hygiene- und Papierprodukten des täglichen Bedarfs, gegliedert in fünf Geschäftsbereiche.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <h4>👶 Baby- &amp; Kinderbetreuung</h4>
+        <p><strong>Huggies</strong> (Little Snugglers, Skin Essentials, Little Movers, Ultra Dry mit Leakshield, Little Swimmers, Overnites), <strong>Pull-Ups</strong>, <strong>Goodnites</strong>, regional KleenBebé/Sweety, <strong>Evenflo</strong> (Flaschen, Schnuller, Brustpumpe).</p>
+      </div>
+      <div class="card">
+        <h4>🩸 Damenhygiene</h4>
+        <p><strong>Kotex</strong> (Gravity-Core-Technologie, Kotex Unika, BioCare, Bamboo, Night Defense), regional Intimus (DE/CH), Plenitud (Lateinamerika), Softex (Asien); künftig o.b. nach Kenvue.</p>
+      </div>
+      <div class="card">
+        <h4>👴 Erwachseneninkontinenz</h4>
+        <p><strong>Poise</strong> und <strong>Depend</strong> (Depend Pants, Derma-Protect-Technologie). Gemeinsam ≈ 55 % Marktanteil in Nordamerika — stärkste Einzelposition im Portfolio.</p>
+      </div>
+      <div class="card">
+        <h4>🧻 Tissue für den Haushalt</h4>
+        <p><strong>Kleenex</strong> (Taschentücher, Anti-Viral, Lotion), <strong>Scott</strong> und <strong>Cottonelle</strong> (Toilettenpapier), <strong>Andrex</strong> (UK), <strong>Viva</strong> (Küchenrollen).</p>
+      </div>
+      <div class="card">
+        <h4>🏢 Professionelle Lösungen</h4>
+        <p><strong>Kleenex Professional</strong> und <strong>Scott Professional</strong> (Waschraumsysteme), <strong>WypAll</strong> (Industrie-Wischtücher), <strong>Pétalo</strong> (günstigere Spenderlinie).</p>
+      </div>
+      <div class="card">
+        <h4>🚀 Zukunft: Kenvue</h4>
+        <p>Nach Abschluss der Übernahme (angestrebt Q4 2026) kommen <strong>Tylenol, Listerine, Neutrogena, Aveeno</strong> und <strong>Band-Aid</strong> hinzu — kombinierter Umsatz ≈ 32 Mrd. $.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BURGGRABEN -->
+  <section id="burggraben">
+    <h2>3. Der Burggraben — vier Säulen</h2>
+    <ol>
+      <li><strong>Marken- und Preismacht:</strong> Nr. 1- oder 2-Position in ≈ 70 Ländern; Premium-Anteil in Nordamerika von 40 % auf ≈ 70 %, in China von 6 % auf über 40 % gestiegen.</li>
+      <li><strong>Kostenvorteile:</strong> Skaleneffekte, „Powering Care“-Produktivität von 5–6 % p. a. (Q2 2026 Rekord: 6,4 %), ≈ 80 % des Rohstoffkorbs abgesichert.</li>
+      <li><strong>Technologische Führerschaft:</strong> über 75 % des Wachstums 2025 aus Innovationen; Langfristprojekt „Alternative Natural Fiber“ als Zellstoffersatz.</li>
+      <li><strong>Marktführerschaft:</strong> ≈ 55 % kombinierter Marktanteil bei Erwachseneninkontinenz (Depend/Poise) in Nordamerika, Anteilsgewinne u. a. in Indonesien (+390 Bp.) und Brasilien (+70 Bp.).</li>
+    </ol>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Quelle</th><th>Einstufung</th><th>Kernbegründung</th></tr></thead>
+        <tbody>
+          <tr><td>Morningstar</td><td>Schmal</td><td>Schwaches Konsumumfeld, Zweifel an Kenvue-Logik</td></tr>
+          <tr><td>GuruFocus</td><td>Breit (8/10)</td><td>Klare, dauerhafte Wettbewerbsvorteile</td></tr>
+          <tr><td>Find My Moat</td><td>Breit (76/100)</td><td>Oligopol-Struktur; Risiko: China-Reputation</td></tr>
+          <tr><td>Alpha Spread</td><td>Schmal</td><td>Druck durch Handelsmarken, volatile Kosten</td></tr>
+          <tr><td>EcoMoat</td><td>Moderat</td><td>Gestützt auf ROE ≈ 19,7 % und hohe Liquidität</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><em>Fazit:</em> Der Burggraben ist real (Marken, Skaleneffekte, Technologie), aber nicht uneinnehmbar — Handelsmarken, Procter &amp; Gamble und Reputationsrisiken (China) begrenzen ihn.</p>
+  </section>
+
+  <!-- 4. KENNZAHLEN -->
+  <section id="kennzahlen">
+    <h2>4. Kennzahlen im Detail</h2>
+    <p><em>Hinweis: Die zugrundeliegenden Werte stammen aus mehreren Auswertungen zu unterschiedlichen Stichtagen und weichen daher teils leicht voneinander ab — die Richtung ist in allen Quellen konsistent.</em></p>
+
+    <h3>Profitabilität</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kennzahl</th><th>Peak (2015)</th><th>5J-Ø</th><th>Aktuell</th></tr></thead>
+        <tbody>
+          <tr><td>Bruttomarge</td><td>37,6 %</td><td>35,4 %</td><td>36,7–37,3 %</td></tr>
+          <tr><td>Operative Marge</td><td>18,0 %</td><td>14,4 %</td><td>12,4–14,3 %</td></tr>
+          <tr><td>Nettomarge</td><td>13,0 %</td><td>11,0 %</td><td>10,2–11,8 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Wachstum</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kennzahl</th><th>Langfristig</th><th>1 Jahr</th></tr></thead>
+        <tbody>
+          <tr><td>Umsatzwachstum</td><td>≈ 2,7 % p. a. (5J)</td><td>-1 %</td></tr>
+          <tr><td>Organisches Wachstum</td><td>2025: +1,7 %</td><td>Q2 2026: -0,1 %</td></tr>
+          <tr><td>EPS-Wachstum</td><td>10J: +20 % / 3J: -20 %</td><td>-2 %</td></tr>
+          <tr><td>FCF je Aktie</td><td>-8 % p. a. (5J)</td><td>-4 %</td></tr>
+          <tr><td>Dividende je Aktie</td><td>+3 % p. a. (5J)</td><td>+3 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Umsatz 2013: 21,15 Mrd. $ → 2025/26e: ≈ 16,4–16,6 Mrd. $ (≈ -22 %), überwiegend durch Devestitionen und die Arbex-Ausgliederung, nicht organisch bedingt.</p>
+
+    <h3>Kapitalrendite</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kennzahl</th><th>5J-Ø</th><th>Aktuell</th></tr></thead>
+        <tbody>
+          <tr><td>ROE</td><td>≈ 80 % (verzerrt)</td><td>19,7 %</td></tr>
+          <tr><td>ROIC</td><td>16–17 %</td><td>14,2 %</td></tr>
+          <tr><td>ROCE</td><td>28 %</td><td>27,7 %</td></tr>
+          <tr><td>CROIC</td><td>16 %</td><td>12 %</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Bewertung</h3>
+    <div class="stat-grid">
+      <div class="stat"><div class="val">10,5–18,2</div><div class="lab">KGV (je nach Basis)</div></div>
+      <div class="stat"><div class="val">19,5–21,8</div><div class="lab">KGV historischer Ø</div></div>
+      <div class="stat"><div class="val">5,3 %</div><div class="lab">FCF-Rendite</div></div>
+      <div class="stat"><div class="val">4,7–5,2 %</div><div class="lab">Dividendenrendite</div></div>
+    </div>
+    <p>Peer-Vergleich: Colgate-Palmolive KGV ≈ 23–36, Church &amp; Dwight ≈ 32 — KMB ist damit klar günstiger bewertet. Fairer Wert laut Aktienfinder: 101,22 € vs. Kurs 90,67 € (≈ +11,6 % Potenzial). Piper Sandler: Kursziel 121 $ (Overweight); Zacks: Hold.</p>
+
+    <h3>Bilanz &amp; Verschuldung</h3>
+    <div class="stat-grid">
+      <div class="stat"><div class="val">3,7</div><div class="lab">Verschuldungsgrad (D/E), ggü. 15,8 in 2020</div></div>
+      <div class="stat"><div class="val">9–13,4</div><div class="lab">Zinsdeckungsgrad</div></div>
+      <div class="stat"><div class="val">≈ 97 %</div><div class="lab">Cash Conversion Ratio</div></div>
+      <div class="stat"><div class="val">141 Mio. $</div><div class="lab">Tilgungskraft (FCF nach Dividende)</div></div>
+    </div>
+    <p>Verzinsliche Schulden ≈ 6,5–7,2 Mrd. $, Cash &amp; Wertpapiere 956 Mio. $, Goodwill 1,83 Mrd. $.</p>
+  </section>
+
+  <!-- 5. QUARTAL -->
+  <section id="quartal">
+    <h2>5. Q2 / H1 2026 im Detail — GAAP gegen bereinigt</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kennzahl</th><th>GAAP</th><th>Bereinigt</th><th>Treiber der Differenz</th></tr></thead>
+        <tbody>
+          <tr><td>Nettogewinn Q2</td><td>-6,1 %</td><td>—</td><td>Sonderposten Kenvue, Arbex, Transformation</td></tr>
+          <tr><td>EPS Q2</td><td>-6,2 %</td><td>+10,4 %</td><td>Zoll-Rückerstattung 45 Mio. $, Produktivität 6,4 %</td></tr>
+          <tr><td>Organisches Wachstum Q2</td><td>-0,1 %</td><td colspan="2">≈ 100 Bp. unter Erwartung (China, NA-Schwäche)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Segment</th><th>Anteil</th><th>H1-Umsatz</th><th>Belastende Faktoren</th></tr></thead>
+        <tbody>
+          <tr><td>Nordamerika</td><td>≈ 65 %</td><td>5,349 Mrd. $ (-0,9 %)</td><td>Brand LA-Verteilzentrum (-22 Mio. $), Retailer-Destocking, Club-Verlust</td></tr>
+          <tr><td>International Personal Care</td><td>≈ 35 %</td><td>3,003 Mrd. $ (+6,5 %)</td><td>China-Krise (-140 Bp. im Q2), Wachstum in Indien/Vietnam/Brasilien</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">Guidance-Senkungen im Q2-2026-Call: organisches Wachstum jetzt ≈ 100 Bp. unter Kategoriewachstum; bereinigtes operatives Ergebnis von „mittel-bis-hoch einstellig“ auf „mittel einstellig“ gesenkt; Gesamt-EPS erwartet nun Rückgang von 1–3 % statt Stabilität.</div>
+    <p>Operativer Cashflow H1: 1,653 Mrd. $ (Vorjahr 1,097 Mrd.); CapEx H1 verdoppelt auf 776 Mio. $; neue Schulden H1: 1,329 Mrd. $; Dividenden H1: 843 Mio. $.</p>
+  </section>
+
+  <!-- 6. KENVUE -->
+  <section id="kenvue">
+    <h2>6. Die Kenvue-Übernahme</h2>
+    <div class="stat-grid">
+      <div class="stat"><div class="val">≈ 40–48,7 Mrd. $</div><div class="lab">Transaktionsvolumen</div></div>
+      <div class="stat"><div class="val">1,9–2,1 Mrd. $</div><div class="lab">Angestrebte Synergien p. a.</div></div>
+      <div class="stat"><div class="val">Q4 2026</div><div class="lab">Geplanter Abschluss</div></div>
+      <div class="stat"><div class="val">≈ 32 Mrd. $</div><div class="lab">Umsatz kombiniert</div></div>
+    </div>
+    <p>Management (CEO Mike Hsu) bezeichnet den Deal als „generationelle Chance“; ≈ 600 Mio. $ Synergien im ersten Jahr laut COO Russ Torres bereits „schaufelfertig“. Integrationskosten Q2 2026: 109 Mio. $ (≈ 0,30 $/Aktie). Auf Nachfrage machte das Management keine konkreten Angaben zur EPS-Verwässerung 2027 — ein Unsicherheitsfaktor.</p>
+    <p>Parallel: Arbex-Joint-Venture mit Suzano (Start 1.7.2026) für das internationale Tissue-/Professional-Geschäft; Verlust aus nicht fortgeführten Aktivitäten Q2: -60 Mio. $.</p>
+    <blockquote>Kritische Gegenstimme: Morningstar bezweifelt die strategische Logik, da der Deal vom bisherigen Fokus auf Körperpflege abweicht und erhebliche Managementressourcen binden wird.</blockquote>
+  </section>
+
+  <!-- 7. MANAGEMENT -->
+  <section id="management">
+    <h2>7. Management &amp; Corporate Governance</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Position</th><th>Person</th><th>Verantwortung</th></tr></thead>
+        <tbody>
+          <tr><td>Chairman &amp; CEO</td><td>Mike Hsu</td><td>Strategie, Transformation, Kenvue-Deal</td></tr>
+          <tr><td>President &amp; COO</td><td>Russ Torres</td><td>Operatives Geschäft, Synergie-Umsetzung</td></tr>
+          <tr><td>CFO</td><td>Nelson Urdaneta</td><td>Kapitalallokation, Bilanzsteuerung</td></tr>
+          <tr><td>Leitung Nordamerika</td><td>John Carmichael</td><td>≈ 65 % des Konzernumsatzes</td></tr>
+          <tr><td>Leitung International Personal Care</td><td>Katy Chen</td><td>≈ 35 % des Konzernumsatzes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Der Verwaltungsrat besteht aus 13 Mitgliedern, von denen nur der CEO operativ im Unternehmen tätig ist — hohe formale Unabhängigkeit. Zu ergänzender Schwachpunkt: überwiegend ältere, teils bereits im Ruhestand befindliche ehemalige CEOs; digitale/E-Commerce-Kompetenz im Gremium eher unterrepräsentiert.</p>
+  </section>
+
+  <!-- 8. DIVIDENDE -->
+  <section id="dividende">
+    <h2>8. Dividende — Historie, Ertrag, Sicherheit</h2>
+    <div class="stat-grid">
+      <div class="stat"><div class="val">92 Jahre</div><div class="lab">Ununterbrochene Dividendenzahlung</div></div>
+      <div class="stat"><div class="val">54 Jahre</div><div class="lab">Erhöhung in Folge (Dividend King)</div></div>
+      <div class="stat"><div class="val">4,7–5,2 %</div><div class="lab">Aktuelle Rendite</div></div>
+      <div class="stat"><div class="val">10/10</div><div class="lab">Stabilitäts-Score</div></div>
+    </div>
+
+    <h3>Der kritische Punkt: Sicherheit</h3>
+    <div class="stat-grid">
+      <div class="stat"><div class="val">65,6–86,9 %</div><div class="lab">Ausschüttungsquote auf den Gewinn</div></div>
+      <div class="stat"><div class="val">93,4 %</div><div class="lab">Ausschüttungsquote auf den FCF</div></div>
+      <div class="stat"><div class="val">26,7 Jahre</div><div class="lab">Schuldentilgungsdauer</div></div>
+      <div class="stat"><div class="val">141 Mio. $</div><div class="lab">Verbleibende Tilgungskraft</div></div>
+    </div>
+    <p><strong>2025:</strong> Dividendenzahlung 1,66 Mrd. $ &gt; erwirtschafteter FCF von 1,64 Mrd. $ — erstmals seit einem Jahrzehnt. <strong>H1 2026:</strong> Dividenden von 843 Mio. $ ausgezahlt, während 1,329 Mrd. $ neue Schulden aufgenommen wurden — die Dividende wird derzeit faktisch teilweise über Fremdkapital finanziert.</p>
+    <p>Dividendenwachstum verliert Tempo: 10J-Ø 3,49 % p. a. → 5J-Ø 2,52 % p. a. → Prognose nur noch 1,19 % p. a.</p>
+    <div class="note">Einschätzung: Ein Dividendenstopp ist kurzfristig unwahrscheinlich, aber die Qualität hat sich von „exzellent abgesichert“ zu „solide, mit erhöhtem Risiko“ verändert. Entscheidend ist, ob die Kenvue-Synergien realisiert werden.</div>
+  </section>
+
+  <!-- 9. HALAL CHECK -->
+  <section id="halal">
+    <h2>9. Halal-Check: Ist die Kimberly-Clark-Aktie Sharia-konform?</h2>
+    <p>Für ein Sharia-Screening nach der gängigen AAOIFI-Methodik prüfen wir zwei Ebenen: erstens die <strong>Geschäftstätigkeit</strong> (keine haram-Kernaktivität) und zweitens die <strong>Finanzkennzahlen</strong> (Verschuldungs- und Liquiditätsgrenzen, üblicherweise 33 % bezogen auf die Marktkapitalisierung bzw. Bilanzsumme). Die folgende Einschätzung ist eine indikative Einordnung auf Basis der oben gezeigten Kennzahlen — <strong>keine verbindliche Fatwa oder Zertifizierung</strong>.</p>
+
+    <h3>Geschäftstätigkeit</h3>
+    <div class="halal-box pass">
+      <div class="screen-row"><span>Kerngeschäft: Hygiene- und Papierprodukte (Windeln, Taschentücher, Toilettenpapier)</span><span class="tag ok">Halal-konform</span></div>
+      <div class="screen-row"><span>Kein Alkohol, Schweinefleisch, Glücksspiel, Waffen oder Pornografie im Portfolio</span><span class="tag ok">Bestanden</span></div>
+      <div class="screen-row"><span>Kein konventionelles Bank- oder Versicherungsgeschäft als Kerntätigkeit</span><span class="tag ok">Bestanden</span></div>
+      <div class="screen-row"><span>Nach Kenvue-Abschluss: Konsumgesundheit (Tylenol, Neutrogena, Band-Aid) — weiterhin halal-konforme Kernaktivität</span><span class="tag ok">Voraussichtlich unkritisch</span></div>
+    </div>
+
+    <h3>Finanzkennzahlen (indikativ)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Kriterium (AAOIFI-Richtwert)</th><th>Ungefährer Wert</th><th>Grenzwert</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Verzinsliche Schulden / Marktkapitalisierung</td><td>≈ 21–23 %</td><td>&lt; 33 %</td><td>Bestanden</td></tr>
+          <tr><td>Cash &amp; verzinsliche Wertpapiere / Marktkapitalisierung</td><td>≈ 3 %</td><td>&lt; 33 %</td><td>Bestanden</td></tr>
+          <tr><td>Nicht-zulässige Erträge (z. B. Zinserträge) / Gesamtumsatz</td><td>nicht separat ausgewiesen</td><td>&lt; 5 %</td><td>Zu prüfen</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note">Wichtiger Hinweis: Kimberly-Clark hält klassische, verzinsliche Unternehmensanleihen (kein Sukuk) und dürfte auf seine Cash-Bestände geringe Zinserträge erzielen. Diese Zinserträge sind nach den meisten Gelehrtenmeinungen zu identifizieren und bei Dividendenerhalt zu <strong>purifizieren</strong> (spenden). Der genaue Zinsertragsanteil war aus den vorliegenden Quartalsberichten nicht separat extrahierbar — für eine exakte, laufend aktualisierte Purifizierungsquote empfehlen wir eine dedizierte Screening-Plattform (z. B. Zoya, Musaffa oder IdealRatings).</div>
+
+    <div class="verdict-final">
+      <div class="icon">✓</div>
+      <div class="txt">
+        <strong>Indikative Einschätzung: Grundsätzlich Sharia-nah (Business-Screen bestanden, Finanzkennzahlen aktuell innerhalb der üblichen Grenzwerte)</strong>
+        <span>Purifizierung eines geringen Zinsertragsanteils bei Dividendenerhalt wahrscheinlich erforderlich. Bitte vor einer Investition zusätzlich eine spezialisierte Sharia-Screening-Plattform konsultieren, da sich Kennzahlen und die Struktur nach dem Kenvue-Abschluss ändern können.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CHANCEN & RISIKEN -->
+  <section id="chancen-risiken">
+    <h2>10. Chancen &amp; Risiken</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h4>✅ Chancen</h4>
+        <p>Kenvue-Synergien (1,9–2,1 Mrd. $), starke Innovationspipeline, Wachstum in Schwellenländern, Rekordproduktivität (6,4 %), Bewertung unter historischem Durchschnitt und Wettbewerbern, bewiesene Entschuldungsfähigkeit (D/E 15,8 → 3,7).</p>
+      </div>
+      <div class="card">
+        <h4>⚠️ Risiken</h4>
+        <p>China-Reputationskrise, Schwäche in Nordamerika (Brand, Destocking, Club-Verlust), Bilanzrisiko durch Kenvue, teilweise fremdfinanzierte Dividende, Wettbewerbsdruck durch Handelsmarken &amp; P&amp;G, Rohstoff- und Zinssensitivität, strategische Unsicherheit rund um Kenvue.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FAZIT -->
+  <section id="fazit">
+    <h2>11. Fazit</h2>
+    <p>Kimberly-Clark ist ein defensiver Marktführer mit einem realen, aber nicht uneinnehmbaren Burggraben aus Marken, Skaleneffekten und Technologie. Kurzfristig (2026) ist die operative Lage angespannt — China-Krise, Probleme in Nordamerika, gesenkte Jahresprognose. Langfristig hängt fast alles an der Kenvue-Integration: Gelingen die angepeilten Synergien von 1,9–2,1 Mrd. $, entsteht ein deutlich breiter aufgestellter Konzern.</p>
+    <p>Die Dividende (Rendite ≈ 4,7–5 %, 54 Jahre Historie) ist aktuell nicht akut gefährdet, ihre Qualität ist jedoch von „exzellent“ zu „solide mit erhöhtem Risiko“ gesunken. Die Aktie eignet sich vor allem für geduldige, einkommensorientierte Anleger, die den Ausgang der Kenvue-Integration abwarten wollen — und aus Sharia-Sicht bereit sind, einen geringen Zinsertragsanteil zu purifizieren.</p>
+  </section>
+
+  <div class="cta-box">
+    <h3>Mehr Halal-Aktienanalysen entdecken</h3>
+    <p>Alle unsere Analysen findest du gesammelt auf einer Seite.</p>
+    <a class="btn" href="aktien-analysen.html">Zu allen Aktien-Analysen →</a>
+  </div>
+
+  <div class="related">
+    <a href="ferrari-aktie-halal-oder-haram.html">📄 Ferrari-Aktie: Halal oder Haram?</a>
+    <a href="aaoifi-standard-erklaert.html">📄 Der AAOIFI-Standard erklärt</a>
+    <a href="halal-etf-liste.html">📄 Halal-ETF-Liste</a>
+  </div>
+
+  <hr class="divider">
+  <p style="font-size:0.85rem;color:var(--muted);">
+    <strong>Disclaimer:</strong> Diese Analyse dient ausschließlich Informationszwecken und stellt keine Anlageberatung, keine Kauf- oder Verkaufsempfehlung und keine verbindliche Sharia-Zertifizierung dar. Alle Kennzahlen stammen aus öffentlich zugänglichen Quellen zu unterschiedlichen Stichtagen (Stand Q2/H1 2026) und können sich seither verändert haben. Aktienkurse können schwanken; ein Totalverlust des eingesetzten Kapitals ist möglich. Für eine verbindliche Sharia-Konformitätsprüfung konsultiere bitte einen qualifizierten Gelehrten oder eine spezialisierte Screening-Plattform. Weitere Hinweise siehe <a href="disclaimer.html">Disclaimer</a>.
+  </p>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© 2026 AmanaAktien — Halal investieren, verständlich erklärt.</div>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="links.html">Links</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
