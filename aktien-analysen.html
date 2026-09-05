@@ -6,7 +6,7 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://amanaaktien.github.io/aktien-analysen.html">
 <title>Halal Aktien-Analysen 2026 – AAOIFI-geprüft auf Deutsch | Amana Aktien</title>
-<meta name="description" content="Fundierte Halal-Aktienanalysen nach AAOIFI-Standard auf Deutsch. Mit Video und Artikel: Arista Networks, ServiceNow, Apple und mehr – scharia-konform geprüft.">
+<meta name="description" content="Fundierte Halal-Aktienanalysen nach AAOIFI-Standard auf Deutsch. Mit Video und Artikel: Arista Networks, ServiceNow, Apple, Kimberly-Clark und mehr – scharia-konform geprüft.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Halal Aktien-Analysen 2026 | Amana Aktien">
@@ -42,7 +42,6 @@ a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
 
-/* ── HERO ── */
 .hero{padding:4rem 2rem 3rem;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-80px;right:-60px;width:420px;height:420px;background:radial-gradient(circle,var(--gold-glow) 0%,transparent 65%);border-radius:50%;pointer-events:none}
 .hero-inner{max-width:1100px;margin:0 auto;position:relative;z-index:1}
@@ -55,12 +54,10 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
 .stat-val{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--gold);line-height:1}
 .stat-lbl{font-size:.67rem;color:var(--muted);margin-top:.2rem;text-transform:uppercase;letter-spacing:.08em}
 
-/* ── DISCLAIMER ── */
 .disc{background:var(--gold-glow);border-bottom:1px solid var(--border);padding:.6rem 2rem}
 .disc-inner{max-width:1100px;margin:0 auto;font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.5rem}
 .disc-inner strong{color:var(--gold)}
 
-/* ── FILTER ── */
 .filter-wrap{padding:1.25rem 2rem;border-bottom:1px solid var(--border);position:sticky;top:62px;z-index:90;background:var(--bg);backdrop-filter:blur(12px);transition:background .25s}
 .filter-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
 .filter-btn{font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:700;padding:.38rem .85rem;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.04em}
@@ -69,17 +66,17 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
 .filter-count{font-size:.6rem;background:rgba(255,255,255,.08);padding:.1rem .4rem;border-radius:10px;margin-left:.25rem}
 .filter-btn.active .filter-count{background:rgba(0,0,0,.2)}
 
-/* ── GRID ── */
 .grid-wrap{max-width:1100px;margin:0 auto;padding:2rem 2rem 5rem}
 .analyses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
 
-/* ── ANALYSE CARD ── */
 .analyse-card{background:var(--bg2);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .25s;display:flex;flex-direction:column;position:relative}
 .analyse-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .3s}
 .analyse-card:hover{border-color:rgba(201,168,76,.45);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
 .analyse-card:hover::before{opacity:1}
 .card-thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#111;flex-shrink:0}
 .card-thumb img{width:100%;height:100%;object-fit:cover;opacity:.82;transition:opacity .3s,transform .4s}
+.card-thumb.no-video{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg3),var(--bg2))}
+.card-thumb.no-video .thumb-ticker{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:900;color:var(--gold);opacity:.35;letter-spacing:.05em}
 .analyse-card:hover .card-thumb img{opacity:1;transform:scale(1.03)}
 .thumb-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
 .analyse-card:hover .thumb-play{opacity:1}
@@ -102,13 +99,14 @@ h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
 .btn-video:hover{opacity:.88}
 .btn-artikel{display:inline-flex;align-items:center;gap:.4rem;font-size:.7rem;font-weight:700;letter-spacing:.04em;padding:.42rem .85rem;border-radius:4px;background:transparent;color:var(--muted);border:1px solid var(--border);flex:1;justify-content:center;transition:color .2s,border-color .2s}
 .btn-artikel:hover{color:var(--text);border-color:rgba(255,255,255,.2)}
+.btn-artikel.primary{background:var(--gold);color:#0D0D0D;border-color:var(--gold)}
+.btn-artikel.primary:hover{opacity:.88;color:#0D0D0D}
 
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;transition:background .25s}
 footer p{font-size:.68rem;color:var(--muted)}
 footer a{color:var(--muted);transition:color .2s}
 footer a:hover{color:var(--gold)}
 
-/* ── COOKIE ── */
 #cb{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--bg2);border-top:1px solid var(--border);backdrop-filter:blur(12px);padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.25rem;flex-wrap:wrap;font-family:'DM Sans',sans-serif;transition:transform .4s ease}
 #cb.hidden{transform:translateY(100%)}
 #cb-text{font-size:.8rem;color:var(--muted);max-width:580px;line-height:1.6}
@@ -136,12 +134,11 @@ footer a:hover{color:var(--gold)}
 <div id="site-nav"></div>
 <script src="nav.js"></script>
 
-<!-- ── HERO ── -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-tag">☪ AAOIFI-Standard</div>
     <h1>Halal <em>Aktien-Analysen</em></h1>
-    <p class="hero-lead">Fundierte Fundamentalanalysen scharia-konformer Aktien – auf Deutsch, mit Halal-Check nach AAOIFI-Standard. Jede Analyse enthält Video, Kennzahlen und islamische Beurteilung.</p>
+    <p class="hero-lead">Fundierte Fundamentalanalysen scharia-konformer Aktien – auf Deutsch, mit Halal-Check nach AAOIFI-Standard. Jede Analyse enthält Kennzahlen und islamische Beurteilung, viele zusätzlich ein Video.</p>
     <div class="hero-stats">
       <div><div class="stat-val" id="statCount">0</div><div class="stat-lbl">Analysen</div></div>
       <div><div class="stat-val">AAOIFI</div><div class="stat-lbl">Screening-Standard</div></div>
@@ -150,7 +147,6 @@ footer a:hover{color:var(--gold)}
   </div>
 </section>
 
-<!-- ── DISCLAIMER ── -->
 <div class="disc">
   <div class="disc-inner">
     <strong>⚠ Hinweis:</strong> Alle Analysen dienen nur der Bildung. Keine Anlageberatung. Scharia-Beurteilungen stellen keine Fatwa dar. &nbsp;|&nbsp;
@@ -158,7 +154,6 @@ footer a:hover{color:var(--gold)}
   </div>
 </div>
 
-<!-- ── FILTER ── -->
 <div class="filter-wrap">
   <div class="filter-inner" id="filterBar">
     <button class="filter-btn active" data-filter="alle">Alle <span class="filter-count" id="countAlle">0</span></button>
@@ -170,7 +165,6 @@ footer a:hover{color:var(--gold)}
   </div>
 </div>
 
-<!-- ── GRID ── -->
 <div class="grid-wrap">
   <div class="analyses-grid" id="analysenGrid"></div>
 </div>
@@ -194,6 +188,12 @@ const ANALYSEN = [
     halal:true,standard:'AAOIFI',ytId:'Ss_CyIxKNeI',
     desc:'Ferrari besteht das AAOIFI-Screening mit Bravour. Schulden weit unter 30%, Zinsanteil minimal – einer der saubersten Luxuswerte für halal-bewusste Anleger.',
     datum:'2026',artikel:'ferrari-aktie-halal-oder-haram.html'
+  },
+  {
+    ticker:'KMB',name:'Kimberly-Clark',sektor:'dividend',sektorLabel:'Konsumgüter & Hygiene',
+    halal:true,standard:'AAOIFI',ytId:null,
+    desc:'Huggies, Kleenex, Kotex, Depend – Dividend King mit 54 Jahren Erhöhungshistorie. Geschäftsmodell, Kennzahlen, die Kenvue-Übernahme und die Sharia-Konformität im Detail.',
+    datum:'2026',artikel:'kimberly-clark-aktie-halal-oder-haram.html'
   },
   {
     ticker:'ANET',name:'Arista Networks',sektor:'tech',sektorLabel:'Netzwerk-Technologie',
@@ -229,13 +229,33 @@ function halalBadge(h){
   return '<span class="badge badge-pending">⏳ Prüfung</span>';
 }
 
+function buildThumb(a){
+  if(a.ytId){
+    return `<a href="https://www.youtube.com/watch?v=${esc(a.ytId)}" target="_blank" rel="noopener noreferrer nofollow" aria-label="${esc(a.name)} auf YouTube ansehen">
+      <img src="https://img.youtube.com/vi/${esc(a.ytId)}/hqdefault.jpg" alt="${esc(a.name)} Halal-Analyse" loading="lazy" decoding="async" width="320" height="180">
+      <div class="thumb-play" aria-hidden="true"><div class="play-circle"><div class="play-tri"></div></div></div>
+    </a>`;
+  }
+  return `<a href="${a.artikel?esc(a.artikel):'#'}" aria-label="${esc(a.name)} Analyse lesen">
+    <div class="thumb-ticker">${esc(a.ticker)}</div>
+  </a>`;
+}
+
+function buildFooterButtons(a){
+  if(a.ytId){
+    return `<a href="https://www.youtube.com/watch?v=${esc(a.ytId)}" target="_blank" rel="noopener noreferrer nofollow" class="btn-video">▶ Video ansehen</a>
+      ${a.artikel ? `<a href="${esc(a.artikel)}" class="btn-artikel">Artikel lesen →</a>` : `<span class="btn-artikel" style="opacity:.4;cursor:default">Artikel folgt</span>`}`;
+  }
+  return a.artikel
+    ? `<a href="${esc(a.artikel)}" class="btn-artikel primary">📄 Artikel lesen →</a>`
+    : `<span class="btn-artikel" style="opacity:.4;cursor:default">Artikel folgt</span>`;
+}
+
 function buildCard(a){
+  const thumbClass = a.ytId ? 'card-thumb' : 'card-thumb no-video';
   return `<article class="analyse-card" data-sektor="${esc(a.sektor)}">
-    <div class="card-thumb">
-      <a href="https://www.youtube.com/watch?v=${esc(a.ytId)}" target="_blank" rel="noopener noreferrer nofollow" aria-label="${esc(a.name)} auf YouTube ansehen">
-        <img src="https://img.youtube.com/vi/${esc(a.ytId)}/hqdefault.jpg" alt="${esc(a.name)} Halal-Analyse" loading="lazy" decoding="async" width="320" height="180">
-        <div class="thumb-play" aria-hidden="true"><div class="play-circle"><div class="play-tri"></div></div></div>
-      </a>
+    <div class="${thumbClass}">
+      ${buildThumb(a)}
       <div class="card-badges">${halalBadge(a.halal)}<span class="badge badge-sector">${esc(a.sektorLabel)}</span></div>
     </div>
     <div class="card-body">
@@ -244,8 +264,7 @@ function buildCard(a){
       <div class="card-meta"><span>📅 ${esc(a.datum)}</span><span>·</span><span style="color:var(--gold)">☪ ${esc(a.standard)}</span></div>
     </div>
     <div class="card-footer">
-      <a href="https://www.youtube.com/watch?v=${esc(a.ytId)}" target="_blank" rel="noopener noreferrer nofollow" class="btn-video">▶ Video ansehen</a>
-      ${a.artikel ? `<a href="${esc(a.artikel)}" class="btn-artikel">Artikel lesen →</a>` : `<span class="btn-artikel" style="opacity:.4;cursor:default">Artikel folgt</span>`}
+      ${buildFooterButtons(a)}
     </div>
   </article>`;
 }
