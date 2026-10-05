@@ -89,11 +89,12 @@ footer a{color:var(--muted)}
 <section id="anfrage"><div class="wrap">
   <h2>Termin anfragen</h2>
   <div class="ok" id="ok"><strong>Danke für deine Anfrage.</strong> Ich melde mich so schnell wie möglich per E-Mail bei dir.</div>
-  <form action="https://formsubmit.co/youssefchafi1108@gmail.com" method="POST">
-    <input type="hidden" name="_subject" value="Neue Beratungsanfrage über Amana Aktien">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://amanaaktien.github.io/beratung.html?danke=1">
-    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="2104cbe2-31b5-407b-bc19-a0a7470be852">
+    <input type="hidden" name="subject" value="Neue Beratungsanfrage über Amana Aktien">
+    <input type="hidden" name="from_name" value="Amana Aktien Website">
+    <input type="hidden" name="redirect" value="https://amanaaktien.github.io/beratung.html?danke=1">
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <div class="row">
       <div><label for="name">Name</label><input id="name" name="Name" type="text" required autocomplete="name"></div>
       <div><label for="email">E-Mail</label><input id="email" name="email" type="email" required autocomplete="email"></div>
