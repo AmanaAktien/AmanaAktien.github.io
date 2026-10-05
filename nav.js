@@ -195,7 +195,7 @@
         <li><a href="watchlist.html" ${isActive('watchlist.html')}>📋 Watchlist</a></li>
         <li><a href="halal-etf-liste.html" ${isActive('halal-etf-liste.html')}>Halal ETFs</a></li>
         <li><a href="blog.html" ${isActive('blog.html')}>Blog</a></li>
-        <li><a href="amana_club_pricing_page.html" ${isActive('amana_club_pricing_page.html')} class="aa-nav-premium">✨ Amana Club Premium</a></li>
+        <li><a href="beratung.html" ${isActive('beratung.html')} class="aa-nav-premium">💬 Beratung buchen</a></li>
       </ul>
       <div class="aa-nav-right">
         <button id="aa-theme-btn" aria-label="Theme wechseln">${themeIcon}</button>
@@ -211,7 +211,7 @@
     <a href="watchlist.html">📋 Watchlist</a>
     <a href="halal-etf-liste.html">Halal ETFs</a>
     <a href="blog.html">Blog</a>
-    <a href="amana_club_pricing_page.html" class="aa-mobile-premium">✨ Amana Club Premium</a>
+    <a href="beratung.html" class="aa-mobile-premium">💬 Beratung buchen</a>
   </div>`;
 
   /* ── Nav einfügen + Events ── */
